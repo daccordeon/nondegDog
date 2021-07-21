@@ -13,7 +13,7 @@ Guide to replicating results:
 -
 -
 -
-- Contact the authors for any technical enquiries at <u6069809@anu.edu.au>.
+- Contact the authors for any technical enquiries at <james.gardner@anu.edu.au>.
 
 Requirements:
 - ipython==5.5.0
