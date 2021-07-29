@@ -10,22 +10,28 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[   1988702,      37241]
-NotebookOptionsPosition[   1983744,      37163]
-NotebookOutlinePosition[   1984113,      37179]
-CellTagsIndexPosition[   1984070,      37176]
+NotebookDataLength[   1989498,      37251]
+NotebookOptionsPosition[   1984538,      37173]
+NotebookOutlinePosition[   1984907,      37189]
+CellTagsIndexPosition[   1984864,      37186]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell["\<\
-sWLC from Li et at, 2020
-Re-viewing calculation
-Lossless first, then lossy\
-\>", "Text",
+Cell[TextData[{
+ "sWLC from Li et at, 2020\nRe-viewing calculation\nLossless first, then \
+lossy\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Omega]", "s"], "=", "\[Kappa]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0315b5c6-e41e-4c11-9524-cc4499af6fd1"],
+ ", re-labelled to align with degenerate internal squeezing"
+}], "Text",
  CellChangeTimes->{{3.834797040711691*^9, 3.834797069039122*^9}, {
-  3.8351208439461184`*^9, 
-  3.83512084812578*^9}},ExpressionUUID->"075d40ea-fa8d-4f2b-babd-\
+  3.8351208439461184`*^9, 3.83512084812578*^9}, {3.836530773310005*^9, 
+  3.836530808565715*^9}},ExpressionUUID->"075d40ea-fa8d-4f2b-babd-\
 8770a0fbd10e"],
 
 Cell[CellGroupData[{
@@ -64,22 +70,29 @@ Cell[BoxData[
     RowBox[{"\[Kappa]", "=", 
      RowBox[{"10", "\[Gamma]R"}]}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"Sh", "[", 
-     RowBox[{"\[CapitalOmega]_", ",", "\[Chi]_"}], "]"}], ":=", 
-    FractionBox[
-     RowBox[{
-      SuperscriptBox[
-       RowBox[{"(", 
-        RowBox[{
-         SuperscriptBox["\[CapitalOmega]", "2"], "+", 
-         SuperscriptBox["\[Chi]", "2"], "-", 
-         SuperscriptBox["\[Kappa]", "2"]}], ")"}], "2"], "+", 
+    RowBox[{"\[Omega]s", "=", "\[Kappa]"}], ";", 
+    RowBox[{"(*", 
+     RowBox[{"re", "-", 
       RowBox[{
-       SuperscriptBox["\[CapitalOmega]", "2"], 
-       SuperscriptBox["\[Gamma]R", "2"]}]}], 
-     RowBox[{"4", 
-      SuperscriptBox["\[Alpha]", "2"], 
-      SuperscriptBox["\[Kappa]", "2"], "\[Gamma]R"}]]}], 
+      "labelled", " ", "to", " ", "align", " ", "with", " ", "degenerate", 
+       " ", "internal", " ", "squeezing"}]}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Sh", "[", 
+      RowBox[{"\[CapitalOmega]_", ",", "\[Chi]_"}], "]"}], ":=", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[CapitalOmega]", "2"], "+", 
+          SuperscriptBox["\[Chi]", "2"], "-", 
+          SuperscriptBox["\[Omega]s", "2"]}], ")"}], "2"], "+", 
+       RowBox[{
+        SuperscriptBox["\[CapitalOmega]", "2"], 
+        SuperscriptBox["\[Gamma]R", "2"]}]}], 
+      RowBox[{"4", 
+       SuperscriptBox["\[Alpha]", "2"], 
+       SuperscriptBox["\[Omega]s", "2"], "\[Gamma]R"}]]}]}], 
    "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"ASDh", "[", 
@@ -149,13 +162,13 @@ Cell[BoxData[
              RowBox[{"(", 
               RowBox[{
                SuperscriptBox["\[CapitalOmega]", "2"], "-", 
-               SuperscriptBox["\[Kappa]", "2"]}], ")"}], "2"], "+", 
+               SuperscriptBox["\[Omega]s", "2"]}], ")"}], "2"], "+", 
             RowBox[{
              SuperscriptBox["\[CapitalOmega]", "2"], 
              SuperscriptBox["\[Gamma]R", "2"]}]}], 
            RowBox[{"4", 
             SuperscriptBox["\[Alpha]", "2"], 
-            SuperscriptBox["\[Kappa]", "2"], "\[Gamma]R"}]], " ", ")"}], 
+            SuperscriptBox["\[Omega]s", "2"], "\[Gamma]R"}]], " ", ")"}], 
          RowBox[{"1", "/", "2"}]], "\[IndentingNewLine]", 
         RowBox[{"Tcon", "[", "\[CapitalOmega]_", "]"}]}], ":=", 
        RowBox[{
@@ -164,7 +177,7 @@ Cell[BoxData[
           FractionBox[
            FractionBox[
             RowBox[{
-             RowBox[{"-", "2"}], "\[Alpha]", " ", "\[Kappa]", " ", 
+             RowBox[{"-", "2"}], "\[Alpha]", " ", "\[Omega]s", " ", 
              SuperscriptBox["\[Gamma]R", 
               RowBox[{"1", "/", "2"}]]}], 
             RowBox[{
@@ -172,7 +185,7 @@ Cell[BoxData[
            RowBox[{"\[Gamma]R", "-", 
             RowBox[{"I", " ", "\[CapitalOmega]"}], "+", 
             FractionBox[
-             SuperscriptBox["\[Kappa]", "2"], 
+             SuperscriptBox["\[Omega]s", "2"], 
              RowBox[{
               RowBox[{"-", "I"}], " ", "\[CapitalOmega]"}]]}]], "]"}], 
          RowBox[{"(*", 
@@ -202,13 +215,13 @@ Cell[BoxData[
            RowBox[{"-", "\[Gamma]R"}], "-", 
            RowBox[{"I", " ", "\[CapitalOmega]"}], "+", 
            FractionBox[
-            SuperscriptBox["\[Kappa]", "2"], 
+            SuperscriptBox["\[Omega]s", "2"], 
             RowBox[{
              RowBox[{"-", "I"}], " ", "\[CapitalOmega]"}]], " "}], 
           RowBox[{"\[Gamma]R", "-", 
            RowBox[{"I", " ", "\[CapitalOmega]"}], "+", 
            FractionBox[
-            SuperscriptBox["\[Kappa]", "2"], 
+            SuperscriptBox["\[Omega]s", "2"], 
             RowBox[{
              RowBox[{"-", "I"}], " ", "\[CapitalOmega]"}]]}]], "]"}]}]}]}]}], 
     
@@ -237,7 +250,7 @@ Cell[BoxData[
        RowBox[{"comparison", ":", "\[IndentingNewLine]", "\[Gamma]Baseline"}],
         "=", 
        FractionBox[
-        SuperscriptBox["\[Kappa]", "2"], "\[Gamma]R"]}], ";", 
+        SuperscriptBox["\[Omega]s", "2"], "\[Gamma]R"]}], ";", 
       "\[IndentingNewLine]", 
       RowBox[{
        RowBox[{"LogLogPlot", "[", 
@@ -261,13 +274,13 @@ Cell[BoxData[
                 RowBox[{"(", 
                  RowBox[{
                   SuperscriptBox["\[CapitalOmega]", "2"], "-", 
-                  SuperscriptBox["\[Kappa]", "2"]}], ")"}], "2"], "+", 
+                  SuperscriptBox["\[Omega]s", "2"]}], ")"}], "2"], "+", 
                RowBox[{
                 SuperscriptBox["\[CapitalOmega]", "2"], 
                 SuperscriptBox["\[Gamma]R", "2"]}]}], 
               RowBox[{"4", 
                SuperscriptBox["\[Alpha]", "2"], 
-               SuperscriptBox["\[Kappa]", "2"], "\[Gamma]R"}]], " ", ")"}], 
+               SuperscriptBox["\[Omega]s", "2"], "\[Gamma]R"}]], " ", ")"}], 
             RowBox[{"1", "/", "2"}]], ",", 
            SuperscriptBox[
             RowBox[{"(", 
@@ -988,7 +1001,7 @@ QgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghnuf/Ac6evOY=
             RowBox[{
              RowBox[{"\[CapitalOmega]to\[Gamma]R", " ", "\[Gamma]R"}], ",", 
              RowBox[{"\[Chi]", "=", 
-              RowBox[{"0.995", "\[Kappa]"}]}]}], "]"}]}], ",", 
+              RowBox[{"0.995", "\[Omega]s"}]}]}], "]"}]}], ",", 
           "\[IndentingNewLine]", 
           RowBox[{
            SuperscriptBox[
@@ -998,7 +1011,7 @@ QgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghnuf/Ac6evOY=
            RowBox[{"ASDh", "[", 
             RowBox[{
              RowBox[{"\[CapitalOmega]to\[Gamma]R", " ", "\[Gamma]R"}], ",", 
-             RowBox[{"\[Chi]", "=", "\[Kappa]"}]}], "]"}]}]}], "}"}], ",", 
+             RowBox[{"\[Chi]", "=", "\[Omega]s"}]}], "]"}]}]}], "}"}], ",", 
         RowBox[{"{", 
          RowBox[{"\[CapitalOmega]to\[Gamma]R", ",", "0.15", ",", "35"}], 
          "}"}], ",", 
@@ -1062,12 +1075,12 @@ SuperscriptBox[SubscriptBox[\(\[Gamma]\), \(R\)], \
            RowBox[{
             RowBox[{"2", "\[Pi]", " ", "f"}], ",", 
             RowBox[{"\[Chi]", "=", 
-             RowBox[{"0.995", "\[Kappa]"}]}]}], "]"}], ",", 
+             RowBox[{"0.995", "\[Omega]s"}]}]}], "]"}], ",", 
           "\[IndentingNewLine]", 
           RowBox[{"ASDh", "[", 
            RowBox[{
             RowBox[{"2", "\[Pi]", " ", "f"}], ",", 
-            RowBox[{"\[Chi]", "=", "\[Kappa]"}]}], "]"}]}], "}"}], ",", 
+            RowBox[{"\[Chi]", "=", "\[Omega]s"}]}], "]"}]}], "}"}], ",", 
         RowBox[{"{", 
          RowBox[{"f", ",", 
           FractionBox["10", 
@@ -1129,14 +1142,14 @@ scale)\>\""}], "}"}], ",",
    3.836434955086893*^9}, {3.836434992770509*^9, 3.836435134685885*^9}, 
    3.836435200126602*^9, {3.836435239646084*^9, 3.836435256862892*^9}, {
    3.836435364501232*^9, 3.836435408837657*^9}, {3.8364359384177732`*^9, 
-   3.836435970844347*^9}},
+   3.836435970844347*^9}, {3.836530818954843*^9, 3.836530881934287*^9}},
  CellLabel->"In[1]:=",ExpressionUUID->"178a6746-8cba-4802-b5cf-1ad1741287d6"],
 
 Cell[BoxData["\<\"[old plot commented out]\"\>"], "Print",
- CellChangeTimes->{3.836530529781021*^9},
+ CellChangeTimes->{3.836531073781468*^9},
  CellLabel->
   "During evaluation of \
-In[1]:=",ExpressionUUID->"b8ea5c92-afb9-41a0-a063-dc6b2465bc93"]
+In[1]:=",ExpressionUUID->"d3b7c16d-c00f-4152-a745-1c85be9ec1ff"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1168,7 +1181,7 @@ Cell[BoxData[
   RowBox[{
    RowBox[{
     RowBox[{"Clear", "[", 
-     RowBox[{"\[Alpha]", ",", "\[Chi]", ",", "\[Kappa]", ",", "\[Gamma]R"}], 
+     RowBox[{"\[Alpha]", ",", "\[Chi]", ",", "\[Omega]s", ",", "\[Gamma]R"}], 
      "]"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"c", "=", 
@@ -1233,66 +1246,71 @@ Cell[BoxData[
      RowBox[{"2", "\[Pi]", " ", "500"}]}], " ", 
     RowBox[{"(*", "Hz", "*)"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"\[Kappa]", "=", 
-     RowBox[{"10", "\[Gamma]R"}]}], ";"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{"Labeled", "[", 
+    RowBox[{"\[Omega]s", "=", 
+     RowBox[{"10", "\[Gamma]R"}]}], ";", 
+    RowBox[{"(*", 
      RowBox[{
-      RowBox[{"LogLogPlot", "[", 
-       RowBox[{
-        RowBox[{"{", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"ASDScon", "[", 
-           RowBox[{"2", "\[Pi]", " ", "f"}], "]"}], ",", 
-          "\[IndentingNewLine]", 
-          RowBox[{"ASDh", "[", 
-           RowBox[{
-            RowBox[{"2", "\[Pi]", " ", "f"}], ",", 
-            RowBox[{"\[Chi]", "=", "0"}]}], "]"}], ",", "\[IndentingNewLine]", 
-          RowBox[{"ASDh", "[", 
-           RowBox[{
-            RowBox[{"2", "\[Pi]", " ", "f"}], ",", 
-            RowBox[{"\[Chi]", "=", 
-             RowBox[{"0.986", "\[Kappa]"}]}]}], "]"}], ",", 
-          "\[IndentingNewLine]", 
-          RowBox[{"ASDh", "[", 
-           RowBox[{
-            RowBox[{"2", "\[Pi]", " ", "f"}], ",", 
-            RowBox[{"\[Chi]", "=", "\[Kappa]"}]}], "]"}]}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"f", ",", "10", ",", 
-          SuperscriptBox["10", "4"]}], "}"}], ",", 
-        RowBox[{"ImageSize", "\[Rule]", "400"}], ",", 
-        RowBox[{"PlotLegends", "\[Rule]", 
-         RowBox[{"LineLegend", "[", 
-          RowBox[{"\"\<Expressions\>\"", ",", 
-           RowBox[{"LabelStyle", "\[Rule]", 
-            RowBox[{"Directive", "[", "10", "]"}]}]}], "]"}]}], ",", 
+      RowBox[{"=", "\[Kappa]"}], ",", " ", 
+      RowBox[{"re", "-", "labelled"}]}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{"Labeled", "[", 
+      RowBox[{
+       RowBox[{"LogLogPlot", "[", 
         RowBox[{
-        "PlotLabel", "\[Rule]", 
-         "\"\<lossless stable nondegenerate 3-mode amplification (sWLC)\\nfor \
-different nondegenerate gains \[Chi]\\n\[Kappa]=10\!\(\*SubscriptBox[\(\
-\[Gamma]\), \(R\)]\), \!\(\*SubscriptBox[\(\[Gamma]\), \(R\)]\) is SRM \
-coupling rate\\nno radiation pressure effects\\nparameters of LIGO \
-Voyager\>\""}], ",", 
-        RowBox[{"PlotStyle", "\[Rule]", 
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"ASDScon", "[", 
+            RowBox[{"2", "\[Pi]", " ", "f"}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"ASDh", "[", 
+            RowBox[{
+             RowBox[{"2", "\[Pi]", " ", "f"}], ",", 
+             RowBox[{"\[Chi]", "=", "0"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"ASDh", "[", 
+            RowBox[{
+             RowBox[{"2", "\[Pi]", " ", "f"}], ",", 
+             RowBox[{"\[Chi]", "=", 
+              RowBox[{"0.986", "\[Omega]s"}]}]}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"ASDh", "[", 
+            RowBox[{
+             RowBox[{"2", "\[Pi]", " ", "f"}], ",", 
+             RowBox[{"\[Chi]", "=", "\[Omega]s"}]}], "]"}]}], "}"}], ",", 
          RowBox[{"{", 
-          RowBox[{"Dashed", ",", ",", ","}], "}"}]}]}], "]"}], ",", 
-      RowBox[{"{", 
-       RowBox[{
-       "\"\<frequency, f=\!\(\*FractionBox[\(\[CapitalOmega]\), \(2 \
-\[Pi]\)]\) / Hz (log scale)\>\"", ",", 
-        "\"\<strain sensitivity (NSR), \
-\!\(\*SuperscriptBox[SubscriptBox[\(S\), \(h\)], \(1/2\)]\)\\n/ \
-\!\(\*SuperscriptBox[\(Hz\), \(\(-1\)/2\)]\) (log scale)\>\""}], "}"}], ",", 
-      RowBox[{"{", 
-       RowBox[{"Bottom", ",", "Left"}], "}"}], ",", 
-      RowBox[{"RotateLabel", "\[Rule]", "True"}], ",", 
-      RowBox[{"LabelStyle", "\[Rule]", 
-       RowBox[{"Directive", "[", "10", "]"}]}]}], "]"}], "*)"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{
-   "Print", "[", "\"\<[old plot commented out]\>\"", "]"}]}]}]], "Input",
+          RowBox[{"f", ",", "10", ",", 
+           SuperscriptBox["10", "4"]}], "}"}], ",", 
+         RowBox[{"ImageSize", "\[Rule]", "400"}], ",", 
+         RowBox[{"PlotLegends", "\[Rule]", 
+          RowBox[{"LineLegend", "[", 
+           RowBox[{"\"\<Expressions\>\"", ",", 
+            RowBox[{"LabelStyle", "\[Rule]", 
+             RowBox[{"Directive", "[", "10", "]"}]}]}], "]"}]}], ",", 
+         RowBox[{
+         "PlotLabel", "\[Rule]", 
+          "\"\<lossless stable nondegenerate 3-mode amplification \
+(sWLC)\\nfor different nondegenerate gains \
+\[Chi]\\n\[Kappa]=10\!\(\*SubscriptBox[\(\[Gamma]\), \(R\)]\), \
+\!\(\*SubscriptBox[\(\[Gamma]\), \(R\)]\) is SRM coupling rate\\nno radiation \
+pressure effects\\nparameters of LIGO Voyager\>\""}], ",", 
+         RowBox[{"PlotStyle", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"Dashed", ",", ",", ","}], "}"}]}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<frequency, f=\!\(\*FractionBox[\(\[CapitalOmega]\), \(2 \[Pi]\)]\
+\) / Hz (log scale)\>\"", ",", 
+         "\"\<strain sensitivity (NSR), \!\(\*SuperscriptBox[SubscriptBox[\(S\
+\), \(h\)], \(1/2\)]\)\\n/ \!\(\*SuperscriptBox[\(Hz\), \(\(-1\)/2\)]\) (log \
+scale)\>\""}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Bottom", ",", "Left"}], "}"}], ",", 
+       RowBox[{"RotateLabel", "\[Rule]", "True"}], ",", 
+       RowBox[{"LabelStyle", "\[Rule]", 
+        RowBox[{"Directive", "[", "10", "]"}]}]}], "]"}], "*)"}], 
+    "\[IndentingNewLine]", 
+    RowBox[{
+    "Print", "[", "\"\<[old plot commented out]\>\"", "]"}]}]}]}]], "Input",
  CellChangeTimes->{{3.835035149895096*^9, 3.835035211208274*^9}, {
   3.835035683781434*^9, 3.835035707461011*^9}, {3.835035759597912*^9, 
   3.835035764614431*^9}, {3.835035795287764*^9, 3.835035833335251*^9}, {
@@ -1301,14 +1319,14 @@ Voyager\>\""}], ",",
   3.835037675441442*^9, 3.835037755446409*^9}, {3.835038866585786*^9, 
   3.835038931356164*^9}, {3.835039117091229*^9, 3.835039141920133*^9}, {
   3.835902432813109*^9, 3.835902434190742*^9}, {3.8360018918748617`*^9, 
-  3.836001893448635*^9}},
+  3.836001893448635*^9}, {3.836530883838502*^9, 3.836530901315544*^9}},
  CellLabel->"In[8]:=",ExpressionUUID->"0883ef2b-3c1f-4b86-94d2-5cfe699198ba"],
 
 Cell[BoxData["\<\"[old plot commented out]\"\>"], "Print",
- CellChangeTimes->{3.836530529864914*^9},
+ CellChangeTimes->{3.83653107384475*^9},
  CellLabel->
   "During evaluation of \
-In[8]:=",ExpressionUUID->"418ce69d-7a4b-45c6-9823-b73533a8c979"]
+In[8]:=",ExpressionUUID->"9d4ee6df-28cf-4d93-bf85-73f5e7120bed"]
 }, Open  ]],
 
 Cell["\<\
@@ -1482,7 +1500,7 @@ Cell[BoxData[
       FractionBox[
        FractionBox[
         RowBox[{
-         RowBox[{"-", "2"}], "\[Alpha]", " ", "\[Kappa]", " ", 
+         RowBox[{"-", "2"}], "\[Alpha]", " ", "\[Omega]s", " ", 
          SuperscriptBox["\[Gamma]R", 
           RowBox[{"1", "/", "2"}]]}], 
         RowBox[{
@@ -1492,7 +1510,7 @@ Cell[BoxData[
         RowBox[{"\[Gamma]btot", "[", "Tlb", "]"}], "-", 
         RowBox[{"I", " ", "\[CapitalOmega]"}], "+", 
         FractionBox[
-         SuperscriptBox["\[Kappa]", "2"], 
+         SuperscriptBox["\[Omega]s", "2"], 
          RowBox[{
           RowBox[{"\[Gamma]a", "[", "Tla", "]"}], "-", 
           RowBox[{"I", " ", "\[CapitalOmega]"}]}]], "-", 
@@ -1525,7 +1543,7 @@ Cell[BoxData[
               RowBox[{"2", "\[Gamma]R"}], "-", 
               RowBox[{"I", " ", "\[CapitalOmega]"}], "+", 
               FractionBox[
-               SuperscriptBox["\[Kappa]", "2"], 
+               SuperscriptBox["\[Omega]s", "2"], 
                RowBox[{
                 RowBox[{"\[Gamma]a", "[", "Tla", "]"}], "-", 
                 RowBox[{"I", " ", "\[CapitalOmega]"}]}]], "-", 
@@ -1545,7 +1563,7 @@ Cell[BoxData[
                 RowBox[{"(", 
                  RowBox[{"\[Gamma]R", " ", 
                   RowBox[{"\[Gamma]a", "[", "Tla", "]"}]}], ")"}], 
-                RowBox[{"1", "/", "2"}]], "\[Kappa]"}], 
+                RowBox[{"1", "/", "2"}]], "\[Omega]s"}], 
               RowBox[{
                RowBox[{"\[Gamma]a", "[", "Tla", "]"}], "-", 
                RowBox[{"I", " ", "\[CapitalOmega]"}]}]], "]"}], "2"], 
@@ -1581,7 +1599,7 @@ Cell[BoxData[
             RowBox[{"\[Gamma]btot", "[", "Tlb", "]"}], "-", 
             RowBox[{"I", " ", "\[CapitalOmega]"}], "+", 
             FractionBox[
-             SuperscriptBox["\[Kappa]", "2"], 
+             SuperscriptBox["\[Omega]s", "2"], 
              RowBox[{
               RowBox[{"\[Gamma]a", "[", "Tla", "]"}], "-", 
               RowBox[{"I", " ", "\[CapitalOmega]"}]}]], "-", 
@@ -1611,7 +1629,7 @@ Cell[BoxData[
              RowBox[{"Tlc", ",", "symSRM"}], "]"}], "2"], "+", 
            SuperscriptBox["\[CapitalOmega]", "2"]}], ")"}], "4", 
          SuperscriptBox["\[Alpha]", "2"], 
-         SuperscriptBox["\[Kappa]", "2"], "\[Gamma]R"}]], 
+         SuperscriptBox["\[Omega]s", "2"], "\[Gamma]R"}]], 
        RowBox[{"(", "\[IndentingNewLine]", 
         RowBox[{
          SuperscriptBox[
@@ -1637,7 +1655,7 @@ Cell[BoxData[
                 RowBox[{"Tlc", ",", "symSRM"}], "]"}]}], ")"}], 
              SuperscriptBox["\[CapitalOmega]", "2"]}], "+", 
             RowBox[{
-             SuperscriptBox["\[Kappa]", "2"], 
+             SuperscriptBox["\[Omega]s", "2"], 
              RowBox[{"\[Gamma]c", "[", 
               RowBox[{"Tlc", ",", "symSRM"}], "]"}]}], "-", 
             RowBox[{
@@ -1650,7 +1668,7 @@ Cell[BoxData[
            RowBox[{"(", 
             RowBox[{
              SuperscriptBox["\[Chi]", "2"], "-", 
-             SuperscriptBox["\[Kappa]", "2"], "-", 
+             SuperscriptBox["\[Omega]s", "2"], "-", 
              RowBox[{
               RowBox[{"(", 
                RowBox[{
@@ -1669,7 +1687,7 @@ Cell[BoxData[
          "\[IndentingNewLine]", "+", 
          RowBox[{"4", "\[Gamma]R", " ", 
           RowBox[{"\[Gamma]a", "[", "Tla", "]"}], " ", 
-          SuperscriptBox["\[Kappa]", "2"], 
+          SuperscriptBox["\[Omega]s", "2"], 
           RowBox[{"(", 
            RowBox[{
             SuperscriptBox[
@@ -1726,7 +1744,7 @@ Cell[BoxData[
                    RowBox[{"Tlc", ",", "symSRM"}], "]"}]}], ")"}], 
                 SuperscriptBox["\[CapitalOmega]", "2"]}], "+", 
                RowBox[{
-                SuperscriptBox["\[Kappa]", "2"], 
+                SuperscriptBox["\[Omega]s", "2"], 
                 RowBox[{"\[Gamma]c", "[", 
                  RowBox[{"Tlc", ",", "symSRM"}], "]"}]}], "-", 
                RowBox[{
@@ -1739,7 +1757,7 @@ Cell[BoxData[
               RowBox[{"(", 
                RowBox[{
                 SuperscriptBox["\[Chi]", "2"], "-", 
-                SuperscriptBox["\[Kappa]", "2"], "-", 
+                SuperscriptBox["\[Omega]s", "2"], "-", 
                 RowBox[{
                  RowBox[{"\[Gamma]btot", "[", "Tlb", "]"}], 
                  RowBox[{"(", 
@@ -1776,7 +1794,7 @@ Cell[BoxData[
             RowBox[{"N", "[", 
              RowBox[{
               RowBox[{"vals", "[", 
-               RowBox[{"[", "1", "]"}], "]"}], "/", "\[Kappa]"}], "]"}], 
+               RowBox[{"[", "1", "]"}], "]"}], "/", "\[Omega]s"}], "]"}], 
             "]"}], ",", 
            RowBox[{"ToString", "[", 
             RowBox[{"vals", "[", 
@@ -1797,10 +1815,11 @@ Cell[BoxData[
          RowBox[{
           RowBox[{"StringForm", "[", 
            RowBox[{
-           "\"\<\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
-\!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(\[Gamma]\), \
-\(c, tot\)]\)=\!\(\*SubscriptBox[\(\[Gamma]\), \(R\)]\)+\!\(\*SubscriptBox[\(\
-\[Gamma]\), \(c, loss\\\ port\)]\)(\!\(\*SubscriptBox[\(T\), \(l, c\)]\)=``), \
+           "\"\<\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, \
+a\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(\
+\[Gamma]\), \(c, tot\)]\)=\!\(\*SubscriptBox[\(\[Gamma]\), \
+\(R\)]\)+\!\(\*SubscriptBox[\(\[Gamma]\), \(c, loss\\\ \
+port\)]\)(\!\(\*SubscriptBox[\(T\), \(l, c\)]\)=``), \
 \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``\>\"", ",", "\[IndentingNewLine]", 
             RowBox[{"paddedStrings", "[", 
              RowBox[{"[", "1", "]"}], "]"}], ",", "\[IndentingNewLine]", 
@@ -1818,10 +1837,10 @@ Cell[BoxData[
          RowBox[{
           RowBox[{"StringForm", "[", 
            RowBox[{
-           "\"\<\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
-\!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, c\)]\
-\)=``, \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``\>\"", ",", 
-            "\[IndentingNewLine]", 
+           "\"\<\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, \
+a\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \
+\!\(\*SubscriptBox[\(T\), \(l, c\)]\)=``, \!\(\*SubscriptBox[\(R\), \
+\(PD\)]\)=``\>\"", ",", "\[IndentingNewLine]", 
             RowBox[{"paddedStrings", "[", 
              RowBox[{"[", "1", "]"}], "]"}], ",", "\[IndentingNewLine]", 
             RowBox[{"paddedStrings", "[", 
@@ -2167,8 +2186,9 @@ kHz\>\"", "}"}]}], "]"}], ",",
    3.836345705321231*^9, 3.836345730967383*^9}, 3.836434611860034*^9, {
    3.8364354327275257`*^9, 3.836435452996402*^9}, {3.836435494197998*^9, 
    3.836435514884654*^9}, {3.836435565916098*^9, 3.836435582889743*^9}, {
-   3.836530515148273*^9, 3.8365305206663847`*^9}},
- CellLabel->"In[19]:=",ExpressionUUID->"f199c58f-b00b-4e35-ab51-2a4bdb445049"],
+   3.836530515148273*^9, 3.8365305206663847`*^9}, {3.836530903281802*^9, 
+   3.83653091859369*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"f199c58f-b00b-4e35-ab51-2a4bdb445049"],
 
 Cell[CellGroupData[{
 
@@ -2190,7 +2210,7 @@ Cell[BoxData[{
      "\[IndentingNewLine]", 
      RowBox[{"{", 
       RowBox[{
-       RowBox[{"\[Chi]Ratio0", " ", "\[Kappa]"}], ",", "0", ",", "0", ",", 
+       RowBox[{"\[Chi]Ratio0", " ", "\[Omega]s"}], ",", "0", ",", "0", ",", 
        "0", ",", "0"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{"plotsWLC", "[", "valsList0", "]"}], "\[IndentingNewLine]", 
  RowBox[{
@@ -2212,27 +2232,27 @@ rate\\nparameters of LIGO Voyager\\nno radiation pressure effects\>\"", ",",
      RowBox[{
       RowBox[{"{", 
        RowBox[{
-        RowBox[{"0", "\[Kappa]"}], ",", "0", ",", "0", ",", "0", ",", "0"}], 
+        RowBox[{"0", "\[Omega]s"}], ",", "0", ",", "0", ",", "0", ",", "0"}], 
        "}"}], ",", "\[IndentingNewLine]", 
       RowBox[{"{", 
        RowBox[{
-        RowBox[{"\[Chi]Ratio0", " ", "\[Kappa]"}], ",", "0", ",", "0", ",", 
+        RowBox[{"\[Chi]Ratio0", " ", "\[Omega]s"}], ",", "0", ",", "0", ",", 
         "0", ",", "0"}], "}"}], ",", "\[IndentingNewLine]", 
       RowBox[{"{", 
        RowBox[{
-        RowBox[{"\[Chi]Ratio0", " ", "\[Kappa]"}], ",", "0.1", ",", "0", ",", 
-        "0", ",", "0"}], "}"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"\[Chi]Ratio0", " ", "\[Omega]s"}], ",", "0.1", ",", "0", ",",
+         "0", ",", "0"}], "}"}], ",", "\[IndentingNewLine]", 
       RowBox[{"{", 
        RowBox[{
-        RowBox[{"\[Chi]Ratio0", " ", "\[Kappa]"}], ",", "0", ",", "0.1", ",", 
-        "0", ",", "0"}], "}"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"\[Chi]Ratio0", " ", "\[Omega]s"}], ",", "0", ",", "0.1", ",",
+         "0", ",", "0"}], "}"}], ",", "\[IndentingNewLine]", 
       RowBox[{"{", 
        RowBox[{
-        RowBox[{"\[Chi]Ratio0", " ", "\[Kappa]"}], ",", "0", ",", "0", ",", 
+        RowBox[{"\[Chi]Ratio0", " ", "\[Omega]s"}], ",", "0", ",", "0", ",", 
         "0.1", ",", "0"}], "}"}], ",", "\[IndentingNewLine]", 
       RowBox[{"{", 
        RowBox[{
-        RowBox[{"\[Chi]Ratio0", " ", "\[Kappa]"}], ",", "0", ",", "0", ",", 
+        RowBox[{"\[Chi]Ratio0", " ", "\[Omega]s"}], ",", "0", ",", "0", ",", 
         "0", ",", "0.5"}], "}"}]}], "}"}], ";"}], "*)"}]}]}], "Input",
  CellChangeTimes->{
   3.83575339794003*^9, {3.835818773021297*^9, 3.83581878106182*^9}, {
@@ -2245,8 +2265,8 @@ rate\\nparameters of LIGO Voyager\\nno radiation pressure effects\>\"", ",",
    3.8363461068212833`*^9, 3.8363461213643084`*^9}, {3.836505954116495*^9, 
    3.836505969562521*^9}, {3.83650603800452*^9, 3.836506045127161*^9}, {
    3.836506083875114*^9, 3.836506106318247*^9}, {3.836528224264711*^9, 
-   3.836528281125798*^9}},
- CellLabel->"In[31]:=",ExpressionUUID->"272780f9-7176-40cd-b7be-8f433b7d7549"],
+   3.836528281125798*^9}, {3.836530932739143*^9, 3.83653093563761*^9}},
+ CellLabel->"In[30]:=",ExpressionUUID->"272780f9-7176-40cd-b7be-8f433b7d7549"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -2512,24 +2532,24 @@ zjrDijMfC9tc4LV8HSRuV3hE7ofagbNw3YHR6Stu8HO7+cK8c/D/AP3B8sM=
          TemplateBox[{
            StyleBox[
             InterpretationBox[
-            "\"\[Chi]/\[Kappa]=0.  ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+            "\"\[Chi]/\[Omega]s=0.  ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
 a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
              StringForm[
-             "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
+             "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
 \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, c\)]\
 \)=``, \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", "0.  ", "0   ", "0   ", 
               "0   ", "0   "], Editable -> False], FontFamily -> "Monospace", 
             StripOnInput -> False], 
            StyleBox[
             InterpretationBox[
-            "\"\[Chi]/\[Kappa]=0.85; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+            "\"\[Chi]/\[Omega]s=0.85; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
 a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
              StringForm[
-             "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
+             "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
 \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, c\)]\
 \)=``, \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", "0.85", "0   ", "0   ", 
               "0   ", "0   "], Editable -> False], FontFamily -> "Monospace", 
@@ -3194,24 +3214,24 @@ xFEGy+u60Pzlvqjv8abBRI9fPwm5fc/cUpgPDUbODhB8O03grtNq9cOjNDDK
          TemplateBox[{
            StyleBox[
             InterpretationBox[
-            "\"\[Chi]/\[Kappa]=0.  ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+            "\"\[Chi]/\[Omega]s=0.  ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
 a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
              StringForm[
-             "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
+             "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
 \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, c\)]\
 \)=``, \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", "0.  ", "0   ", "0   ", 
               "0   ", "0   "], Editable -> False], FontFamily -> "Monospace", 
             StripOnInput -> False], 
            StyleBox[
             InterpretationBox[
-            "\"\[Chi]/\[Kappa]=0.85; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+            "\"\[Chi]/\[Omega]s=0.85; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
 a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
              StringForm[
-             "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
+             "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
 \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, c\)]\
 \)=``, \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", "0.85", "0   ", "0   ", 
               "0   ", "0   "], Editable -> False], FontFamily -> "Monospace", 
@@ -3896,24 +3916,24 @@ zQi+/jUlJ6upCH7Uvvch/tMQ/Ck7Jfa3IfEBNqa2GA==
          TemplateBox[{
            StyleBox[
             InterpretationBox[
-            "\"\[Chi]/\[Kappa]=0.  ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+            "\"\[Chi]/\[Omega]s=0.  ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
 a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
              StringForm[
-             "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
+             "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
 \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, c\)]\
 \)=``, \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", "0.  ", "0   ", "0   ", 
               "0   ", "0   "], Editable -> False], FontFamily -> "Monospace", 
             StripOnInput -> False], 
            StyleBox[
             InterpretationBox[
-            "\"\[Chi]/\[Kappa]=0.85; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+            "\"\[Chi]/\[Omega]s=0.85; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
 a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
              StringForm[
-             "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
+             "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
 \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, c\)]\
 \)=``, \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", "0.85", "0   ", "0   ", 
               "0   ", "0   "], Editable -> False], FontFamily -> "Monospace", 
@@ -4201,8 +4221,8 @@ for 1\[Dash]4 kHz\""}, "LineLegend", DisplayFunction -> (FormBox[
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
    GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{0}}}],
   "Column"]], "Output",
- CellChangeTimes->{3.8365305307246523`*^9},
- CellLabel->"Out[33]=",ExpressionUUID->"ef8a1026-f565-401b-a2aa-93eec076f5b8"],
+ CellChangeTimes->{3.836531074358283*^9},
+ CellLabel->"Out[32]=",ExpressionUUID->"f5ba13c1-d010-4028-8e4b-19e9f1fc9838"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -4638,14 +4658,14 @@ effects\"", TraditionalForm]}},
          TemplateBox[{
            StyleBox[
             InterpretationBox[
-            "\"\[Chi]/\[Kappa]=0.  ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+            "\"\[Chi]/\[Omega]s=0.  ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
 a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, tot\\)]\\)=\\!\\(\\*SubscriptBox[\
 \\(\[Gamma]\\), \\(R\\)]\\)+\\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, \
 loss\\\\ port\\)]\\)(\\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0   ), \\!\
 \\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
              StringForm[
-             "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
+             "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
 \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(\[Gamma]\), \
 \(c, tot\)]\)=\!\(\*SubscriptBox[\(\[Gamma]\), \(R\)]\)+\!\(\*SubscriptBox[\(\
 \[Gamma]\), \(c, loss\\ port\)]\)(\!\(\*SubscriptBox[\(T\), \(l, c\)]\)=``), \
@@ -4654,14 +4674,14 @@ loss\\\\ port\\)]\\)(\\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0   ), \\!\
             StripOnInput -> False], 
            StyleBox[
             InterpretationBox[
-            "\"\[Chi]/\[Kappa]=0.85; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+            "\"\[Chi]/\[Omega]s=0.85; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
 a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, tot\\)]\\)=\\!\\(\\*SubscriptBox[\
 \\(\[Gamma]\\), \\(R\\)]\\)+\\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, \
 loss\\\\ port\\)]\\)(\\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0   ), \\!\
 \\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
              StringForm[
-             "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
+             "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
 \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(\[Gamma]\), \
 \(c, tot\)]\)=\!\(\*SubscriptBox[\(\[Gamma]\), \(R\)]\)+\!\(\*SubscriptBox[\(\
 \[Gamma]\), \(c, loss\\ port\)]\)(\!\(\*SubscriptBox[\(T\), \(l, c\)]\)=``), \
@@ -5074,7 +5094,7 @@ ZUJ+9Z/jFFAPXf/1bM4Qkm/d8VN0psDpEbnh5Z+G4N1ao+rmQoHKEBpFBnn3
 0svq/pMUSEm+V3ZlxhC4eQf8OF3R+IUyZ2qmDWFG7quqrhsFxmdbIyd+GMIL
 3dnFwNMUOJ9wxZuIfNt+tfqBOwX8KFoPqFOG8D+fsuA7
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$3259#1"]& ], 
+            Annotation[#, "Charting`Private`Tag$3257#1"]& ], 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -5236,7 +5256,7 @@ QGvYBSeB0klADxHZdg1oIkBdRqnu2dFJQO4q5DZEaSJAMsoLxjLRSUDMRO/2
 emoiQAGvFq2L0ElAq176trFrIkAfZbOj5M9JQMTQ9JU=
               "]]}, 
             Annotation[#, 
-             "Charting`Private`Tag$3259#2"]& ], {}}, {{}, {}, {}, {}}}, {}, \
+             "Charting`Private`Tag$3257#2"]& ], {}}, {{}, {}, {}, {}}}, {}, \
 {}}, {Ticks -> {
            Charting`ScaledTicks[{Log, Exp}], 
            Charting`ScaledTicks[{Log, Exp}]}, GridLines -> {None, None}, 
@@ -5304,14 +5324,14 @@ emoiQAGvFq2L0ElAq176trFrIkAfZbOj5M9JQMTQ9JU=
          TemplateBox[{
            StyleBox[
             InterpretationBox[
-            "\"\[Chi]/\[Kappa]=0.  ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+            "\"\[Chi]/\[Omega]s=0.  ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
 a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, tot\\)]\\)=\\!\\(\\*SubscriptBox[\
 \\(\[Gamma]\\), \\(R\\)]\\)+\\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, \
 loss\\\\ port\\)]\\)(\\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0   ), \\!\
 \\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
              StringForm[
-             "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
+             "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
 \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(\[Gamma]\), \
 \(c, tot\)]\)=\!\(\*SubscriptBox[\(\[Gamma]\), \(R\)]\)+\!\(\*SubscriptBox[\(\
 \[Gamma]\), \(c, loss\\ port\)]\)(\!\(\*SubscriptBox[\(T\), \(l, c\)]\)=``), \
@@ -5320,14 +5340,14 @@ loss\\\\ port\\)]\\)(\\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0   ), \\!\
             StripOnInput -> False], 
            StyleBox[
             InterpretationBox[
-            "\"\[Chi]/\[Kappa]=0.85; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+            "\"\[Chi]/\[Omega]s=0.85; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
 a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, tot\\)]\\)=\\!\\(\\*SubscriptBox[\
 \\(\[Gamma]\\), \\(R\\)]\\)+\\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, \
 loss\\\\ port\\)]\\)(\\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0   ), \\!\
 \\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
              StringForm[
-             "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
+             "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
 \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(\[Gamma]\), \
 \(c, tot\)]\)=\!\(\*SubscriptBox[\(\[Gamma]\), \(R\)]\)+\!\(\*SubscriptBox[\(\
 \[Gamma]\), \(c, loss\\ port\)]\)(\!\(\*SubscriptBox[\(T\), \(l, c\)]\)=``), \
@@ -5741,7 +5761,7 @@ EvOr/hymgVbYyq9n08ZEys3bAdtcaXBsUGlg4acx4dtcreHpRoOKUAZNAXnr
 /MuqnqM0SE25W3px0pjgF+gN4PVA4xfLnKyeMCYmlb5qGHjSYGSqOWr0hzHx
 wmBqLvgYDU4nXvQlI99yXKq670WDAJruffq4MfE/V7wmlA==
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$3330#1"]& ], 
+            Annotation[#, "Charting`Private`Tag$3327#1"]& ], 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -5888,7 +5908,7 @@ N62VaP+6cm1PNw6YnGImxnVwyVVTT8te7ePA5jlXZ912LilFfxMssZ8D2p3e
 vcltOH+1j9rGnhz4/pzrNf6CS7YaT/w64sUB5yuj/CboHOeZssIDuH6/dfMy
 nnPJ/wFENpcN
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$3330#2"]& ], 
+            Annotation[#, "Charting`Private`Tag$3327#2"]& ], 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -5902,7 +5922,7 @@ fA+9/GVaCQi+cZIQm/RrBF9i0U/tnY2ycP7iqMT9sXxycP6HPV0dDjMQfHPt
 H+IXdeXhfBWhZyIZOxH8NiaenDANBTh/w0sPrXJfBP/2hdYX04sQ/NbgENGX
 zQi+/jUlJ6upCH7Uvvch/tMQ/Ck7Jfa3IfEBNqa2GA==
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$3330#3"]& ]}}, {}, {}}, {
+            Annotation[#, "Charting`Private`Tag$3327#3"]& ]}}, {}, {}}, {
         Ticks -> {
            Charting`ScaledTicks[{Log, Exp}], 
            Charting`ScaledTicks[{Log, Exp}]}, GridLines -> {None, None}, 
@@ -5974,14 +5994,14 @@ zQi+/jUlJ6upCH7Uvvch/tMQ/Ck7Jfa3IfEBNqa2GA==
          TemplateBox[{
            StyleBox[
             InterpretationBox[
-            "\"\[Chi]/\[Kappa]=0.  ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+            "\"\[Chi]/\[Omega]s=0.  ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
 a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, tot\\)]\\)=\\!\\(\\*SubscriptBox[\
 \\(\[Gamma]\\), \\(R\\)]\\)+\\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, \
 loss\\\\ port\\)]\\)(\\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0   ), \\!\
 \\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
              StringForm[
-             "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
+             "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
 \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(\[Gamma]\), \
 \(c, tot\)]\)=\!\(\*SubscriptBox[\(\[Gamma]\), \(R\)]\)+\!\(\*SubscriptBox[\(\
 \[Gamma]\), \(c, loss\\ port\)]\)(\!\(\*SubscriptBox[\(T\), \(l, c\)]\)=``), \
@@ -5990,14 +6010,14 @@ loss\\\\ port\\)]\\)(\\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0   ), \\!\
             StripOnInput -> False], 
            StyleBox[
             InterpretationBox[
-            "\"\[Chi]/\[Kappa]=0.85; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+            "\"\[Chi]/\[Omega]s=0.85; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
 a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, tot\\)]\\)=\\!\\(\\*SubscriptBox[\
 \\(\[Gamma]\\), \\(R\\)]\\)+\\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, \
 loss\\\\ port\\)]\\)(\\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0   ), \\!\
 \\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
              StringForm[
-             "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
+             "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
 \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(\[Gamma]\), \
 \(c, tot\)]\)=\!\(\*SubscriptBox[\(\[Gamma]\), \(R\)]\)+\!\(\*SubscriptBox[\(\
 \[Gamma]\), \(c, loss\\ port\)]\)(\!\(\*SubscriptBox[\(T\), \(l, c\)]\)=``), \
@@ -6287,8 +6307,8 @@ for 1\[Dash]4 kHz\""}, "LineLegend", DisplayFunction -> (FormBox[
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
    GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{0}}}],
   "Column"]], "Output",
- CellChangeTimes->{3.836530531160777*^9},
- CellLabel->"Out[34]=",ExpressionUUID->"57d1118c-d187-4d9b-9b75-cb942cf3b66e"]
+ CellChangeTimes->{3.836531074985746*^9},
+ CellLabel->"Out[33]=",ExpressionUUID->"d42f5832-7e21-420d-8a50-d370801916ff"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -6434,8 +6454,8 @@ Cell[BoxData[
         SuperscriptBox[
          RowBox[{"ASDShsWLC", "[", 
           RowBox[{"\[CapitalOmega]", ",", 
-           RowBox[{"r", " ", "\[Kappa]"}], ",", "0", ",", "0", ",", "0", ",", 
-           "0"}], "]"}], "2"], "\[IndentingNewLine]", 
+           RowBox[{"r", " ", "\[Omega]s"}], ",", "0", ",", "0", ",", "0", ",",
+            "0"}], "]"}], "2"], "\[IndentingNewLine]", 
         RowBox[{"opti1Fn", "[", 
          RowBox[{"r_", "?", "NumericQ"}], "]"}]}], ":=", 
        RowBox[{
@@ -7318,7 +7338,7 @@ EEIIIYQQQgghhBBCCCGEEEIIUd/8HzgWGoU=
          RowBox[{
           RowBox[{"{", 
            RowBox[{
-            RowBox[{"0", "\[Kappa]"}], ",", "0", ",", "0", ",", "0", ",", 
+            RowBox[{"0", "\[Omega]s"}], ",", "0", ",", "0", ",", "0", ",", 
             "0"}], "}"}], ",", "\[IndentingNewLine]", 
           RowBox[{"{", 
            RowBox[{
@@ -7328,7 +7348,7 @@ EEIIIYQQQgghhBBCCCGEEEIIUd/8HzgWGoU=
                RowBox[{
                 RowBox[{"opti1Vals", "[", 
                  RowBox[{"[", "2", "]"}], "]"}], "[", 
-                RowBox[{"[", "1", "]"}], "]"}]}], ")"}], " ", "\[Kappa]"}], 
+                RowBox[{"[", "1", "]"}], "]"}]}], ")"}], " ", "\[Omega]s"}], 
             ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
           "\[IndentingNewLine]", 
           RowBox[{"{", 
@@ -7339,7 +7359,7 @@ EEIIIYQQQgghhBBCCCGEEEIIUd/8HzgWGoU=
                RowBox[{
                 RowBox[{"opti1Vals", "[", 
                  RowBox[{"[", "2", "]"}], "]"}], "[", 
-                RowBox[{"[", "1", "]"}], "]"}]}], ")"}], " ", "\[Kappa]"}], 
+                RowBox[{"[", "1", "]"}], "]"}]}], ")"}], " ", "\[Omega]s"}], 
             ",", "0.1", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
           "\[IndentingNewLine]", 
           RowBox[{"{", 
@@ -7350,7 +7370,7 @@ EEIIIYQQQgghhBBCCCGEEEIIUd/8HzgWGoU=
                RowBox[{
                 RowBox[{"optiExpk1Vals1", "[", 
                  RowBox[{"[", "2", "]"}], "]"}], "[", 
-                RowBox[{"[", "1", "]"}], "]"}]}], ")"}], " ", "\[Kappa]"}], 
+                RowBox[{"[", "1", "]"}], "]"}]}], ")"}], " ", "\[Omega]s"}], 
             ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
           "\[IndentingNewLine]", 
           RowBox[{"{", 
@@ -7361,7 +7381,7 @@ EEIIIYQQQgghhBBCCCGEEEIIUd/8HzgWGoU=
                RowBox[{
                 RowBox[{"optiExpk1Vals1", "[", 
                  RowBox[{"[", "2", "]"}], "]"}], "[", 
-                RowBox[{"[", "1", "]"}], "]"}]}], ")"}], " ", "\[Kappa]"}], 
+                RowBox[{"[", "1", "]"}], "]"}]}], ")"}], " ", "\[Omega]s"}], 
             ",", "0.1", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
           "\[IndentingNewLine]", 
           RowBox[{"{", 
@@ -7372,7 +7392,7 @@ EEIIIYQQQgghhBBCCCGEEEIIUd/8HzgWGoU=
                RowBox[{
                 RowBox[{"optiExpk1Vals2", "[", 
                  RowBox[{"[", "2", "]"}], "]"}], "[", 
-                RowBox[{"[", "1", "]"}], "]"}]}], ")"}], " ", "\[Kappa]"}], 
+                RowBox[{"[", "1", "]"}], "]"}]}], ")"}], " ", "\[Omega]s"}], 
             ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
           "\[IndentingNewLine]", 
           RowBox[{"{", 
@@ -7383,7 +7403,7 @@ EEIIIYQQQgghhBBCCCGEEEIIUd/8HzgWGoU=
                RowBox[{
                 RowBox[{"optiExpk1Vals2", "[", 
                  RowBox[{"[", "2", "]"}], "]"}], "[", 
-                RowBox[{"[", "1", "]"}], "]"}]}], ")"}], " ", "\[Kappa]"}], 
+                RowBox[{"[", "1", "]"}], "]"}]}], ")"}], " ", "\[Omega]s"}], 
             ",", "0.1", ",", "0", ",", "0", ",", "0"}], "}"}]}], "}"}], ",", 
         "\"\<optical sWLC model\\n\[Kappa]=10\!\(\*SubscriptBox[\(\[Gamma]\), \
 \(R\)]\), \!\(\*SubscriptBox[\(\[Gamma]\), \(R\)]\) is SRM coupling \
@@ -7409,8 +7429,9 @@ rate\\nparameters of LIGO Voyager\\nno radiation pressure effects\>\"", ",",
   3.835903180452896*^9}, {3.835903720322219*^9, 3.8359037250966*^9}, {
   3.8359068361994877`*^9, 3.835906837083214*^9}, {3.8359164736171713`*^9, 
   3.835916490366932*^9}, {3.836346510016387*^9, 3.8363465334470663`*^9}, {
-  3.836505877929369*^9, 3.836505885919804*^9}},
- CellLabel->"In[35]:=",ExpressionUUID->"843eb25d-6eec-4659-bbd6-0ae7c45cc287"],
+  3.836505877929369*^9, 3.836505885919804*^9}, {3.836530942893477*^9, 
+  3.836530953970372*^9}},
+ CellLabel->"In[34]:=",ExpressionUUID->"843eb25d-6eec-4659-bbd6-0ae7c45cc287"],
 
 Cell[CellGroupData[{
 
@@ -7477,7 +7498,7 @@ Cell[BoxData[
       RowBox[{"\[Gamma]btot", "[", "Tlb", "]"}], "-", 
       RowBox[{"I", " ", "\[CapitalOmega]"}], "+", 
       FractionBox[
-       SuperscriptBox["\[Kappa]", "2"], 
+       SuperscriptBox["\[Omega]s", "2"], 
        RowBox[{
         RowBox[{"\[Gamma]a", "[", "Tla", "]"}], "-", 
         RowBox[{"I", " ", "\[CapitalOmega]"}]}]], "-", 
@@ -7517,7 +7538,7 @@ Cell[BoxData[
                   RowBox[{"[", "i", "]"}], "]"}]}], "]"}], "/.", 
                RowBox[{"{", 
                 RowBox[{"\[Chi]", "\[Rule]", 
-                 RowBox[{"ratio", " ", "\[Kappa]"}]}], "}"}]}], ")"}], "/", 
+                 RowBox[{"ratio", " ", "\[Omega]s"}]}], "}"}]}], ")"}], "/", 
              "\[Gamma]R"}], ",", 
             RowBox[{"{", 
              RowBox[{"i", ",", "1", ",", 
@@ -7575,7 +7596,7 @@ Cell[BoxData[
                   RowBox[{"[", "i", "]"}], "]"}]}], "]"}], "/.", 
                RowBox[{"{", 
                 RowBox[{"\[Chi]", "\[Rule]", 
-                 RowBox[{"ratio", " ", "\[Kappa]"}]}], "}"}]}], ")"}], "/", 
+                 RowBox[{"ratio", " ", "\[Omega]s"}]}], "}"}]}], ")"}], "/", 
              "\[Gamma]R"}], ",", 
             RowBox[{"{", 
              RowBox[{"i", ",", "1", ",", 
@@ -7604,7 +7625,7 @@ Cell[BoxData[
             ",", 
             RowBox[{"{", 
              RowBox[{
-             "\"\<\!\(\*FractionBox[\(\[Chi]\), \(\[Kappa]\)]\)\>\"", ","}], 
+             "\"\<\!\(\*FractionBox[\(\[Chi]\), \(\[Omega]s\)]\)\>\"", ","}], 
              "}"}]}], "}"}]}], ",", 
          RowBox[{"GridLines", "\[Rule]", 
           RowBox[{"{", 
@@ -7692,8 +7713,8 @@ Cell[BoxData[
    3.836250176159008*^9, 3.836250221227647*^9}, {3.836336010423093*^9, 
    3.8363360373829308`*^9}, {3.8363448160371923`*^9, 3.836344816659512*^9}, {
    3.8363462481744223`*^9, 3.836346332687386*^9}, {3.836505989396023*^9, 
-   3.8365060036075993`*^9}},
- CellLabel->"In[43]:=",ExpressionUUID->"099af43e-d730-461d-825e-0617c033dd5b"],
+   3.8365060036075993`*^9}, {3.836530955588299*^9, 3.8365309581363497`*^9}},
+ CellLabel->"In[42]:=",ExpressionUUID->"099af43e-d730-461d-825e-0617c033dd5b"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -7739,10 +7760,10 @@ Cell[BoxData[
          4 $CellContext`\[Kappa]0^2 + 4 $CellContext`\[Chi]0^2)^
         Rational[1, 2])}}],
   Editable->False]], "Print",
- CellChangeTimes->{3.836530531603488*^9},
+ CellChangeTimes->{3.836531075470694*^9},
  CellLabel->
   "During evaluation of \
-In[43]:=",ExpressionUUID->"a5354020-476c-401f-8db6-ef4b2b6cfcf9"],
+In[42]:=",ExpressionUUID->"4dbcfcd4-d859-446d-8e15-e7034843d3fc"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -7792,7 +7813,7 @@ hmbxTtMkSCV2xle0YOj6eKar+tymX3G6UV0rhnQcrozxF0nw4J4/1PYaQ1Tx
 3sKEFRKYPhe5gk4Mva+xDPBeJyGKakIfEGCIF1BgjIlI4M51+I52Y+jeLpkl
 cvPnSjcsOBNCDP0HV8Whhw==
             "]]},
-          Annotation[#, "Charting`Private`Tag$5101#1"]& ], 
+          Annotation[#, "Charting`Private`Tag$5099#1"]& ], 
          TagBox[
           {RGBColor[0.880722, 0.611041, 0.142051], AbsoluteThickness[1.6], 
            Opacity[1.], Dashing[{Small, Small}], LineBox[CompressedData["
@@ -7839,7 +7860,7 @@ FEWBepQ165OQwP8ACEnBjQ==
             "]]},
           
           Annotation[#, 
-           "Charting`Private`Tag$5101#2"]& ], {}}, {{}, {}, {}, {}}}, {}, {}},
+           "Charting`Private`Tag$5099#2"]& ], {}}, {{}, {}, {}, {}}}, {}, {}},
       
       AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
       Axes->{True, True},
@@ -8207,7 +8228,7 @@ G84X9CrSaeL7A+ff0b1wuXIPgr9hnr3Kk7i/cH7sejNB2X8IfkPrwsY7q/7B
 /YFvEPzCR3NCFN8j+Bo+OfcPfEHwWRivLJnwHcF/sNU6K+EXgr8na7G+wV8E
 f7o899f//xF8AKIz8x8=
             "]]},
-          Annotation[#, "Charting`Private`Tag$5150#1"]& ], 
+          Annotation[#, "Charting`Private`Tag$5148#1"]& ], 
          TagBox[
           {RGBColor[0.880722, 0.611041, 0.142051], AbsoluteThickness[1.6], 
            Opacity[1.], Dashing[{Small, Small}], LineBox[CompressedData["
@@ -8290,7 +8311,7 @@ f7o899f//xF8AKIz8x8=
             "]]},
           
           Annotation[#, 
-           "Charting`Private`Tag$5150#2"]& ], {}}, {{}, {}, {}, {}}}, {}, {}},
+           "Charting`Private`Tag$5148#2"]& ], {}}, {{}, {}, {}, {}}}, {}, {}},
       
       AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
       Axes->{True, True},
@@ -8302,7 +8323,7 @@ f7o899f//xF8AKIz8x8=
          FormBox["\"Re[\[CapitalOmega]]/\[Gamma]R\"", TraditionalForm], ""}, {
         
          FormBox[
-         "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Kappa]\\)]\\)\"", 
+         "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Omega]s\\)]\\)\"", 
           TraditionalForm], ""}},
       FrameTicks->FrontEndValueCache[{{Automatic, 
           Charting`ScaledFrameTicks[{Identity, Identity}]}, {Automatic, 
@@ -8535,8 +8556,8 @@ f7o899f//xF8AKIz8x8=
    GridBoxAlignment->{"Columns" -> {{Left}}},
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
   "Column"]], "Output",
- CellChangeTimes->{3.836530531652391*^9},
- CellLabel->"Out[48]=",ExpressionUUID->"9e7b7bff-276f-4dbb-9576-66fe8950197b"],
+ CellChangeTimes->{3.836531075518241*^9},
+ CellLabel->"Out[47]=",ExpressionUUID->"8f5a7e80-7dc3-4c50-bfed-6a61aeee8f8a"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -8669,7 +8690,7 @@ Qt7/P+2kEZXsYTLAunjNyYHp/z/txgqp6GkywJYtNY9R7P8/wjqyj+drMsBx
 MsDgtTtqYPr/P854qlvhdTLAvGqjLzD9/z9F6eb533cywJcfC/X///8/W5Ue
 jN55MsBjRlUa
             "]]},
-          Annotation[#, "Charting`Private`Tag$5710#1"]& ], 
+          Annotation[#, "Charting`Private`Tag$5218#1"]& ], 
          TagBox[
           {RGBColor[0.880722, 0.611041, 0.142051], AbsoluteThickness[1.6], 
            Opacity[1.], Dashing[{Small, Small}], LineBox[CompressedData["
@@ -8809,7 +8830,7 @@ WCpMWHa+h8DhuWWu46Y0hl7wbvDvJRCtWNnnaEHj9UzNXelrAm/fD8en8Wg8
 hl1Vx8YJXO1bqdQsoLG/UZi6dfLzry6put+JRlXqeYqeJpC8/mUT40xjmZPF
 KCEEDIXJJ0xdaPwPEWwOGQ==
             "]]},
-          Annotation[#, "Charting`Private`Tag$5710#2"]& ], 
+          Annotation[#, "Charting`Private`Tag$5218#2"]& ], 
          TagBox[
           {RGBColor[0.560181, 0.691569, 0.194885], AbsoluteThickness[1.6], 
            Opacity[1.], Dashing[{0, Small, Small, Small}], 
@@ -8958,7 +8979,7 @@ r5hkkSHxK1c9IUTSwhk0y7JwvSIanAgR4n9d5TYV
             "]]},
           
           Annotation[#, 
-           "Charting`Private`Tag$5710#3"]& ], {}}, {{}, {}, {}, {}, {}}}, {}, \
+           "Charting`Private`Tag$5218#3"]& ], {}}, {{}, {}, {}, {}, {}}}, {}, \
 {}},
       AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
       Axes->{True, True},
@@ -9533,7 +9554,7 @@ v8c/c+F+xvGeYbX1KNIjba/c09LfuHC/vUSCYzn+nQv91uirg4JVk1w4T9bH
 vOtMmuFC/5NrYHLV7TcX7lePjd/arTEL+kB0yhNUnJvjQr+o4xQ21kRCeifI
 31+aSUX6+fW5Rag/gwv1nBBaYmTMRv7mqa0gc7ncxb+PW4/9P51maiM=
             "]]},
-          Annotation[#, "Charting`Private`Tag$5759#1"]& ], 
+          Annotation[#, "Charting`Private`Tag$5267#1"]& ], 
          TagBox[
           {RGBColor[0.880722, 0.611041, 0.142051], AbsoluteThickness[1.6], 
            Opacity[1.], Dashing[{Small, Small}], LineBox[CompressedData["
@@ -9820,7 +9841,7 @@ Vvwbyt9yUbblxHcOzFtjbw/zVU5zYH9UG/2+I3EOxS9bx+S6yy8O6IkTE3f3
 qcyDfQSHHD7ZhQUO6DkNh9DxBiLiO75lA8UZFO7vjbCvL81D/Ogc6D/4kCI9
 fRbyN0dpNYnD4fybx4yx/wfXVByB
             "]]},
-          Annotation[#, "Charting`Private`Tag$5759#2"]& ], 
+          Annotation[#, "Charting`Private`Tag$5267#2"]& ], 
          TagBox[
           {RGBColor[0.560181, 0.691569, 0.194885], AbsoluteThickness[1.6], 
            Opacity[1.], Dashing[{0, Small, Small, Small}], 
@@ -10150,7 +10171,7 @@ kDgc7rU19j/fO86/
             "]]},
           
           Annotation[#, 
-           "Charting`Private`Tag$5759#3"]& ], {}}, {{}, {}, {}, {}, {}}}, {}, \
+           "Charting`Private`Tag$5267#3"]& ], {}}, {{}, {}, {}, {}, {}}}, {}, \
 {}},
       AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
       Axes->{True, True},
@@ -10162,7 +10183,7 @@ kDgc7rU19j/fO86/
          FormBox["\"Re[\[CapitalOmega]]/\[Gamma]R\"", TraditionalForm], ""}, {
         
          FormBox[
-         "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Kappa]\\)]\\)\"", 
+         "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Omega]s\\)]\\)\"", 
           TraditionalForm], ""}},
       FrameTicks->FrontEndValueCache[{{Automatic, 
           Charting`ScaledFrameTicks[{Identity, Identity}]}, {Automatic, 
@@ -10396,8 +10417,8 @@ kDgc7rU19j/fO86/
    GridBoxAlignment->{"Columns" -> {{Left}}},
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
   "Column"]], "Output",
- CellChangeTimes->{3.8365305332297688`*^9},
- CellLabel->"Out[49]=",ExpressionUUID->"74927bf3-0f5d-4efe-97e9-60ee00072b45"],
+ CellChangeTimes->{3.836531077202186*^9},
+ CellLabel->"Out[48]=",ExpressionUUID->"277a4a03-d2b7-49d6-ba4e-eaddf7b0c5e1"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -10489,7 +10510,7 @@ Pyph0coU4TTAKExs38D0/z8KZw6T/OQ0wAQB1KSQ9/8/vog+avDmNMDgtTtq
 YPr/P2C30jjk6DTAvGqjLzD9/z9VLM3+1+o0wJcfC/X///8/QyAwvMvsNMAO
 oCOU
             "]]},
-          Annotation[#, "Charting`Private`Tag$5830#1"]& ], 
+          Annotation[#, "Charting`Private`Tag$5828#1"]& ], 
          TagBox[
           {RGBColor[0.880722, 0.611041, 0.142051], AbsoluteThickness[1.6], 
            Opacity[1.], Dashing[{Small, Small}], LineBox[CompressedData["
@@ -10596,7 +10617,7 @@ OGeMwu78Hk7IBwZ/cXAtDnq36AftT2sgDCYNlW+3mqbQknT6KneeQVvJgdf3
 P1LQOm/p3sERIofde7WEULgd0Fm27gsh/tMoiotSU0isunwv10CI8rhKJ2cN
 hZTGxnIlT4hnLfRnKaVQ/4OLp9cKIf4HlgEDHA==
             "]]},
-          Annotation[#, "Charting`Private`Tag$5830#2"]& ], 
+          Annotation[#, "Charting`Private`Tag$5828#2"]& ], 
          TagBox[
           {RGBColor[0.560181, 0.691569, 0.194885], AbsoluteThickness[1.6], 
            Opacity[1.], Dashing[{0, Small, Small, Small}], 
@@ -10705,7 +10726,7 @@ GYReka/vf+Yg7uYfKtaSQcB7cTGbcig2nVRjRKX4+4YoPJjlkBQxaUbieykk
             "]]},
           
           Annotation[#, 
-           "Charting`Private`Tag$5830#3"]& ], {}}, {{}, {}, {}, {}, {}}}, {}, \
+           "Charting`Private`Tag$5828#3"]& ], {}}, {{}, {}, {}, {}, {}}}, {}, \
 {}},
       AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
       Axes->{True, True},
@@ -11256,7 +11277,7 @@ Vwf4y8Zx6Ac14R2vYyahXqjpOoZXnX7h4O+PjubsVp4CvcHsMvhlpqdRvBp2
 QZ/qZ3HwW/y8vYXXaDg59MsrdwZVH/v83CzQh0msN0uhBBZs0OUg/mUoLpvD
 cRz63f8BqpTFGg==
             "]]},
-          Annotation[#, "Charting`Private`Tag$5879#1"]& ], 
+          Annotation[#, "Charting`Private`Tag$5877#1"]& ], 
          TagBox[
           {RGBColor[0.880722, 0.611041, 0.142051], AbsoluteThickness[1.6], 
            Opacity[1.], Dashing[{Small, Small}], LineBox[CompressedData["
@@ -11496,7 +11517,7 @@ UbbJ6BfMx5HGA/zl4xzop2vCO1pjJ4EvRIa6zmXHn9z8zxofHc3dLT/FgfMJ
 20x+qelpDvQjyrZBH+tn8X1+3t6iKxQO9BefnhoFetNB/whyYOFmDRbwi5wp
 u/Qfh4P18P8BzliUKA==
             "]]},
-          Annotation[#, "Charting`Private`Tag$5879#2"]& ], 
+          Annotation[#, "Charting`Private`Tag$5877#2"]& ], 
          TagBox[
           {RGBColor[0.560181, 0.691569, 0.194885], AbsoluteThickness[1.6], 
            Opacity[1.], Dashing[{0, Small, Small, Small}], 
@@ -11775,7 +11796,7 @@ CszqKjxPp+yxQ58emYT4sXgwf9aEFKzV4lD+TplmyS+Y5vEwP/0PP1Z4xQ==
             "]]},
           
           Annotation[#, 
-           "Charting`Private`Tag$5879#3"]& ], {}}, {{}, {}, {}, {}, {}}}, {}, \
+           "Charting`Private`Tag$5877#3"]& ], {}}, {{}, {}, {}, {}, {}}}, {}, \
 {}},
       AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
       Axes->{True, True},
@@ -11787,7 +11808,7 @@ CszqKjxPp+yxQ58emYT4sXgwf9aEFKzV4lD+TplmyS+Y5vEwP/0PP1Z4xQ==
          FormBox["\"Re[\[CapitalOmega]]/\[Gamma]R\"", TraditionalForm], ""}, {
         
          FormBox[
-         "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Kappa]\\)]\\)\"", 
+         "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Omega]s\\)]\\)\"", 
           TraditionalForm], ""}},
       FrameTicks->FrontEndValueCache[{{Automatic, 
           Charting`ScaledFrameTicks[{Identity, Identity}]}, {Automatic, 
@@ -12020,8 +12041,8 @@ CszqKjxPp+yxQ58emYT4sXgwf9aEFKzV4lD+TplmyS+Y5vEwP/0PP1Z4xQ==
    GridBoxAlignment->{"Columns" -> {{Left}}},
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
   "Column"]], "Output",
- CellChangeTimes->{3.83653053355965*^9},
- CellLabel->"Out[50]=",ExpressionUUID->"bd54778c-9a6e-4d39-8d6d-8d675b31a769"]
+ CellChangeTimes->{3.836531077565054*^9},
+ CellLabel->"Out[49]=",ExpressionUUID->"9b9d4248-58cf-43f4-85b0-18eb23cdc9cd"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -12155,7 +12176,7 @@ pressure effects\\nparameters of LIGO Voyager\>\""}], "}"}]}], "}"}]}]}],
     RowBox[{
      RowBox[{
      "showing", " ", "that", " ", "minimum", " ", "is", " ", "indeed", " ", 
-      "\[Chi]"}], "=", "kout"}], "*)"}], "\[IndentingNewLine]", 
+      "\[Chi]"}], "=", "\[Omega]s"}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{"thresholdrdB", " ", "=", " ", 
     RowBox[{"N", "[", 
      RowBox[{
@@ -12203,19 +12224,19 @@ pressure effects\\nparameters of LIGO Voyager\>\""}], "}"}]}], "}"}]}]}],
       RowBox[{
        RowBox[{"Abs", "[", 
         FractionBox[
-         RowBox[{"threshold\[Chi]", "-", "\[Kappa]"}], "\[Kappa]"], "]"}], 
+         RowBox[{"threshold\[Chi]", "-", "\[Omega]s"}], "\[Omega]s"], "]"}], 
        "<", "tolerance"}]}], "]"}], "]"}], "\[IndentingNewLine]", 
    RowBox[{"Print", "[", 
     RowBox[{"StringForm", "[", 
      RowBox[{
-     "\"\<\[Chi]Opti=``, \[Kappa]=``, \!\(\*FractionBox[\(\[Chi]Opti\), \(\
-\[Kappa]\)]\)=``\>\"", ",", 
+     "\"\<\[Chi]Opti=``, \[Omega]s=``, \!\(\*FractionBox[\(\[Chi]Opti\), \(\
+\[Omega]s\)]\)=``\>\"", ",", 
       RowBox[{"NumberForm", "[", "threshold\[Chi]", "]"}], ",", 
       RowBox[{"NumberForm", "[", 
-       RowBox[{"N", "[", "\[Kappa]", "]"}], "]"}], ",", 
+       RowBox[{"N", "[", "\[Omega]s", "]"}], "]"}], ",", 
       RowBox[{"NumberForm", "[", 
        FractionBox["threshold\[Chi]", 
-        RowBox[{"N", "[", "\[Kappa]", "]"}]], "]"}]}], "]"}], "]"}], 
+        RowBox[{"N", "[", "\[Omega]s", "]"}]], "]"}]}], "]"}], "]"}], 
    "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"Manipulate", "[", 
@@ -12226,7 +12247,7 @@ pressure effects\\nparameters of LIGO Voyager\>\""}], "}"}]}], "}"}]}]}],
          RowBox[{
           RowBox[{"2", "\[Pi]", " ", "f"}], ",", 
           RowBox[{"\[Chi]", "=", 
-           RowBox[{"rat", " ", "\[Kappa]"}]}], ",", 
+           RowBox[{"rat", " ", "\[Omega]s"}]}], ",", 
           RowBox[{"lossRatio", "=", "0"}], ",", 
           RowBox[{"Rpd", "=", "0"}]}], "]"}], ",", 
         RowBox[{"{", 
@@ -12254,12 +12275,12 @@ pressure effects\\nparameters of LIGO Voyager\>\""}], "}"}]}], "}"}]}]}],
              RowBox[{"StringForm", "[", 
               RowBox[{
               "\"\<above process optimises for sensitivity at `` kHz\\nnot \
-for overall bandwidth\\n\!\(\*FractionBox[\(\[Chi]\), \(\[Kappa]\)]\)=``\>\"",
-                ",", 
+for overall bandwidth\\n\!\(\*FractionBox[\(\[Chi]\), \
+\(\[Omega]s\)]\)=``\>\"", ",", 
                FractionBox["fProbe", 
                 SuperscriptBox["10", "3"]], ",", 
-               FractionBox["\[Chi]", "\[Kappa]"]}], "]"}]}], "}"}]}], "}"}]}],
-         ",", 
+               FractionBox["\[Chi]", "\[Omega]s"]}], "]"}]}], "}"}]}], 
+          "}"}]}], ",", 
         RowBox[{"GridLines", "\[Rule]", 
          RowBox[{"{", 
           RowBox[{
@@ -12272,8 +12293,8 @@ for overall bandwidth\\n\!\(\*FractionBox[\(\[Chi]\), \(\[Kappa]\)]\)=``\>\"",
         RowBox[{"{", 
          RowBox[{"rat", ",", 
           FractionBox["threshold\[Chi]", 
-           RowBox[{"N", "[", "\[Kappa]", "]"}]], ",", 
-          "\"\<\!\(\*FractionBox[\(\[Chi]\), \(\[Kappa]\)]\)\>\""}], "}"}], 
+           RowBox[{"N", "[", "\[Omega]s", "]"}]], ",", 
+          "\"\<\!\(\*FractionBox[\(\[Chi]\), \(\[Omega]s\)]\)\>\""}], "}"}], 
         ",", "0", ",", "2"}], "}"}]}], "]"}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{"LogLogPlot", "[", 
     RowBox[{
@@ -12282,13 +12303,15 @@ for overall bandwidth\\n\!\(\*FractionBox[\(\[Chi]\), \(\[Kappa]\)]\)=``\>\"",
        RowBox[{"ASDShsWLC", "[", 
         RowBox[{
          RowBox[{"2", "\[Pi]", " ", "f"}], ",", 
-         RowBox[{"\[Chi]", "=", "threshold\[Chi]"}], " ", ",", "0", ",", "0", 
-         ",", "0", ",", "0"}], "]"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"(*", 
+          RowBox[{"\[Chi]", "="}], "*)"}], "threshold\[Chi]", " ", ",", "0", 
+         ",", "0", ",", "0", ",", "0"}], "]"}], ",", "\[IndentingNewLine]", 
        RowBox[{"ASDShsWLC", "[", 
         RowBox[{
          RowBox[{"2", "\[Pi]", " ", "f"}], ",", 
-         RowBox[{"\[Chi]", "=", "\[Kappa]"}], ",", "0", ",", "0", ",", "0", 
-         ",", "0"}], "]"}]}], "}"}], ",", 
+         RowBox[{"(*", 
+          RowBox[{"\[Chi]", "="}], "*)"}], "\[Omega]s", ",", "0", ",", "0", 
+         ",", "0", ",", "0"}], "]"}]}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"f", ",", "10", ",", 
        SuperscriptBox["10", "4"]}], "}"}], ",", 
@@ -12321,18 +12344,21 @@ for overall bandwidth\\n\!\(\*FractionBox[\(\[Chi]\), \(\[Kappa]\)]\)=``\>\"",
       RowBox[{"{", 
        RowBox[{
         RowBox[{"StringForm", "[", 
-         RowBox[{"\"\<\[Chi]=``\[Kappa]\>\"", ",", 
+         RowBox[{"\"\<\[Chi]=``\[Omega]s\>\"", ",", 
           RowBox[{"NumberForm", "[", 
            RowBox[{
             FractionBox["threshold\[Chi]", 
-             RowBox[{"N", "[", "\[Kappa]", "]"}]], ",", "4"}], "]"}]}], "]"}],
-         ",", "\"\<\[Chi]=\[Kappa]\>\""}], "}"}]}]}], "]"}]}]}]], "Input",
+             RowBox[{"N", "[", "\[Omega]s", "]"}]], ",", "4"}], "]"}]}], 
+         "]"}], ",", "\"\<\[Chi]=\[Omega]s\>\""}], "}"}]}]}], 
+    "]"}]}]}]], "Input",
  CellChangeTimes->{{3.8359099623107567`*^9, 3.835910124288116*^9}, {
   3.8359101836936007`*^9, 3.835910187722117*^9}, {3.835910267901157*^9, 
   3.835910299071917*^9}, {3.835910918740971*^9, 3.8359109310717077`*^9}, {
   3.836179642459117*^9, 3.836179643617537*^9}, {3.836346220368332*^9, 
-  3.836346233549069*^9}, {3.836346559001944*^9, 3.8363465602697563`*^9}},
- CellLabel->"In[52]:=",ExpressionUUID->"0354e25c-c46a-4599-bb51-61a30edad071"],
+  3.836346233549069*^9}, {3.836346559001944*^9, 3.8363465602697563`*^9}, {
+  3.836530960402367*^9, 3.836531000425912*^9}, {3.836531147798015*^9, 
+  3.836531161804611*^9}},ExpressionUUID->"0354e25c-c46a-4599-bb51-\
+61a30edad071"],
 
 Cell[BoxData[
  TemplateBox[{GraphicsBox[{{{{}, {}, 
@@ -12447,7 +12473,7 @@ Rs4onqSR0Ko6z+S2t1Tkd0FKgsEgocKhwx6e5VQUpH975c0CCfEc7hlfr6Ci
 UL7f364wScgg88bB+EoqSi56+mB5mYQEL/KFVRBUlHOLw6Pi7//4Qnh9zKup
 6OXxsweD1kho46O2xu9PVFQqU79z/38kVH0pqfVqLRVVLcivbGyQ0Klf6ke4
 66no/wCmvENy
-          "]]}, Annotation[#, "Charting`Private`Tag$5944#1"]& ], 
+          "]]}, Annotation[#, "Charting`Private`Tag$5942#1"]& ], 
        
        TagBox[{
          Directive[
@@ -12546,7 +12572,7 @@ cKlW2VMKyhMJX6ypJyHdhrmrM7EU1G1Hcm9pJSErp6fSh5MoSKGfbPinn4Rk
 loQkKoVDfxRSUEx26oP5eRIS1HnwYplGQSmBHNSCRRIaefrAM7yYgt4cdjXw
 XyahRKFSsnwJBX2SK5fUWyGh0nHdxM+lFFQ0vW1hdXVtPs/FFbNyCvofS1QV
 0Q==
-          "]]}, Annotation[#, "Charting`Private`Tag$5944#1"]& ], 
+          "]]}, Annotation[#, "Charting`Private`Tag$5942#1"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -12649,7 +12675,7 @@ A+3XZknoZ2Bu2/2RjPH5GaHz8yQ8OrC+iK+CjOl3+B3LFkl4IJyoFPuFjLnH
 LxjcXCYhodjKXbWKjMUbq9fr/yUh+bZU/IevZPw0vWmBwyFh9D/6CUdryPg/
 AOw+cg==
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$5944#1"]& ]}}, {}, {}}, {
+        Annotation[#, "Charting`Private`Tag$5942#1"]& ]}}, {}, {}}, {
     DisplayFunction -> Identity, Ticks -> {Automatic, Automatic}, 
      AxesOrigin -> {0, 0}, FrameTicks -> {{Automatic, 
         Charting`ScaledFrameTicks[{Identity, Identity}]}, {Automatic, 
@@ -13003,13 +13029,13 @@ c\\)]\\)=\\!\\(\\*FormBox[\\\"0\\\", TraditionalForm]\\)\"",
      RowBox[{#, ",", 
        RowBox[{"Placed", "[", 
          RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )]], "Output",
- CellChangeTimes->{3.8365305338402042`*^9},
- CellLabel->"Out[57]=",ExpressionUUID->"3d70f179-dd71-4088-bddd-c5f7dbfacd24"],
+ CellChangeTimes->{3.836531077779436*^9},
+ CellLabel->"Out[56]=",ExpressionUUID->"eeae4b47-79cd-4ab6-8832-10a8514f038a"],
 
 Cell[BoxData[
  RowBox[{"rdB", "\[Rule]", "0.8855813527467037`"}]], "Output",
- CellChangeTimes->{3.836530534016128*^9},
- CellLabel->"Out[58]=",ExpressionUUID->"2d3ed081-0648-4a05-9502-4866520f15fc"],
+ CellChangeTimes->{3.8365310779000063`*^9},
+ CellLabel->"Out[57]=",ExpressionUUID->"6bd1f8cd-99cc-4696-b28d-c907a3f5cccf"],
 
 Cell[CellGroupData[{
 
@@ -13021,27 +13047,28 @@ Cell[BoxData[
   StringForm["To a tolerance of ``, the optimum \[Chi] is on threshold: ``", 
    ScientificForm[0.00001], False],
   Editable->False]], "Print",
- CellChangeTimes->{3.83653053401941*^9},
+ CellChangeTimes->{3.836531077901814*^9},
  CellLabel->
   "During evaluation of \
-In[52]:=",ExpressionUUID->"a45bc30e-daaa-4cbe-b047-aee6d08cbb1d"],
+In[51]:=",ExpressionUUID->"9ebfe1be-ae54-4ce0-bce7-a474b2d45ce4"],
 
 Cell[BoxData[
  InterpretationBox["\<\"\[Chi]Opti=\\!\\(\\*RowBox[{\\\"\\\\\\\"27207.\\\\\\\"\
-\\\"}]\\), \[Kappa]=\\!\\(\\*RowBox[{\\\"\\\\\\\"31415.9\\\\\\\"\\\"}]\\), \
-\\!\\(\\*FractionBox[\\(\[Chi]Opti\\), \\(\[Kappa]\\)]\\)=\\!\\(\\*RowBox[{\\\
-\"\\\\\\\"0.866025\\\\\\\"\\\"}]\\)\"\>",
+\\\"}]\\), \[Omega]s=\\!\\(\\*RowBox[{\\\"\\\\\\\"31415.9\\\\\\\"\\\"}]\\), \
+\\!\\(\\*FractionBox[\\(\[Chi]Opti\\), \
+\\(\[Omega]s\\)]\\)=\\!\\(\\*RowBox[{\\\"\\\\\\\"0.866025\\\\\\\"\\\"}]\\)\"\>\
+",
   StringForm[
-  "\[Chi]Opti=``, \[Kappa]=``, \!\(\*FractionBox[\(\[Chi]Opti\), \
-\(\[Kappa]\)]\)=``", 
+  "\[Chi]Opti=``, \[Omega]s=``, \!\(\*FractionBox[\(\[Chi]Opti\), \(\[Omega]s\
+\)]\)=``", 
    NumberForm[27206.99046351325], 
    NumberForm[31415.926535897932`], 
    NumberForm[0.8660254037844382]],
   Editable->False]], "Print",
- CellChangeTimes->{3.836530534022674*^9},
+ CellChangeTimes->{3.836531077904359*^9},
  CellLabel->
   "During evaluation of \
-In[52]:=",ExpressionUUID->"c2e3cc56-3bbf-45ff-a35e-af63b59570de"]
+In[51]:=",ExpressionUUID->"e6ca3a96-7e02-43e9-b564-b9ab2440436d"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -13233,7 +13260,7 @@ oO9ngH3ToFtGtwmrLDGn4u9BBrT2zjixvzVhJecXBmm6MWBwq9cZpy4TVkBD
 pa6XOwPy77vfr+g0Yan/aa3oPswAq9689Uc6TFgiYr1BQp4MkFx+Gd3Yjt5f
 5avuDi8GcEwrjdCQX+/4NRfqzYDb98scQt+YsO47L1aUHGHArS2OPW/bTFj/
 ATIxUGs=
-          "]]}, Annotation[#, "Charting`Private`Tag$6068#1"]& ], 
+          "]]}, Annotation[#, "Charting`Private`Tag$6065#1"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -13269,7 +13296,7 @@ PYnHL11J8tpGwKBD/8uORyTG1dz2idpOwB/qj1UrGHtONuqf7CQgMjJ9m/Hv
 JFpadSfN2kVAYsQL76iHTP9FT32kUQQ0JFibNtWR2CAdm0iOJqDlOavHi/Hl
 sGm9ZjeTz/jm5fxaEv8D9DI4fQ==
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$6068#2"]& ]}}, {}, {}}, {Ticks -> {
+        Annotation[#, "Charting`Private`Tag$6065#2"]& ]}}, {}, {}}, {Ticks -> {
        Charting`ScaledTicks[{Log, Exp}], 
        Charting`ScaledTicks[{Log, Exp}]}, GridLines -> {{{7.824046010856292, 
          RGBColor[1, 0, 0]}}, None}, FrameTicks -> {{
@@ -13354,10 +13381,10 @@ bandwidth\"",
      TemplateBox[{
        InterpretationBox[
        "\"\[Chi]=\\!\\(\\*FormBox[\\\"\\\\\\\"0.866\\\\\\\"\\\", \
-TraditionalForm]\\)\[Kappa]\"", 
-        StringForm["\[Chi]=``\[Kappa]", 
+TraditionalForm]\\)\[Omega]s\"", 
+        StringForm["\[Chi]=``\[Omega]s", 
          NumberForm[0.8660254037844382, 4]], Editable -> False], 
-       "\"\[Chi]=\[Kappa]\""}, "LineLegend", DisplayFunction -> (FormBox[
+       "\"\[Chi]=\[Omega]s\""}, "LineLegend", DisplayFunction -> (FormBox[
         StyleBox[
          StyleBox[
           PaneBox[
@@ -13554,8 +13581,8 @@ TraditionalForm]\\)\[Kappa]\"",
      RowBox[{#, ",", 
        RowBox[{"Placed", "[", 
          RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )]], "Output",
- CellChangeTimes->{3.836530534261116*^9},
- CellLabel->"Out[63]=",ExpressionUUID->"23eab44b-d151-4a3f-853f-8f7a6d444d0c"]
+ CellChangeTimes->{3.8365310786187487`*^9},
+ CellLabel->"Out[62]=",ExpressionUUID->"56748185-2306-4c75-8dc2-922eda0bfb00"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -13697,11 +13724,11 @@ Cell[BoxData[
    3.8365054961967907`*^9, 3.836505533188126*^9}, {3.836505677707346*^9, 
    3.836505689553411*^9}, {3.836505730495778*^9, 3.8365057500273848`*^9}, {
    3.8365060518430157`*^9, 3.836506053842658*^9}},
- CellLabel->"In[64]:=",ExpressionUUID->"16be657a-a5f0-43ba-9edd-9361507244e0"],
+ CellLabel->"In[63]:=",ExpressionUUID->"16be657a-a5f0-43ba-9edd-9361507244e0"],
 
 Cell[BoxData["1"], "Output",
- CellChangeTimes->{3.836530534696286*^9},
- CellLabel->"Out[65]=",ExpressionUUID->"a1cb9f8a-8073-4f4d-82e7-a8f8e46a00b2"]
+ CellChangeTimes->{3.8365310791210413`*^9},
+ CellLabel->"Out[64]=",ExpressionUUID->"d8388b83-06b5-492f-b91d-70483876820a"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -13728,7 +13755,7 @@ Cell[BoxData[
         RowBox[{"2", "\[Gamma]R"}], "-", 
         RowBox[{"I", " ", "\[CapitalOmega]"}], "+", 
         FractionBox[
-         SuperscriptBox["\[Kappa]", "2"], 
+         SuperscriptBox["\[Omega]s", "2"], 
          RowBox[{
           RowBox[{"\[Gamma]a", "[", "Tla", "]"}], "-", 
           RowBox[{"I", " ", "\[CapitalOmega]"}]}]], "-", 
@@ -13743,7 +13770,7 @@ Cell[BoxData[
         RowBox[{"\[Gamma]btot", "[", "Tlb", "]"}], "-", 
         RowBox[{"I", " ", "\[CapitalOmega]"}], "+", 
         FractionBox[
-         SuperscriptBox["\[Kappa]", "2"], 
+         SuperscriptBox["\[Omega]s", "2"], 
          RowBox[{
           RowBox[{"\[Gamma]a", "[", "Tla", "]"}], "-", 
           RowBox[{"I", " ", "\[CapitalOmega]"}]}]], "-", 
@@ -13774,7 +13801,7 @@ Cell[BoxData[
           RowBox[{"(", 
            RowBox[{"\[Gamma]R", " ", 
             RowBox[{"\[Gamma]a", "[", "Tla", "]"}]}], ")"}], 
-          RowBox[{"1", "/", "2"}]], "\[Kappa]"}], 
+          RowBox[{"1", "/", "2"}]], "\[Omega]s"}], 
         RowBox[{
          RowBox[{"\[Gamma]a", "[", "Tla", "]"}], "-", 
          RowBox[{"I", " ", "\[CapitalOmega]"}]}]], "]"}], "/", 
@@ -13783,7 +13810,7 @@ Cell[BoxData[
         RowBox[{"\[Gamma]btot", "[", "Tlb", "]"}], "-", 
         RowBox[{"I", " ", "\[CapitalOmega]"}], "+", 
         FractionBox[
-         SuperscriptBox["\[Kappa]", "2"], 
+         SuperscriptBox["\[Omega]s", "2"], 
          RowBox[{
           RowBox[{"\[Gamma]a", "[", "Tla", "]"}], "-", 
           RowBox[{"I", " ", "\[CapitalOmega]"}]}]], "-", 
@@ -13819,7 +13846,7 @@ Cell[BoxData[
         RowBox[{"\[Gamma]btot", "[", "Tlb", "]"}], "-", 
         RowBox[{"I", " ", "\[CapitalOmega]"}], "+", 
         FractionBox[
-         SuperscriptBox["\[Kappa]", "2"], 
+         SuperscriptBox["\[Omega]s", "2"], 
          RowBox[{
           RowBox[{"\[Gamma]a", "[", "Tla", "]"}], "-", 
           RowBox[{"I", " ", "\[CapitalOmega]"}]}]], "-", 
@@ -13860,7 +13887,7 @@ Cell[BoxData[
         RowBox[{"\[Gamma]btot", "[", "Tlb", "]"}], "-", 
         RowBox[{"I", " ", "\[CapitalOmega]"}], "+", 
         FractionBox[
-         SuperscriptBox["\[Kappa]", "2"], 
+         SuperscriptBox["\[Omega]s", "2"], 
          RowBox[{
           RowBox[{"\[Gamma]a", "[", "Tla", "]"}], "-", 
           RowBox[{"I", " ", "\[CapitalOmega]"}]}]], "-", 
@@ -14015,8 +14042,8 @@ PD loss\>\"", ",", "\"\<total shot noise\>\""}], "}"}], ",",
    3.8360100592868853`*^9, {3.836344615210113*^9, 3.836344658239587*^9}, 
    3.836345364766424*^9, {3.83634540096426*^9, 3.8363454349236097`*^9}, {
    3.8363459340807343`*^9, 3.836345934240191*^9}, {3.836530259778285*^9, 
-   3.836530261071271*^9}},
- CellLabel->"In[66]:=",ExpressionUUID->"955084ef-5cb9-4280-90fa-9ce17335e299"],
+   3.836530261071271*^9}, {3.8365310118836184`*^9, 3.836531014815362*^9}},
+ CellLabel->"In[65]:=",ExpressionUUID->"955084ef-5cb9-4280-90fa-9ce17335e299"],
 
 Cell[CellGroupData[{
 
@@ -14032,41 +14059,41 @@ Cell[BoxData[
     RowBox[{
      RowBox[{"{", 
       RowBox[{
-       RowBox[{"\[Chi]Ratio0", " ", "\[Kappa]"}], ",", "0", ",", "0", ",", 
+       RowBox[{"\[Chi]Ratio0", " ", "\[Omega]s"}], ",", "0", ",", "0", ",", 
        "0", ",", "0"}], "}"}], ",", "True"}], "]"}], "\[IndentingNewLine]", 
    RowBox[{"plotNoiseBudgetsWLC", "[", 
     RowBox[{
      RowBox[{"{", 
       RowBox[{
-       RowBox[{"\[Chi]Ratio0", " ", "\[Kappa]"}], ",", "0.1", ",", "0", ",", 
+       RowBox[{"\[Chi]Ratio0", " ", "\[Omega]s"}], ",", "0.1", ",", "0", ",", 
        "0", ",", "0"}], "}"}], ",", "False"}], "]"}], "\[IndentingNewLine]", 
    RowBox[{"plotNoiseBudgetsWLC", "[", 
     RowBox[{
      RowBox[{"{", 
       RowBox[{
-       RowBox[{"\[Chi]Ratio0", " ", "\[Kappa]"}], ",", "0.1", ",", "0.2", ",",
-        "0", ",", "0.25"}], "}"}], ",", "False"}], "]"}], 
+       RowBox[{"\[Chi]Ratio0", " ", "\[Omega]s"}], ",", "0.1", ",", "0.2", 
+       ",", "0", ",", "0.25"}], "}"}], ",", "False"}], "]"}], 
    "\[IndentingNewLine]", 
    RowBox[{"plotNoiseBudgetsWLC", "[", 
     RowBox[{
      RowBox[{"{", 
       RowBox[{
-       RowBox[{"\[Chi]Ratio0", " ", "\[Kappa]"}], ",", "0.1", ",", "0.2", ",",
-        "0", ",", "0.25"}], "}"}], ",", "True"}], "]"}], 
+       RowBox[{"\[Chi]Ratio0", " ", "\[Omega]s"}], ",", "0.1", ",", "0.2", 
+       ",", "0", ",", "0.25"}], "}"}], ",", "True"}], "]"}], 
    "\[IndentingNewLine]", 
    RowBox[{"plotNoiseBudgetsWLC", "[", 
     RowBox[{
      RowBox[{"{", 
       RowBox[{
-       RowBox[{"\[Chi]Ratio0", " ", "\[Kappa]"}], ",", "0", ",", "0", ",", 
+       RowBox[{"\[Chi]Ratio0", " ", "\[Omega]s"}], ",", "0", ",", "0", ",", 
        "0.1", ",", "0"}], "}"}], ",", "True"}], "]"}], "\[IndentingNewLine]", 
    
    RowBox[{"plotNoiseBudgetsWLC", "[", 
     RowBox[{
      RowBox[{"{", 
       RowBox[{
-       RowBox[{"\[Chi]Ratio0", " ", "\[Kappa]"}], ",", "0.1", ",", "0.1", ",",
-        "0.1", ",", "0.1"}], "}"}], ",", "True"}], "]"}]}]}]], "Input",
+       RowBox[{"\[Chi]Ratio0", " ", "\[Omega]s"}], ",", "0.1", ",", "0.1", 
+       ",", "0.1", ",", "0.1"}], "}"}], ",", "True"}], "]"}]}]}]], "Input",
  CellChangeTimes->{{3.836009957060774*^9, 3.836010003866375*^9}, {
    3.8360100740721283`*^9, 3.836010087802064*^9}, 3.836010353142397*^9, {
    3.836010453127142*^9, 3.836010453689444*^9}, {3.836179396083489*^9, 
@@ -14077,8 +14104,8 @@ Cell[BoxData[
    3.836346001371724*^9, 3.836346002981913*^9}, {3.8364219753729773`*^9, 
    3.836421984915765*^9}, {3.836513655661524*^9, 3.836513684894573*^9}, {
    3.836514099677197*^9, 3.83651412984776*^9}, {3.8365302656477613`*^9, 
-   3.836530268161085*^9}},
- CellLabel->"In[72]:=",ExpressionUUID->"93b4aa71-9261-40d5-b44f-7987e1bd6c09"],
+   3.836530268161085*^9}, {3.83653101587249*^9, 3.8365310170999613`*^9}},
+ CellLabel->"In[71]:=",ExpressionUUID->"93b4aa71-9261-40d5-b44f-7987e1bd6c09"],
 
 Cell[BoxData[
  TemplateBox[{GraphicsBox[{{{{}, {}, 
@@ -14105,7 +14132,7 @@ FwXT6HWLkLTz54PNtITSmAA05Ze2q5iHLknPJef46GXDNbJ7O3rxyiKpFKDH
 0OqfOaIuGTo2tIziZaNJbSv1S45uePikPOokWmXqFhWcQkeujVBTZ9Bu7jPl
 Lvno5bCPoqQC9HCSdbWiEP04Z4PSF6H/AEd9/Qc=
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$7016#1"]& ], 
+        Annotation[#, "Charting`Private`Tag$7014#1"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -14344,7 +14371,7 @@ LJPc1QjwaqpScrYTRaGpI+FJ6hEg+7ezcsBBFFVS+xp29YcDK/tHP4KTKO4V
 6mqgfhwO8zLflY47i2K1o/anWKdw6Di+sBLgIoraafDqsXw4PLdcryy5JIph
 YvsY5Ldvwv8AFw+zug==
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$7016#2"]& ], {}, {}, 
+        Annotation[#, "Charting`Private`Tag$7014#2"]& ], {}, {}, 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -14416,7 +14443,7 @@ Tj1jk5LErLKfniwI/MJevOY7m1y4lR+6cjcLeOUJS6Qn2IRbed/Y35sFP2yO
 Nn5mmBG98fqyJh8WaLTYS4YrmREZuQ+hc/1YcEbMJNN2kRn5odNtvM5/un9N
 w0el5Wakbt3QWFjANP+85Me9pmbktsdUWdE/LAhwkLIssTQj/wP6Yk/j
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$7016#5"]& ], {}, 
+        Annotation[#, "Charting`Private`Tag$7014#5"]& ], {}, 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -14657,7 +14684,7 @@ fTzz7vHgUfNKzdleGi+Ys2+7phEPSn8+lHQ5SqNNnUCe4oc4EBDs9eJzkkZt
 q/cGhglxMKP4TU3bWRrzrJsdVmzjoFl79vc1F4bePboPFbfGwTPrlZKX56Qx
 re/bk4GlWPgfbnPBOA==
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$7016#7"]& ]}}, {}, {}}, {Ticks -> {
+        Annotation[#, "Charting`Private`Tag$7014#7"]& ]}}, {}, {}}, {Ticks -> {
        Charting`ScaledTicks[{Log, Exp}], Automatic}, 
      GridLines -> {None, None}, FrameTicks -> {{Automatic, Automatic}, {
         Charting`ScaledTicks[{Log, Exp}], 
@@ -14732,14 +14759,14 @@ re/bk4GlWPgfbnPBOA==
                StyleBox[
                 StyleBox[
                  InterpretationBox[
-                 "\"\[Chi]/\[Kappa]=0.95; \\!\\(\\*SubscriptBox[\\(T\\), \
+                 "\"\[Chi]/\[Omega]s=0.95; \\!\\(\\*SubscriptBox[\\(T\\), \
 \\(l, a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, tot\\)]\\)=\\!\\(\\*SubscriptBox[\
 \\(\[Gamma]\\), \\(R\\)]\\)+\\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, \
 loss\\\\ port\\)]\\)(\\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0   ), \\!\
 \\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
                   StringForm[
-                  "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, \
+                  "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, \
 a\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(\
 \[Gamma]\), \(c, tot\)]\)=\!\(\*SubscriptBox[\(\[Gamma]\), \
 \(R\)]\)+\!\(\*SubscriptBox[\(\[Gamma]\), \(c, loss\\ \
@@ -15294,17 +15321,18 @@ port\)]\)(\!\(\*SubscriptBox[\(T\), \(l, c\)]\)=``), \
            RowBox[{"LegendLabel", "\[Rule]", 
              StyleBox[
               InterpretationBox[
-              "\"\[Chi]/\[Kappa]=0.95; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, a\
-\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
+              "\"\[Chi]/\[Omega]s=0.95; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, tot\\)]\\)=\\!\\(\\*SubscriptBox[\
 \\(\[Gamma]\\), \\(R\\)]\\)+\\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, \
 loss\\\\ port\\)]\\)(\\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0   ), \\!\
 \\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
                StringForm[
-               "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
-\!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(\[Gamma]\), \
-\(c, tot\)]\)=\!\(\*SubscriptBox[\(\[Gamma]\), \(R\)]\)+\!\(\*SubscriptBox[\(\
-\[Gamma]\), \(c, loss\\ port\)]\)(\!\(\*SubscriptBox[\(T\), \(l, c\)]\)=``), \
+               "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, \
+a\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(\
+\[Gamma]\), \(c, tot\)]\)=\!\(\*SubscriptBox[\(\[Gamma]\), \
+\(R\)]\)+\!\(\*SubscriptBox[\(\[Gamma]\), \(c, loss\\ \
+port\)]\)(\!\(\*SubscriptBox[\(T\), \(l, c\)]\)=``), \
 \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", "0.95", "0   ", "0   ", "0   ", 
                 "0   "], Editable -> False], FontFamily -> "Monospace", 
               StripOnInput -> False]}], ",", 
@@ -15327,8 +15355,8 @@ loss\\\\ port\\)]\\)(\\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0   ), \\!\
      RowBox[{#, ",", 
        RowBox[{"Placed", "[", 
          RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )]], "Output",
- CellChangeTimes->{3.83653053499928*^9},
- CellLabel->"Out[73]=",ExpressionUUID->"be02ec3b-2cf2-4461-87c1-1f97d4ec7c7e"],
+ CellChangeTimes->{3.8365310793097754`*^9},
+ CellLabel->"Out[72]=",ExpressionUUID->"5a67f0e6-adb5-4f0e-8c90-f0fae91cf858"],
 
 Cell[BoxData[
  TemplateBox[{GraphicsBox[{{{{}, {}, 
@@ -15355,7 +15383,7 @@ FwXT6HWLkLTz54PNtITSmAA05Ze2q5iHLknPJef46GXDNbJ7O3rxyiKpFKDH
 0OqfOaIuGTo2tIziZaNJbSv1S45uePikPOokWmXqFhWcQkeujVBTZ9Bu7jPl
 Lvno5bCPoqQC9HCSdbWiEP04Z4PSF6H/AEd9/Qc=
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$7668#1"]& ], 
+        Annotation[#, "Charting`Private`Tag$7666#1"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -15597,7 +15625,7 @@ LnxDrZDZJfR/VqfpcYIOjiHWkaWMl1Bl6WVtvxsdsncQIZRTF5GXfzCI250O
 bTSV1wuUiziz6bPmHg86GIvoTca8DsXOPT8WQ07RIWLn+5HehFC877BcW+FJ
 B53UvqH+3aH4P5T7Kn0=
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$7668#2"]& ], 
+        Annotation[#, "Charting`Private`Tag$7666#2"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -15678,7 +15706,7 @@ ToRZ10oiTX0F0LxZ+tiKNBGGNtYId/kJwOlt6YDyaREajz+q7vIXQMjiDW0F
 JSJUUOyJlAsQgH3T0KaAGhEOG/wjdNglgOgW30uGDSJsdRj5FhUogJuarGtj
 rSIs3vq9unw3428TL/CPbhH+D9qK3kc=
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$7668#3"]& ], {}, {}, {}, 
+        Annotation[#, "Charting`Private`Tag$7666#3"]& ], {}, {}, {}, 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -15911,7 +15939,7 @@ OQG3tuvXHbaEc8dNA0NPY17oqq1StRXyA+IBdYI2cE3KnbotBzitpCxQ3hH2
 7axXcnOCZdef1425wLuY3gbSu8JLkh+VdN3gAd3ltRB3nOeB7WbdIw/k/wPg
 2lFw
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$7668#7"]& ]}}, {}, {}}, {Ticks -> {
+        Annotation[#, "Charting`Private`Tag$7666#7"]& ]}}, {}, {}}, {Ticks -> {
        Charting`ScaledTicks[{Log, Exp}], Automatic}, 
      GridLines -> {None, None}, FrameTicks -> {{Automatic, Automatic}, {
         Charting`ScaledTicks[{Log, Exp}], 
@@ -15986,12 +16014,12 @@ OQG3tuvXHbaEc8dNA0NPY17oqq1StRXyA+IBdYI2cE3KnbotBzitpCxQ3hH2
                StyleBox[
                 StyleBox[
                  InterpretationBox[
-                 "\"\[Chi]/\[Kappa]=0.95; \\!\\(\\*SubscriptBox[\\(T\\), \
+                 "\"\[Chi]/\[Omega]s=0.95; \\!\\(\\*SubscriptBox[\\(T\\), \
 \\(l, a\\)]\\)=0.1 , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
                   StringForm[
-                  "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, \
+                  "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, \
 a\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \
 \!\(\*SubscriptBox[\(T\), \(l, c\)]\)=``, \!\(\*SubscriptBox[\(R\), \
 \(PD\)]\)=``", "0.95", "0.1 ", "0   ", "0   ", "0   "], Editable -> False], 
@@ -16543,16 +16571,16 @@ a\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \
            RowBox[{"LegendLabel", "\[Rule]", 
              StyleBox[
               InterpretationBox[
-              "\"\[Chi]/\[Kappa]=0.95; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, a\
-\\)]\\)=0.1 , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
+              "\"\[Chi]/\[Omega]s=0.95; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+a\\)]\\)=0.1 , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
                StringForm[
-               "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
-\!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, c\)]\
-\)=``, \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", "0.95", "0.1 ", "0   ", 
-                "0   ", "0   "], Editable -> False], FontFamily -> 
-              "Monospace", StripOnInput -> False]}], ",", 
+               "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, \
+a\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \
+\!\(\*SubscriptBox[\(T\), \(l, c\)]\)=``, \!\(\*SubscriptBox[\(R\), \
+\(PD\)]\)=``", "0.95", "0.1 ", "0   ", "0   ", "0   "], Editable -> False], 
+              FontFamily -> "Monospace", StripOnInput -> False]}], ",", 
            RowBox[{"LegendLayout", "\[Rule]", "\"Column\""}]}], "]"}]& ), 
       Editable -> True], TraditionalForm], TraditionalForm]},
   "Legended",
@@ -16572,8 +16600,8 @@ a\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \
      RowBox[{#, ",", 
        RowBox[{"Placed", "[", 
          RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )]], "Output",
- CellChangeTimes->{3.836530535281784*^9},
- CellLabel->"Out[74]=",ExpressionUUID->"ed04dc00-ad55-47d1-aeed-b67761de5453"],
+ CellChangeTimes->{3.836531079597487*^9},
+ CellLabel->"Out[73]=",ExpressionUUID->"c4a1575f-e055-4cee-8aca-42fa9ece4fa4"],
 
 Cell[BoxData[
  TemplateBox[{GraphicsBox[{{{{}, {}, 
@@ -16600,7 +16628,7 @@ FwXT6HWLkLTz54PNtITSmAA05Ze2q5iHLknPJef46GXDNbJ7O3rxyiKpFKDH
 0OqfOaIuGTo2tIziZaNJbSv1S45uePikPOokWmXqFhWcQkeujVBTZ9Bu7jPl
 Lvno5bCPoqQC9HCSdbWiEP04Z4PSF6H/AEd9/Qc=
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$8140#1"]& ], 
+        Annotation[#, "Charting`Private`Tag$8138#1"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -16792,7 +16820,7 @@ B23UCK9RclOGO6beR1vT8PtuxvWauf3KcOyaX+OJYxx0/k5phPYBZfDI4XLZ
 EM5BIc9q9fy8lEGQ96TOVDAHreO8qenzUYZ+26dZCb4cJC75LkLUVxne7BgW
 dvDioF+an/XM/XA8ONn31Dw4qNV8cirKXxnM4caRxb0cdNd9tqYiQBmO0Nt2
 DDpz0H+CTcdJ
-          "]]}, Annotation[#, "Charting`Private`Tag$8140#2"]& ], 
+          "]]}, Annotation[#, "Charting`Private`Tag$8138#2"]& ], 
        
        TagBox[{
          Directive[
@@ -16889,7 +16917,7 @@ N3qZqiYYUlGiF7CNgmJnsb2f9UxQ83tdcasfBTwxmDhua4ISUu1h4jsoMDrD
 NGxyNsHR5R/0LAMoMOuX6CC3mGCt5dh/BwMpCBE/2bw30ARvec8U399JgfZc
 AR7uN8H/ARQvSlI=
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$8140#3"]& ], 
+        Annotation[#, "Charting`Private`Tag$8138#3"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -16974,7 +17002,7 @@ aW/mICM+MXCLhBr6V5XobvPmIOvGrshgWTXUHHla3OzDgdCKp4UXFqrhtOmv
 g6Zu5eBIp1RzgY4a9ql80DXbxsG3h7rZj4zVsN6sfzjEjwOlLyrz2izV8PrG
 seKC7Xy9QZPd4Bo1/B9ALWC8
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$8140#4"]& ], {}, 
+        Annotation[#, "Charting`Private`Tag$8138#4"]& ], {}, 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -16993,7 +17021,7 @@ HJz/YU9Xh8MMOST//xC/qCsP56sIPRPJ2IngtzHx5IRpKMD5ty+0vphehOA3
 394/+852BF/jjbTRDyZFOF/B0uK/mCeC/zPK9PmVXgT/fFPIpswbCP6PZ8Zb
 GOWU4PxLStO33nRB8FfH/dq2MRvBBwCxxTkb
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$8140#6"]& ], 
+        Annotation[#, "Charting`Private`Tag$8138#6"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -17262,7 +17290,7 @@ YX0vP1Nuwv+e67dqKVtuhuub7XVamzdH/4iAZ9VBC+TMx257GVsiXzOPkI26
 gHzAM2Gt1Qp5RXRW1aY1HFdY7HX4Iuz2slrW0RaWWH9bNWgP76P96LXHAV4S
 mpJVd4S71JfXfJ3gx5YbVc8uw/8H6o6MCg==
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$8140#7"]& ]}}, {}, {}}, {Ticks -> {
+        Annotation[#, "Charting`Private`Tag$8138#7"]& ]}}, {}, {}}, {Ticks -> {
        Charting`ScaledTicks[{Log, Exp}], Automatic}, 
      GridLines -> {None, None}, FrameTicks -> {{Automatic, Automatic}, {
         Charting`ScaledTicks[{Log, Exp}], 
@@ -17337,12 +17365,12 @@ mpJVd4S71JfXfJ3gx5YbVc8uw/8H6o6MCg==
                StyleBox[
                 StyleBox[
                  InterpretationBox[
-                 "\"\[Chi]/\[Kappa]=0.95; \\!\\(\\*SubscriptBox[\\(T\\), \
+                 "\"\[Chi]/\[Omega]s=0.95; \\!\\(\\*SubscriptBox[\\(T\\), \
 \\(l, a\\)]\\)=0.1 , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0.2 , \
 \\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0.25\"", 
                   StringForm[
-                  "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, \
+                  "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, \
 a\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \
 \!\(\*SubscriptBox[\(T\), \(l, c\)]\)=``, \!\(\*SubscriptBox[\(R\), \
 \(PD\)]\)=``", "0.95", "0.1 ", "0.2 ", "0   ", "0.25"], Editable -> False], 
@@ -17894,16 +17922,16 @@ a\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \
            RowBox[{"LegendLabel", "\[Rule]", 
              StyleBox[
               InterpretationBox[
-              "\"\[Chi]/\[Kappa]=0.95; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, a\
-\\)]\\)=0.1 , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0.2 , \
+              "\"\[Chi]/\[Omega]s=0.95; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+a\\)]\\)=0.1 , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0.2 , \
 \\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0.25\"", 
                StringForm[
-               "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
-\!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, c\)]\
-\)=``, \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", "0.95", "0.1 ", "0.2 ", 
-                "0   ", "0.25"], Editable -> False], FontFamily -> 
-              "Monospace", StripOnInput -> False]}], ",", 
+               "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, \
+a\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \
+\!\(\*SubscriptBox[\(T\), \(l, c\)]\)=``, \!\(\*SubscriptBox[\(R\), \
+\(PD\)]\)=``", "0.95", "0.1 ", "0.2 ", "0   ", "0.25"], Editable -> False], 
+              FontFamily -> "Monospace", StripOnInput -> False]}], ",", 
            RowBox[{"LegendLayout", "\[Rule]", "\"Column\""}]}], "]"}]& ), 
       Editable -> True], TraditionalForm], TraditionalForm]},
   "Legended",
@@ -17923,8 +17951,8 @@ a\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \
      RowBox[{#, ",", 
        RowBox[{"Placed", "[", 
          RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )]], "Output",
- CellChangeTimes->{3.836530535593629*^9},
- CellLabel->"Out[75]=",ExpressionUUID->"88dbf5d2-db7c-44d0-b6a0-58b45f50e0b4"],
+ CellChangeTimes->{3.836531079891138*^9},
+ CellLabel->"Out[74]=",ExpressionUUID->"2c0f4c30-b00a-4477-937f-79c52bdefb39"],
 
 Cell[BoxData[
  TemplateBox[{GraphicsBox[{{{{}, {}, 
@@ -17951,7 +17979,7 @@ FwXT6HWLkLTz54PNtITSmAA05Ze2q5iHLknPJef46GXDNbJ7O3rxyiKpFKDH
 0OqfOaIuGTo2tIziZaNJbSv1S45uePikPOokWmXqFhWcQkeujVBTZ9Bu7jPl
 Lvno5bCPoqQC9HCSdbWiEP04Z4PSF6H/AEd9/Qc=
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$8614#1"]& ], 
+        Annotation[#, "Charting`Private`Tag$8612#1"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -18197,7 +18225,7 @@ LrUYvLVmY6kPSoI3HWOC6tW7lwYt2Zj/i2pdLzcm2PW9dZ8wZ2Ma7I6qXg8m
 qOw7+UN2JxsTl3gfLOrJhMhD0aE629nYpOpXXRMvJhyosbhha8jG2k1+z573
 ZsLbx8U6oVvYWLHTQtV/J5jwciV+f6EOG/sfQ5wTlw==
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$8614#2"]& ], 
+        Annotation[#, "Charting`Private`Tag$8612#2"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -18357,7 +18385,7 @@ KGaxJbp490GYgR8b9Ldk8Hs4lmh/ebHRTn82RJaxc+10LZHe3/dFLdvZkC9Y
 9kdylSWSI7eFyQSywdsldWOwsyUa0u4xstnJBrEi+FG3yRLV2gxPhu9iQ8rh
 65kG2yzRfe+Zoie72bC049zxS0GW6H8HFMMB
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$8614#3"]& ], 
+        Annotation[#, "Charting`Private`Tag$8612#3"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -18508,7 +18536,7 @@ Fhs66rVRUcK9ksW9bMit/3GoclobXc3KCTbwYEM8WyZmdl4bHaktNfb1ZINB
 9K3plRQdpP/rZUm3Nxuk9dqfZMnqIClaT7CEDxuad/NJjbJ10JTmsPF6XzaE
 eiZVsHV0UMv66dkQPzYcRNtK3E100CO3hZKCA2wImZrhvbNWB/0PRr576g==
 
-          "]]}, Annotation[#, "Charting`Private`Tag$8614#4"]& ], 
+          "]]}, Annotation[#, "Charting`Private`Tag$8612#4"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -18656,7 +18684,7 @@ rc99H080RUE1pQZHDjCgoc+nYvMtU6Q9/7ak8xADZn969QsVmiJxUk+YqBcD
 1ndoafu8NEVT7M8GlkcY8MJsS/6bBlPUbPlj7qQ3A276Je/RaDNFT9yWSgp8
 GPAx/7ve1X5T9D/rJXm6
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$8614#5"]& ], 
+        Annotation[#, "Charting`Private`Tag$8612#5"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -18675,7 +18703,7 @@ HJz/YU9Xh8MMOST//xC/qCsP56sIPRPJ2IngtzHx5IRpKMD5ty+0vphehOA3
 394/+852BF/jjbTRDyZFOF/B0uK/mCeC/zPK9PmVXgT/fFPIpswbCP6PZ8Zb
 GOWU4PxLStO33nRB8FfH/dq2MRvBBwCxxTkb
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$8614#6"]& ], 
+        Annotation[#, "Charting`Private`Tag$8612#6"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -18909,7 +18937,7 @@ nx4GFQkoYMVOo8yWCoG3gsbz7iSgffK+leQzVOicY7l0DSWg8visys1zVPi8
 v7sqla0Qh/gE+v14nKigL9bDxTp2By0qTmgcdqbC0sbeW4Lpd1D74R+r1y9j
 8VeHr7dY3kHP7TYqX7pQgakz95cE3x30P60i2mY=
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$8614#7"]& ]}}, {}, {}}, {Ticks -> {
+        Annotation[#, "Charting`Private`Tag$8612#7"]& ]}}, {}, {}}, {Ticks -> {
        Charting`ScaledTicks[{Log, Exp}], Automatic}, 
      GridLines -> {None, None}, FrameTicks -> {{Automatic, Automatic}, {
         Charting`ScaledTicks[{Log, Exp}], 
@@ -18984,14 +19012,14 @@ v7sqla0Qh/gE+v14nKigL9bDxTp2By0qTmgcdqbC0sbeW4Lpd1D74R+r1y9j
                StyleBox[
                 StyleBox[
                  InterpretationBox[
-                 "\"\[Chi]/\[Kappa]=0.95; \\!\\(\\*SubscriptBox[\\(T\\), \
+                 "\"\[Chi]/\[Omega]s=0.95; \\!\\(\\*SubscriptBox[\\(T\\), \
 \\(l, a\\)]\\)=0.1 , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0.2 , \
 \\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, tot\\)]\\)=\\!\\(\\*SubscriptBox[\
 \\(\[Gamma]\\), \\(R\\)]\\)+\\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, \
 loss\\\\ port\\)]\\)(\\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0   ), \\!\
 \\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0.25\"", 
                   StringForm[
-                  "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, \
+                  "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, \
 a\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(\
 \[Gamma]\), \(c, tot\)]\)=\!\(\*SubscriptBox[\(\[Gamma]\), \
 \(R\)]\)+\!\(\*SubscriptBox[\(\[Gamma]\), \(c, loss\\ \
@@ -19546,17 +19574,18 @@ port\)]\)(\!\(\*SubscriptBox[\(T\), \(l, c\)]\)=``), \
            RowBox[{"LegendLabel", "\[Rule]", 
              StyleBox[
               InterpretationBox[
-              "\"\[Chi]/\[Kappa]=0.95; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, a\
-\\)]\\)=0.1 , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0.2 , \
+              "\"\[Chi]/\[Omega]s=0.95; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+a\\)]\\)=0.1 , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0.2 , \
 \\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, tot\\)]\\)=\\!\\(\\*SubscriptBox[\
 \\(\[Gamma]\\), \\(R\\)]\\)+\\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, \
 loss\\\\ port\\)]\\)(\\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0   ), \\!\
 \\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0.25\"", 
                StringForm[
-               "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
-\!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(\[Gamma]\), \
-\(c, tot\)]\)=\!\(\*SubscriptBox[\(\[Gamma]\), \(R\)]\)+\!\(\*SubscriptBox[\(\
-\[Gamma]\), \(c, loss\\ port\)]\)(\!\(\*SubscriptBox[\(T\), \(l, c\)]\)=``), \
+               "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, \
+a\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(\
+\[Gamma]\), \(c, tot\)]\)=\!\(\*SubscriptBox[\(\[Gamma]\), \
+\(R\)]\)+\!\(\*SubscriptBox[\(\[Gamma]\), \(c, loss\\ \
+port\)]\)(\!\(\*SubscriptBox[\(T\), \(l, c\)]\)=``), \
 \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", "0.95", "0.1 ", "0.2 ", "0   ", 
                 "0.25"], Editable -> False], FontFamily -> "Monospace", 
               StripOnInput -> False]}], ",", 
@@ -19579,8 +19608,8 @@ loss\\\\ port\\)]\\)(\\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0   ), \\!\
      RowBox[{#, ",", 
        RowBox[{"Placed", "[", 
          RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )]], "Output",
- CellChangeTimes->{3.836530535875678*^9},
- CellLabel->"Out[76]=",ExpressionUUID->"ae9ed575-0399-4591-b6b8-4fdbc3ff8b6d"],
+ CellChangeTimes->{3.836531080165324*^9},
+ CellLabel->"Out[75]=",ExpressionUUID->"c5dfbd0c-e0cc-407b-8efb-4f7647b34977"],
 
 Cell[BoxData[
  TemplateBox[{GraphicsBox[{{{{}, {}, 
@@ -19607,7 +19636,7 @@ FwXT6HWLkLTz54PNtITSmAA05Ze2q5iHLknPJef46GXDNbJ7O3rxyiKpFKDH
 0OqfOaIuGTo2tIziZaNJbSv1S45uePikPOokWmXqFhWcQkeujVBTZ9Bu7jPl
 Lvno5bCPoqQC9HCSdbWiEP04Z4PSF6H/AEd9/Qc=
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$9269#1"]& ], 
+        Annotation[#, "Charting`Private`Tag$9267#1"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -19845,7 +19874,7 @@ rFRxddrie5vj98+GLJD/96Gi+wwVG48z/X7sngVc3H2BHC5UnDYX93iGWTAj
 O6qi40pFZc6jflT+LGjV+f33khsVdb/t/bM+lQmP7VYqnrlTsfCf+Wethkz4
 H673fvw=
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$9269#2"]& ], {}, {}, 
+        Annotation[#, "Charting`Private`Tag$9267#2"]& ], {}, {}, 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -19914,7 +19943,7 @@ NuQqdd6QZP3nFhHpzYIDnvfxZLIhiZz05Rb7sCBVTc7nxTVDYqwZXoZ2iOc7
 dfZu+2pI9KdelrXtYcHXhph3M9JGRFbuXcSivSzQiHzV+kLRiIxq9XGt97HA
 O5lyS0dGpNF67NuJ/eL+cYEee7SNSL7vTFlREAt2S6R2crhG5H/oQCOk
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$9269#5"]& ], {}, 
+        Annotation[#, "Charting`Private`Tag$9267#5"]& ], {}, 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -20152,7 +20181,7 @@ lSpOdlTseXdycqaoGOR/dlQMOFBxmKxw1disGLiIw94cjlSkpPTXF8kVw/LO
 DyoHnah4Oiv762WGYmg/+GXtmjMVneSNadJHiuCp1e+KYhcq0jQd/aBSUgT/
 AxcUa08=
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$9269#7"]& ]}}, {}, {}}, {Ticks -> {
+        Annotation[#, "Charting`Private`Tag$9267#7"]& ]}}, {}, {}}, {Ticks -> {
        Charting`ScaledTicks[{Log, Exp}], Automatic}, 
      GridLines -> {None, None}, FrameTicks -> {{Automatic, Automatic}, {
         Charting`ScaledTicks[{Log, Exp}], 
@@ -20227,14 +20256,14 @@ AxcUa08=
                StyleBox[
                 StyleBox[
                  InterpretationBox[
-                 "\"\[Chi]/\[Kappa]=0.95; \\!\\(\\*SubscriptBox[\\(T\\), \
+                 "\"\[Chi]/\[Omega]s=0.95; \\!\\(\\*SubscriptBox[\\(T\\), \
 \\(l, a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, tot\\)]\\)=\\!\\(\\*SubscriptBox[\
 \\(\[Gamma]\\), \\(R\\)]\\)+\\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, \
 loss\\\\ port\\)]\\)(\\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0.1 ), \\!\
 \\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
                   StringForm[
-                  "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, \
+                  "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, \
 a\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(\
 \[Gamma]\), \(c, tot\)]\)=\!\(\*SubscriptBox[\(\[Gamma]\), \
 \(R\)]\)+\!\(\*SubscriptBox[\(\[Gamma]\), \(c, loss\\ \
@@ -20789,17 +20818,18 @@ port\)]\)(\!\(\*SubscriptBox[\(T\), \(l, c\)]\)=``), \
            RowBox[{"LegendLabel", "\[Rule]", 
              StyleBox[
               InterpretationBox[
-              "\"\[Chi]/\[Kappa]=0.95; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, a\
-\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
+              "\"\[Chi]/\[Omega]s=0.95; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, tot\\)]\\)=\\!\\(\\*SubscriptBox[\
 \\(\[Gamma]\\), \\(R\\)]\\)+\\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, \
 loss\\\\ port\\)]\\)(\\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0.1 ), \\!\
 \\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
                StringForm[
-               "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
-\!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(\[Gamma]\), \
-\(c, tot\)]\)=\!\(\*SubscriptBox[\(\[Gamma]\), \(R\)]\)+\!\(\*SubscriptBox[\(\
-\[Gamma]\), \(c, loss\\ port\)]\)(\!\(\*SubscriptBox[\(T\), \(l, c\)]\)=``), \
+               "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, \
+a\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(\
+\[Gamma]\), \(c, tot\)]\)=\!\(\*SubscriptBox[\(\[Gamma]\), \
+\(R\)]\)+\!\(\*SubscriptBox[\(\[Gamma]\), \(c, loss\\ \
+port\)]\)(\!\(\*SubscriptBox[\(T\), \(l, c\)]\)=``), \
 \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", "0.95", "0   ", "0   ", "0.1 ", 
                 "0   "], Editable -> False], FontFamily -> "Monospace", 
               StripOnInput -> False]}], ",", 
@@ -20822,8 +20852,8 @@ loss\\\\ port\\)]\\)(\\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0.1 ), \\!\
      RowBox[{#, ",", 
        RowBox[{"Placed", "[", 
          RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )]], "Output",
- CellChangeTimes->{3.836530536116634*^9},
- CellLabel->"Out[77]=",ExpressionUUID->"59e47af9-1bdc-45ea-884b-15c6b8ca9d3a"],
+ CellChangeTimes->{3.8365310804083652`*^9},
+ CellLabel->"Out[76]=",ExpressionUUID->"547da9af-f558-4afa-98b8-0de9cae20398"],
 
 Cell[BoxData[
  TemplateBox[{GraphicsBox[{{{{}, {}, 
@@ -20850,7 +20880,7 @@ FwXT6HWLkLTz54PNtITSmAA05Ze2q5iHLknPJef46GXDNbJ7O3rxyiKpFKDH
 0OqfOaIuGTo2tIziZaNJbSv1S45uePikPOokWmXqFhWcQkeujVBTZ9Bu7jPl
 Lvno5bCPoqQC9HCSdbWiEP04Z4PSF6H/AEd9/Qc=
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$9921#1"]& ], 
+        Annotation[#, "Charting`Private`Tag$9919#1"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -21116,7 +21146,7 @@ ppat2UlDJN+5FNI2GorNzvVScZAGl60oYFiRhjxqy9WdzkqD0Oax3Y/laWjn
 r5aynnPS0PfLf6ekDA1t5u/34rkgDQ8sewKGyfj8Sp/V9ZzweZ/lFT4l0lCz
 3vefvs7ScNv2SLO9JA29sFktK3SRhkrVyXY5cRr6HwniAxo=
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$9921#2"]& ], 
+        Annotation[#, "Charting`Private`Tag$9919#2"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -21315,7 +21345,7 @@ rILuwoBip7LzAa+MUVn69YplDwaU/BI1mF40Rhfu3AvX8mRAPT+jvoPTBIU0
 VOr57WdAy+XG28UiJkhjvr2ix5sBjAmec/6KJkhE9EO4kC8DMrg2XbLSMEGT
 al/0LPwYMAo2y/LGJuilxdTcMX/sZp/GlU0m6K7rUsXDAAa8+fv+Z6+dCfof
 eGnO1Q==
-          "]]}, Annotation[#, "Charting`Private`Tag$9921#3"]& ], 
+          "]]}, Annotation[#, "Charting`Private`Tag$9919#3"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -21466,7 +21496,7 @@ aJQjE9zHKAI7g1goat5V554TE8J5fIUmw1ho87qQWoYLE5gHnfjXn2Gh6tSC
 1r70ZAIt8nE8fxULiZHfhIp4MeHR+zaba7Us9E3ls46JNxNMa2dO6zayULfJ
 zK8IHybcWZso1tvMQrdcl2qrjjCBkPaGy7Odhf4P/iFh/w==
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$9921#4"]& ], 
+        Annotation[#, "Charting`Private`Tag$9919#4"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -21614,7 +21644,7 @@ rcr5QzhHXl4J/ODFRsn3i0IN3FjQmq9eei0Efw80VHE83VmwSr0kdM8Z3L/+
 aavsPsKCq/JrkltT2UiW8j5U2oMF26eCxuNy2GhC6zNniycLcqw0O0xxv966
 ZXLmpBcLDD/4chcq2KjQ6W/lQ28WqJfvX1eFvw/+H5XW7P4=
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$9921#5"]& ], 
+        Annotation[#, "Charting`Private`Tag$9919#5"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -21633,7 +21663,7 @@ e7o6HGYg+ObaP8Qv6srD+SpCz0QydiL4bUw8OWEaCnD+7QutL6YXIfjNt/fP
 vrMdwdd4I230g0kRzlewtPgv5ong/4wyfX6lF8E/3xSyKfMGgv/jmfEWRjkl
 OP+S0vStN10Q/NVxv7ZtzEbwAc3Q1vA=
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$9921#6"]& ], 
+        Annotation[#, "Charting`Private`Tag$9919#6"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -21877,7 +21907,7 @@ eTynCBlG1JcUn6BC4JTuloVhEWpZ/FUSbUSFS1te0muPC1F17fHSI2eoUKjj
 k+F3yENKf9pKe52oMOXVar5Ey0X8Av2+vJeoUFnneorfNhfNK35V13PGzBW+
 e0owF33U+7V604UK6ua5eK/WHJRlu1Fa4EoFvPEO9eLAHPQ/bAJ+yQ==
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$9921#7"]& ]}}, {}, {}}, {Ticks -> {
+        Annotation[#, "Charting`Private`Tag$9919#7"]& ]}}, {}, {}}, {Ticks -> {
        Charting`ScaledTicks[{Log, Exp}], Automatic}, 
      GridLines -> {None, None}, FrameTicks -> {{Automatic, Automatic}, {
         Charting`ScaledTicks[{Log, Exp}], 
@@ -21952,14 +21982,14 @@ e0owF33U+7V604UK6ua5eK/WHJRlu1Fa4EoFvPEO9eLAHPQ/bAJ+yQ==
                StyleBox[
                 StyleBox[
                  InterpretationBox[
-                 "\"\[Chi]/\[Kappa]=0.95; \\!\\(\\*SubscriptBox[\\(T\\), \
+                 "\"\[Chi]/\[Omega]s=0.95; \\!\\(\\*SubscriptBox[\\(T\\), \
 \\(l, a\\)]\\)=0.1 , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0.1 , \
 \\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, tot\\)]\\)=\\!\\(\\*SubscriptBox[\
 \\(\[Gamma]\\), \\(R\\)]\\)+\\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, \
 loss\\\\ port\\)]\\)(\\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0.1 ), \\!\
 \\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0.1 \"", 
                   StringForm[
-                  "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, \
+                  "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, \
 a\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(\
 \[Gamma]\), \(c, tot\)]\)=\!\(\*SubscriptBox[\(\[Gamma]\), \
 \(R\)]\)+\!\(\*SubscriptBox[\(\[Gamma]\), \(c, loss\\ \
@@ -22514,17 +22544,18 @@ port\)]\)(\!\(\*SubscriptBox[\(T\), \(l, c\)]\)=``), \
            RowBox[{"LegendLabel", "\[Rule]", 
              StyleBox[
               InterpretationBox[
-              "\"\[Chi]/\[Kappa]=0.95; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, a\
-\\)]\\)=0.1 , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0.1 , \
+              "\"\[Chi]/\[Omega]s=0.95; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+a\\)]\\)=0.1 , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0.1 , \
 \\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, tot\\)]\\)=\\!\\(\\*SubscriptBox[\
 \\(\[Gamma]\\), \\(R\\)]\\)+\\!\\(\\*SubscriptBox[\\(\[Gamma]\\), \\(c, \
 loss\\\\ port\\)]\\)(\\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0.1 ), \\!\
 \\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0.1 \"", 
                StringForm[
-               "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
-\!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(\[Gamma]\), \
-\(c, tot\)]\)=\!\(\*SubscriptBox[\(\[Gamma]\), \(R\)]\)+\!\(\*SubscriptBox[\(\
-\[Gamma]\), \(c, loss\\ port\)]\)(\!\(\*SubscriptBox[\(T\), \(l, c\)]\)=``), \
+               "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, \
+a\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(\
+\[Gamma]\), \(c, tot\)]\)=\!\(\*SubscriptBox[\(\[Gamma]\), \
+\(R\)]\)+\!\(\*SubscriptBox[\(\[Gamma]\), \(c, loss\\ \
+port\)]\)(\!\(\*SubscriptBox[\(T\), \(l, c\)]\)=``), \
 \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", "0.95", "0.1 ", "0.1 ", "0.1 ", 
                 "0.1 "], Editable -> False], FontFamily -> "Monospace", 
               StripOnInput -> False]}], ",", 
@@ -22547,8 +22578,8 @@ loss\\\\ port\\)]\\)(\\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0.1 ), \\!\
      RowBox[{#, ",", 
        RowBox[{"Placed", "[", 
          RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )]], "Output",
- CellChangeTimes->{3.836530536412567*^9},
- CellLabel->"Out[78]=",ExpressionUUID->"7bb351da-58a8-4805-905e-cf726bc046a0"]
+ CellChangeTimes->{3.83653108072561*^9},
+ CellLabel->"Out[77]=",ExpressionUUID->"19067d7f-20a8-43a5-8a91-5df07a3e9a98"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -22654,7 +22685,7 @@ Cell[BoxData[
         "losses"}], ")"}], "!"}]}], "*)"}]}]}]], "Input",
  CellChangeTimes->{{3.836271236837304*^9, 3.836271264124236*^9}, {
    3.8363355168222237`*^9, 3.836335517287979*^9}, 3.836504029155654*^9},
- CellLabel->"In[79]:=",ExpressionUUID->"0a20d459-3438-40ba-8e2f-751bca18808b"],
+ CellLabel->"In[78]:=",ExpressionUUID->"0a20d459-3438-40ba-8e2f-751bca18808b"],
 
 Cell[BoxData[
  RowBox[{"1", "-", 
@@ -22681,8 +22712,8 @@ Cell[BoxData[
         SuperscriptBox["\[Chi]1", "2"]}]}], ")"}], " ", 
      SuperscriptBox["\[CapitalOmega]1", "2"]}], "+", 
     SuperscriptBox["\[CapitalOmega]1", "4"]}]]}]], "Output",
- CellChangeTimes->{3.8365305366712017`*^9},
- CellLabel->"Out[81]=",ExpressionUUID->"6ebc3e7f-2bf9-4b76-a1fa-490f3e23dedd"]
+ CellChangeTimes->{3.83653108099513*^9},
+ CellLabel->"Out[80]=",ExpressionUUID->"4fec0019-7a84-4310-bf90-685be9104412"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -22830,7 +22861,7 @@ Cell[BoxData[
              RowBox[{"RsWLC", "[", 
               RowBox[{
                RowBox[{"2", "\[Pi]", " ", "f"}], ",", 
-               RowBox[{"\[Chi]Ratio0", " ", "\[Kappa]"}], ",", 
+               RowBox[{"\[Chi]Ratio0", " ", "\[Omega]s"}], ",", 
                RowBox[{"armLossList", "[", 
                 RowBox[{"[", "i", "]"}], "]"}], ",", "0", ",", "0", ",", "0", 
                ",", "True"}], "]"}], "]"}]}], 
@@ -22849,7 +22880,7 @@ Cell[BoxData[
              RowBox[{"NOPOV22symSRM", "[", 
               RowBox[{
                RowBox[{"2", "\[Pi]", " ", "f"}], ",", 
-               RowBox[{"\[Chi]Ratio0", " ", "\[Kappa]"}]}], "]"}], "]"}]}], 
+               RowBox[{"\[Chi]Ratio0", " ", "\[Omega]s"}]}], "]"}], "]"}]}], 
            ",", "\[IndentingNewLine]", 
            RowBox[{"10", 
             RowBox[{"Log10", "[", "1", "]"}]}]}], "}"}]}], "]"}], "]"}], ",", 
@@ -22970,8 +23001,8 @@ symmetric loss at SRM, i.e. \
    3.836335163169441*^9}, {3.8363351946383257`*^9, 3.836335220964796*^9}, 
    3.836335503855775*^9, {3.8363446741782093`*^9, 3.836344746294108*^9}, {
    3.8363447845626307`*^9, 3.83634479551093*^9}, {3.836344926089839*^9, 
-   3.836344995459547*^9}},
- CellLabel->"In[82]:=",ExpressionUUID->"d3656d18-28b3-4c3d-9bb5-1e2155da010c"],
+   3.836344995459547*^9}, {3.836531017803932*^9, 3.83653101831667*^9}},
+ CellLabel->"In[81]:=",ExpressionUUID->"d3656d18-28b3-4c3d-9bb5-1e2155da010c"],
 
 Cell[BoxData[
  TemplateBox[{GraphicsBox[{{{{}, {}, 
@@ -23207,7 +23238,7 @@ bw0vX92uoDD70lbN7iFDsMlbdJ+oobBOxiW5Z6chqMldt1Z7w75/ytk9Nc4E
 0Qwh/eg6CuUrpHzDi5jQ8qfSPvVGCh8QoH7SlAmZO6rpMU0UBm2z/cNJhglB
 kcwtn5op/G+b0YNtKwZgwf1hGVopLD8Zxr+v2QB+vuY2EdtGIZ/smeDGBwbw
 P9SRXn4=
-          "]]}, Annotation[#, "Charting`Private`Tag$11343#1"]& ], 
+          "]]}, Annotation[#, "Charting`Private`Tag$11341#1"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -23341,7 +23372,7 @@ z5zD8wcfTUE6W9I4sZ7GnH9UfluwTaH5isb67Y00/vckNIC0NIVciRrZy89p
 DAq9PbZHyRTC40yXjjbRaE+c456aMwE7voE5eEGjkL+RNfO5CWiF+QwltXDm
 Lx28+CjdBP4HzbkSyw==
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$11343#2"]& ], 
+        Annotation[#, "Charting`Private`Tag$11341#2"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -23586,7 +23617,7 @@ Bd3FZ+x0X5Df89nXp37YDrKpMsbh5WR9zg3/kuztUBOtsXTdSz6qmBrK5mzf
 DulzyuQjqvgoF3xFbIC3HU5e3D71azUfXb9IqKaPmsBO8Q8/4RUfO3yGV3aW
 m8DKE+69ka/5uK3Hviw81gT+Bw15BJc=
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$11343#3"]& ], 
+        Annotation[#, "Charting`Private`Tag$11341#3"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -23776,7 +23807,7 @@ X258N7+h1wLEcjYfTGii0JmPPvg13wJe3tTYot9C4YOSsHgDMwvI21Qvmfic
 wunbp5MKJC0g6JrFuqkXa32z/TUaO20OR7iHF6F1zd/ZaLm5WnPYfslzPKmN
 wv+SZDk6483hf87LuSs=
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$11343#4"]& ], 
+        Annotation[#, "Charting`Private`Tag$11341#4"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -23956,7 +23987,7 @@ MXvB3YE2fr6SQpeF9ckLlnth+/PU1yOPKJRjTTluWrMXZngPHibWUCjb8sbf
 yQtMaEvV0TB+SuGro4LZxjpMyJdskLvcQqH2O8UmJSEmRJ5jLvvUSqGVb1pF
 WJ8V2Au/nYZ2CnkOTzbYFFiBXoTPhysdFN7Q8R3JC7OC/wCnLViP
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$11343#5"]& ], 
+        Annotation[#, "Charting`Private`Tag$11341#5"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -24143,7 +24174,7 @@ bdU1SY0U5bi20/pJFuBWOu43fItiiNx4bGqXOeiviXbRb6FY/EakYCDCHBQu
 y5snt1LEmI93R341h3sXtTW2tlMMPFMrsE0xA8EvN9nn71BsvXKl9KqBGUTE
 W/48clf4b+IpLnemTMFR7OUk3KeYWdj0nl9kChvDfYf/6hDed29SlJ6rKfwH
 8XDt/A==
-          "]]}, Annotation[#, "Charting`Private`Tag$11343#6"]& ], 
+          "]]}, Annotation[#, "Charting`Private`Tag$11341#6"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -24328,7 +24359,7 @@ vdW4CVpuq34S34Cvn6yZ3BJvgo4/XvSZfEGDlaFcSkC3MdJSuuqk1UKDr7/C
 PBSrZ4TCYky5ZjpxPqqXid9dPoJs2EaX0Bsa1GxS3BVWegSphXpPJnfRQDBO
 0E3E+Qj6HxxGgo0=
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$11343#7"]& ], 
+        Annotation[#, "Charting`Private`Tag$11341#7"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -24353,7 +24384,7 @@ wfx3TdNzj8G/xgcG5aPg7L4fhQs6cFTAjawoPdi1C09uGAO/bAoNjDaA1dTn
 HooJcHltCnnxBfgEafYnzwgOvyZcUE6C/wABcPw3
           "]]}, 
         Annotation[#, 
-         "Charting`Private`Tag$11343#8"]& ], {}}, {{}, {}, {}, {}, {}, {}, \
+         "Charting`Private`Tag$11341#8"]& ], {}}, {{}, {}, {}, {}, {}, {}, \
 {}, {}, {}, {}}}, {}, {}}, {Ticks -> {
        Charting`ScaledTicks[{Log, Exp}], Automatic}, 
      GridLines -> {None, None}, FrameTicks -> {{Automatic, Automatic}, {
@@ -25112,8 +25143,8 @@ SuperscriptBox[\\\"10\\\", \\\"\\\\\\\"-100\\\\\\\"\\\"]}]\\)\"",
      RowBox[{#, ",", 
        RowBox[{"Placed", "[", 
          RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )]], "Output",
- CellChangeTimes->{3.836530537768032*^9},
- CellLabel->"Out[87]=",ExpressionUUID->"fbd33638-3795-4478-97c0-9b3af46d66cb"],
+ CellChangeTimes->{3.8365310822287416`*^9},
+ CellLabel->"Out[86]=",ExpressionUUID->"08bebe97-a3fb-4f97-8c3e-31906a6a5cc6"],
 
 Cell[BoxData[
  TemplateBox[{GraphicsBox[{{{{}, {}, 
@@ -25379,7 +25410,7 @@ fbuMwsxz69Q7+g3AOnfOdbSKwhopp8TOzQagInPNSuUtC/+MvWN8RB+E0wR0
 I2solC2T8A4t0Iem+wo7VespfEiA6lETfUjfVEmPaqAwYP35Ww5S+hAQrr/2
 eyOFEjOGD9cv6oE555cFaKaw9GgIz85GPdh/xWU0uoXCDdInAusf6sH/AAgX
 X8w=
-          "]]}, Annotation[#, "Charting`Private`Tag$11825#1"]& ], 
+          "]]}, Annotation[#, "Charting`Private`Tag$11823#1"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -25629,7 +25660,7 @@ n+m3VHgX7K7rJWSGNOVvO2g2U4HTc3/+nW8nkXA2v0lcCxVi54c8qBUnUddj
 NUXtdiqMMA1bzVieRLl8TWIJHVSgo/ucyyl7EoXcP8n+vZMKSSo/C4vXTZEN
 8+Qaek+FcPtatk8dpmjfTe/pxA9UiLLptfN5aor+B1Vs0H0=
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$11825#2"]& ], 
+        Annotation[#, "Charting`Private`Tag$11823#2"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -25870,7 +25901,7 @@ v0QhlglLdPTBsv/MM7xes/ePRMQtka5yjItuGwMEn3/j2vzpIJIoEjFPbWeA
 94WY8p7qg+jFdfVNel14v3336KRZH0TFwk+l07sZULMWa1a/4SA6n3iQe66H
 AS/vWgs4/7ZAR9infqFeBuSQM6Wjuy3Q9nN+Mxl9DHjjyCshf8MC/Q9g9BEP
 
-          "]]}, Annotation[#, "Charting`Private`Tag$11825#3"]& ], 
+          "]]}, Annotation[#, "Charting`Private`Tag$11823#3"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -26119,7 +26150,7 @@ ns34Gphhy22VT6PrWbD5atP55hFT7FTp4qWJ5yyYMzFSGhAzxXQUg+x0Wlhg
 Be6n0yKC5Y5g/hFHeKfbWfAzx8h+y7IJdpzr8x/sDQtCEpKuH3ltgqnfcJu4
 85YFu0qOBi3cM8H+B6mUFqY=
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$11825#4"]& ], 
+        Annotation[#, "Charting`Private`Tag$11823#4"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -26348,7 +26379,7 @@ c6yyJWEwL9TBoIqH1oldL+91byFU02ibL1XzkL5//tTWwi3E61i9Batf8PD4
 UaA3x3oLkaHwhH75JQ9+gXeGTOdsIYLPb6EMvuLBnh0xa3TCgtgu1jlB1PJA
 9TKxVXtpQSwJ8ui98obcf3FX9IPrFsT/AACNX2Y=
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$11825#5"]& ], 
+        Annotation[#, "Charting`Private`Tag$11823#5"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -26595,7 +26626,7 @@ lCXSf3vp3fB9Yt5Oh0uDd1iiX20195IbuLCBa7nQPmiBnMsWfEafcOH4V8vJ
 JFrtRYVij6lpHUSeoU16tfJ7UVjCXsrEM2Jeu/gPu/w0R3bYx5/oBReuXbtZ
 n9hujjafPTGa/pIL4hfIw+pXzdH/AH1loqU=
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$11825#6"]& ], 
+        Annotation[#, "Charting`Private`Tag$11823#6"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -26841,7 +26872,7 @@ XLj909zYYGgfErslYhTXwIWNZ63Fpgr3oeakTfJaTVxY2qat22K6D2WteiIR
 /5wLua/93s1J7kOBl/YJfHnBhZXn+UfyfhmjQ3wDv9FLLiT8+yDU3WiMNp9z
 H0lo4cIS1DodfN0Y/Q+6ZeX4
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$11825#7"]& ], 
+        Annotation[#, "Charting`Private`Tag$11823#7"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -27028,7 +27059,7 @@ bdU1SY0U5bi20/pJFuBWOu43fItiiNx4bGqXOeiviXbRb6FY/EakYCDCHBQu
 y5snt1LEmI93R341h3sXtTW2tlMMPFMrsE0xA8EvN9nn71BsvXKl9KqBGUTE
 W/48clf4b+IpLnemTMFR7OUk3KeYWdj0nl9kChvDfYf/6hDed29SlJ6rKfwH
 8XDt/A==
-          "]]}, Annotation[#, "Charting`Private`Tag$11825#8"]& ], 
+          "]]}, Annotation[#, "Charting`Private`Tag$11823#8"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -27213,7 +27244,7 @@ vdW4CVpuq34S34Cvn6yZ3BJvgo4/XvSZfEGDlaFcSkC3MdJSuuqk1UKDr7/C
 PBSrZ4TCYky5ZjpxPqqXid9dPoJs2EaX0Bsa1GxS3BVWegSphXpPJnfRQDBO
 0E3E+Qj6HxxGgo0=
           "]]}, 
-        Annotation[#, "Charting`Private`Tag$11825#9"]& ], 
+        Annotation[#, "Charting`Private`Tag$11823#9"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -27238,7 +27269,7 @@ wfx3TdNzj8G/xgcG5aPg7L4fhQs6cFTAjawoPdi1C09uGAO/bAoNjDaA1dTn
 HooJcHltCnnxBfgEafYnzwgOvyZcUE6C/wABcPw3
           "]]}, 
         Annotation[#, 
-         "Charting`Private`Tag$11825#10"]& ], {}}, {{}, {}, {}, {}, {}, {}, \
+         "Charting`Private`Tag$11823#10"]& ], {}}, {{}, {}, {}, {}, {}, {}, \
 {}, {}, {}, {}, {}, {}}}, {}, {}}, {Ticks -> {
        Charting`ScaledTicks[{Log, Exp}], Automatic}, 
      GridLines -> {None, None}, FrameTicks -> {{Automatic, Automatic}, {
@@ -28143,8 +28174,8 @@ SuperscriptBox[\\\"10\\\", \\\"\\\\\\\"-100\\\\\\\"\\\"]}]\\)\"",
      RowBox[{#, ",", 
        RowBox[{"Placed", "[", 
          RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )]], "Output",
- CellChangeTimes->{3.8365305397664127`*^9},
- CellLabel->"Out[88]=",ExpressionUUID->"41aa54fd-8525-4f8e-9516-d2e54b1cbe00"]
+ CellChangeTimes->{3.83653108424935*^9},
+ CellLabel->"Out[87]=",ExpressionUUID->"77e4f972-eda2-4a50-8673-91a1a028a03f"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -28156,7 +28187,7 @@ Cell[BoxData[
     "hard"}]}], "*)"}]], "Input",
  CellChangeTimes->{{3.836518045305601*^9, 3.83651804932211*^9}, {
   3.8365273047254868`*^9, 3.836527310835413*^9}},
- CellLabel->"In[89]:=",ExpressionUUID->"f2cd9478-0cc5-4ac8-8b6b-018ad00c054f"],
+ CellLabel->"In[88]:=",ExpressionUUID->"f2cd9478-0cc5-4ac8-8b6b-018ad00c054f"],
 
 Cell[CellGroupData[{
 
@@ -28168,8 +28199,6 @@ Cell[BoxData[
     "int", " ", 
     RowBox[{"sqz", " ", ".", "nb"}]}], "*)"}], "\[IndentingNewLine]", 
   RowBox[{
-   RowBox[{
-    RowBox[{"\[Omega]s", "=", "\[Kappa]"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{"Clear", "[", 
     RowBox[{"plotThresholdFinder", ",", "fProbe"}], "]"}], 
    "\[IndentingNewLine]", 
@@ -28180,7 +28209,6 @@ Cell[BoxData[
       RowBox[{"pastThreshold_:", "False"}]}], "]"}], ":=", 
     RowBox[{"(", "\[IndentingNewLine]", 
      RowBox[{
-      RowBox[{"\[Omega]s", "=", "\[Kappa]"}], ";", "\[IndentingNewLine]", 
       RowBox[{"rpdList", "=", 
        RowBox[{"Subdivide", "[", 
         RowBox[{"0", ",", "0.5", ",", "5"}], "]"}]}], ";", 
@@ -28284,8 +28312,8 @@ effects\\nparameters of LIGO Voyager\>\""}], "}"}]}], "}"}]}], ",",
                RowBox[{"StringForm", "[", 
                 RowBox[{
                 "\"\<\!\(\*FractionBox[\(\[Chi]\), \
-\(kout\)]\)\[Element](0,1), \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``\>\"", ",", 
-                 
+\(\[Omega]s\)]\)\[Element](0,1), \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``\>\"", 
+                 ",", 
                  RowBox[{"NumberForm", "[", 
                   RowBox[{"N", "[", 
                    RowBox[{"rpdList", "[", 
@@ -28357,7 +28385,7 @@ effects\\nparameters of LIGO Voyager\>\""}], "}"}]}], "}"}]}], ",",
             RowBox[{"{", 
              RowBox[{"StringForm", "[", 
               RowBox[{
-              "\"\<\!\(\*FractionBox[\(\[Chi]\), \(kout\)]\)=1, varying \
+              "\"\<\!\(\*FractionBox[\(\[Chi]\), \(\[Omega]s\)]\)=1, varying \
 \!\(\*SubscriptBox[\(R\), \(PD\)]\)\[Element](``,``)\>\"", ",", 
                RowBox[{"NumberForm", "[", 
                 RowBox[{"N", "[", 
@@ -28448,9 +28476,8 @@ effects\\nparameters of LIGO Voyager\>\""}], "}"}]}], "}"}]}], ",",
                  RowBox[{
                   RowBox[{"StringForm", "[", 
                    RowBox[{
-                   "\"\<\!\(\*FractionBox[\(\[Chi]\), \
-\(kout\)]\)\[Element](1,2), \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``\>\"", ",", 
-                    
+                   "\"\<\!\(\*FractionBox[\(\[Chi]\), \(\[Omega]s\)]\)\
+\[Element](1,2), \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``\>\"", ",", 
                     RowBox[{"NumberForm", "[", 
                     RowBox[{"N", "[", 
                     RowBox[{"rpdList", "[", 
@@ -28744,15 +28771,16 @@ loss/sqz. / dB (-20 \!\(\*SubscriptBox[\(log\), \(10\)]\))\>\"", ",",
      "\[Infinity]", " ", "makes", " ", "T", " ", "no", " ", "longer", " ", 
       "depend", " ", "on", " ", "\[Chi]"}]}], "*)"}]}]}]], "Input",
  CellChangeTimes->CompressedData["
-1:eJwdzkEoQ3EAx/F/k2X2OOy0Iw6bg7K1sqXIy8W76PXeGCLx8rwLimYbDi4O
-WNusmAktB8SyZQuJZnGRg2VOnJm0HJAVM/Z7h2+f67d6cIwbUhBCtMVgg3jV
-s7qcpVPtG73w4dwyDC+t9Q54K1HTUJRevLBLkLbgYU4bhRfPj3Ho/C45huxp
-8yv0OEI5SPa+fqCZny3ARiWvDBadi9Wo4NnKWyUsbR2pg6pyuxEGFQETdJpn
-LDA8kWyCnYvbNPQYl9pgTK/n4a6NkT2oorohWe/vgx/XtgFoylrt8H3S54K1
-ozdTMPpJ5iFvKCzAp3yFD24mOD9MCkwAavzqNWjYD+1AVyQsO15GRWCLLn0C
-M2kmAVmOlU39Zu7kX7HjHro1R3lIC/E/+A+v9tCm
+1:eJwdzk8oQwEAx/HXZBmPw05yMgejXtlatqXIy8UKrb2xEYmX2cEomm0oLg7+
+NLNittBy8GeWLVtINIuLdrDMiTOTlgOyMGO/d/j2uX5F/SOaAR5BEGW5oNxw
+1bW2kqLjbRvd8P5cOQgvtTUWeGMkJ6HB+LwE9axxCx6mS4Pw4ukhDK3fecdQ
+fdrwAu0WbxoSvs8fqGBmsrCOz/DdOWdDFQJ4tvpaAvObTBQUFJql0M1zyaBV
+MaWE/rFoPexY2KahXbrcDENiMQN3dSrOg3KyExLrvT3w/VrXB2UprRm+jTts
+sGo4NgGDH8QcZCTZefiYKXbAzYjGCaOsygWFziIPlOx7d6At4OccLSADsLEy
+cQKTCVUEqjVqzvhv8pb7NbTfwUXhUQbSbPgPDrXqqz05fdMUBb9i/lq41yKS
+w3/NHuDE
   "],
- CellLabel->"In[97]:=",ExpressionUUID->"5f64755d-6345-4cff-b36a-efefc9ceb3d9"],
+ CellLabel->"In[95]:=",ExpressionUUID->"5f64755d-6345-4cff-b36a-efefc9ceb3d9"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -28893,7 +28921,7 @@ hiYPWce851xcLxRsazBiw9rn69aaPeVi8CSl2RcXs8H//MMy/ywuHk3YP9Ax
 iQ3LwoyOqaRy8T+N+v4LDBs+6jdMybjBxbQDYdsXyLBhQF2pUT+Gi0u7VZa+
 +SMPp98cT6sK5eL7aTLBB3vl4X/nTnkr
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$14963#1"]& ], 
+            Annotation[#, "Charting`Private`Tag$14961#1"]& ], 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -29031,7 +29059,7 @@ B3+Rh9UXXiSbPSL9415BTtcdeVA5emnegjIuSqcuPLYoTx6mCqvqjIq5WLDd
 O/NEujxsp5JXzcnm4p7bTr4zouRhKPQbTEvlYuLbwakBu+RBZuZPz0lnuLhD
 xVIxP0AevjS+K5OP56JlnYpjj7s8JPm+cPl9mPS3s3Y2znCQh/8DQGhNpw==
 
-              "]]}, Annotation[#, "Charting`Private`Tag$14963#2"]& ], 
+              "]]}, Annotation[#, "Charting`Private`Tag$14961#2"]& ], 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -29170,7 +29198,7 @@ vZNqDQXYP9mq9MBWCl49m/fk2hU+fnEIkpDVEIC4scmFX3N42Pu7puzhOS6s
 8+MVl8ht42CnuktKaxwLhh6NBO314iBbovLgwygWxBZbMa2uHJy6ftnuyN0s
 CO2sn76M3H/d1CQiLX1Z8D9d+E/6
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$14963#3"]& ], 
+            Annotation[#, "Charting`Private`Tag$14961#3"]& ], 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -29304,7 +29332,7 @@ f4pDesa/t074stDlwPwUjw5xeD6+Ljzci4XvWUJqfW/E4ZVx8ytXJxZ6RaRY
 kWu7icODhjKVWPgxb5v79g3i4KOVPhQry8LHEWp0OYjDNu0vJ3cz5P9p8Mpz
 07XFwUovpsySy8KwJucxj/nisPxpS+ICURaWazuYFM4Uh/8DDRUfSg==
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$14963#4"]& ], 
+            Annotation[#, "Charting`Private`Tag$14961#4"]& ], 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -29436,7 +29464,7 @@ Mmz4MjwTY9fJQYEmfx6cpdjwcOpRVkcTB9ktS+hzFWADNTlo2faVg4J+ni06
 X4Wx4P1K7bbHjzho9YJID8szLNBnc9/OjuKg7ZUFlvJ2LDB1KLLwu8lBak7m
 X9p3s+CBp0H+cDCOJ/Xu76dbWdDwYLm4rT8HuV+eyrXTZsF/RvcJpA==
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$14963#5"]& ], 
+            Annotation[#, "Charting`Private`Tag$14961#5"]& ], 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -29567,7 +29595,7 @@ EyWinOgH58Uiywv71aR7mCjmYKMx54RYpBXePqnRyUQlF9Jr1niKRfR/rl2r
 Opjoc6a8apCpWKTX9fu9fTMTmR8J9rw8Xyz6P9pDuGU=
               "]]}, 
             Annotation[#, 
-             "Charting`Private`Tag$14963#6"]& ], {}}, {{}, {}, {}, {}, {}, \
+             "Charting`Private`Tag$14961#6"]& ], {}}, {{}, {}, {}, {}, {}, \
 {}, {}, {}}}, {{{}, {}, 
            TagBox[{
              Directive[
@@ -29607,7 +29635,7 @@ J4FDUKltcOY58/uc/ysNgXvM+icWOvHcCGfaeamDQE6clpCwmucYovD6CjWB
 gYfvuTou5TmLStkUoo3AVj3LiCwpzwUUDPo+aCXQ8M3ZlUM2k/1Q1LmUfwi8
 lm6WuN568v+zcY1HC4FbIo7tLprPc/8BakVC5Q==
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$15015#1"]& ]}}}, {
+            Annotation[#, "Charting`Private`Tag$15013#1"]& ]}}}, {
         DisplayFunction -> Identity, AspectRatio -> 1, Axes -> {True, True}, 
          AxesLabel -> {None, None}, AxesOrigin -> {0, 0}, DisplayFunction :> 
          Identity, Frame -> {{True, True}, {True, True}}, FrameLabel -> {{
@@ -29638,52 +29666,52 @@ effects\\nparameters of LIGO Voyager\"", TraditionalForm]}},
             FormBox[
              TemplateBox[{
                InterpretationBox[
-               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \
-\\(kout\\)]\\)\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
+               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Omega]s\\)]\\)\
+\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
 \\(PD\\)]\\)=\\!\\(\\*RowBox[{\\\"\\\\\\\"0.\\\\\\\"\\\"}]\\)\"", 
                 StringForm[
-                "\!\(\*FractionBox[\(\[Chi]\), \(kout\)]\)\[Element](0,1), \!\
-\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
+                "\!\(\*FractionBox[\(\[Chi]\), \
+\(\[Omega]s\)]\)\[Element](0,1), \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
                  NumberForm[0.]], Editable -> False], 
                InterpretationBox[
-               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \
-\\(kout\\)]\\)\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
+               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Omega]s\\)]\\)\
+\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
 \\(PD\\)]\\)=\\!\\(\\*RowBox[{\\\"\\\\\\\"0.1\\\\\\\"\\\"}]\\)\"", 
                 StringForm[
-                "\!\(\*FractionBox[\(\[Chi]\), \(kout\)]\)\[Element](0,1), \!\
-\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
+                "\!\(\*FractionBox[\(\[Chi]\), \
+\(\[Omega]s\)]\)\[Element](0,1), \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
                  NumberForm[0.1]], Editable -> False], 
                InterpretationBox[
-               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \
-\\(kout\\)]\\)\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
+               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Omega]s\\)]\\)\
+\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
 \\(PD\\)]\\)=\\!\\(\\*RowBox[{\\\"\\\\\\\"0.2\\\\\\\"\\\"}]\\)\"", 
                 StringForm[
-                "\!\(\*FractionBox[\(\[Chi]\), \(kout\)]\)\[Element](0,1), \!\
-\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
+                "\!\(\*FractionBox[\(\[Chi]\), \
+\(\[Omega]s\)]\)\[Element](0,1), \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
                  NumberForm[0.2]], Editable -> False], 
                InterpretationBox[
-               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \
-\\(kout\\)]\\)\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
+               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Omega]s\\)]\\)\
+\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
 \\(PD\\)]\\)=\\!\\(\\*RowBox[{\\\"\\\\\\\"0.3\\\\\\\"\\\"}]\\)\"", 
                 StringForm[
-                "\!\(\*FractionBox[\(\[Chi]\), \(kout\)]\)\[Element](0,1), \!\
-\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
+                "\!\(\*FractionBox[\(\[Chi]\), \
+\(\[Omega]s\)]\)\[Element](0,1), \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
                  NumberForm[0.30000000000000004`]], Editable -> False], 
                InterpretationBox[
-               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \
-\\(kout\\)]\\)\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
+               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Omega]s\\)]\\)\
+\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
 \\(PD\\)]\\)=\\!\\(\\*RowBox[{\\\"\\\\\\\"0.4\\\\\\\"\\\"}]\\)\"", 
                 StringForm[
-                "\!\(\*FractionBox[\(\[Chi]\), \(kout\)]\)\[Element](0,1), \!\
-\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
+                "\!\(\*FractionBox[\(\[Chi]\), \
+\(\[Omega]s\)]\)\[Element](0,1), \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
                  NumberForm[0.4]], Editable -> False], 
                InterpretationBox[
-               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \
-\\(kout\\)]\\)\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
+               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Omega]s\\)]\\)\
+\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
 \\(PD\\)]\\)=\\!\\(\\*RowBox[{\\\"\\\\\\\"0.5\\\\\\\"\\\"}]\\)\"", 
                 StringForm[
-                "\!\(\*FractionBox[\(\[Chi]\), \(kout\)]\)\[Element](0,1), \!\
-\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
+                "\!\(\*FractionBox[\(\[Chi]\), \
+\(\[Omega]s\)]\)\[Element](0,1), \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
                  NumberForm[0.5]], Editable -> False]}, "LineLegend", 
               DisplayFunction -> (StyleBox[
                 StyleBox[
@@ -30238,13 +30266,13 @@ c\\)]\\)=\\!\\(\\*RowBox[{\\\"\\\\\\\"0.1\\\\\\\"\\\"}]\\)\"",
             FormBox[
              TemplateBox[{
                InterpretationBox[
-               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(kout\\)]\\)=1, \
+               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Omega]s\\)]\\)=1, \
 varying \\!\\(\\*SubscriptBox[\\(R\\), \
 \\(PD\\)]\\)\[Element](\\!\\(\\*RowBox[{\\\"\\\\\\\"0.\\\\\\\"\\\"}]\\),\\!\\(\
 \\*RowBox[{\\\"\\\\\\\"0.5\\\\\\\"\\\"}]\\))\"", 
                 StringForm[
-                "\!\(\*FractionBox[\(\[Chi]\), \(kout\)]\)=1, varying \
-\!\(\*SubscriptBox[\(R\), \(PD\)]\)\[Element](``,``)", 
+                "\!\(\*FractionBox[\(\[Chi]\), \(\[Omega]s\)]\)=1, varying \!\
+\(\*SubscriptBox[\(R\), \(PD\)]\)\[Element](``,``)", 
                  NumberForm[0.], 
                  NumberForm[0.5]], Editable -> False]}, "LineLegend", 
               DisplayFunction -> (StyleBox[
@@ -30469,7 +30497,7 @@ MWDHd71/hg9zIOr4/ZqoIgYcUEhxMfDjgPEpy73KeQx47MS+0+TCgVcmXRqF
 mQwwc+SZB63nwCil8NrkHAPkxc7JSNpwILJhf/6LJAbk/hYoZ5hw4H8TkdIo
 
             "]]},
-          Annotation[#, "Charting`Private`Tag$15052#1"]& ], 
+          Annotation[#, "Charting`Private`Tag$15050#1"]& ], 
          TagBox[
           {RGBColor[0, 
             NCache[
@@ -30566,7 +30594,7 @@ soBk1jasLqFBP0iXeRWx4DCRvlUrjwaTPUc7b6SwYCZkYgN1hQaWapP6Gy+w
 QFh9yksmhQbllHzFl1Ms+N7+4blYPA2SW6LijoexIM2/1eXXGRqo1eWmEgdY
 8H9Rser5
             "]]},
-          Annotation[#, "Charting`Private`Tag$15052#2"]& ], 
+          Annotation[#, "Charting`Private`Tag$15050#2"]& ], 
          TagBox[
           {RGBColor[0, 
             NCache[
@@ -30663,7 +30691,7 @@ ZQmpDLC30r40XsAB4+xnBR+PMEB1zj0mI4cDbe87PIv3MkBb9mlG5wkOrM/i
 6kjtYcBRT/3RhIMcmCmej0oMYACfm2/iyr0cSHtmJdHlwYA2ZpXJfyEcSOht
 Wq3vyIDgZV/sTbw48H/zJtM2
             "]]},
-          Annotation[#, "Charting`Private`Tag$15052#3"]& ], 
+          Annotation[#, "Charting`Private`Tag$15050#3"]& ], 
          TagBox[
           {RGBColor[0, 
             NCache[
@@ -30761,7 +30789,7 @@ uGVYfaJjFgclP49KCVdRRwQPXlThoJrfqyO+kA9f3ZzBowocyLluic7W4cNN
 r+fYtkkcnHBKlDFS42PlwphSSx4HPhL9r5vl+Zhf2XJiuhgHw6P8Tzuk+fg/
 aw8GCQ==
             "]]},
-          Annotation[#, "Charting`Private`Tag$15052#4"]& ], 
+          Annotation[#, "Charting`Private`Tag$15050#4"]& ], 
          TagBox[
           {RGBColor[0, 
             NCache[
@@ -30858,7 +30886,7 @@ HRQ3Giy8qyRDqomD12AJHU7VhQ0fwP8fYnpOKkTl0aGT/2jo80IyuNy8uUYl
 nQ7PFdW+Z2WQwSd/ePuV23TQJFHK6clkqB1zCmUF0eHwmUazkFgyaA5HCJV5
 0yHV/0D9TDgZhJMmeo1c6dCbul3IIZQM/0Qyxgbs6PA/HjIosw==
             "]]},
-          Annotation[#, "Charting`Private`Tag$15052#5"]& ], 
+          Annotation[#, "Charting`Private`Tag$15050#5"]& ], 
          TagBox[
           {RGBColor[0, 
             NCache[
@@ -30957,7 +30985,7 @@ FN4b8AH9wXF49ysG9Nopz51S4wOl4d+DVj0M8DR34BZU5oP/AdyZARk=
             "]]},
           
           Annotation[#, 
-           "Charting`Private`Tag$15052#6"]& ], {}}, {{}, {}, {}, {}, {}, {}, \
+           "Charting`Private`Tag$15050#6"]& ], {}}, {{}, {}, {}, {}, {}, {}, \
 {}, {}}}, {{}, {}, 
         TagBox[
          {GrayLevel[0], AbsoluteThickness[1.6], Opacity[1.], 
@@ -30992,7 +31020,7 @@ QOJKCed+4hsCdL/FgTF+JLblBEmofxOI918csN2XxM3i0AHLQQKF88PqvD21
 jIk+Am0Why5VuZLYXT4mvdNLwIUZJbZcqeU/HbuY9UT7J6LeKPpG6/9qRiPp
 IbAvMJzGdiHxHz9/Rr8=
            "]]},
-         Annotation[#, "Charting`Private`Tag$15080#1"]& ]}},
+         Annotation[#, "Charting`Private`Tag$15078#1"]& ]}},
       AspectRatio->NCache[
         Rational[3, 4], 0.75],
       Axes->{True, True},
@@ -31039,13 +31067,8 @@ dB (-20 \!\(\*SubscriptBox[\(log\), \(10\)]\))", 2.5], Editable -> False],
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
    GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{0}}}],
   "Column"]], "Output",
- CellChangeTimes->{
-  3.836529393995275*^9, {3.836529552024366*^9, 3.836529581206595*^9}, 
-   3.836529631159149*^9, 3.836529874017153*^9, {3.836530079569306*^9, 
-   3.836530120348289*^9}, 3.8365303409548807`*^9, 3.836530540530583*^9, 
-   3.83653070467099*^9},
- CellLabel->
-  "Out[100]=",ExpressionUUID->"158de458-4b1b-4091-a31b-ed7e34f1e0bf"],
+ CellChangeTimes->{3.836531085030487*^9, 3.836531136294445*^9},
+ CellLabel->"Out[97]=",ExpressionUUID->"e0d519a6-ec6d-49c8-8a64-9fd8794f43d8"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -31088,7 +31111,7 @@ iZJ6WYwv+8vHBU+Hmi+SeKbvZ6lcK8PEUosCfwUJ5qlCzjx7GfbwWs1ClCTM
 f5ewe5xk6LDnvOuuJhHyspvpvlGGp2luDtIaEn2JdVKFuwzMEVqPto5EUTZ9
 hOEhA3UhbSi+kcTKndcfJPNl+Bd993Au
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$15138#1"]& ], 
+            Annotation[#, "Charting`Private`Tag$15136#1"]& ], 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -31128,7 +31151,7 @@ ycj5cwn7v/vKmioVAWc130u0RQhiLKzDh3WFwBr9pGaFbaKlu2nKQAhGQZIP
 ttirZcf4KmMhPHe5KnXE5g1SyQ0bhKCVlVRAx/YbMVncaimE/LdrRQzstROP
 yr1shIDuBXJ9sdepjZ7mbxaCh76mUyC243T5+/2OOJ9gfROC/T9fXX4i
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$15138#2"]& ], 
+            Annotation[#, "Charting`Private`Tag$15136#2"]& ], 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -31167,7 +31190,7 @@ eka9S3zrIAGEtVXf3+g1nq8655IICGsJhgl0Xfzw27gsAob+imx6qbGyL0jn
 awKGGZ/av0FfVK+dq8wm4GSyu0SJfiGc9x4VEzAft3hlFn0qOWPseDEBLFrr
 +neaedxj/jC9QIB7e231f+iR7yXGrd8S4HJ2wEqNPiGOqN1dRkBygn3FEvp/
 I251kg==
-              "]]}, Annotation[#, "Charting`Private`Tag$15138#3"]& ], 
+              "]]}, Annotation[#, "Charting`Private`Tag$15136#3"]& ], 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -31206,7 +31229,7 @@ nmOJcJiAgnSrwmR0tcjAvneUgGPPDYtT0K6TTNracwKelZreTkUfXbAYdpwi
 M9BtA+Yl6VsEcOYSe7PQvLaJX/7YIUCh6/rgDbTR9sNRsVQYWH4iHM1Gu7i8
 YMvvDQP6u3FxDjqy3M7sC/kwkLUzmc5F/wedna1m
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$15138#4"]& ], 
+            Annotation[#, "Charting`Private`Tag$15136#4"]& ], 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -31245,7 +31268,7 @@ DYWQx+jGxdx3TUICdst+2mlF77xSa1B+TsDTvX8C2tBvOgamUwcJKC/mikkX
 DGc3+00QIOVZkNNO9nvuu/bPENCYYviedEHPXITpAgHPpsd8O9DtA5Z7tcsE
 MDhJQtIv2rsUD78lgKVnot+J/g8Wr2Kz
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$15138#5"]& ], 
+            Annotation[#, "Charting`Private`Tag$15136#5"]& ], 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -31284,7 +31307,7 @@ aPYeEaAfZIWFr1STwJ+e1mtBVzc4ctLrSHCn0mNoVyUmPc4R4H3xYiltSr5r
 p9J9EvI/S3FsRddoPhUVtZNQJdyfS/txKTWs0UUCZ2h2iHaO4EvPChEJzOJG
 bSH6P/21J3E=
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$15138#6"]& ]}}, {{{}, {}, 
+            Annotation[#, "Charting`Private`Tag$15136#6"]& ]}}, {{{}, {}, 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -31323,7 +31346,7 @@ hEGNo/9QJHLSbCCyg0aEXvw+TwUmcd5QLTKV0nBjnRAHKTGJluCupaiFRk1d
 THi8GpPcu7VhntNM48joncrUJUzSLs8jRo007tWFWedqMEnWfbWUvt9ozDo+
 ZBZpMsnZW5GO+bU01mWX6lZoM8m/TN2J5g==
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$15190#1"]& ]}}}, {
+            Annotation[#, "Charting`Private`Tag$15188#1"]& ]}}}, {
         DisplayFunction -> Identity, AspectRatio -> 1, Axes -> {True, True}, 
          AxesLabel -> {None, None}, AxesOrigin -> {0, 0}, DisplayFunction :> 
          Identity, Frame -> {{True, True}, {True, True}}, FrameLabel -> {{
@@ -31354,52 +31377,52 @@ effects\\nparameters of LIGO Voyager\"", TraditionalForm]}},
             FormBox[
              TemplateBox[{
                InterpretationBox[
-               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \
-\\(kout\\)]\\)\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
+               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Omega]s\\)]\\)\
+\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
 \\(PD\\)]\\)=\\!\\(\\*RowBox[{\\\"\\\\\\\"0.\\\\\\\"\\\"}]\\)\"", 
                 StringForm[
-                "\!\(\*FractionBox[\(\[Chi]\), \(kout\)]\)\[Element](0,1), \!\
-\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
+                "\!\(\*FractionBox[\(\[Chi]\), \
+\(\[Omega]s\)]\)\[Element](0,1), \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
                  NumberForm[0.]], Editable -> False], 
                InterpretationBox[
-               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \
-\\(kout\\)]\\)\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
+               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Omega]s\\)]\\)\
+\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
 \\(PD\\)]\\)=\\!\\(\\*RowBox[{\\\"\\\\\\\"0.1\\\\\\\"\\\"}]\\)\"", 
                 StringForm[
-                "\!\(\*FractionBox[\(\[Chi]\), \(kout\)]\)\[Element](0,1), \!\
-\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
+                "\!\(\*FractionBox[\(\[Chi]\), \
+\(\[Omega]s\)]\)\[Element](0,1), \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
                  NumberForm[0.1]], Editable -> False], 
                InterpretationBox[
-               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \
-\\(kout\\)]\\)\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
+               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Omega]s\\)]\\)\
+\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
 \\(PD\\)]\\)=\\!\\(\\*RowBox[{\\\"\\\\\\\"0.2\\\\\\\"\\\"}]\\)\"", 
                 StringForm[
-                "\!\(\*FractionBox[\(\[Chi]\), \(kout\)]\)\[Element](0,1), \!\
-\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
+                "\!\(\*FractionBox[\(\[Chi]\), \
+\(\[Omega]s\)]\)\[Element](0,1), \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
                  NumberForm[0.2]], Editable -> False], 
                InterpretationBox[
-               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \
-\\(kout\\)]\\)\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
+               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Omega]s\\)]\\)\
+\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
 \\(PD\\)]\\)=\\!\\(\\*RowBox[{\\\"\\\\\\\"0.3\\\\\\\"\\\"}]\\)\"", 
                 StringForm[
-                "\!\(\*FractionBox[\(\[Chi]\), \(kout\)]\)\[Element](0,1), \!\
-\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
+                "\!\(\*FractionBox[\(\[Chi]\), \
+\(\[Omega]s\)]\)\[Element](0,1), \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
                  NumberForm[0.30000000000000004`]], Editable -> False], 
                InterpretationBox[
-               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \
-\\(kout\\)]\\)\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
+               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Omega]s\\)]\\)\
+\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
 \\(PD\\)]\\)=\\!\\(\\*RowBox[{\\\"\\\\\\\"0.4\\\\\\\"\\\"}]\\)\"", 
                 StringForm[
-                "\!\(\*FractionBox[\(\[Chi]\), \(kout\)]\)\[Element](0,1), \!\
-\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
+                "\!\(\*FractionBox[\(\[Chi]\), \
+\(\[Omega]s\)]\)\[Element](0,1), \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
                  NumberForm[0.4]], Editable -> False], 
                InterpretationBox[
-               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \
-\\(kout\\)]\\)\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
+               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Omega]s\\)]\\)\
+\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
 \\(PD\\)]\\)=\\!\\(\\*RowBox[{\\\"\\\\\\\"0.5\\\\\\\"\\\"}]\\)\"", 
                 StringForm[
-                "\!\(\*FractionBox[\(\[Chi]\), \(kout\)]\)\[Element](0,1), \!\
-\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
+                "\!\(\*FractionBox[\(\[Chi]\), \
+\(\[Omega]s\)]\)\[Element](0,1), \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
                  NumberForm[0.5]], Editable -> False]}, "LineLegend", 
               DisplayFunction -> (StyleBox[
                 StyleBox[
@@ -31955,13 +31978,13 @@ c\\)]\\)=\\!\\(\\*RowBox[{\\\"\\\\\\\"1.\\\\\\\"\\\"}]\\)\"",
             FormBox[
              TemplateBox[{
                InterpretationBox[
-               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(kout\\)]\\)=1, \
+               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Omega]s\\)]\\)=1, \
 varying \\!\\(\\*SubscriptBox[\\(R\\), \
 \\(PD\\)]\\)\[Element](\\!\\(\\*RowBox[{\\\"\\\\\\\"0.\\\\\\\"\\\"}]\\),\\!\\(\
 \\*RowBox[{\\\"\\\\\\\"0.5\\\\\\\"\\\"}]\\))\"", 
                 StringForm[
-                "\!\(\*FractionBox[\(\[Chi]\), \(kout\)]\)=1, varying \
-\!\(\*SubscriptBox[\(R\), \(PD\)]\)\[Element](``,``)", 
+                "\!\(\*FractionBox[\(\[Chi]\), \(\[Omega]s\)]\)=1, varying \!\
+\(\*SubscriptBox[\(R\), \(PD\)]\)\[Element](``,``)", 
                  NumberForm[0.], 
                  NumberForm[0.5]], Editable -> False]}, "LineLegend", 
               DisplayFunction -> (StyleBox[
@@ -32005,7 +32028,8 @@ varying \\!\\(\\*SubscriptBox[\\(R\\), \
                     "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
                     GridBoxAlignment -> {
                     "Columns" -> {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> 
-                    False, GridBoxItemSize -> {
+                    False, 
+                    GridBoxItemSize -> {
                     "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
                     GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0}}}],
                     "Grid"], Alignment -> Left, AppearanceElements -> None, 
@@ -32126,7 +32150,7 @@ k3nTI4eE94T/zCgIHF/c3v/kOgm/7SsMo+UEpk3M0rl5JFI1l6e/ayAQx3pm
 5FtM4uDp8tvDrQQ6bOkfu0u/dReHu0dBoF3iwgi5T8KaqeU53E3A9IPKi76H
 JLTt5u7s6SVAXZH076kmMehrIh5REvgXFjp4pA==
            "]]},
-         Annotation[#, "Charting`Private`Tag$15227#1"]& ], 
+         Annotation[#, "Charting`Private`Tag$15225#1"]& ], 
         TagBox[
          {RGBColor[0, 
            NCache[
@@ -32161,7 +32185,7 @@ el2bSUMxGDs562ijtYe+EqroYmDuWe7SQAf2aynMzMRw4uik73sX/M/zLSvb
 LcXQdtlUdwW9aaK+iG2NeY5p9zLaSH0kT2gnhly+MncJ7TBd9M9hBzFo3zrr
 u4D+H75AUEg=
            "]]},
-         Annotation[#, "Charting`Private`Tag$15227#2"]& ], 
+         Annotation[#, "Charting`Private`Tag$15225#2"]& ], 
         TagBox[
          {RGBColor[0, 
            NCache[
@@ -32195,7 +32219,7 @@ JSCr45J5KtrOf7R+TkaA68OLLcfQNyRd0+ITBKhXxu2RmTzZGmJ2moB57pBL
 IvqycdNcqZKAnDCO5RH0G9EC86mKgKoj+rY49KmkjIHjFwjoyHlcFWv680XM
 79YFBJhHPlZJ0d0/aq1qrxDwa29dggR9UhV5PayIgKn1qr1i9H+zdXL7
            "]]},
-         Annotation[#, "Charting`Private`Tag$15227#3"]& ], 
+         Annotation[#, "Charting`Private`Tag$15225#3"]& ], 
         TagBox[
          {RGBColor[0, 
            NCache[
@@ -32229,7 +32253,7 @@ bnctAZ0yJv176l+2Jn1ohICsoiy1HL25sDhyyTgBTi63HSkHrC/4xmGSgHRy
 XHkG3dppX5JjIIDhy/suDy1rfXqufp6A8gjB7Gn0R3N3nmiMJODmJthP2cvr
 RRTdRAKWC3h9p9Bx5cJNH9Ml4Fhq7k35X7lXhe4=
            "]]},
-         Annotation[#, "Charting`Private`Tag$15227#4"]& ], 
+         Annotation[#, "Charting`Private`Tag$15225#4"]& ], 
         TagBox[
          {RGBColor[0, 
            NCache[
@@ -32263,7 +32287,7 @@ MTbcyGfotemdPxg9JIDMEptQnrvTPZrdQ4C6XfrbOLq0r0gZOkxAE03Bodyg
 uhrQ9QcB6dpXNsaou2oixmkK9/9bd4tya7f7Vu0LAvZOXoqj/Ki1Tf+jeQK8
 lcWWlP8H8bIrHg==
            "]]},
-         Annotation[#, "Charting`Private`Tag$15227#5"]& ], 
+         Annotation[#, "Charting`Private`Tag$15225#5"]& ], 
         TagBox[
          {RGBColor[0, 
            NCache[
@@ -32297,7 +32321,7 @@ Y4oIeF322DQe3XaVE/yhlIBD0uG/r6BLaxxj4qsICLSd/5Xy/ciogdQGAugJ
 KoqUSSWBtvJDApaSNcg4dJnuiPDnJwR0XNKIpTxQSA7pCAjgs1UsKac2XDhe
 JCTgsZmc5DL6P14zEJI=
            "]]},
-         Annotation[#, "Charting`Private`Tag$15227#6"]& ]}, {{}, {}, 
+         Annotation[#, "Charting`Private`Tag$15225#6"]& ]}, {{}, {}, 
         TagBox[
          {GrayLevel[0], AbsoluteThickness[1.6], Opacity[1.], 
           Dashing[{Small, Small}], FaceForm[Opacity[0.3]], 
@@ -32332,7 +32356,7 @@ WNItAQhAFHezNarKWb9RDDQcRgcIQLmvKvtmyFm//ofSp1IKCEDQ+JzAI8ZZ
 vyGv9ndfDQhAk7oKhuDDWb+qiqyMbBAIQIevc0udwVm/uCYA5nkTCEBkwFvv
 
            "]]},
-         Annotation[#, "Charting`Private`Tag$15255#1"]& ]}},
+         Annotation[#, "Charting`Private`Tag$15253#1"]& ]}},
       AspectRatio->NCache[
         Rational[3, 4], 0.75],
       Axes->{True, True},
@@ -32379,13 +32403,8 @@ dB (-20 \!\(\*SubscriptBox[\(log\), \(10\)]\))", 2.5], Editable -> False],
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
    GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{0}}}],
   "Column"]], "Output",
- CellChangeTimes->{
-  3.836529393995275*^9, {3.836529552024366*^9, 3.836529581206595*^9}, 
-   3.836529631159149*^9, 3.836529874017153*^9, {3.836530079569306*^9, 
-   3.836530120348289*^9}, 3.8365303409548807`*^9, 3.836530540530583*^9, 
-   3.836530705013681*^9},
- CellLabel->
-  "Out[101]=",ExpressionUUID->"c863d370-add6-455a-8b4f-ccec144927e7"],
+ CellChangeTimes->{3.836531085030487*^9, 3.836531136644248*^9},
+ CellLabel->"Out[98]=",ExpressionUUID->"8e430d90-9000-4a1d-b9fa-d9f618d4ddc3"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -32482,7 +32501,7 @@ Yo/9E/vzMKr5ZOLkcIQL1XsiH0aQ+YR6bz/e48aFxkXjLW9zMCo3OfS/O6e4
 kDn1aUiRuChSS7T1NBc6zq2u3pdN8llyz3ChPxecl3RaBV0n82Tf5YPrWCT+
 aSoji8y//wMRPFDh
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$15313#1"]& ], 
+            Annotation[#, "Charting`Private`Tag$15311#1"]& ], 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -32569,7 +32588,7 @@ V1pUX8cgrmueMY+4931sXdMrBkH2AtFwYu2r/eJsG4PnfvqiycRyZtTiLgED
 hZhmowzi0yZnr3zqYuA0FZ6YQ+xhrePX30Pqn2Eyq5i4ajYnYegLA90uuQcV
 xP8HJfJuhA==
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$15313#2"]& ], 
+            Annotation[#, "Charting`Private`Tag$15311#2"]& ], 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -32657,7 +32676,7 @@ wQJe5aNTTGzF+DFa9SYWJHBeH4ig6nnNSe/WZYGEut8CtX+HEty/iJrj+w26
 LqUeNO3EAu0R44Ey7L06G4r/58aC08NppZXYE7OzKuIHsFvfxtdQ+8Uuf/76
 IRZE6EgF38X+P2h0Kv8=
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$15313#3"]& ], 
+            Annotation[#, "Charting`Private`Tag$15311#3"]& ], 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -32742,7 +32761,7 @@ RDR0M1KRBR6vzuuoQvejPZ6VgXwjveo4pQmH4kE3u1yyP32w/ezVgkMct0qW
 7HeDB1TbYwCHpdHRT/nIgd1OZtyHOOQT/P8WkfOl1czyOnEwS/0RT/bLdbs1
 RgSfofFZvRFlyHpjfatVXuBw2q0spByZ/qMwxrQHjdcO+LsC+X9zSWRR
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$15313#4"]& ], 
+            Annotation[#, "Charting`Private`Tag$15311#4"]& ], 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -32825,7 +32844,7 @@ eWRdGd7fBTEbFSkWD3ZvKTmugKyxVSSWpHhwoLpMDO9/1GvdAtUQHtRWiQUo
 Ij8LLvQ5F8EDhUBXDfxeFPUu3RiI5kFL4uZxbKFRPTODeB6wdpwsw++NU76V
 d2YiD0aDJcM2Iv8f4Tdxag==
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$15313#5"]& ], 
+            Annotation[#, "Charting`Private`Tag$15311#5"]& ], 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -32905,7 +32924,7 @@ bFI4FAgP57ngffHrvsmTpygwGnnegR1+M6c/7iAFxaMCz+PIbBeZxtkACswz
 AwewE7cI5UOPUkCrfg7B+/gfIhdEVw==
               "]]}, 
             Annotation[#, 
-             "Charting`Private`Tag$15313#6"]& ], {}}, {{}, {}, {}, {}, {}, \
+             "Charting`Private`Tag$15311#6"]& ], {}}, {{}, {}, {}, {}, {}, \
 {}, {}, {}}}, {{{}, {}, 
            TagBox[{
              Directive[
@@ -32945,7 +32964,7 @@ ouGScKS0K48ikzfvHX/4G43sl+a1/YUUOWP+va/LRRq8ytG86WKKGGQW2/sm
 tKhwxOk+RWrcJ3LNTtC4EGMw5NlIkcr2vWsnomh0zBsZs/+mSIKeLK1cQuO7
 TdUlvMcUOe/Qx5SIaNxb814c3UqRfwEpT4cU
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$15365#1"]& ]}}}, {
+            Annotation[#, "Charting`Private`Tag$15363#1"]& ]}}}, {
         DisplayFunction -> Identity, AspectRatio -> 1, Axes -> {True, True}, 
          AxesLabel -> {None, None}, AxesOrigin -> {0, 0}, DisplayFunction :> 
          Identity, Frame -> {{True, True}, {True, True}}, FrameLabel -> {{
@@ -32976,52 +32995,52 @@ effects\\nparameters of LIGO Voyager\"", TraditionalForm]}},
             FormBox[
              TemplateBox[{
                InterpretationBox[
-               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \
-\\(kout\\)]\\)\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
+               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Omega]s\\)]\\)\
+\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
 \\(PD\\)]\\)=\\!\\(\\*RowBox[{\\\"\\\\\\\"0.\\\\\\\"\\\"}]\\)\"", 
                 StringForm[
-                "\!\(\*FractionBox[\(\[Chi]\), \(kout\)]\)\[Element](0,1), \!\
-\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
+                "\!\(\*FractionBox[\(\[Chi]\), \
+\(\[Omega]s\)]\)\[Element](0,1), \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
                  NumberForm[0.]], Editable -> False], 
                InterpretationBox[
-               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \
-\\(kout\\)]\\)\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
+               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Omega]s\\)]\\)\
+\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
 \\(PD\\)]\\)=\\!\\(\\*RowBox[{\\\"\\\\\\\"0.1\\\\\\\"\\\"}]\\)\"", 
                 StringForm[
-                "\!\(\*FractionBox[\(\[Chi]\), \(kout\)]\)\[Element](0,1), \!\
-\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
+                "\!\(\*FractionBox[\(\[Chi]\), \
+\(\[Omega]s\)]\)\[Element](0,1), \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
                  NumberForm[0.1]], Editable -> False], 
                InterpretationBox[
-               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \
-\\(kout\\)]\\)\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
+               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Omega]s\\)]\\)\
+\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
 \\(PD\\)]\\)=\\!\\(\\*RowBox[{\\\"\\\\\\\"0.2\\\\\\\"\\\"}]\\)\"", 
                 StringForm[
-                "\!\(\*FractionBox[\(\[Chi]\), \(kout\)]\)\[Element](0,1), \!\
-\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
+                "\!\(\*FractionBox[\(\[Chi]\), \
+\(\[Omega]s\)]\)\[Element](0,1), \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
                  NumberForm[0.2]], Editable -> False], 
                InterpretationBox[
-               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \
-\\(kout\\)]\\)\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
+               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Omega]s\\)]\\)\
+\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
 \\(PD\\)]\\)=\\!\\(\\*RowBox[{\\\"\\\\\\\"0.3\\\\\\\"\\\"}]\\)\"", 
                 StringForm[
-                "\!\(\*FractionBox[\(\[Chi]\), \(kout\)]\)\[Element](0,1), \!\
-\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
+                "\!\(\*FractionBox[\(\[Chi]\), \
+\(\[Omega]s\)]\)\[Element](0,1), \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
                  NumberForm[0.30000000000000004`]], Editable -> False], 
                InterpretationBox[
-               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \
-\\(kout\\)]\\)\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
+               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Omega]s\\)]\\)\
+\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
 \\(PD\\)]\\)=\\!\\(\\*RowBox[{\\\"\\\\\\\"0.4\\\\\\\"\\\"}]\\)\"", 
                 StringForm[
-                "\!\(\*FractionBox[\(\[Chi]\), \(kout\)]\)\[Element](0,1), \!\
-\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
+                "\!\(\*FractionBox[\(\[Chi]\), \
+\(\[Omega]s\)]\)\[Element](0,1), \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
                  NumberForm[0.4]], Editable -> False], 
                InterpretationBox[
-               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \
-\\(kout\\)]\\)\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
+               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Omega]s\\)]\\)\
+\[Element](0,1), \\!\\(\\*SubscriptBox[\\(R\\), \
 \\(PD\\)]\\)=\\!\\(\\*RowBox[{\\\"\\\\\\\"0.5\\\\\\\"\\\"}]\\)\"", 
                 StringForm[
-                "\!\(\*FractionBox[\(\[Chi]\), \(kout\)]\)\[Element](0,1), \!\
-\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
+                "\!\(\*FractionBox[\(\[Chi]\), \
+\(\[Omega]s\)]\)\[Element](0,1), \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", 
                  NumberForm[0.5]], Editable -> False]}, "LineLegend", 
               DisplayFunction -> (StyleBox[
                 StyleBox[
@@ -33576,13 +33595,13 @@ c\\)]\\)=\\!\\(\\*RowBox[{\\\"\\\\\\\"0.1\\\\\\\"\\\"}]\\)\"",
             FormBox[
              TemplateBox[{
                InterpretationBox[
-               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(kout\\)]\\)=1, \
+               "\"\\!\\(\\*FractionBox[\\(\[Chi]\\), \\(\[Omega]s\\)]\\)=1, \
 varying \\!\\(\\*SubscriptBox[\\(R\\), \
 \\(PD\\)]\\)\[Element](\\!\\(\\*RowBox[{\\\"\\\\\\\"0.\\\\\\\"\\\"}]\\),\\!\\(\
 \\*RowBox[{\\\"\\\\\\\"0.5\\\\\\\"\\\"}]\\))\"", 
                 StringForm[
-                "\!\(\*FractionBox[\(\[Chi]\), \(kout\)]\)=1, varying \
-\!\(\*SubscriptBox[\(R\), \(PD\)]\)\[Element](``,``)", 
+                "\!\(\*FractionBox[\(\[Chi]\), \(\[Omega]s\)]\)=1, varying \!\
+\(\*SubscriptBox[\(R\), \(PD\)]\)\[Element](``,``)", 
                  NumberForm[0.], 
                  NumberForm[0.5]], Editable -> False]}, "LineLegend", 
               DisplayFunction -> (StyleBox[
@@ -33770,7 +33789,7 @@ qGvtuC6fwvzzXOj2l5400liDy9aM2z9a+Hj50qjc37sjhvH+4RsDtsE05vz1
 /W8ybrTwVOsMo2GXttpzkrHwlEG/cTSNUX7BrnWpBJSY7Xh9HI0bIbk/GDK+
 65B7UINNY+P4b20ejP8H/D6cZA==
             "]]},
-          Annotation[#, "Charting`Private`Tag$15402#1"]& ], 
+          Annotation[#, "Charting`Private`Tag$15400#1"]& ], 
          TagBox[
           {RGBColor[0, 
             NCache[
@@ -33830,7 +33849,7 @@ bmuiYNVAnCAUO802423XPQqI6cRET2x752ZJzwMKGpa8FTZjjw8df/D4EQW2
 JpUtHGzr4kkl+g8KUloNC+2x2W6ExZ8MBSZNHo022Fmc3HOjf1KQ91RnyRI7
 0tsmYXKEAnHIyUgz7Fs6fPH0Kwq08nomDLH/BaXFgU0=
             "]]},
-          Annotation[#, "Charting`Private`Tag$15402#2"]& ], 
+          Annotation[#, "Charting`Private`Tag$15400#2"]& ], 
          TagBox[
           {RGBColor[0, 
             NCache[
@@ -33890,7 +33909,7 @@ Pu3zhC16YEHBd5vmD63Dfpl08C3XnoJaQULfamzr01NX5HsoeFw/bsrBNpBG
 54scKdDam5+q/ukejZwUX3cKBDpPJWxs+3X8CNqTAvXzoSosbDfhxuKT3hQ4
 lLjJl17Q6O+pKWMdXwqahzO9F7CFLnlz145Q8O+CmcFH7P8D3OyZKw==
             "]]},
-          Annotation[#, "Charting`Private`Tag$15402#3"]& ], 
+          Annotation[#, "Charting`Private`Tag$15400#3"]& ], 
          TagBox[
           {RGBColor[0, 
             NCache[
@@ -33950,7 +33969,7 @@ kjjBfrBIIGcgZlwVN0GsNbsoMLWMgaSaU0+eEbPu6BR0VzEQZ+6hUBFfyary
 ahp6+E9e5rVXytsMtD5eWDJIvMzCanjhrwwcjJkTPyC2U/XrmN1nIF+a4zlA
 LPizKMm1l4Em2ZjV78R/A4OUdqc=
             "]]},
-          Annotation[#, "Charting`Private`Tag$15402#4"]& ], 
+          Annotation[#, "Charting`Private`Tag$15400#4"]& ], 
          TagBox[
           {RGBColor[0, 
             NCache[
@@ -34010,7 +34029,7 @@ eunEb5f6WBpzhBBXxA48RsxYv1gsoISg21zYkEac1mN7fm2SEHI2jHCPEv98
 qDrqmEgIi37R60olrul/d3Y4XQjduan2Wus8cXB3zhLCN+W7q0TEwTJvdlmu
 EERrE020/hccJS/E
             "]]},
-          Annotation[#, "Charting`Private`Tag$15402#5"]& ], 
+          Annotation[#, "Charting`Private`Tag$15400#5"]& ], 
          TagBox[
           {RGBColor[0, 
             NCache[
@@ -34024,8 +34043,8 @@ EERrE020/hccJS/E
             3.01029985064745}, {-1.85634888621874*^-8, 
             3.0102995326712882`}, {-7.425398221187503*^-8, 
             3.0102982607804596`}, {-2.9701626833936937`*^-7, 
-            3.0102931734381917`}, {-1.1880705245132335`*^-6, 
-            3.01027282760586}, {-5.160529607695651*^-6, 
+            3.0102931734381917`}, {-1.1880705245132335`*^-6, 3.01027282760586}
+            , {-5.160529607695651*^-6, 
             3.01018219382044}, {-0.000011391354466525683`, 
             3.010040268189923}, {-0.00001986442448535509, 
             3.0098477271797206`}, {-0.000031703449748583385`, 
@@ -34072,7 +34091,7 @@ frfKIO4YDdP56s512P8Aklg5+g==
             "]]},
           
           Annotation[#, 
-           "Charting`Private`Tag$15402#6"]& ], {}}, {{}, {}, {}, {}, {}, {}, \
+           "Charting`Private`Tag$15400#6"]& ], {}}, {{}, {}, {}, {}, {}, {}, \
 {}, {}}}, {{}, {}, 
         TagBox[
          {GrayLevel[0], AbsoluteThickness[1.6], Opacity[1.], 
@@ -34107,7 +34126,7 @@ jJQTeK/CoKfmkODWFFXKzyfw6JW7e+6fIaGyNGzD/gICH3FfERmcQYKuOCwk
 KgJnZckWxUpJSE+xm6WrJXBN6IjS7QAJfkY1eRN1BK58uv77kX0kRC/ujzOu
 J/Bxh9zMcvHXn/GZQ1aNBD65rt9CLCJhvOBVJ62ZwP8B1VtjVw==
            "]]},
-         Annotation[#, "Charting`Private`Tag$15430#1"]& ]}},
+         Annotation[#, "Charting`Private`Tag$15428#1"]& ]}},
       AspectRatio->NCache[
         Rational[3, 4], 0.75],
       Axes->{True, True},
@@ -34154,13 +34173,8 @@ dB (-20 \!\(\*SubscriptBox[\(log\), \(10\)]\))", 0.1], Editable -> False],
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
    GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{0}}}],
   "Column"]], "Output",
- CellChangeTimes->{
-  3.836529393995275*^9, {3.836529552024366*^9, 3.836529581206595*^9}, 
-   3.836529631159149*^9, 3.836529874017153*^9, {3.836530079569306*^9, 
-   3.836530120348289*^9}, 3.8365303409548807`*^9, 3.836530540530583*^9, 
-   3.836530705590632*^9},
- CellLabel->
-  "Out[102]=",ExpressionUUID->"22e1a78b-63e8-492b-a06a-8d4579b85566"],
+ CellChangeTimes->{3.836531085030487*^9, 3.836531137146203*^9},
+ CellLabel->"Out[99]=",ExpressionUUID->"af91cc91-0db9-4829-ac82-73cb9b4e20f4"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -34273,7 +34287,7 @@ dH9mD1Xu4OIj+C2Jio8CN1y9/7SsBw/srXeucpwPXqy6WflMCJ4Jn6l0l4YH
 1QK+umIrX2HJh+8jjevqnBVyRWHfah4buDIht/qvHZz8sNRPxgHrvVqfyV9w
 RH7wz+vqEWd4H907v70uRPMQ/Sx/8gLcc3Jp9YorXGK7Uf3kIvr/F/V4UpI=
 
-              "]]}, Annotation[#, "Charting`Private`Tag$15498#1"]& ], 
+              "]]}, Annotation[#, "Charting`Private`Tag$15496#1"]& ], 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -34529,7 +34543,7 @@ qEx/2CF+IYuYMOjyNlbZec4PMgJjsmbMGRRp00hwifGFuy8SnOVOMqhj1Hu5
 5szhA8OS3YqqVgwGnx8y3p/lDZWqP39fsWaw4kLlDuasN8SfmM5KtWHVC/es
 YRf2hv8BmC7+3Q==
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$15498#2"]& ], 
+            Annotation[#, "Charting`Private`Tag$15496#2"]& ], 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -34782,7 +34796,7 @@ u36WRyzF21ePBeSHFEOLx8TM6eO6PQrm1Mm2xVAR9kEmjKOYtMB61ciMAP4D
 /LUxvw==
               "]]}, 
             Annotation[#, 
-             "Charting`Private`Tag$15498#3"]& ], {}}, {{}, {}, {}, {}, {}}}, \
+             "Charting`Private`Tag$15496#3"]& ], {}}, {{}, {}, {}, {}, {}}}, \
 {}, {}}, {Ticks -> {
            Charting`ScaledTicks[{Log, Exp}], Automatic}, 
          GridLines -> {None, None}, FrameTicks -> {{Automatic, Automatic}, {
@@ -34843,36 +34857,36 @@ u36WRyzF21ePBeSHFEOLx8TM6eO6PQrm1Mm2xVAR9kEmjKOYtMB61ciMAP4D
          TemplateBox[{
            StyleBox[
             InterpretationBox[
-            "\"\[Chi]/\[Kappa]=0.  ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+            "\"\[Chi]/\[Omega]s=0.  ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
 a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0.1 , \
 \\!\\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
              StringForm[
-             "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
+             "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
 \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, c\)]\
 \)=``, \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", "0.  ", "0   ", "0   ", 
               "0.1 ", "0   "], Editable -> False], FontFamily -> "Monospace", 
             StripOnInput -> False], 
            StyleBox[
             InterpretationBox[
-            "\"\[Chi]/\[Kappa]=0.4 ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+            "\"\[Chi]/\[Omega]s=0.4 ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
 a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0.1 , \
 \\!\\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
              StringForm[
-             "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
+             "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
 \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, c\)]\
 \)=``, \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", "0.4 ", "0   ", "0   ", 
               "0.1 ", "0   "], Editable -> False], FontFamily -> "Monospace", 
             StripOnInput -> False], 
            StyleBox[
             InterpretationBox[
-            "\"\[Chi]/\[Kappa]=0.8 ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+            "\"\[Chi]/\[Omega]s=0.8 ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
 a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0.1 , \
 \\!\\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
              StringForm[
-             "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
+             "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
 \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, c\)]\
 \)=``, \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", "0.8 ", "0   ", "0   ", 
               "0.1 ", "0   "], Editable -> False], FontFamily -> "Monospace", 
@@ -35354,7 +35368,7 @@ j4xfNcmeAn2HR6p4FoygMiG/+s8xCqiHrv96NmcEybfu+Cu6UODUiNzw8k8j
 8GmtUXV3pUBlCI0ig7x76WV1/wkKpCTfK7syYwTcPAP+nG5o/EKZMzXTRjAj
 91VVz50C47OtkRM/jOCF3uxi0CkKnEu44kNEvu2wWv3AgwL+FK0H1Ckj+B99
 k+d1
-              "]]}, Annotation[#, "Charting`Private`Tag$15569#1"]& ], 
+              "]]}, Annotation[#, "Charting`Private`Tag$15567#1"]& ], 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -35553,7 +35567,7 @@ jDmGQVnEnYfi4pEStS4xMhOSs7568rg6Pd2sv1OM49dTg2du4LFlr2HhDMb+
 xdnmPht5PGxYG7u1Q4wZ/eVZld48Rgz9eN/QLsZPKjXB47bw0NMPCtNm3DWl
 xXyxDw/lX7NWOLWJUba4+8u+rTxqT4u9E1rFuOExlHXLl9kvyM590iLGf3yB
 Vw8=
-              "]]}, Annotation[#, "Charting`Private`Tag$15569#2"]& ], 
+              "]]}, Annotation[#, "Charting`Private`Tag$15567#2"]& ], 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -35740,7 +35754,7 @@ DxHZdg1oIkDdCFcyCNVJQO4q5DZEaSJAIhAvilzUSUDMRO/2emoiQP/WzPiw
 00lAq176trFrIkBtvgx+BdNJQJfBukc=
               "]]}, 
             Annotation[#, 
-             "Charting`Private`Tag$15569#3"]& ], {}}, {{}, {}, {}, {}, {}}}, \
+             "Charting`Private`Tag$15567#3"]& ], {}}, {{}, {}, {}, {}, {}}}, \
 {}, {}}, {Ticks -> {
            Charting`ScaledTicks[{Log, Exp}], 
            Charting`ScaledTicks[{Log, Exp}]}, GridLines -> {None, None}, 
@@ -35808,24 +35822,24 @@ DxHZdg1oIkDdCFcyCNVJQO4q5DZEaSJAIhAvilzUSUDMRO/2emoiQP/WzPiw
          TemplateBox[{
            StyleBox[
             InterpretationBox[
-            "\"\[Chi]/\[Kappa]=0.  ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+            "\"\[Chi]/\[Omega]s=0.  ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
 a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0.1 , \
 \\!\\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
              StringForm[
-             "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
+             "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
 \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, c\)]\
 \)=``, \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", "0.  ", "0   ", "0   ", 
               "0.1 ", "0   "], Editable -> False], FontFamily -> "Monospace", 
             StripOnInput -> False], 
            StyleBox[
             InterpretationBox[
-            "\"\[Chi]/\[Kappa]=0.4 ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+            "\"\[Chi]/\[Omega]s=0.4 ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
 a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0.1 , \
 \\!\\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
              StringForm[
-             "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
+             "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
 \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, c\)]\
 \)=``, \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", "0.4 ", "0   ", "0   ", 
               "0.1 ", "0   "], Editable -> False], FontFamily -> "Monospace", 
@@ -35833,12 +35847,12 @@ a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
            StyleBox[
             InterpretationBox[
             
-            "\"\[Chi]/\[Kappa]=0.8 ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+            "\"\[Chi]/\[Omega]s=0.8 ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
 a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0.1 , \
 \\!\\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
              StringForm[
-             "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
+             "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
 \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, c\)]\
 \)=``, \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", "0.8 ", "0   ", "0   ", 
               "0.1 ", "0   "], Editable -> False], FontFamily -> "Monospace", 
@@ -36321,7 +36335,7 @@ P/gwFdwOvtaOXTAigmcd1B/aUmF9gu/D6nkjYqe8XxXZngo9h4Yq+eeMiIqE
 sqr3OBVSku+VXp4yInj5+/y53dH4RTOnqieNiCnFr+r6HlQYnW6OHPthRLzQ
 n54POkGFswmXfUjItx2Wqx54UsGfqvOANmFE/A+IlCaX
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$15643#1"]& ], 
+            Annotation[#, "Charting`Private`Tag$15641#1"]& ], 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -36511,7 +36525,7 @@ pDuFgRv2M2AdQyVgccSc9Kst0/I8wADbKpX3Osjrf7WW9hxkwFzCLq+ib+ak
 iGhfoJAHA/qSUi+PDJmTP1S/aBl5MsBs6NHsCuQWo4m5YC8G7GLTu7rvqzl5
 12Wh9IE3A4YdKoIzv5iT/wGwCbHu
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$15643#2"]& ], 
+            Annotation[#, "Charting`Private`Tag$15641#2"]& ], 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -36678,7 +36692,7 @@ e9BBv5otTAY5uKVO29eTDjfs2VbD+hhM1d8v7/d5o/HOCZrT3zKYgkLvwvh9
 6LDw+itveC8a/8b/tE186SC8Kevjyx4Gs9NkdiHSjw7v4X27LPItl6X79/zp
 0OfR9CSim8H8H+vhuMM=
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$15643#3"]& ], 
+            Annotation[#, "Charting`Private`Tag$15641#3"]& ], 
            TagBox[{
              Directive[
               Opacity[1.], 
@@ -36692,7 +36706,7 @@ fA+9/GVaCQi+cZIQm/RrBF9i0U/tnY2ycP7iqMT9sXxycP6HPV0dDjMQfHPt
 H+IXdeXhfBWhZyIZOxH8NiaenDANBTh/w0sPrXJfBP/2hdYX04sQ/NbgENGX
 zQi+/jUlJ6upCH7Uvvch/tMQ/Ck7Jfa3IfEBNqa2GA==
               "]]}, 
-            Annotation[#, "Charting`Private`Tag$15643#4"]& ]}}, {}, {}}, {
+            Annotation[#, "Charting`Private`Tag$15641#4"]& ]}}, {}, {}}, {
         Ticks -> {
            Charting`ScaledTicks[{Log, Exp}], 
            Charting`ScaledTicks[{Log, Exp}]}, GridLines -> {None, None}, 
@@ -36764,36 +36778,36 @@ zQi+/jUlJ6upCH7Uvvch/tMQ/Ck7Jfa3IfEBNqa2GA==
          TemplateBox[{
            StyleBox[
             InterpretationBox[
-            "\"\[Chi]/\[Kappa]=0.  ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+            "\"\[Chi]/\[Omega]s=0.  ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
 a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0.1 , \
 \\!\\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
              StringForm[
-             "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
+             "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
 \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, c\)]\
 \)=``, \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", "0.  ", "0   ", "0   ", 
               "0.1 ", "0   "], Editable -> False], FontFamily -> "Monospace", 
             StripOnInput -> False], 
            StyleBox[
             InterpretationBox[
-            "\"\[Chi]/\[Kappa]=0.4 ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+            "\"\[Chi]/\[Omega]s=0.4 ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
 a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0.1 , \
 \\!\\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
              StringForm[
-             "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
+             "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
 \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, c\)]\
 \)=``, \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", "0.4 ", "0   ", "0   ", 
               "0.1 ", "0   "], Editable -> False], FontFamily -> "Monospace", 
             StripOnInput -> False], 
            StyleBox[
             InterpretationBox[
-            "\"\[Chi]/\[Kappa]=0.8 ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
+            "\"\[Chi]/\[Omega]s=0.8 ; \\!\\(\\*SubscriptBox[\\(T\\), \\(l, \
 a\\)]\\)=0   , \\!\\(\\*SubscriptBox[\\(T\\), \\(l, b\\)]\\)=0   , \
 \\!\\(\\*SubscriptBox[\\(T\\), \\(l, c\\)]\\)=0.1 , \
 \\!\\(\\*SubscriptBox[\\(R\\), \\(PD\\)]\\)=0   \"", 
              StringForm[
-             "\[Chi]/\[Kappa]=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
+             "\[Chi]/\[Omega]s=``; \!\(\*SubscriptBox[\(T\), \(l, a\)]\)=``, \
 \!\(\*SubscriptBox[\(T\), \(l, b\)]\)=``, \!\(\*SubscriptBox[\(T\), \(l, c\)]\
 \)=``, \!\(\*SubscriptBox[\(R\), \(PD\)]\)=``", "0.8 ", "0   ", "0   ", 
               "0.1 ", "0   "], Editable -> False], FontFamily -> "Monospace", 
@@ -37152,13 +37166,9 @@ for 1\[Dash]4 kHz\""}, "LineLegend", DisplayFunction -> (FormBox[
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
    GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{0}}}],
   "Column"]], "Output",
- CellChangeTimes->{
-  3.836529393995275*^9, {3.836529552024366*^9, 3.836529581206595*^9}, 
-   3.836529631159149*^9, 3.836529874017153*^9, {3.836530079569306*^9, 
-   3.836530120348289*^9}, 3.8365303409548807`*^9, 3.836530540530583*^9, 
-   3.836530706348063*^9},
+ CellChangeTimes->{3.836531085030487*^9, 3.836531137890239*^9},
  CellLabel->
-  "Out[103]=",ExpressionUUID->"73437f7f-adcd-4df4-b1d3-badfd0a5e774"]
+  "Out[100]=",ExpressionUUID->"e49948f1-2905-4e57-848b-57d2cdb04b53"]
 }, Open  ]]
 },
 WindowSize->{1728, 862},
@@ -37178,70 +37188,70 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 274, 8, 125, "Text",ExpressionUUID->"075d40ea-fa8d-4f2b-babd-8770a0fbd10e"],
+Cell[558, 20, 598, 14, 161, "Text",ExpressionUUID->"075d40ea-fa8d-4f2b-babd-8770a0fbd10e"],
 Cell[CellGroupData[{
-Cell[857, 32, 58428, 1100, 2394, "Input",ExpressionUUID->"178a6746-8cba-4802-b5cf-1ad1741287d6"],
-Cell[59288, 1134, 204, 4, 36, "Print",ExpressionUUID->"b8ea5c92-afb9-41a0-a063-dc6b2465bc93"]
+Cell[1181, 38, 58783, 1107, 2428, "Input",ExpressionUUID->"178a6746-8cba-4802-b5cf-1ad1741287d6"],
+Cell[59967, 1147, 204, 4, 36, "Print",ExpressionUUID->"d3b7c16d-c00f-4152-a745-1c85be9ec1ff"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[59529, 1143, 6523, 161, 1040, "Input",ExpressionUUID->"0883ef2b-3c1f-4b86-94d2-5cfe699198ba"],
-Cell[66055, 1306, 204, 4, 36, "Print",ExpressionUUID->"418ce69d-7a4b-45c6-9823-b73533a8c979"]
+Cell[60208, 1156, 6763, 166, 1040, "Input",ExpressionUUID->"0883ef2b-3c1f-4b86-94d2-5cfe699198ba"],
+Cell[66974, 1324, 203, 4, 36, "Print",ExpressionUUID->"9d4ee6df-28cf-4d93-bf85-73f5e7120bed"]
 }, Open  ]],
-Cell[66274, 1313, 288, 6, 54, "Text",ExpressionUUID->"e9937aac-b987-4462-a6d6-6a2fa2646848"],
-Cell[66565, 1321, 34651, 849, 3581, "Input",ExpressionUUID->"f199c58f-b00b-4e35-ab51-2a4bdb445049"],
+Cell[67192, 1331, 288, 6, 54, "Text",ExpressionUUID->"e9937aac-b987-4462-a6d6-6a2fa2646848"],
+Cell[67483, 1339, 34705, 851, 3581, "Input",ExpressionUUID->"f199c58f-b00b-4e35-ab51-2a4bdb445049"],
 Cell[CellGroupData[{
-Cell[101241, 2174, 3205, 74, 490, "Input",ExpressionUUID->"272780f9-7176-40cd-b7be-8f433b7d7549"],
-Cell[104449, 2250, 107793, 1954, 810, "Output",ExpressionUUID->"ef8a1026-f565-401b-a2aa-93eec076f5b8"],
-Cell[212245, 4206, 115938, 2084, 892, "Output",ExpressionUUID->"57d1118c-d187-4d9b-9b75-cb942cf3b66e"]
+Cell[102213, 2194, 3257, 74, 490, "Input",ExpressionUUID->"272780f9-7176-40cd-b7be-8f433b7d7549"],
+Cell[105473, 2270, 107803, 1954, 810, "Output",ExpressionUUID->"f5ba13c1-d010-4028-8e4b-19e9f1fc9838"],
+Cell[213279, 4226, 115950, 2084, 892, "Output",ExpressionUUID->"d42f5832-7e21-420d-8a50-d370801916ff"]
 }, Open  ]],
-Cell[328198, 6293, 59978, 1119, 2502, "Input",ExpressionUUID->"843eb25d-6eec-4659-bbd6-0ae7c45cc287"],
+Cell[329244, 6313, 60035, 1120, 2502, "Input",ExpressionUUID->"843eb25d-6eec-4659-bbd6-0ae7c45cc287"],
 Cell[CellGroupData[{
-Cell[388201, 7416, 12046, 279, 1259, "Input",ExpressionUUID->"099af43e-d730-461d-825e-0617c033dd5b"],
-Cell[400250, 7697, 1808, 47, 59, "Print",ExpressionUUID->"a5354020-476c-401f-8db6-ef4b2b6cfcf9"],
-Cell[402061, 7746, 39205, 792, 658, "Output",ExpressionUUID->"9e7b7bff-276f-4dbb-9576-66fe8950197b"],
-Cell[441269, 8540, 104116, 1859, 658, "Output",ExpressionUUID->"74927bf3-0f5d-4efe-97e9-60ee00072b45"],
-Cell[545388, 10401, 89791, 1622, 658, "Output",ExpressionUUID->"bd54778c-9a6e-4d39-8d6d-8d675b31a769"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[635216, 12028, 12014, 306, 2056, "Input",ExpressionUUID->"0354e25c-c46a-4599-bb51-61a30edad071"],
-Cell[647233, 12336, 35989, 670, 472, "Output",ExpressionUUID->"3d70f179-dd71-4088-bddd-c5f7dbfacd24"],
-Cell[683225, 13008, 197, 3, 53, "Output",ExpressionUUID->"2d3ed081-0648-4a05-9502-4866520f15fc"],
-Cell[CellGroupData[{
-Cell[683447, 13015, 553, 11, 38, "Print",ExpressionUUID->"a45bc30e-daaa-4cbe-b047-aee6d08cbb1d"],
-Cell[684003, 13028, 679, 15, 59, "Print",ExpressionUUID->"c2e3cc56-3bbf-45ff-a35e-af63b59570de"]
-}, Open  ]],
-Cell[684697, 13046, 26974, 511, 441, "Output",ExpressionUUID->"23eab44b-d151-4a3f-853f-8f7a6d444d0c"]
+Cell[389304, 7437, 12098, 279, 1259, "Input",ExpressionUUID->"099af43e-d730-461d-825e-0617c033dd5b"],
+Cell[401405, 7718, 1808, 47, 59, "Print",ExpressionUUID->"4dbcfcd4-d859-446d-8e15-e7034843d3fc"],
+Cell[403216, 7767, 39206, 792, 658, "Output",ExpressionUUID->"8f5a7e80-7dc3-4c50-bfed-6a61aeee8f8a"],
+Cell[442425, 8561, 104115, 1859, 658, "Output",ExpressionUUID->"277a4a03-d2b7-49d6-ba4e-eaddf7b0c5e1"],
+Cell[546543, 10422, 89793, 1622, 658, "Output",ExpressionUUID->"9b9d4248-58cf-43f4-85b0-18eb23cdc9cd"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[711708, 13562, 5939, 137, 595, "Input",ExpressionUUID->"16be657a-a5f0-43ba-9edd-9361507244e0"],
-Cell[717650, 13701, 149, 2, 53, "Output",ExpressionUUID->"a1cb9f8a-8073-4f4d-82e7-a8f8e46a00b2"]
-}, Open  ]],
-Cell[717814, 13706, 11826, 312, 1325, "Input",ExpressionUUID->"955084ef-5cb9-4280-90fa-9ce17335e299"],
+Cell[636373, 12049, 12170, 311, 2056, "Input",ExpressionUUID->"0354e25c-c46a-4599-bb51-61a30edad071"],
+Cell[648546, 12362, 35987, 670, 472, "Output",ExpressionUUID->"eeae4b47-79cd-4ab6-8832-10a8514f038a"],
+Cell[684536, 13034, 199, 3, 53, "Output",ExpressionUUID->"6bd1f8cd-99cc-4696-b28d-c907a3f5cccf"],
 Cell[CellGroupData[{
-Cell[729665, 14022, 2555, 58, 286, "Input",ExpressionUUID->"93b4aa71-9261-40d5-b44f-7987e1bd6c09"],
-Cell[732223, 14082, 67660, 1248, 427, "Output",ExpressionUUID->"be02ec3b-2cf2-4461-87c1-1f97d4ec7c7e"],
-Cell[799886, 15332, 67203, 1243, 427, "Output",ExpressionUUID->"ed04dc00-ad55-47d1-aeed-b67761de5453"],
-Cell[867092, 16577, 73148, 1349, 427, "Output",ExpressionUUID->"88dbf5d2-db7c-44d0-b6a0-58b45f50e0b4"],
-Cell[940243, 17928, 91677, 1654, 427, "Output",ExpressionUUID->"ae9ed575-0399-4591-b6b8-4fdbc3ff8b6d"],
-Cell[1031923, 19584, 67206, 1241, 427, "Output",ExpressionUUID->"59e47af9-1bdc-45ea-884b-15c6b8ca9d3a"],
-Cell[1099132, 20827, 95950, 1723, 427, "Output",ExpressionUUID->"7bb351da-58a8-4805-905e-cf726bc046a0"]
+Cell[684760, 13041, 554, 11, 38, "Print",ExpressionUUID->"9ebfe1be-ae54-4ce0-bce7-a474b2d45ce4"],
+Cell[685317, 13054, 685, 16, 59, "Print",ExpressionUUID->"e6ca3a96-7e02-43e9-b564-b9ab2440436d"]
+}, Open  ]],
+Cell[686017, 13073, 26979, 511, 441, "Output",ExpressionUUID->"56748185-2306-4c75-8dc2-922eda0bfb00"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1195119, 22555, 4085, 101, 547, "Input",ExpressionUUID->"0a20d459-3438-40ba-8e2f-751bca18808b"],
-Cell[1199207, 22658, 914, 26, 92, "Output",ExpressionUUID->"6ebc3e7f-2bf9-4b76-a1fa-490f3e23dedd"]
+Cell[713033, 13589, 5939, 137, 595, "Input",ExpressionUUID->"16be657a-a5f0-43ba-9edd-9361507244e0"],
+Cell[718975, 13728, 151, 2, 53, "Output",ExpressionUUID->"d8388b83-06b5-492f-b91d-70483876820a"]
+}, Open  ]],
+Cell[719141, 13733, 11880, 312, 1325, "Input",ExpressionUUID->"955084ef-5cb9-4280-90fa-9ce17335e299"],
+Cell[CellGroupData[{
+Cell[731046, 14049, 2608, 58, 286, "Input",ExpressionUUID->"93b4aa71-9261-40d5-b44f-7987e1bd6c09"],
+Cell[733657, 14109, 67669, 1249, 427, "Output",ExpressionUUID->"5a67f0e6-adb5-4f0e-8c90-f0fae91cf858"],
+Cell[801329, 15360, 67192, 1243, 427, "Output",ExpressionUUID->"c4a1575f-e055-4cee-8aca-42fa9ece4fa4"],
+Cell[868524, 16605, 73137, 1349, 427, "Output",ExpressionUUID->"2c0f4c30-b00a-4477-937f-79c52bdefb39"],
+Cell[941664, 17956, 91683, 1655, 427, "Output",ExpressionUUID->"c5dfbd0c-e0cc-407b-8efb-4f7647b34977"],
+Cell[1033350, 19613, 67214, 1242, 427, "Output",ExpressionUUID->"547da9af-f558-4afa-98b8-0de9cae20398"],
+Cell[1100567, 20857, 95955, 1724, 427, "Output",ExpressionUUID->"19067d7f-20a8-43a5-8a91-5df07a3e9a98"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1200158, 22689, 12440, 284, 1654, "Input",ExpressionUUID->"d3656d18-28b3-4c3d-9bb5-1e2155da010c"],
-Cell[1212601, 22975, 119085, 2140, 470, "Output",ExpressionUUID->"fbd33638-3795-4478-97c0-9b3af46d66cb"],
-Cell[1331689, 25117, 171576, 3029, 472, "Output",ExpressionUUID->"41aa54fd-8525-4f8e-9516-d2e54b1cbe00"]
+Cell[1196559, 22586, 4085, 101, 547, "Input",ExpressionUUID->"0a20d459-3438-40ba-8e2f-751bca18808b"],
+Cell[1200647, 22689, 911, 26, 92, "Output",ExpressionUUID->"4fec0019-7a84-4310-bf90-685be9104412"]
 }, Open  ]],
-Cell[1503280, 28149, 433, 9, 47, "Input",ExpressionUUID->"f2cd9478-0cc5-4ac8-8b6b-018ad00c054f"],
 Cell[CellGroupData[{
-Cell[1503738, 28162, 25057, 592, 3078, "Input",ExpressionUUID->"5f64755d-6345-4cff-b36a-efefc9ceb3d9"],
-Cell[1528798, 28756, 125093, 2291, 905, "Output",ExpressionUUID->"158de458-4b1b-4091-a31b-ed7e34f1e0bf"],
-Cell[1653894, 31049, 67839, 1338, 905, "Output",ExpressionUUID->"c863d370-add6-455a-8b4f-ccec144927e7"],
-Cell[1721736, 32389, 94171, 1773, 904, "Output",ExpressionUUID->"22e1a78b-63e8-492b-a06a-8d4579b85566"],
-Cell[1815910, 34164, 167818, 2996, 866, "Output",ExpressionUUID->"73437f7f-adcd-4df4-b1d3-badfd0a5e774"]
+Cell[1201595, 22720, 12487, 284, 1654, "Input",ExpressionUUID->"d3656d18-28b3-4c3d-9bb5-1e2155da010c"],
+Cell[1214085, 23006, 119087, 2140, 470, "Output",ExpressionUUID->"08bebe97-a3fb-4f97-8c3e-31906a6a5cc6"],
+Cell[1333175, 25148, 171573, 3029, 472, "Output",ExpressionUUID->"77e4f972-eda2-4a50-8673-91a1a028a03f"]
+}, Open  ]],
+Cell[1504763, 28180, 433, 9, 47, "Input",ExpressionUUID->"f2cd9478-0cc5-4ac8-8b6b-018ad00c054f"],
+Cell[CellGroupData[{
+Cell[1505221, 28193, 24918, 589, 2976, "Input",ExpressionUUID->"5f64755d-6345-4cff-b36a-efefc9ceb3d9"],
+Cell[1530142, 28784, 124963, 2286, 882, "Output",ExpressionUUID->"e0d519a6-ec6d-49c8-8a64-9fd8794f43d8"],
+Cell[1655108, 31072, 67729, 1334, 882, "Output",ExpressionUUID->"8e430d90-9000-4a1d-b9fa-d9f618d4ddc3"],
+Cell[1722840, 32408, 94040, 1768, 881, "Output",ExpressionUUID->"af91cc91-0db9-4829-ac82-73cb9b4e20f4"],
+Cell[1816883, 34178, 167639, 2992, 833, "Output",ExpressionUUID->"e49948f1-2905-4e57-848b-57d2cdb04b53"]
 }, Open  ]]
 }
 ]
