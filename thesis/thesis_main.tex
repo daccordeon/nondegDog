@@ -1,0 +1,153 @@
+% honours thesis, main .tex file
+% initial comments are from Rose Ahlefeldt
+
+\documentclass[onecolumn,12pt,a4paper,openany,oneside]{book}
+\usepackage{anuthesis} % Style file for thesis formatting
+\usepackage{fullpage}
+\usepackage{layouts}
+% Global formatting packages 
+\usepackage[T1]{fontenc} % For fonts. Fixes some pdf bugs
+\usepackage{lmodern} % fixes some font scaling problem
+\usepackage[nottoc]{tocbibind} %Add bibliography/index/contents to Table of Contents
+\usepackage{appendix} % To label appendix chapters as "Appendix A, B, C..." instead of "Chapters 7, 8 ,9"
+\usepackage{fancyhdr} % To allow more control of headers/footers
+\usepackage{hyperref} % hyperlinks for \ref and \cite commands, super useful.
+% Maths packages
+\usepackage{amsmath,amssymb, amsfonts} % General maths
+% Some optional packages
+\usepackage{mathtools} % Builds on amsmath, more formatting options
+\usepackage{siunitx} %Offers consistent formatting of in-text numbers and units
+\usepackage{physics} % bunch of handy physics things, like bra-ket notation
+
+% Tables
+\usepackage{booktabs} % Nice table formatting
+
+% Figures
+\usepackage{graphicx} % Required for figures
+
+% Bibliography
+\usepackage[numbers]{natbib} %Offers more sophisticated bibliographic options
+\bibliographystyle{unsrtnat} % bibliography in order of appearance
+
+% Markup
+%\usepackage{showkeys} %Turn this on to list citation keys, reference keys in text
+\usepackage[mathlines,pagewise]{lineno} % line numbers
+
+\usepackage[usenames,dvipsnames]{xcolor}
+\newcommand{\jam}{\textcolor{magenta}}
+
+% If you never plan to print and bind your thesis as a book, you can make the margins even (setlength commands below) you will also need to add the option "openany" to your documentclass
+%\setlength\oddsidemargin{\dimexpr(\paperwidth-\textwidth)/2 - 1in\relax}
+%\setlength\evensidemargin{\oddsidemargin}
+
+\setlength{\parindent}{0pt}
+% Here are the parameters for the page layout. If you modify the template, do not decrease: the font size, the line spacing (1.5), the margin size.\\
+% \printinunitsof{mm}{\pagevalues}
+% \verb|\marginparwidth|: \printinunitsof{mm}\prntlen{\marginparwidth}
+% \pagediagram
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\pagenumbering{roman} 
+
+\begin{titlepage}
+\title{ \textbf{Advanced quantum-mechanical techniques for future gravitational-wave detectors}\\[2cm]}
+\author{\textbf{James W. Gardner}\\[6cm]
+\textbf{A thesis submitted for the degree of}\\
+\textbf{Bachelor of Philosophy (Science) with Honours in Physics at} \\
+\textbf{The Australian National University}\\[1cm]}
+\date{\textbf{\thismonth}}
+\maketitle
+\end{titlepage}
+ 
+\sloppy
+
+
+\chapter*{Declaration}
+\addcontentsline{toc}{chapter}{Declaration}
+
+This thesis is an account of research undertaken between February 2021 and October 2021 at the Centre for Gravitational Astrophysics, Research School of Physics, The Australian National University, Canberra, Australia.
+
+Except where acknowledged in the customary manner, the material presented in this thesis is, to the best of my knowledge, original and has not been submitted in whole or part for a degree at any other university.
+
+The research presented in this thesis was completed on the lands of the Ngunnawal and Ngambri people, the traditional owners of the land of The Australian National University's Canberra campus. I acknowledge that this land was stolen and sovereignty was never ceded, and pay my respects to the elders past and present.
+
+\vspace{20mm}
+\hspace{80mm}\rule{40mm}{.15mm}\par
+\hspace{80mm} James W. Gardner\par
+\hspace{80mm} \thismonth
+
+
+% include statements effectively insert the contents of the named file. they always start a new page.
+\newpage % to fix numbering in ToC
+\addcontentsline{toc}{chapter}{Acknowledgements} 
+\include{acknowledgements} 
+
+\addcontentsline{toc}{chapter}{Abstract} 
+\include{abstract}
+
+\tableofcontents
+
+%\cleardoublepage % Make sure next section starts on a right hand page if using uneven margins
+\pagenumbering{arabic} 
+
+%\linenumbers % This will add linenumbers, which are useful for people proofreading.
+
+% how to remove the "chapter 1" headings on the first page of a chapter: In your chapter itself, instead of "\chapter{First Chapter} use:  \chapter*{First Chapter} \chaptermark{First Chapter} 
+% then here, uncomment the below line (which must be before your include statement)
+%\addcontentsline{toc}{chapter}{First chapter} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% (background chapters)
+
+\include{introduction} 
+	% motivation: kHz gravitational wave detection could lead to new physics
+	% the problem: cannot increase power but want to increase HF sensitivity without sacrificing LF sensitivity
+	% aims
+	% outline
+
+\include{background_theory}
+	% Mizuno limit
+	% cannot increase power
+% Squeezing to improve quantum noise--limited sensitivity
+	% mechanism of squeezing
+	% optical loss
+	% external squeezing
+	% remaining problem of how to further increase kHz sensitivity
+
+% should this background chapter be broken up? GWD's separately then theory of quantum noise?
+
+\include{degenIntSqz}
+	% literature review
+
+\include{sWLC}
+	% literature review
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% (research chapters)
+
+\include{nondegenIntSqz}
+
+\include{conclusions}
+	% return to aims
+	% limitations
+	% future work
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{appendices}
+% \include{appendixA} % include the file appendixA.tex if you have it.
+% \end{appendices} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \nocite{*}
+\bibliographystyle{myunsrt}
+\bibliography{thesis}
+
+
+\end{document}
