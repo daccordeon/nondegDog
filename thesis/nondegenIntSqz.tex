@@ -1,4 +1,4 @@
-\chapter{Novel proposal: nondegenerate internal squeezing}
+\chapter{Nondegenerate internal squeezing}
 
 \section{Literature review}
 \jam{(justify novelty of proposal)}
@@ -140,11 +140,38 @@ Where $\vec{\hat{X}}_{B_\mathrm{in}}(\Omega)$ is the quadrature vector of the va
 \end{cases}
 \end{equation} 
 
+
 \jam{(set up the combined noise, spectral densities matrix Sx)}
+
+\begin{equation}
+\mathrm{S}_X(\Omega)2\pi\delta(\Omega-\Omega')=\ev{\vec{\hat{X}}_\mathrm{PD}(\Omega)\cdot\vec{\hat{X}}_\mathrm{PD}(\Omega')^\dag}
+\end{equation}
+
+\jam{(explain uncorrelated vacuum assumption -- i and j are not indices of vectors)}
+
+\begin{equation}
+\ev{\vec{\hat{X}}_{(i)}(\Omega)\cdot\vec{\hat{X}}_{(j)}(\Omega')^\dag}=\delta_{i,j}\mathrm{I}\,2\pi\delta(\Omega-\Omega'),\quad \mathrm{S_{vac}}=\mathrm{I}=\begin{bsmallmatrix}
+1 & 0 \\ 
+0 & 1
+\end{bsmallmatrix}
+\end{equation}
+
+\jam{(versus single-sided power spectral density of single function, not a vector: $A\circ B=\dfrac{1}{2}(A\cdot B+B\cdot A)$, check factors of two again --> single sided, vac=1, quadratures normalised as 1/rt2, quadrature is Hermitian and therefore commutes with its dagger)}
+
+\begin{equation}
+\mathcal{S}_X(\Omega)2\pi\delta(\Omega-\Omega')=\ev{\vec{\hat{X}}_{\mathrm{PD},2}(\Omega)\circ\vec{\hat{X}}_{\mathrm{PD},2}(\Omega')^\dag},\quad \mathcal{S}_\mathrm{vac}=1
+\end{equation}
+
+\begin{equation}
+\mathcal{T}(\Omega)=(\mathrm{T}.\begin{bsmallmatrix}
+1\\ 
+1
+\end{bsmallmatrix})_2
+\end{equation}
 
 I define the sensitivity of the detector to be the noise-to-signal ratio, i.e. the ratio of the noise and signal transfer functions (or, the signal-normalised noise).
 Assuming that we measure the second quadrature, e.g. via balanced homodyne readout \jam{(address optimisation of quadrature angle, might not be 2 just because signal is only there. Also, need to describe homodyne readout somewhere)}, this gives:
-$$S_h(\Omega)=\frac{S_X(\Omega)}{T(\Omega)}.$$
+$$S_h(\Omega)=\frac{(\mathrm{S}_X(\Omega))_{2,2}}{\abs{\mathcal{T}(\Omega)}^2}.$$
 
 
 
@@ -165,9 +192,9 @@ $$S_h(\Omega)=\frac{S_X(\Omega)}{T(\Omega)}.$$
 
 \subsection{Threshold}
 
-I have devised a definition of threshold: "threshold is the value of the squeezing parameter such that the anti-squeezed quadrature of the quantum noise has a real pole at some frequency; if multiple poles exist then the threshold is the smallest squeezer value". 
+I have devised a definition of threshold: ``threshold is the (real) value of the squeezing parameter such that the anti-squeezed quadrature of the quantum noise has a singularity at some (real) frequency; if multiple singularities exist then the threshold is the smallest squeezer value''. Here, I am only looking for singularities that diverge to infinity (along all angles of approach). In order to reduce confusion, I do not call these ``poles'' since the quantum noise is not defined on $\mathbb{C}$. \jam{(Check this: looking at the imaginary part of the poles for stability and looking for real poles (i.e. poles on the real axis) for threshold are the same solutions, surely?)}
 
-For this unified, anti-squeezed pole definition of threshold, I find the real poles of each system to be at:
+For this unified, anti-squeezed singularity definition of threshold, I find the real singularities of each system to be at:
 \begin{align}
 \label{eq:unified-threshold}
 \mathrm{dOPO}&: \Omega=0, \chi=\gamma^b_\mathrm{tot}\\
@@ -184,9 +211,9 @@ For this unified, anti-squeezed pole definition of threshold, I find the real po
 \end{align}
 
 For dIS, by Eq.~\ref{eq:unified-threshold}, the definition reduces to dOPO threshold $(\Omega,\chi)\xrightarrow[\gamma_a\rightarrow\infty]{}(0,\gamma^b_\mathrm{tot})$ and to the lossless threshold $(\Omega,\chi)\xrightarrow[\gamma_a\rightarrow0]{}(\omega_s,\gamma^b_\mathrm{tot})$.
-For nIS, this definition reduces to nOPO threshold $(\Omega,\chi)\xrightarrow[\gamma_a\rightarrow\infty]{}(0,\sqrt{\gamma^b_\mathrm{tot}\gamma_c})$ and to the lossless threshold in the formal limit $(\Omega,\chi)\xrightarrow[\gamma_a=0,\gamma_c\rightarrow0]{}(0,\omega_s)$.
+For nIS, this definition reduces to nOPO threshold $(\Omega,\chi)\xrightarrow[\gamma_a\rightarrow\infty]{}(0,\sqrt{\gamma^b_\mathrm{tot}\gamma_c})$ and to the lossless threshold in the formal limit $(\Omega,\chi)\xrightarrow[\gamma_a=0,\gamma_c\rightarrow0]{}(0,\omega_s)$. This last limit makes sense from the stability \jam{(make sure stability already studied)} analysis, since the lossless system is marginally stable at threshold and this anti-squeezed singularity definition looks for when the poles are on the real axis.
 
-Radiation pressure and back-action evasion do not change threshold because the quantum noise transfer function denominator has the same +ve zeros as the shot noise transfer function without radiation pressure (and BAE).
+Radiation pressure and back-action evasion do not change threshold because the quantum noise transfer function denominator has the same positive zeros as the shot noise transfer function without radiation pressure (and BAE).
 
 
 
