@@ -193,6 +193,7 @@ $$S_h(\Omega)=\frac{(\mathrm{S}_X(\Omega))_{2,2}}{\abs{\mathcal{T}(\Omega)}^2}.$
 \subsection{Threshold}
 
 I have devised a definition of threshold: ``threshold is the (real) value of the squeezing parameter such that the anti-squeezed quadrature of the quantum noise has a singularity at some (real) frequency; if multiple singularities exist then the threshold is the smallest squeezer value''. Here, I am only looking for singularities that diverge to infinity (along all angles of approach). In order to reduce confusion, I do not call these ``poles'' since the quantum noise is not defined on $\mathbb{C}$. \jam{(Check this: looking at the imaginary part of the poles for stability and looking for real poles (i.e. poles on the real axis) for threshold are the same solutions, surely?)}
+% NB: I am calling the points "singularities" for now to avoid confusion, but they are just the poles of the transfer functions (against complex \[CapitalOmega]) at real \[Chi] such that they are on the real axis (and therefore real \[CapitalOmega]).
 
 For this unified, anti-squeezed singularity definition of threshold, I find the real singularities of each system to be at:
 \begin{align}
@@ -214,6 +215,12 @@ For dIS, by Eq.~\ref{eq:unified-threshold}, the definition reduces to dOPO thres
 For nIS, this definition reduces to nOPO threshold $(\Omega,\chi)\xrightarrow[\gamma_a\rightarrow\infty]{}(0,\sqrt{\gamma^b_\mathrm{tot}\gamma_c})$ and to the lossless threshold in the formal limit $(\Omega,\chi)\xrightarrow[\gamma_a=0,\gamma_c\rightarrow0]{}(0,\omega_s)$. This last limit makes sense from the stability \jam{(make sure stability already studied)} analysis, since the lossless system is marginally stable at threshold and this anti-squeezed singularity definition looks for when the poles are on the real axis.
 
 Radiation pressure and back-action evasion do not change threshold because the quantum noise transfer function denominator has the same positive zeros as the shot noise transfer function without radiation pressure (and BAE).
+
+\jam{(Threshold plots)}
+
+\subsubsection{Degenerate internal squeezing - different notions of threshold}
+
+\jam{(One explanation for the difference between position of the singularity of the anti-squeezed quadrature and the minimum of the squeezed quadrature is that the expression for the sloshing frequency in Korobko et al, 2019 is not valid at large arm losses. If this is so, then what does this fixed--sloshing frequency Hamiltonian correspond to? And for that system, why does the supposedly Gaussian squeezing not maximise antisqz at the frequency that it minimises squeezing? --> Look at pump phase and/or covariance matrix)}
 
 
 
