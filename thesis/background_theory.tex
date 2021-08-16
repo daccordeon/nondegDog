@@ -1,13 +1,26 @@
-\chapter{Background theory: quantum noise in interferometric gravitational-wave detectors}
+\chapter{Background theory: quantum noise in interferometric gravitational-wave detectors} % Background: theory of quantum noise in interferometric gravitational-wave detectors
+
+% set up EVERYTHING the audience needs to know
+% set up the problem sufficiently and specifically, the problems with current proposals are detailed in the next chapter
 
 % this chapter has a lot of ideas, need to figure out the logical flow -- look at research proposal and other theses --> talk to supes
 
 % do I need to start as far back as MJ's thesis? i.e. back at the quantisation of light, definition of quadratures etc.?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% chapter introduction
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Quantum noise}
 
 % HUP
+
+
+	% At high frequencies, the sensitivity of current detectors is limited by quantum noise arising from the quantum nature of light~\cite{danilishinQuantumMeasurementTheory2012}. By the Heisenberg Uncertainty Principle, the amplitude and phase of a quantum state of light (including the vacuum) cannot be exactly known at the same time. Uncertainty in the amplitude of the light within the interferometer leads to quantum radiation pressure noise, while uncertainty in its phase leads to so-called “shot noise”. At high frequencies, shot noise is the dominant source of quantum noise and limits the sensitivity of current detectors. Therefore, reducing shot noise at high frequencies is the principal way to improve high-frequency sensitivity.
+
+
 
 \subsection{Optical loss}
 %  source of loss, realistic values (now and in a few decades time, 100 years time etc.)
@@ -17,8 +30,13 @@
 
 \section{Squeezing}
 
+% just a paragraph about sidebands, I do not go further into this because I do not use the formalism (preferring the operator+Interaction Picture which achieves the same effect of studying frequency offsets)
 
-% \section{Squeezed cavity (OPO) - analytic model}
+
+	% An established technology to reduce shot noise at high frequencies is squeezing~\cite{danilishinQuantumMeasurementTheory2012,chuaQuantumEnhancementKm2015}. Squeezing manipulates the quantum state of light and the vacuum to trade-off phase uncertainty for amplitude uncertainty; this decreases shot noise by increasing quantum radiation pressure noise~\footnote{Squeezing only improves sensitivity if the interferometer readout is suitably designed to exploit the trade-off between shot noise and radiation pressure noise.}. Squeezed states of light can be created in a crystal with nonlinear polarisability by parametric down-conversion which annihilates a photon at a pump frequency and creates two entangled photons with ``squeezed" uncertainties. To conserve energy, the sum of the frequencies of the created photons must equal the pump frequency. This process is degenerate if the frequencies of the created photons are equal and is nondegenerate otherwise.
+	% The fact that nondegenerate squeezing involves three distinct frequencies (the pump and the two created frequencies) rather than two is an important change in the symmetry of the system that I will revisit later.
+	% An example application of squeezing to reduce shot noise is the injection of squeezed vacuum from an external, degenerate squeezer which is used to approximately halve the shot noise in current detectors~\cite{tseQuantumEnhancedAdvancedLIGO2019}. The squeezed vacuum is injected behind the signal-recycling mirror via a Faraday isolator placed outside the signal-recycling cavity as shown in the left panel of Fig.~\ref{fig:coupled_cavities}.
+
 
 Although this derivation is widely available in the literature~\cite{}, I include it here to demonstrate the Hamiltonian method that I use throughout the rest of the thesis. \jam{Should this be included in an appendix?}
 

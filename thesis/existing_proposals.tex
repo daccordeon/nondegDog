@@ -1,4 +1,10 @@
-\chapter{Existing proposals for kilohertz sensitivity}
+\chapter{Existing proposals for improving kilohertz sensitivity} % Background: existing proposals for improving kilohertz sensitivity
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% chapter introduction
+
+
+
 
 
 \section{Literature review}
@@ -6,6 +12,10 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Existing proposal 1: degenerate internal squeezing}
+
+
+	% A proposed technology to further reduce shot noise is degenerate internal squeezing where a degenerate squeezer is included inside the signal-recycling cavity as shown in the left panel of Fig.~\ref{fig:coupled_cavities}~\cite{korobkoQuantumExpanderGravitationalwave2019,adyaQuantumEnhancedKHz2020}.
+	% To simplify modelling this configuration, the two coupled optical modes of concern, the differential mode from the arm cavities and the mode in the signal-recycling cavity, are approximated as coming from a pair of coupled cavities as shown in the right panel of Fig.~\ref{fig:coupled_cavities}. The quantum noise enters with the vacuum into the signal-recycling cavity, but the signal arises in the arm cavity and so sees the squeezer differently. This difference leads to no change in sensitivity at low frequencies and improved sensitivity at high frequencies around the resonance of the signal-recycling cavity as shown in Fig.~\ref{fig:sensitivity_curve}. The improvement occurs around the signal-recycling cavity resonance as this is where the most quantum noise field is present inside the cavity and so is where the internal squeezer produces the most squeezing. The resulting noise reduction is sufficient to overcome the de-amplification of the signal due to squeezing. The overall sensitivity improvement from degenerate internal squeezing is limited by optical loss in the interferometer and at the photodetector~\cite{korobkoQuantumExpanderGravitationalwave2019}. 
 
 % \subsection{Internal squeezing}
 
@@ -22,16 +32,35 @@ This derivation is available in Ref.~\cite{}, but I include it here to demonstra
 \subsection{Problems with proposal - vulnerability to optical loss}
 
 
+
+\subsection{Connection to nondegenerate internal squeezing}
+
+
+	% Nondegenerate internal squeezing, where the internal squeezer is instead nondegenerate, has
+	% been proposed as an alternative to degenerate internal squeezing~\cite{yapadyaPersonalCommunication}, although a comprehensive analysis of nondegenerate internal squeezing is yet to be done~\cite{liBroadbandSensitivityImprovement2020}. Because nondegenerate squeezing results in two entangled photons with different frequencies, these photons will not interfere with each other in the same manner as the degenerate case. Without this interference, nondegenerate internal squeezing increases the signal and the noise instead of decreasing them like the degenerate case. Therefore, nondegenerate internal squeezing is predicted to be more resistant to photodetector loss since the signal amplitude is greater. This project aims to investigate the potential benefits of nondegenerate internal squeezing over degenerate internal squeezing.
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Existing proposal 2: stable optomechanical filtering}
 
 % Li et al, 2020
+
+
+	% Stable optomechanical filtering consists of an auxiliary filter cavity inside the signal-recycling cavity. One of the filter cavity's mirrors is a mechanical oscillator, such as a suspended mirror, driven by a laser whose frequency is appropriate to excite the mechanical mode~\cite{liBroadbandSensitivityImprovement2020}. This design is dynamically stable unlike previous designs for optomechanical filter cavities~\cite{miaoEnhancingBandwidthGravitationalWave2015,pageEnhancedDetectionHigh2018,miaoDesignGravitationalWaveDetectors2018}. This system has a parity-time symmetry between the differential optical mode of the interferometer and the mechanical mode; replicating this symmetry with an internal squeezer requires the squeezer to be nondegenerate to mimic the distinction between the filter cavity optical mode and the mechanical mode~\cite{liBroadbandSensitivityImprovement2020}. Stable optomechanical filtering improves high-frequency sensitivity by cancelling the effect of the resonance behaviour of the interferometer cavities. It is designed for implementation in later-generation detectors and assumes technological improvements in the near future in arm length, power, optical loss, Brownian noise, and, most stringently, in the thermal noise and quality factor of the mechanical oscillator. These assumptions are necessary to achieve the target sensitivity for astrophysical applications~\cite{miaoDesignGravitationalWaveDetectors2018}. By investigating nondegenerate internal squeezing, I aim to find more realistic requirements for a future detector.
+
+
 
 \subsection{Problems with proposal - vulnerability to thermal noise and mechanical quality factor}
 
 
 \subsubsection{Technological limit: thermal noise}
 
+
+\subsection{Connection to nondegenerate internal squeezing}
+
+	% Nondegenerate internal squeezing is also motivated by a connection between it and the use of
+	% a stable optomechanical filter cavity to improve high-frequency sensitivity~\cite{yapadyaPersonalCommunication,liBroadbandSensitivityImprovement2020}. The Hamiltonians of the two systems are equivalent under some mapping of the creation and annihilation operators of certain optical fields to certain mechanical fields. This connection exploits the fact that the nondegenerate squeezer interacts with three distinct frequencies to introduce a symmetry into the all-optical system that the optomechanical system has. This means that using nondegenerate internal squeezing may achieve the benefits of a stable optomechanical filter cavity without the optomechanical drawbacks of requiring cryogenic (around 4~K~\cite{miaoEnhancingBandwidthGravitationalWave2015}) environmental temperature and high mechanical quality factor. Therefore, understanding stable optomechanical filtering should lead to a better understanding of what nondegenerate internal squeezing might achieve.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Chapter summary}
