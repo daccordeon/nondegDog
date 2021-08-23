@@ -13,75 +13,96 @@
 
 In this chapter, I motivate the detection of kilohertz gravitational waves, describe what currently prevents us detecting them, and outline what this thesis contributes to detecting them in the future.
 
-
 \section{Gravitational waves}
+\label{sec:gravWaves}
 
 Gravitational waves are propagating perturbations in spacetime.
-These perturbations change the distance and time between events, move massive objects around, and therefore carry energy.
+These perturbations change the distance and time between events, move massive objects around, and therefore carry energy. \jam{(``Move'' is problematic, look at choice of frame)}
 Just as they are able to move objects, gravitational waves can be emitted by the motion (namely, acceleration) of massive objects under certain asymmetry conditions~\cite{}.
 % tense?
-The gravitational waves detected so far were all from the late inspiral of compact binary systems~\cite{} -- meaning that two massive, compact objects, such as black holes~\cite{} or neutron stars~\cite{} (or a mixture thereof~\cite{}), were closely orbiting each other. As the binary system lost energy by emitting gravitational waves, the objects got closer together, the orbital frequency increased and correspondingly so did the frequency of the emitted gravitational waves, and eventually the objects collided and merged. The late inspiral of such systems refers to the last moments before the objects collide and merge and therefore to the highest frequency gravitational waves emitted pre-merger which were around $\sim 100$~Hz.
-Despite being emitted by some of the most massive objects in the universe, the effects of gravitational waves are extremely small -- by the time they reach Earth, even the loudest gravitational waves will only move two objects separated by a kilometre closer or further away from each other by less than a thousandth the width of a proton~\cite{}. %wordchoice: loudest
-This poses a great challenge to detection which I discuss later.
+Gravitational waves have been detected from the late inspiral of compact binary systems~\cite{} -- meaning that two massive, compact objects, such as black holes~\cite{} or neutron stars~\cite{} (or a mixture thereof~\cite{}), were closely orbiting each other. As the binary system lost energy by emitting gravitational waves, the objects got closer together, the orbital frequency increased and correspondingly so did the frequency of the emitted gravitational waves, and eventually the objects collided and merged. The late inspiral of such systems refers to the last moments before the objects collide and merge and therefore to the highest frequency gravitational waves emitted pre-coalescence -- at around $\sim 100$~Hz. % check this?
+Despite being emitted by some of the most massive objects in the universe, the effects of gravitational waves are extremely small -- by the time they reach Earth, even the loudest gravitational waves will only move two objects separated by a kilometre by less than a thousandth the width of a proton~\cite{}. %wordchoice: loudest
+This poses a great challenge to detection which I will discuss later.
 
 Gravitational waves are described by radiative, transverse-traceless solutions to the Einstein field equations of General Relativity~\cite{}. % will need to mention transverse-traceless, quadrupole moment?
 The initial amplitude of these waves when emitted is described by the quadrupole moment of the source -- a quantity that depends on its distribution of mass and therefore is why only the most massive astrophysical sources can be detected. % sources closer to the detector can be less massive
 % ...
-The effect of these waves is to alternately stretch and squash spacetime along the two axes perpendicular to the direction of propagation. A gravitational wave incident normally on a ring of test particles will, over time, stretch then squash then stretch again one semi-axis of the ring while conversely squashing, stretching, then squashing again the other semi-axis -- as shown in Fig.~\ref{}.
-The quantity of interest is the unitless gravitational-wave strain at the ring (or ``detector''), $h(t)$, which gives the change in length $\Delta L$ of one of the semi-axes of initial length $L$ as $\Delta L = L h(t)$. The goal of gravitational-wave detection is to measure $h(t)$ as accurately and precisely as possible as it encodes astrophysical information about the source. Henceforth, $h(t)$ is referred to as the gravitational-wave signal, or just: the signal.
+The effect of these waves is to alternately stretch and squash spacetime along the two axes perpendicular to the direction of propagation. A gravitational wave incident normally on a ring of test particles will, over time, stretch and squash one semi-axis of the ring while conversely squashing and stretching the other semi-axis -- as shown in Fig.~\ref{}.
+The unitless gravitational-wave strain at the ring (or ``detector''), $h(t)$, gives the change in length $\Delta L$ of one of the semi-axes of initial length $L$ as $\Delta L = L h(t)$. The goal of gravitational-wave detection is to measure $h(t)$ (or its Fourier domain counterpart, $\tilde{h}(\Omega)$) as accurately and precisely as possible as it encodes astrophysical information about the source. Henceforth, $h(t)$ is referred to as the gravitational-wave signal, or just: the signal.
 
 
 	% The orbital period of binary black-hole or neutron-star systems decays as the system radiates away energy in the form of low-amplitude waves in spacetime; these gravitational waves, correspondingly, increase in frequency over time. Current interferometric detectors are most sensitive to gravitational waves in a low-frequency window around 100~Hz that are emitted in the late inspiral of such mergers~\cite{AdvancedLIGO:2015}.
 
 \subsection{Kilohertz gravitational-wave astrophysics} %i.e. sources
 
-Current detections of gravitational waves have all been around $\sim100$~Hz, but there is varied and interesting astrophysics believed to be encoded in higher frequency, kilohertz gravitational waves that currently go unseen.
-
 % motivate HF limit
+All detections of gravitational waves so far have all been around $\sim100$~Hz~\cite{}, but there is believed to be varied and interesting astrophysics encoded in higher frequency, kilohertz gravitational waves yet to be detected.
+Such as the merger and post-merger signals from binary neutron-star mergers, which are kilohertz gravitational waves predicted to be emitted during the coalescence of the neutron stars and from the remnant object (possibly another neutron star) of the merger.
+Due to the violent nature of the merger, these signals are predicted to contain information otherwise unavailable about the exotic states of matter within neutron stars. Information that could better constrain the possible equations-of-state and improve our understanding of matter under extreme conditions~\cite{miaoDesignGravitationalWaveDetectors2018,}. %this is a bold claim, need another reference?
 
-% Non-astrophysical sources of gravitational waves
+Other astrophysical applications of kilohertz gravitational-wave detection could include determining the origin of low-mass black holes by detecting the merger and ringdown of binary black hole-neutron star mergers~\cite{}, understanding the post-bounce dynamics of core-collapse supernovae~\cite{}, improving measurements of the Hubble constant independently of electromagnetic observations, and searching the stochastic gravitational-wave background for exotic or primordial sources~\cite{miaoDesignGravitationalWaveDetectors2018}.
+This possible bounty of new astrophysics motivates developing the ability to detect kilohertz gravitational waves.
 
+% Non-astrophysical sources of gravitational waves?
 
 	% However, the frequency of the emitted gravitational waves then increases beyond this window and so the merger can no longer be observed. In particular, predicted high-frequency gravitational waves around 1--4~kHz from the merger and post-merger remnant of binary neutron-star mergers are yet to be detected. These signals are predicted to contain valuable information that could be used to better constrain the possible equations-of-state of the exotic states of matter within neutron stars~\cite{miaoDesignGravitationalWaveDetectors2018}.
 	% Potential astrophysical applications of high-frequency (kilohertz) gravitational-wave detection also include determining the origin of low-mass black holes by detecting binary black hole-neutron star mergers, improving measurements of the Hubble constant independently of electromagnetic observations, and searching the stochastic gravitational-wave background for exotic or primordial sources~\cite{miaoDesignGravitationalWaveDetectors2018}. 
 
-\subsubsection{Astrophysical target}
+\subsubsection{Sensitivity target for new astrophysics}
 
 % this will be the goal of my optimisation
+As a case example, the post-merger signal from a typical binary neutron star merger lies within 1--4~kHz. To reliably detect this signal, the estimated sensitivity at 1--4~kHz required is $5 10^{-25} \mathrm{Hz}^{-1/2}$~\cite{miaoDesignGravitationalWaveDetectors2018}. \jam{(for an arbitrary detector?)}
+Other kilohertz astrophysical sources are predicted to require similar or greater sensitivity~\cite{}. 
+The sensitivity is calculated as the amplitude spectral density of the ratio of the noise to signal transfer functions -- which will be explained in detail in Chapter~\ref{chp:proposals}. For now, all that matters is that I have a target sensitivity for optimisation and determining whether a given detector will be useful to kilohertz gravitational-wave detection.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Interferometric gravitational-wave detectors}
 
-	% The amount of laser power within an interferometric gravitational-wave detector limits how much its high-frequency sensitivity can improve without its low-frequency sensitivity worsening or the power needing to increase~\cite{miaoFundamentalQuantumLimit2017}. 
-	% However, gravitational waves require a wide band of sensitive frequencies to detect as they are typically not monochromatic~\cite{miaoDesignGravitationalWaveDetectors2018}, and further increasing the power is technologically problematic~\cite{Brooks_2021,PhysRevLett.114.161102}. A recent proposal uses a stable optomechanical filter cavity to avoid this limit and increase high-frequency sensitivity without fully sacrificing low-frequency sensitivity nor increasing the power~\cite{liBroadbandSensitivityImprovement2020}. However, it requires cryogenic (around 4~K) environmental temperature and a higher mechanical quality factor than is currently possible. An all-optical alternative to this optomechanical proposal without these requirements is desirable.
+% explain what a GWD is 
+Current gravitational-wave detectors are based on the Michelson interferometer as shown in Fig.~\ref{}. Recall that an optical Michelson interferometer involves a laser beam being split down two perpendicular arms before returning and interfering at the beamsplitter to produce an interference pattern at the output. 
+An incident gravitational wave, imagined as coming into the page in Fig.~\ref{}, stretches and squashes the lengths of the arms in opposite manners and changes the path difference between them -- albeit by a small amount, a relative length change of less than $10^{-21}$~\cite{}. The resulting change in the interference pattern, known as fluctuations in the interferometer's differential mode, is detected by a photodetector.
+A more complete explanation would include that the gravitational wave can be considered to only move the end mirrors, which phase modulates the light in each cavity, which appears as amplitude modulation after the beamsplitter and can be detected by a photodiode (for example), but the simple explanation above will suffice until a formal model is introduced in Chapter~\ref{}.  
 
-	% Current interferometric gravitational-wave detectors are not sensitive at high frequencies (1--4~kHz) because of their use of optical cavities~\cite{miaoEnhancingBandwidthGravitationalWave2015}. Interferometric gravitational-wave detectors are based on the Michelson interferometer as shown in the left panel of Fig.~\ref{fig:coupled_cavities}. A gravitational wave perturbs the path difference between the two arms of the interferometer by stretching and squashing spacetime and the resulting change in the interference of the light at the beamsplitter produces a signal on a photodetector. This change in the interference is known as fluctuations in the differential mode of the interferometer. Arm cavities (circled in green in Fig.~\ref{fig:coupled_cavities}) and a power-recycling cavity are introduced to increase the power within the arms since this increases the sensitivity of an interferometric detector~\cite{1995AuJPh..48..953M}. A signal-recycling cavity (circled in blue in Fig.~\ref{fig:coupled_cavities}) is introduced to further enhance the signal by changing the overall resonance behaviour of the interferometer to increase the time that the light spends coupled to the gravitational wave. Optical cavities display resonance behaviour due to the interference condition on the phase acquired by the light on each round-trip of the cavity. These cavities increase low-frequency sensitivity around 100~Hz and without them, detection would not be possible. However, their resonance behaviour significantly decreases the finite bandwidth of the interferometer and therefore reduces high-frequency (1--4~kHz) sensitivity~\footnote{Only the first resonance of the cavities is considered here because the second resonance is far above (around 37~kHz) the frequency band of astrophysical interest (here, around 1--4~kHz). Moreover, the signal response of the Michelson interferometer falls off at higher frequencies which makes the detector less sensitive at each successive resonance.}. This project considers interferometer configurations that modify the signal-recycling cavity to improve high-frequency sensitivity.
+	%Interferometric gravitational-wave detectors are based on the Michelson interferometer as shown in the left panel of Fig.~\ref{fig:coupled_cavities}. A gravitational wave perturbs the path difference between the two arms of the interferometer by stretching and squashing spacetime and the resulting change in the interference of the light at the beamsplitter produces a signal on a photodetector. This change in the interference is known as fluctuations in the differential mode of the interferometer. 
 
-% explain what a GWD is and why there are optical cavities
+A problem for interferometric detectors is that the perpendicular axes of deformation (recall: the effect of a gravitational wave on a ring of test particles in Sect.~\ref{sec:gravWaves}) are determined by the polarisation of the gravitational wave and so, if the wave is not aligned to the arms, then the response will be less than usual or might vanish. Throughout this thesis, I will ignore this subtlety and assume the maximum detector response: from a gravitational wave exactly aligned to the arms, as this problem can be solved by a global network of detectors. % -- like we currently have.
 
 % Michelson signal response function
-
-
-% A subtlety for non--ring like detectors is that the perpendicular axes of deformation (recall: the effect of a gravitational wave on a ring of test particles in Sect.~\ref{}) are determined by the polarisation of the gravitational wave and so if the wave is not aligned to the detector, then the response will be less or zero. Throughout this thesis, I will ignore this subtlety and assume the maximum detector response: from a gravitational wave exactly aligned to the arms, as the problem can be solved by a global network of detectors -- like we currently have.
+% Another problem for interferometers is that they are only sensitive to phase differences between the arms modulo $2\pi$. %unrelated
+Another problem for Michelson interferometers is that the phase accumulated by the light can cancel between the two legs of the arms: going from the beamsplitter to the end mirror and going from the end mirror back to the beamsplitter.
+Therefore the signal transfer function of a Michelson interferometer, $T(\Omega)$, where the spectrum of the measurement of $\delta\hat{X}(t)$ at the photodetector is $\delta\tilde{\hat{X}}(\Omega) = T(\Omega) \tilde{h}(\Omega) + \text{noise terms}$ ($\Omega$ is the angular frequency offset from the carrier frequency, explained further in Chapter~\ref{}), will vanish for periods $2\pi/\Omega$ that are a multiple of the round-trip time of the light in the arms $2L/c$ where $L$ is the length of the arm and $c$ is the speed of light~\cite{}. 
+I will ignore this complication because the corresponding frequencies $f=\Omega/(2\pi)=c/(2L)=38\mathrm{kHz}$ for an arm length $L=4\mathrm{km}$ of LIGO~\cite{} are far above the kilohertz frequencies of interest (e.g.\ 1--4~kHz for a neutron-star post-merger signal).
 
 \subsubsection{The role of optical cavities}
+% why are there optical cavities
 
 % kilohertz is now sidebands wrt carrier frequency, will clarify more later
 
+
+	% Arm cavities (circled in green in Fig.~\ref{fig:coupled_cavities}) and a power-recycling cavity are introduced to increase the power within the arms since this increases the sensitivity of an interferometric detector~\cite{1995AuJPh..48..953M}. A signal-recycling cavity (circled in blue in Fig.~\ref{fig:coupled_cavities}) is introduced to further enhance the signal by changing the overall resonance behaviour of the interferometer to increase the time that the light spends coupled to the gravitational wave. Optical cavities display resonance behaviour due to the interference condition on the phase acquired by the light on each round-trip of the cavity. These cavities increase low-frequency sensitivity around 100~Hz and without them, detection would not be possible. However, their resonance behaviour significantly decreases the finite bandwidth of the interferometer and therefore reduces high-frequency (1--4~kHz) sensitivity~\footnote{Only the first resonance of the cavities is considered here because the second resonance is far above (around 37~kHz) the frequency band of astrophysical interest (here, around 1--4~kHz). Moreover, the signal response of the Michelson interferometer falls off at higher frequencies which makes the detector less sensitive at each successive resonance.}. This project considers interferometer configurations that modify the signal-recycling cavity to improve high-frequency sensitivity.
+
 \subsubsection{Simplification to pair of coupled cavities}
 
-% mizuno limit (due to QCRB) on the integrated sensitivity, i.e. on the bandwidth-peak sensitivity product --> can be beaten by squeezing
+The key insight for this simplification is that the cavity mode in each of the arms is less important than the differential mode of the interferometer \jam{, (need explanation) ,} which can be modelled as coming from a single ``arm'' cavity.
 
-\subsubsection{Technological limit: circulating power}
+
+\subsubsection{Technological limitation: circulating power}
 % Why can circulating power not increase?
 % constraints for future detectors
 % I assume that we can't increase power by a factor of 2, unlike Miao et al 2018
+% mizuno limit (due to QCRB) on the integrated sensitivity, i.e. on the bandwidth-peak sensitivity product --> can be beaten by squeezing
+
+
+	% The amount of laser power within an interferometric gravitational-wave detector limits how much its high-frequency sensitivity can improve without its low-frequency sensitivity worsening or the power needing to increase~\cite{miaoFundamentalQuantumLimit2017}. 
+	% However, gravitational waves require a wide band of sensitive frequencies to detect as they are typically not monochromatic~\cite{miaoDesignGravitationalWaveDetectors2018}, and further increasing the power is technologically problematic~\cite{Brooks_2021,PhysRevLett.114.161102}. 
 
 \subsection{Factors limiting kilohertz sensitivity}
 % explain why current GWD are not sensitive at kilohertz
+% what currently prevents us detecting them
 
-% cavities
+
+% cavities % Current interferometric gravitational-wave detectors are not sensitive at high frequencies (1--4~kHz) because of their use of optical cavities~\cite{miaoEnhancingBandwidthGravitationalWave2015}. 
 % shot noise
 
 % overview of the problem: we can't see at HF, (to be covered) and the problems with exisiting proposed solutions (the latter will be detailed more in the relevant background chapters)
@@ -92,20 +113,21 @@ Current detections of gravitational waves have all been around $\sim100$~Hz, but
 
 % It also bears mentioning the other noise sources that affect intereferometers at frequencies below kilohertz: control sensor noise, beam jitter, thermal, seismic, newtonian, gas. But I will not consider any of these in the rest of the thesis.
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Thesis outline}
 % what the thesis contributes towards the problem: the aims from the research proposal
 
-% I aim to design and analytically model an all-optical interferometer configuration to improve high-frequency sensitivity beyond current detectors, while neither fully sacrificing low-frequency sensitivity nor increasing the power. I will include realistic sources of loss in the model to assess the feasibility of this configuration. Finally, I will compare this configuration to existing proposals to show the potential benefits of its design.
-
-% the techniques of detection are ultimately not limited to gravitational waves. broader quantum metrology can benefit
 
 
 
 
+The work in this thesis also has broader applications to cavity-based quantum metrology.
 
 
 % From research proposal
+	% I aim to design and analytically model an all-optical interferometer configuration to improve high-frequency sensitivity beyond current detectors, while neither fully sacrificing low-frequency sensitivity nor increasing the power. I will include realistic sources of loss in the model to assess the feasibility of this configuration. Finally, I will compare this configuration to existing proposals to show the potential benefits of its design.
+
 	% The central aim of this project is to investigate nondegenerate internal squeezing and assess how it might improve the high-frequency sensitivity of future detectors. Although nondegenerate internal squeezing has been considered before, no work has fully examined it nor assessed its feasibility by including losses in the model~\cite{liBroadbandSensitivityImprovement2020}. I will perform an analytic investigation of nondegenerate internal squeezing that will include a feasibility assessment using losses and realistic assumptions and conclude with a comparison to previously proposed configurations.
 
 	% I will use a Hamiltonian method to analytically model nondegenerate internal squeezing and
@@ -120,4 +142,7 @@ Current detections of gravitational waves have all been around $\sim100$~Hz, but
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Chapter summary}
+
+% In this chapter, I motivate the detection of kilohertz gravitational waves, describe what currently prevents us detecting them, and outline what this thesis contributes to detecting them in the future.
+
 
