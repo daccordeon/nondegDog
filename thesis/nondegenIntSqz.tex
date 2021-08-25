@@ -1,4 +1,4 @@
-\chapter{Nondegenerate internal squeezing} %Research chapter: ...
+\chapter{Analytic model of nondegenerate internal squeezing} %Research chapter: ...
 
 % results: interpret deep and far, and be very critical of assessing your approach
 
@@ -14,7 +14,9 @@
 
 % EPR experiments and ``EPR'' squeezing
 
-\section{Analytic model}
+% \section{Analytic model}
+
+\section{Hamiltonian model}
 
 This derivation is based on the lossless model in Ref.~\cite{liBroadbandSensitivityImprovement2020} with the differential mode $\hat{a}$, the signal mode in the signal-recycling cavity $\hat{b}$, and the idler mode in the signal-recycling cavity $\hat{c}$. \jam{Approximations have already been made: single mode and semi-classical pump}. In that model, the only source of vacuum is into the $\hat{b}$ mode from the readout -- i.e. behind the signal-recycling mirror.
 To that model, I add in optical loss: (1) intra-cavity to each of the three modes $\hat{a}, \hat{b}, \hat{c}$ through loss ports \jam{(explain loss port, give a picture)} with transmissivity $T_{l,a}, T_{l,b}, T_{l,c}$, respectively; and (2) at the photodetector, through a beamsplitter with reflectivity $R_{PD}$ \jam{shown in fig}.
@@ -190,7 +192,7 @@ $$S_h(\Omega)=\frac{(\mathrm{S}_X(\Omega))_{2,2}}{\abs{\mathcal{T}(\Omega)}^2}.$
 
 \jam{(continue writing up derivation...)}
 
-
+\jam{(back up and include pump phase in model to show its non-effect)}
 
 
 
@@ -200,9 +202,19 @@ $$S_h(\Omega)=\frac{(\mathrm{S}_X(\Omega))_{2,2}}{\abs{\mathcal{T}(\Omega)}^2}.$
 % &\implies R^{(i)}(\Omega), T(\Omega)\\ S_h(\Omega)&= \frac{\sum_i \left| R^{(i)}(\Omega) \right|^2+\frac{R_{\mathrm{PD}}}{1-R_\mathrm{PD}}}{\left| T(\Omega) \right|^2}
 % \end{align}
 
+\section{Reduction to known systems}
+
+\subsection{Lossless, PT-symmetric limit}
+
+% symmetry broken by RP, repair by BAE but too complicated for here
+
+\subsection{Nondegenerate OPO limit}
 
 
-\subsection{Threshold}
+\section{Stability}
+
+
+\section{Singularity threshold}
 
 I have devised a definition of threshold: ``threshold is the (real) value of the squeezing parameter such that the anti-squeezed quadrature of the quantum noise has a singularity at some (real) frequency; if multiple singularities exist then the threshold is the smallest squeezer value''. Here, I am only looking for singularities that diverge to infinity (along all angles of approach). In order to reduce confusion, I do not call these ``poles'' since the quantum noise is not defined on $\mathbb{C}$. \jam{(Check this: looking at the imaginary part of the poles for stability and looking for real poles (i.e. poles on the real axis) for threshold are the same solutions, surely?)}
 % NB: I am calling the points "singularities" for now to avoid confusion, but they are just the poles of the transfer functions (against complex \[CapitalOmega]) at real \[Chi] such that they are on the real axis (and therefore real \[CapitalOmega]).
@@ -236,20 +248,45 @@ Radiation pressure and back-action evasion do not change threshold because the q
 \jam{(One explanation for the difference between position of the singularity of the anti-squeezed quadrature and the minimum of the squeezed quadrature is that the expression for the sloshing frequency in Korobko et al, 2019 is not valid at large arm losses. If this is so, then what does this fixed--sloshing frequency Hamiltonian correspond to? And for that system, why does the supposedly Gaussian squeezing not maximise antisqz at the frequency that it minimises squeezing? --> Look at pump phase and/or covariance matrix)}
 
 
-\subsection{PT-symmetry and back-action evasion}
+% \subsection{PT-symmetry}
+% % mention removing back-action evasion
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Chapter summary}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Feasibility comparison to existing proposals}
+\chapter{Gravitational-wave detection science case for nondegenerate internal squeezing}
 
+% comparison to existing proposals
+
+\section{Experimental constraints} %on parameter space
 
 % call back to optical loss
 
-\subsection{Optimisation}
 
-% chosen metrics (mutrics), optimisation to hit astrophysical target
-% Realistic experimental constraints
+% \section{Sensitivity optimisation}
 
+% % chosen metrics (mutrics), optimisation to hit astrophysical target
+% % Realistic experimental constraints
+
+% \subsection{Kilohertz detector}
+
+% \subsection{Broadband detector}
+
+\section{Feasibility for gravitational-wave detection}
+
+% miao et al, 2018 astro target and mutrics
+
+% motivation was kilohertz detection but works better as broadband detector?
+% cover two detector designs
+
+\subsection{Optimisation for kilohertz detection}
+
+\subsection{Optimisation for broadband detection}
+
+
+\section{Comparison to existing proposals}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
