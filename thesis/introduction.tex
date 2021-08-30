@@ -53,7 +53,7 @@ This possible bounty of new astrophysics motivates developing the ability to det
 % this will be the goal of my optimisation
 As a case example, the post-merger signal from a typical binary neutron star merger lies within 1--4~kHz. To reliably detect this signal, the estimated sensitivity at 1--4~kHz required is $5 10^{-25} \mathrm{Hz}^{-1/2}$~\cite{miaoDesignGravitationalWaveDetectors2018}. \jam{(for an arbitrary detector?)}
 Other kilohertz astrophysical sources are predicted to require similar or greater sensitivity~\cite{}. 
-The sensitivity is calculated as the amplitude spectral density of the ratio of the noise to signal transfer functions -- which will be explained in detail in Chapter~\ref{chp:proposals}. For now, all that matters is that I have a target sensitivity for optimisation and determining whether a given detector will be useful to kilohertz gravitational-wave detection.
+The sensitivity is calculated as the amplitude spectral density of the ratio of the noise to signal transfer functions -- which will be explained in detail in Chapter~\ref{chp:proposals}. For now, all that matters is that I have a target sensitivity for determining whether a given detector will be useful to kilohertz gravitational-wave detection.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -61,68 +61,105 @@ The sensitivity is calculated as the amplitude spectral density of the ratio of 
 
 % explain what a GWD is 
 Current gravitational-wave detectors are based on the Michelson interferometer as shown in Fig.~\ref{}. Recall that an optical Michelson interferometer involves a laser beam being split down two perpendicular arms before returning and interfering at the beamsplitter to produce an interference pattern at the output. 
-An incident gravitational wave, imagined as coming into the page in Fig.~\ref{}, stretches and squashes the lengths of the arms in opposite manners and changes the path difference between them -- albeit by a small amount, a relative length change of less than $10^{-21}$~\cite{}. The resulting change in the interference pattern, known as fluctuations in the interferometer's differential mode, is detected by a photodetector.
-A more complete explanation would include that the gravitational wave can be considered to only move the end mirrors, which phase modulates the light in each cavity, which appears as amplitude modulation after the beamsplitter and can be detected by a photodiode (for example), but the simple explanation above will suffice until a formal model is introduced in Chapter~\ref{}.  
+An incident gravitational wave, imagined as coming into the page in Fig.~\ref{}, stretches and squashes the lengths of the arms in opposite fashion and changes the path difference between them -- albeit by a small amount, a relative length change of less than $10^{-21}$~\cite{}~\footnote{Corresponding to $\sim10^-{18}$~m which is far smaller than the wavelength of the carrier $\lambda_0\sim10^{-6}$~m and therefore it is not a concern that the interferometer is sensitive to changes only modulo the wavelength of the carrier.}. The resulting change in the interference pattern, known as fluctuations in the interferometer's differential mode, is detected by a photodetector. Note that I assume that the interferometer is tuned such that the light from the arms destructively interferes at the output of the beamsplitter and constructively interferes at the input of the beamsplitter (this ``common'' mode then travels back towards the laser source).
+A more complete explanation of the operation of a Michelson interferometer would include that the gravitational wave can be considered to only move the end mirrors, which phase modulates the light in each cavity, which appears as amplitude modulation after the beamsplitter and can be detected by a photodiode (for example), but the simple explanation above will suffice until a formal model is introduced in Chapter~\ref{}.  
 
 	%Interferometric gravitational-wave detectors are based on the Michelson interferometer as shown in the left panel of Fig.~\ref{fig:coupled_cavities}. A gravitational wave perturbs the path difference between the two arms of the interferometer by stretching and squashing spacetime and the resulting change in the interference of the light at the beamsplitter produces a signal on a photodetector. This change in the interference is known as fluctuations in the differential mode of the interferometer. 
 
 A problem for interferometric detectors is that the perpendicular axes of deformation (recall: the effect of a gravitational wave on a ring of test particles in Sect.~\ref{sec:gravWaves}) are determined by the polarisation of the gravitational wave and so, if the wave is not aligned to the arms, then the response will be less than usual or might vanish. Throughout this thesis, I will ignore this subtlety and assume the maximum detector response: from a gravitational wave exactly aligned to the arms, as this problem can be solved by a global network of detectors. % -- like we currently have.
 
 % Michelson signal response function
-% Another problem for interferometers is that they are only sensitive to phase differences between the arms modulo $2\pi$. %unrelated
-Another problem for Michelson interferometers is that the phase accumulated by the light can cancel between the two legs of the arms: going from the beamsplitter to the end mirror and going from the end mirror back to the beamsplitter.
+% unrelated but Another problem for interferometers is that they are only sensitive to phase differences between the arms modulo $2\pi$. %unrelated
+Another problem for Michelson interferometers is that the phase accumulated by the light can cancel on the two legs of travelling in the arms: going from the beamsplitter to the end mirror and returning from the end mirror back to the beamsplitter.
 Therefore the signal transfer function of a Michelson interferometer, $T(\Omega)$, where the spectrum of the measurement of $\delta\hat{X}(t)$ at the photodetector is $\delta\tilde{\hat{X}}(\Omega) = T(\Omega) \tilde{h}(\Omega) + \text{noise terms}$ ($\Omega$ is the angular frequency offset from the carrier frequency, explained further in Chapter~\ref{}), will vanish for periods $2\pi/\Omega$ that are a multiple of the round-trip time of the light in the arms $2L/c$ where $L$ is the length of the arm and $c$ is the speed of light~\cite{}. 
 I will ignore this complication because the corresponding frequencies $f=\Omega/(2\pi)=c/(2L)=38\mathrm{kHz}$ for an arm length $L=4\mathrm{km}$ of LIGO~\cite{} are far above the kilohertz frequencies of interest (e.g.\ 1--4~kHz for a neutron-star post-merger signal).
 
-\subsubsection{The role of optical cavities}
+\subsection{The role of optical cavities}
 % why are there optical cavities
 
-% kilohertz is now sidebands wrt carrier frequency, will clarify more later
+To the base Michelson interferometer, optical cavities are introduced to improve the sensitivity of the detector, principally around $\sim100$~Hz. Three types of cavities are introduced: (1) arm cavities, (2) a power-recycling cavity, and (3) a signal-recycling cavity. 
+Firstly, arm cavities (shown in Fig.~\ref{}) are introduced via the placement of an input test mass (labelled as ITM in Fig.~\ref{}) mirror after the beamsplitter, for each arm, forming a Fabry-Perot Michelson interferometer. These cavities significantly (up to a factor of 400\jam{(?)} for ...~\cite{}\jam{this is quoting the Finesse, what about the actual power?}) increase the circulating power in the arms which broadly improves the interferometer's sensitivity -- which will be shown in Chapter~\ref{chp:proposals}. 
+Secondly, to further increase the power, a power-recycling cavity is introduced via a power-recycling mirror (labelled as PRM in Fig.~\ref{}) before the beamsplitter, which reflects the otherwise wasted power in the common output mode of the beamsplitter back into the arms. 
+Finally, a signal-recycling cavity is introduced via a signal-recycling mirror (labelled as SRM in Fig.~\ref{}) at the output of the beamsplitter, which enhances the signal by reflecting it back into the arms to be exposed to the gravitational wave for longer. The role of the signal-recycling cavity is more complicated than this simple explanation suggests, it changes the overall resonance behaviour of the interferometer and can be tuned to achieve a variety of outcomes from broadband to narrow-band enhancement~\cite{}, but until a formal model is introduced in Chapter~\ref{chp:proposals} it will suffice. 
+Together, these cavities form a Dual-Recycled Fabry-Perot Michelson interferometer, shown in Fig.~\ref{}, henceforth simply referred to as an interferometer. Without the improved circulating power and signal enhancement of these cavities, the detection of gravitational waves at around $\sim100$~Hz would not have been possible~\cite{}, and their continued inclusion is not optional~\cite{}.
 
+However, the resonance behaviour of these cavities limits the interferometer's signal response at kilohertz. Optical cavities display resonance behaviour due to the different phases acquired by the light at different frequencies on each round-trip of the cavity~\footnote{Note that I will ignore all spatial behaviour of the light throughout this thesis.}. In the steady state, the light entering a cavity interferes with the light that has undergone one round-trip, two round-trips, and so on. When the cavity is on-resonance for a particular frequency, this interference is constructive and the circulating power in the cavity can increase dramatically (beyond 100-fold) the power of the incident light. And when the cavity is off-resonance, the converse is true. 
+For an interferometer with the arm cavities on resonance at the carrier frequency, the resonance behaviour of the arm cavities is broad enough to allow the benefits of circulating power amplification to out-weigh the loss in signal as the cavities come off resonance -- at least, at frequency offsets around $100$~Hz. However, at kilohertz, the arm cavities are no longer near resonance and although the cavities are still a net improvement, the signal response is far lower (by around an order for Advanced~LIGO~\cite{}) than at $100$~Hz. The other cavities in the interferometer also display resonance behaviour but the longer arm cavities have shorter bandwidth and therefore matter at lower frequencies, such as kilohertz, as opposed to $10$~kHz etc.. 
+Due to the phase interference being modulo $2\pi$, the arm cavity resonance is periodic with angular frequency $\dfrac{c}{2L_\text{arm}}$, known as one free spectral range (FSR) of the cavity (approximately 6~kHz for 4~km arms~\jam{(This seems far too small, the fall off seen occurs up to $10^5$ Hz and beyond, which isn't the Michelson, its meant to be the arms?)}), meaning that the cavities will eventually become resonant again. However, I will make a single-mode approximation below that will only be valid for frequencies below the first free spectral range, and so I only discuss the interferometer's response near the first resonance which covers all kilohertz frequencies that I am interested in~\jam{does it?}.
 
 	% Arm cavities (circled in green in Fig.~\ref{fig:coupled_cavities}) and a power-recycling cavity are introduced to increase the power within the arms since this increases the sensitivity of an interferometric detector~\cite{1995AuJPh..48..953M}. A signal-recycling cavity (circled in blue in Fig.~\ref{fig:coupled_cavities}) is introduced to further enhance the signal by changing the overall resonance behaviour of the interferometer to increase the time that the light spends coupled to the gravitational wave. Optical cavities display resonance behaviour due to the interference condition on the phase acquired by the light on each round-trip of the cavity. These cavities increase low-frequency sensitivity around 100~Hz and without them, detection would not be possible. However, their resonance behaviour significantly decreases the finite bandwidth of the interferometer and therefore reduces high-frequency (1--4~kHz) sensitivity~\footnote{Only the first resonance of the cavities is considered here because the second resonance is far above (around 37~kHz) the frequency band of astrophysical interest (here, around 1--4~kHz). Moreover, the signal response of the Michelson interferometer falls off at higher frequencies which makes the detector less sensitive at each successive resonance.}. This project considers interferometer configurations that modify the signal-recycling cavity to improve high-frequency sensitivity.
 
 \subsubsection{Simplification to pair of coupled cavities}
+% does this need to be in the introduction or can it wait until Chapter 3?
+% single mode approximation
 
-The key insight for this simplification is that the cavity mode in each of the arms is less important than the differential mode of the interferometer \jam{, (need explanation) ,} which can be modelled as coming from a single ``arm'' cavity.
+To conceptually simplify the interferometer, as to make it easier to understand and model, I make a single-mode approximation to the light: (1) in the differential mode of the arm cavities and (2) in the signal-recycling cavity. %Meaning what? Only the light at the carrier frequency is studied? Rather, only the light at one of the sidebands of the carrier frequency?
+The key insight for this simplification is that the actual mode in each of the arms is less important than the differential mode of the interferometer which can be approximated as coming from a single ``arm'' cavity, coupled to the signal-recycling cavity~\cite{}, as shown in Fig.~\ref{}. This is not the same as removing an arm from a Michelson interferometer, the new arm cavity mode is the differential mode of the original interferometer.
+This simplification is common in the literature~\cite{Korobko2019,Adya2020} and, although a more complete understanding requires more modes, is accurate below one free spectral range of the arm cavities~\cite{Miaoetal2015,}. In this representation of the interferometer, the laser source and the power-recycling cavity are abstracted away into the input parameter of the circulating power in the arm cavity.
+Importantly, this simplification allows the interferometer to be understood as a pair of coupled cavities, a two-mode system far easier to model, and makes clear why certain quantities, like the sloshing frequency of the two modes, should matter to the interferometer -- which is less clear when the interferometer is directly modelled.
+
+
+\subsection{Factors limiting kilohertz sensitivity}
+% explain why current GWD are not sensitive at kilohertz
+% what currently prevents us detecting them
+
+Gravitational-wave detectors are not sensitive at kilohertz because: (1) the signal response drops off due to the arm cavity resonance, (2) the noise response is dominated by quantum shot noise that is flat in frequency, (3) the integrated sensitivity (the ratio of the signal response to the noise response) cannot improve by classical means without increasing the circulating power, and (4) the circulating power cannot increase without further technological progress.
+The first factor limiting to kilohertz sensitivity, the resonance response of the arm cavities, has been addressed above; I address the latter three factors in turn below.
+
+\subsubsection{Noise at kilohertz is shot noise--dominated}
+% at kilohertz, going by Buikema et al, 2020: laser intensity and frequency, photodetector dark (electronic) noise, thermal (is falling off)
+% It also bears mentioning the other noise sources that affect intereferometers at frequencies below kilohertz: control sensor noise, beam jitter, thermal, seismic, newtonian, gas. But I will not consider any of these in the rest of the thesis.
+
+A real interferometer in subject to noise from many sources, at kilohertz these include, in rough order of magnitude: quantum shot noise, laser intensity noise, photodetector dark noise, laser frequency noise, and thermal noise~\cite{Buikemeetal2020}~\footnote{Below kilohertz, there are many additional noise sources, such as noise from control systems, beam jitter, seismic noise, Newtonian noise, and gas noise. But I will not consider any of these in this thesis.}. However, at kilohertz the noise response is dominated by shot noise, with the sum of contributions from all other noise sources making up less than half the total noise~\cite{}, as shown in Fig.~\ref{} taken from Ref.~\cite{}. As such, I consider quantum noise as the only noise source throughout this thesis.
+
+To explain briefly, shot noise arises from the fundamental, quantum uncertainty in the phase of a state of light. The vacuum fluctuations at a particular frequency mean that even the vacuum will have some uncertainty, a measurable variance, in its phase, distributed about zero. %phase is not a real thing, mention quadratures
+Shot noise is flat in, i.e.\ independent of, frequency which leads it to dominate at kilohertz simply because all other noise sources have been reduced below it by decades of research and innovation~\cite{}. For sensitivity, approximated henceforth as quantum noise--limited sensitivity, which is the ratio of the signal response to the quantum noise response of the interferometer, because the signal is decreasing and the shot noise is constant, the sensitivity decreases at kilohertz, as shown in Fig.~\ref{}.
+A detailed explanation of quantum noise will be given in Section~\ref{sec:qnoise}.
+
+
+\subsubsection{Limit on integrated sensitivity}
+%limit on the quantum noise--limited sensitivity
+% mizuno limit (due to QCRB) on the integrated sensitivity, i.e. on the bandwidth-peak sensitivity product --> can be beaten by squeezing
+
+The circulating power within the arms limits an interferometer's integrated sensitivity, i.e.\ the product of its bandwidth and peak sensitivity~\cite{miaoFundamentalQuantumLimit2017}.
+This limit, the Mizuno limit, comes ultimately from the Quantum Cramer-Rao Bound where the circulating power quantifies the total energy of the detector~\cite{}.
+For a fixed circulating power, this limit means that improving bandwidth to include kilohertz sensitivity would sacrifice peak sensitivity across the band, including compromising existing low-frequency ($\sim100$~Hz) sensitivity beyond the point of being useful for detection. %justify this?
+And while this thesis is motivated by kilohertz detection, this low-frequency sensitivity should be maintained. For the case example of observing binary neutron-star mergers, maintaining low-frequency sensitivity would allow for the pre-merger inspiral to be seen, hopefully along with the merger and post-merger remnant at kilohertz, a necessary piece to construct the full description of the merger~\cite{}.
+Therefore, this limit poses a problem to improving sensitivity at kilohertz to that required for detection.
 
 
 \subsubsection{Technological limitation: circulating power}
 % Why can circulating power not increase?
 % constraints for future detectors
 % I assume that we can't increase power by a factor of 2, unlike Miao et al 2018
-% mizuno limit (due to QCRB) on the integrated sensitivity, i.e. on the bandwidth-peak sensitivity product --> can be beaten by squeezing
+
+The above limit on improving kilohertz sensitivity could be alleviated if the circulating power could be increased, however, this is not currently technologically possible. In Advanced~LIGO, which operates at $750$~kW circulating power in the arms, point absorbers on the optics~\cite{Brooks_2021} and parametric instabilities (particularly when a large number of unstable modes are available)~\cite{PhysRevLett.114.161102} prevent increasing the circulating power far beyond its current value. This poses a technological challenge to future detectors which demand upwards of $3$~MW for LIGO~Voyager~\cite{} and $4.5$~MW for NEMO~\cite{}, a challenge yet to be solved but with much progress towards it~\cite{}. %\jam{(Need further information? For Evans et al, 2015, didn't they alleviate the parametric instability problem?)}
+Therefore, I will assume that $\sim3$~MW circulating power is the maximum achievable value for the next generation of detectors, predicating on significant technological progress in the coming decades. Circulating power cannot alleviate the above Mizuno limit, another method is required to improve kilohertz sensitivity.
 
 
 	% The amount of laser power within an interferometric gravitational-wave detector limits how much its high-frequency sensitivity can improve without its low-frequency sensitivity worsening or the power needing to increase~\cite{miaoFundamentalQuantumLimit2017}. 
 	% However, gravitational waves require a wide band of sensitive frequencies to detect as they are typically not monochromatic~\cite{miaoDesignGravitationalWaveDetectors2018}, and further increasing the power is technologically problematic~\cite{Brooks_2021,PhysRevLett.114.161102}. 
 
-\subsection{Factors limiting kilohertz sensitivity}
-% explain why current GWD are not sensitive at kilohertz
-% what currently prevents us detecting them
+\subsubsection{How to improve kilohertz sensitivity}
 
+The above four factors: the arm cavity resonance, shot noise, the Mizuno limit, and power limitations, can be avoided and sensitivity can be improved, but this requires careful changes to the detector's configuration. Two configurations have been recently proposed to improve kilohertz sensitivity: (1) degenerate internal squeezing~\cite{Korobko2019,Adya2020} and (2) stable optomechanical filtering~\cite{Li2020,Miao2015}. 
+The Mizuno limit, due to its origin from the Quantum Cramer-Rao Bound, can be avoided by non-classical techniques, such as squeezing~\cite{}, a technique which trades off the quantum uncertainty in two quantities to achieve an overall gain because of a bias between them in which matters more to a particular measurement, detailed in Chapter~\ref{chp:background}. Squeezing is already used in Advanced~LIGO to halve the shot noise~\cite{tseQuantumEnhancedAdvancedLIGO2019} across the band, but degenerate internal squeezing is a proposal which uses additional squeezing, inside the signal-recycling cavity, to further enhance the sensitivity by interacting with the signal and noise, detailed in Chapter~\ref{chp:proposals}. 
+The limit can also be avoided by instead addressing the arm cavity resonance, such as by introducing sufficient additional phase at each frequency to the arm cavity broadly resonant. This ``white-light cavity'' idea~\cite{} is what stable optomechanical filtering is proposed is do by coupling a mechanical mode to the signal-recycling cavity mode, detailed in Chapter~\ref{chp:proposals}.
 
-% cavities % Current interferometric gravitational-wave detectors are not sensitive at high frequencies (1--4~kHz) because of their use of optical cavities~\cite{miaoEnhancingBandwidthGravitationalWave2015}. 
-% shot noise
-
-% overview of the problem: we can't see at HF, (to be covered) and the problems with exisiting proposed solutions (the latter will be detailed more in the relevant background chapters)
-
-\subsubsection{Other noise sources at kilohertz} % and why I will ignore them
-
-% going by Buikema et al, 2020: laser intensity and frequency, photodetector dark (electronic) noise, thermal (is falling off)
-
-% It also bears mentioning the other noise sources that affect intereferometers at frequencies below kilohertz: control sensor noise, beam jitter, thermal, seismic, newtonian, gas. But I will not consider any of these in the rest of the thesis.
+However, these two configurations, although frontrunners in the literature~\cite{}, have their problems. Degenerate internal squeezing is susceptible to optical loss, particularly in the readout chain to the photodetector~\jam{check this}, because it decreases the signal and relies on correlations easily degradable by optical losses~\cite{Korobko2019}. Stable optomechanical filtering requires a quiet mechanical mode which demands better thermal noise and mechanical quality factor than are currently technologically possible~\cite{Li2020,Miao2015}. These problems could limit the feasibility of these two configurations for kilohertz detection. While any alternative proposal must first avoid the limit set by the above four factors.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Thesis outline}
 % what the thesis contributes towards the problem: the aims from the research proposal
+% quantum noise--limited sensitivity
+% overview of the problem: we can't see at HF, (to be covered) and the problems with exisiting proposed solutions (the latter will be detailed more in the relevant background chapters)
 
 
+Because of the problems with these two existing proposals, in this thesis I examine an alternative configuration, nondegenerate internal squeezing, which combines the three-mode structure of stable optomechanical filtering with the all-optical approach of degenerate internal squeezing, in the hope that it might present a more feasible option for future detectors. This configuration avoids the four factors limiting kilohertz improvement by the same method of degenerate internal squeezing, it uses squeezing to get around the Quantum Cramer-Rao Bound.
 
 
-
-The work in this thesis also has broader applications to cavity-based quantum metrology.
+% The work in this thesis also has broader applications to cavity-based quantum metrology.
 
 
 % From research proposal
