@@ -1,4 +1,4 @@
-\chapter{Background theory: quantum noise in interferometric gravitational-wave detectors} % Background: theory of quantum noise in interferometric gravitational-wave detectors
+\chapter{Background theory of quantum noise in interferometric gravitational-wave detectors} % Background: theory of quantum noise in interferometric gravitational-wave detectors
 \label{chp:background_theory}
 
 % set up EVERYTHING the audience needs to know
@@ -7,11 +7,14 @@
 % this chapter has a lot of ideas, need to figure out the logical flow -- look at research proposal and other theses --> talk to supes
 
 % do I need to start as far back as MJ's thesis? i.e. back at the quantisation of light, definition of quadratures etc.?
+% supervisors say no for honours thesis
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % chapter introduction
 
+In this chapter, I will review the necessary physics to be able to describe the quantum noise that affects interferometric gravitational-wave detectors. I will use the conventional treatment of quantum noise widely available in the quantum optics literature~\cite{Danilishin,MiaoQCRB}, which builds from the Heisenberg Uncertainty Principle to the quantum noise response of a detector. I will then introduce the technique of squeezing, which can favourably manipulate the quantum noise, first in the abstract and then by demonstrating the Hamiltonian modelling that I will continue to use throughout this thesis. I will derive the response of the well-studied optical parametric oscillator (OPO) in both the degenerate and nondegenerate cases. These models will be expanded upon by adding additional modes in later chapters, so it is well-worth carefully understanding the base model. Finally, I will explain how squeezing is currently used in Advanced LIGO to lower the quantum noise~\cite{} and set-up the motivation behind the more complex uses of squeezing in the next chapter and beyond.
 
+% I will first review the background theory of quantum noise and squeezing in Chapter~\ref{chp:background_theory}, to have the tools to describe the quantum noise response of a detector. In this chapter, I will demonstrate the analytic, Hamiltonian modelling, that I will then use throughout the thesis, on the simple, well-known cases of degenerate and nondegenerate optical parametric oscillators (OPOs, i.e.\ squeezed cavities)~\cite{}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Quantum noise}
@@ -30,6 +33,10 @@
 % \subsubsection{Technological limit: optical loss}
 
 
+\subsection{Quantum noise response of a interferometric gravitational-wave detector}
+
+
+
 \section{Squeezing}
 
 % just a paragraph about sidebands, I do not go further into this because I do not use the formalism (preferring the operator+Interaction Picture which achieves the same effect of studying frequency offsets)
@@ -40,10 +47,11 @@
 	% An example application of squeezing to reduce shot noise is the injection of squeezed vacuum from an external, degenerate squeezer which is used to approximately halve the shot noise in current detectors~\cite{tseQuantumEnhancedAdvancedLIGO2019}. The squeezed vacuum is injected behind the signal-recycling mirror via a Faraday isolator placed outside the signal-recycling cavity as shown in the left panel of Fig.~\ref{fig:coupled_cavities}.
 
 
-Although this derivation is widely available in the literature~\cite{}, I include it here to demonstrate the Hamiltonian method that I use throughout the rest of the thesis. \jam{Should this be included in an appendix?}
-
 
 \subsection{Degenerate OPO}
+% analytic model to demonstrate Hamiltonian method
+
+Although this derivation is widely available in the literature~\cite{}, I include it here to demonstrate the Hamiltonian method that I use throughout the rest of the thesis. \jam{Should this be included in an appendix?}
 
 % OPO = squeezed cavity with no seed light
 
@@ -53,7 +61,7 @@ Although this derivation is widely available in the literature~\cite{}, I includ
 
 
 \subsection{Nondegenerate OPO}
-
+% succicnt analytic model, to show how to calculate covariances
 
 \subsubsection{Threshold and idler loss}
 
