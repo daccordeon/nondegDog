@@ -12,28 +12,62 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % chapter introduction
 
-In this chapter, I will review the necessary physics to be able to describe the quantum noise that affects interferometric gravitational-wave detectors. I will use the conventional treatment of quantum noise widely available in the quantum optics literature~\cite{Danilishin,MiaoQCRB}, which builds from the Heisenberg Uncertainty Principle to the quantum noise response of a detector. I will then introduce the technique of squeezing, which can favourably manipulate the quantum noise, first in the abstract and then by demonstrating the Hamiltonian modelling that I will continue to use throughout this thesis. I will derive the response of the well-studied optical parametric oscillator (OPO) in both the degenerate and nondegenerate cases. These models will be expanded upon by adding additional modes in later chapters, so it is well-worth carefully understanding the base model. Finally, I will explain how squeezing is currently used in Advanced LIGO to lower the quantum noise~\cite{} and set-up the motivation behind the more complex uses of squeezing in the next chapter and beyond.
+In this chapter, I will review the necessary physics to be able to describe the quantum noise that affects interferometric gravitational-wave detectors. I will use the conventional treatment of quantum noise widely available in the quantum optics literature~\cite{Danilishin,MiaoQCRB}, which builds from the Heisenberg Uncertainty Principle to the quantum noise response of a detector. 
+I will then introduce the technique of squeezing, which can favourably manipulate the quantum noise, and then by demonstrating the Hamiltonian modelling of squeezing that I will continue to use throughout this thesis. I will derive the response of the well-studied optical parametric oscillator (OPO) in both the degenerate and nondegenerate cases. These models will be expanded upon by adding additional modes in later chapters, so it is well-worth carefully understanding the base model. Finally, I will explain how squeezing is currently used in Advanced LIGO to lower the quantum noise~\cite{} and set-up the motivation for the more complex uses of squeezing in the next chapter and in my work.
 
 % I will first review the background theory of quantum noise and squeezing in Chapter~\ref{chp:background_theory}, to have the tools to describe the quantum noise response of a detector. In this chapter, I will demonstrate the analytic, Hamiltonian modelling, that I will then use throughout the thesis, on the simple, well-known cases of degenerate and nondegenerate optical parametric oscillators (OPOs, i.e.\ squeezed cavities)~\cite{}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Quantum noise}
 \label{sec:qnoise}
-
 % HUP
 
+Quantum noise, at its most general, refers to any source of noise caused by the quantum-mechanical, fundamental uncertainties in the state of a detector. This covers many different phenomena, from vacuum fluctuations to back-action caused by a measurement~\cite{}. For the light in a cavity-based detector, the amplitude and phase of a particular mode are conjugate quantities related by the Heisenberg Uncertainty Principle, meaning that they can never be simultaneously, exactly known. This is important to gravitational-wave detection because uncertainty in the amplitude and phase of the light in different parts of the detector will appear in the final position measurement, but for now, and largely throughout this thesis, I will just focus on uncertainty in the light itself (which is sufficient~\cite{}). 
 
-	% At high frequencies, the sensitivity of current detectors is limited by quantum noise arising from the quantum nature of light~\cite{danilishinQuantumMeasurementTheory2012}. By the Heisenberg Uncertainty Principle, the amplitude and phase of a quantum state of light (including the vacuum) cannot be exactly known at the same time. Uncertainty in the amplitude of the light within the interferometer leads to quantum radiation pressure noise, while uncertainty in its phase leads to so-called “shot noise”. At high frequencies, shot noise is the dominant source of quantum noise and limits the sensitivity of current detectors. Therefore, reducing shot noise at high frequencies is the principal way to improve high-frequency sensitivity.
+To express these uncertainties formally, I use the conventional, Heisenberg Picture approach used throughout the literature~\cite{Danilishin,}. Let the time-domain creation and annihilation operators of a particular cavity mode (e.g.\ the resonant mode in the single-mode approximation) be $\hat{a}$ and $\hat{a}^\dag$ where the time dependence is implicit, these operators obey $[\hat{a},\hat{a}^\dag]=1$. Let the time-domain quadrature of this mode be $\hat{X}_\theta=\frac{e^{-i \theta}\hat{a}+e^{i \theta}\hat{a}}{\sqrt{2}}$ and $\hat{X}_1=\hat{X}_{\theta=0},\; \hat{X}_2=\hat{X}_{\theta=\frac{\pi}{2}}$ such that $[\hat{X}_1,\hat{X}_2]=i$. This last equation implies the Heisenberg Uncertainty Principle for the amplitude quadrature $\hat{X}_1$ and phase quadrature $\hat{X}_2$: $\sigma_{X_1}\sigma_{X_2}\geq\frac{1}{2}\abs{\ev{[\hat{X}_1,\hat{X}_2]}}=\frac{1}{2}$ where the uncertainty is $\sigma_\mathcal{O}=\sqrt{\ev{\hat{\mathcal{O}}^2}-\ev{\hat{\mathcal{O}}}^2}$ and $\ev{\hat{\mathcal{O}}}=\langle\emptyset\lvert\hat{\mathcal{O}}\rvert\emptyset\rangle$ is the vacuum expectation value~\cite{}. That these quadratures are related to the amplitude and the phase of the light, respectively, matters only to understanding but can indeed be shown~\cite{Danilishin}. More importantly, these time-domain quadratures are Hermitian and therefore observable which is used to ultimately measure the gravitational-wave signal. As such, the exact method of readout of the quadratures is not of concern to this thesis, but it suffices to say that a readout scheme like homodyne readout will work for all applications shown here~\cite{}.
+
+It is worth also understanding the Fourier-domain counterparts to the quadratures, since these contain spectral information about the gravitational-wave signal and Fourier transforms are the primary method of solving Heisenberg equations-of-motion throughout this thesis. Let $\hat{\mathcal{O}}(\Omega) = \int_{-\infty}^\infty \frac{\mathrm{d}t}{\sqrt{2}} \hat{\mathcal{O}} e^{-i\Omega t}$ where the time-dependence is implicit in $\hat{\mathcal{O}}$. Then, let $\hat{X}_\theta(\Omega)=\frac{e^{-i \theta}\hat{a}(\Omega)+e^{i \theta}\hat{a}^\dag(-\Omega)}{\sqrt{2}}$ where careful attention should be made to the sign of the last argument which was flipped in order to accommodate the $e^{-i\Omega t}$ in the Fourier transform. While the time-domain quadratures are Hermitian, $\hat{X}^\dag=\hat{X}$, the Fourier-domain quadratures are not and instead obey $\hat{X}^\dag(\Omega)=\hat{X}(-\Omega)$. These Fourier-domain quantities are still, albeit indirectly, observable either through their time-domain counterparts or through measurements that can derive their real and imaginary parts, ultimately possible due to the ``reality'' condition $\hat{X}^\dag(\Omega)=\hat{X}(-\Omega)$~\cite{sourcecitedinReid}. This detail will not be considered further and I will refer to these quadratures as being observable. In the Fourier domain, the time-domain variances $V_\mathcal{O}=\sigma_\mathcal{O}^2$ are replaced by (single-sided) spectral densities $S_\mathcal{O}(\Omega)\delta(\Omega-\Omega')=\ev{\mathcal{O}(\Omega)\circ\mathcal{O}^\dag(\Omega')}$ where $A\circ B=\dfrac{1}{2}(A\cdot B+B\cdot A)$. For $\hat{a}(\Omega)$ corresponding to an uncorrelated vacuum state, let $\ev{\hat{X}_i(\Omega)\circ\hat{X}_j^\dag(\Omega')}=\delta_{i,j}\delta(\Omega-\Omega')$ where $\delta_{i,j}$ is the Kronecker delta and so $S_X^\text{vac.}=1$, this can be shown from the commutation relations above~\cite{Danilishin}. Finally, there is a subtlety in these spectral density expressions in that I have assumed that the quadrature operators are corresponding to the time-domain quantum fluctuations of the amplitude and phase of the light around its time-independent classical expectation value, i.e.\ I am really considering Fourier transforms of $\delta\hat{X}(t)=\hat{X}(t)-\ev{\hat{X}}$ where I have made the time-dependences explicit for clarity, but I will leave the $\delta$'s implicit to compactify notation.
 
 
+	% At high frequencies, the sensitivity of current detectors is limited by quantum noise arising from the quantum nature of light~\cite{danilishinQuantumMeasurementTheory2012}. By the Heisenberg Uncertainty Principle, the amplitude and phase of a quantum state of light (including the vacuum) cannot be exactly known at the same time. Uncertainty in the amplitude of the light within the interferometer leads to quantum radiation pressure noise, while uncertainty in its phase leads to so-called “shot noise”. 
 
 \subsection{Optical loss}
 %  source of loss, realistic values (now and in a few decades time, 100 years time etc.)
 
-% \subsubsection{Technological limit: optical loss}
+Quantum noise in the light of a cavity-based detector can be thought of as entering the detector through every open port and lossy optic. \jam{(...)}
+% fluctuation-dissipation theorem
+
+
+
+
+
+Having now considered all the sources of quantum noise, I can write down the quantum noise response of an arbitrary detector. %how arbitrary is this?
+Let the quadrature measured at the photodetector (PD) of an arbitrary detector be $\hat{X}_\text{PD}(\Omega)$. This will be determined by the noise quadratures $\hat{X}_i^\text{vac}(\Omega)$ of the vacuum input at each open port and source of optical loss indexed by $i$, the signal $\tilde{h}(\Omega)$, and the detector's linear response to each of these, expressed by the noise $R_i(\Omega)$ and signal $T(\Omega)$ transfer functions (where the frequency dependence will sometimes be implicit henceforth): $$\hat X_\text{PD}(\Omega)=\sum_i R_i \hat X_i^\text{vac}(\Omega) + T \tilde h(\Omega).$$
+The quantum noise measured by the detector is then simply $\hat X_\text{PD}(\Omega)|_{\tilde h=0}$, i.e.\ the output with the signal turned off. This quantum noise can be characterised by its spectral density, $S_X$, in $\text{Hz}^{-1/2}$ which can be simplified assuming uncorrelated vacuum inputs (which is reasonable for all purposes in this thesis~\cite{}) to the sum of squares: $$S_X(\Omega)=\sum_i \abs{R_i}^2(\Omega)$$.
+
+
+% \subsubsection{Technological limit: optical loss}, just give some example values
 
 
 \subsection{Quantum noise response of a interferometric gravitational-wave detector}
+
+For a gravitational-wave detector, where the position of the test mass has, a priori, uncertainty of its own, this uncertainty is fully captured through the amplitude uncertainty of the light and the radiation pressure coupling to the test mass~\cite{}.
+Since the amplitude of the arm cavity mode affects the radiation pressure on the test masses, quantum fluctuations in the amplitude lead to uncertainty in the position of the test masses and therefore quantum radiation pressure noise in the measurement of the gravitational-wave signal~\cite{Danilishin?}. Similarly, uncertainty in the phase of the light incident on a photodetector affects the counting statistics and therefore leads to uncertainty in the intensity and ultimately so-called ``shot noise'' in the measurement of the signal~\cite{}. \jam{(phase isn't real, clarify this)} 
+These amplitude and phase noises combine to form the total quantum noise of the detector.
+
+Similarly, the positions and momenta of the test masses in a gravitational-wave detector are conjugate quantities. This introduces strange consequences of detection, e.g.\ as the position measurement of a test mass improves, its momentum becomes increasingly uncertain which couples through radiation pressure to the arm cavity mode~\cite{}. \jam{(follow up on this, what does this cause?)} 
+These consequences place limits on the quantum noise--limited sensitivity, i.e.\ the signal to quantum noise ratio, of a detector that cannot be surpassed by classical means which will be explained further later.
+
+
+% . These limits, e.g.\ the Standard Quantum Limit and Quantum Cramer-Rao Bound~\cite{},
+%SQL
+
+% QCRB
+
+
+	% At high frequencies, shot noise is the dominant source of quantum noise and limits the sensitivity of current detectors. Therefore, reducing shot noise at high frequencies is the principal way to improve high-frequency sensitivity.
+
+
 
 
 
