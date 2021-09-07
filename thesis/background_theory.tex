@@ -33,7 +33,7 @@ In the Fourier domain, the time-domain variances $V_\mathcal{O}=\sigma_\mathcal{
 
 	% At high frequencies, the sensitivity of current detectors is limited by quantum noise arising from the quantum nature of light~\cite{danilishinQuantumMeasurementTheory2012}. By the Heisenberg Uncertainty Principle, the amplitude and phase of a quantum state of light (including the vacuum) cannot be exactly known at the same time. Uncertainty in the amplitude of the light within the interferometer leads to quantum radiation pressure noise, while uncertainty in its phase leads to so-called “shot noise”. 
 
-\subsection{Optical loss}
+\subsection{Optical loss and decoherence}
 %  source of loss, realistic values (now and in a few decades time, 100 years time etc.)
 
 \begin{figure}
@@ -44,49 +44,84 @@ In the Fourier domain, the time-domain variances $V_\mathcal{O}=\sigma_\mathcal{
 \end{figure}
 
 % So, quantum noise is just caused by uncertainties in the state of detector
-Quantum noise from fundamental uncertainty the light of a cavity-based detector can be thought of as entering the detector through every open port and lossy optic~\cite{}. So far, the explanation introduced above is that quantum noise is caused by fundamental uncertainties in the state of the detector, so what does the previous statement mean? % too colloquial?
+Quantum noise from fundamental uncertainty in the light of a cavity-based detector can be thought of as entering the detector through every open port and lossy optic~\cite{}. So far, the explanation introduced above is that quantum noise is caused by fundamental uncertainties in the state of the detector, so what does the previous statement mean? % too colloquial?
 The key insight is that any state of light in the detector can be written in terms of transformations of the vacuum state, and so any uncertainty in the state of the light can be expressed as vacuum fluctuations (corresponding to $S_X^\text{vac}=1$ above) viewed under such transformations~\cite{}. Therefore, the source of the quantum noise is ultimately the vacuum, which can be thought to surround the detector and enter whenever the system is opened to its surroundings~\footnote{This language is potentially confusing, because the vacuum does not travel and therefore can not enter, but it is shorthand for considering how the system interacts with the surrounding fields -- how light can leak out of and into the detector.}. An open port is the term for such a point where light can enter and leave the detector, such as at the photodetector where the detector is necessarily always open~\cite{}. This is worth emphasising, measurement requires the detector to be coupled to the environment and guarantees a port for the vacuum -- this notion of quantum noise is not well-defined for a closed system. Soon, I will express this notion mathematically, but first it needs to be explained why lossy optics should also be a source of quantum noise.
 
 % fluctuation-dissipation theorem
 Optical loss refers to the energy lost from a light field upon propagation or interaction with an optic, e.g. if $90\%$ of the power incident on a mirror is reflected but only $5\%$ transmitted, then the remaining $5\%$ of the power has been lost to the environment. The chief mechanism for optical loss is dissipation into the thermal bath, i.e.\ heating of the mirror~\cite{}. The Fluctuation-Dissipation Theorem states that any such dissipation into the thermal bath is accompanied by the introduction of uncorrelated noise into the light field~\cite{}. As such, the loss mechanism in an optic can be modelled by a beamsplitter that releases energy into the environment and creates a new open port for vacuum to enter through, as shown in Fig.~\ref{fig:beamsplitter_loss}. In this Beamsplitter Model of Optical Loss, all optics are perfect (i.e.\ the power incident equals the sum of the power reflected and transmitted) but additional open ports are added throughout the detector -- so-called loss ports. It suffices to have a single loss port in every cavity, i.e.\ for every mode, since the uncorrelated vacuum from multiple sources of loss sum in quadrature and is equivalent to a single vacuum source from a lossier port -- which should be clearer later. %is or are?
 This means that any other open ports in the detector, besides any used for measurement, can also be rolled into the loss ports. Therefore, the quantum noise in a cavity-based detector comes from vacuum entering at the measurement device and from loss ports in every mode.
 
-Using this notion of quantum noise, I can write down the quantum noise response of a cavity-based detector. %how arbitrary is this?
+% decoherence and the effect of mixing with the vacuum
+% This mathematical formalism is useful but it leaves the effect of the loss ports vague 
+The physical effect of optical loss is to decohere the state of the light -- reduce correlations and pull the quantum noise back towards its vacuum value of $S_X=1$. This will be demonstrated later, but the effect can be understood using the above notion of optical loss as the introduction of uncorrelated vacuum (along with the actual loss of power). The reflected light from a loss port is some linear combination of the vacuum and the incident light, where conservation of energy in the beamsplitter model of loss means that the linear combination is normalised. This means that the quantum noise of the reflected light can be considered an average of the incident light and the vacuum value of $1$ -- the idea that mixing with the vacuum pulls the quantum noise back towards $1$. The correlations of the light between two different modes similarly is pulled towards the vacuum, and since the vacuum is uncorrelated this means reducing the correlations (towards $0$). Where the correlation between quadratures $\hat{X}_i, \hat{X}_j$ is given by the co-variance (or off-diagonal term in the spectral density matrix seen later) $\ev{\hat{X}_i(\Omega)\circ\hat{X}_j^\dag(\Omega')}$, which is not real but is indirectly observable like the quadratures themselves~\cite{}. That optical loss also decoheres the state is important to techniques that seek to reduce the quantum noise by introducing correlations, such as some of those explored in this thesis.
+
+Finally, using this notion of quantum noise, I can write down the quantum noise response of a cavity-based detector. %how arbitrary is this?
 Let the quadrature measured at the photodetector (PD) of an arbitrary detector be $\hat{X}_\text{PD}(\Omega)$. This will be determined by the noise quadratures $\hat{X}_i^\text{vac}(\Omega)$ of the vacuum input at each open port and source of optical loss indexed by $i$, the signal $\tilde{h}(\Omega)$, and the detector's linear response to each of these, expressed by the noise $R_i(\Omega)$ and signal $T(\Omega)$ transfer functions (where the frequency dependence will often be implicit henceforth): $$\hat X_\text{PD}(\Omega)=\sum_i R_i \hat X_i^\text{vac}(\Omega) + T \tilde h(\Omega).$$
 These transfer functions capture the behaviour of the detector, including the impact on the optical quantum noise by coupling to non-optical modes such as the mechanical mode of a suspended mirror -- more on this later. 
 The quantum noise measured by the detector is then simply $\hat X_\text{PD}(\Omega)|_{\tilde h=0}$, i.e.\ the output with the signal turned off. This quantum noise can be characterised by its spectral density, $S_X$, in $\text{Hz}^{-1/2}$ which can be simplified assuming uncorrelated vacuum inputs (which is reasonable for all purposes in this thesis~\cite{}) to the sum of squares: $$S_X(\Omega)=\sum_i \abs{R_i}^2(\Omega).$$ 
 Since the transfer functions $R_{i_1}, R_{i_2}$ for two loss ports in the same cavity are the same up to the respective loss rates $\sqrt\gamma_{i_1}, \sqrt\gamma_{i_2}$, the two ports can be collapsed to a single loss port with loss rate $\sqrt{\gamma_{i_1}+\gamma_{i_2}}$ since $$\abs{R_{i_1}}^2+\abs{R_{i_2}}^2=\abs{\sqrt{\gamma_{i_1}}R}^2+\abs{\sqrt{\gamma_{i_2}}R}^2=\abs{\sqrt{\gamma_{i_1}+\gamma_{i_2}}R}^2.$$ This explains the claim made before that only one loss port is needed for each mode; an explanation of the loss rates $\gamma$ will be given later in the next section.
 
+
 % \subsubsection{Technological limit: optical loss}, just give some example values
 
+\subsection{Quantum noise response of an interferometric gravitational-wave detector}
 
-\subsection{Quantum noise response of a interferometric gravitational-wave detector}
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Response of a two-cavity conventional detector, shown in Fig.~\ref{}, to quantum radiation pressure noise, shot noise, and total quantum noise. At kilohertz, shot noise is the dominant form of quantum noise. The Standard Quantum Limit (SQL) is shown in the signal-normalised curve \jam{(does this need to be a three-panel N, S, NSR plot?)}.}
+	\label{fig:simplifed_QN_response_conventional}
+\end{figure}
 
-This understanding of quantum noise can be instantiated for a interferometric detector. 
-For an interferometer, the position of the test mass has a fundamental uncertainty of its own, but this uncertainty is fully captured through the amplitude uncertainty of the light and the radiation pressure coupling to the test mass~\cite{}. As mentioned above, the quantum noise transfer function of the detector accounts for the addition of the mechanical mode through solving for its impact on the optical mode. 
-This impact can be understood physically: the amplitude of the arm cavity mode (i.e.\ its amplitude quadrature) affects the radiation pressure on the test masses, quantum fluctuations in the amplitude quadrature lead to uncertainty in the position of the test masses and therefore quantum radiation pressure noise in the measurement of the gravitational-wave signal~\cite{Danilishin?}. Similarly, uncertainty in the phase of the light (its phase quadrature) incident on a photodetector affects the counting statistics of the photodetector and therefore leads to uncertainty in the intensity and ultimately so-called ``shot noise'' in the measurement of the signal~\cite{}.  \jam{(What is a counting statistic, explain this better)} %\jam{(phase isn't real, clarify this)} phase quadrature is measurable
-And so, (1) for an interferometer, the final measurement is affected by uncertainties in both quadratures of the light, but at different points in the detector (this will be clearer when I give a formal model in the next chapter), and (2) the quantum noise can be divided into the effects of shot noise, associated with the photodetector and the loss ports of the detector, and radiation pressure noise, associated with the test mass mechanical mode. \jam{(Clarify the association of loss ports with shot noise)}
+This understanding of quantum noise can be applied to an interferometric detector, which has two sources of quantum noise: (1) radiation pressure noise and (2) shot noise. 
+% mention back-action as QPRN, mention free-falling mass in horizontal direction approximation
+For an interferometer, the position of the test mass has a fundamental uncertainty of its own, but this uncertainty is captured through the quantum noise transfer function of the detector which accounts for the addition of this mechanical mode through solving for its impact on the optical mode. The contribution to the quantum noise is known as quantum radiation pressure noise. 
+This impact can be understood physically: the amplitude quadrature of the arm cavity mode couples to the test mass through radiation pressure~\cite{}, therefore quantum fluctuations in the amplitude quadrature lead to uncertainty in the position of the test masses, and visa versa~\cite{Danilishin?}. The response of the detector to this noise is related to the resonance behaviour of the mechanical mode, i.e.\ the resonances of the suspended pendulum that is the test mass. In reality, the suspension chain in a detector like Advanced LIGO has non-trivial response due to the coupling of different mechanical modes, but this response becomes simpler above the main pendulum resonance(s)~\cite{}. Because the frequencies that I am interested in lie above $100$~Hz and these resonances, I will approximate the test mass as free-falling horizontally, i.e.\ that it is resonant at DC, $0$~Hz. This approximation is commonly made in the literature when studying the kilohertz response of interferometric detectors~\cite{}. The result of this approximation is that the quantum radiation pressure noise response of an interferometric detector is given by \jam{(radiation pressure formula)}~\cite{}, decreasing with increasing frequency.
 
+The rest of the quantum noise comes from the optical mode itself, e.g.\ from the vacuum from each loss port. Physically, this quantum noise manifests as so-called ``shot noise'' at the photodetector -- uncertainty in the number of photons incident on the photodetector~\cite{}. While quantum radiation pressure noise appears (with the gravitational-wave signal) in the amplitude quadrature in the arms, shot noise appears in all quadratures as it is associated with the vacuum \jam{(what happened to shot noise being associated with the phase quadrature? why is it conjugate to QRPN?)}. The shot noise response of an interferometric detector is given by \jam{(two-cavity shot noise response)}~\cite{}, flat with frequency, which will be shown later. This means that at kilohertz, shot noise is the dominant source of quantum noise as quantum radiation pressure noise falls off while shot noise remains flat, as shown in Fig.~\ref{fig:simplifed_QN_response_conventional}. This means that improving the quantum noise at kilohertz requires improving the shot noise, which is what this thesis focuses on. 
+
+% Similarly, uncertainty in the phase of the light (its phase quadrature) incident on a photodetector affects the counting statistics of the photodetector and therefore leads to uncertainty in the intensity and ultimately so-called ``shot noise'' in the measurement of the signal~\cite{}.  \jam{(What is a counting statistic, explain this better)} %\jam{(phase isn't real, clarify this)} phase quadrature is measurable
+% And so, (1) for an interferometer, the final measurement is affected by uncertainties in both quadratures of the light, but at different points in the detector (this will be clearer when I give a formal model in the next chapter), and (2) the quantum noise can be divided into the effects of shot noise, associated with the photodetector and the loss ports of the detector, and radiation pressure noise, associated with the test mass mechanical mode. \jam{(Clarify the association of loss ports with shot noise, what is shot noise only?)}
 
 % Similarly, the positions and momenta of the test masses in a gravitational-wave detector are conjugate quantities. This introduces strange consequences of detection, e.g.\ as the position measurement of a test mass improves, its momentum becomes increasingly uncertain which couples through radiation pressure to the arm cavity mode~\cite{}. \jam{(follow up on this, what does this cause?)} 
 % These consequences place limits on the quantum noise--limited sensitivity, i.e.\ the signal to quantum noise ratio, of a detector that cannot be surpassed by classical means which will be explained further later.
 
-
-% . These limits, e.g.\ the Standard Quantum Limit and Quantum Cramer-Rao Bound~\cite{},
-%SQL
-
-% QCRB
-
-
 	% At high frequencies, shot noise is the dominant source of quantum noise and limits the sensitivity of current detectors. Therefore, reducing shot noise at high frequencies is the principal way to improve high-frequency sensitivity.
 
+\subsubsection{Limits on improving the quantum noise}
 
+% SQL
+% review QCRB again? but did Mizuno Limit on the integrated sensitivity in Introduction?
+The factors limiting the quantum noise--limited sensitivity of a gravitational wave detector were discussed in Chapter~\ref{chp:introduction}. Since the signal transfer function falls off at kilohertz because of the arm cavity resonance and the quantum radiation pressure noise starts dominating the quantum noise below $10$~Hz, there is a window of detection around $100$~Hz where the sensitivity is greatest. In particular, there is a point where the two contributions to quantum noise are equal, shown in Fig.~\ref{fig:simplifed_QN_response_conventional}. The trade-off between the two \jam{(need to explain this tradeoff somewhere above, formulae should help)} means that \jam{(... Will need to read up on SQL and QCRB to write this section properly.)}
+ %changing interferometer parameters (except for circulating power)
+This is known as the Standard Quantum Limit (SQL) for interferometric detection and is an instance of a more general result about quantum noise~\cite{}. Beating the Standard Quantum Limit is not possible using classical techniques but is possible using quantum technology such as squeezing, the focus of the next chapter. This is similar to the Mizuno Limit on the integrated sensitivity described in Chapter~\ref{chp:introduction}, which comes from the Quantum Cramer-Rao Bound, an even more fundamental limit on quantum noise based on the information available~\cite{}, which is also able to be beaten by the correlations introduced through squeezing but not by \jam{(... what? can't just say classical techniques again, really need to read up to make this work)}.
+\jam{(this paragraph should motivate the need for squeezing it is almost there but misses many technical details)}
+These limits on improving the quantum noise motivate the need for technologies like squeezing which manipulate the quantum state beyond just changing the classical interferometer.
 
+% leave optical loss values in LIGO to external squeezing
 
 
 \section{Squeezing}
 
-% just a paragraph about sidebands, I do not go further into this because I do not use the formalism (preferring the operator+Interaction Picture which achieves the same effect of studying frequency offsets)
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Ball-and-stick illustration of squeezing.}
+	\label{fig:ballandstick_simple}
+\end{figure}
+
+% return to HUP
+% ball-and-stick plot
+Squeezing refers to a broad range of technologies that all manipulate the quantum noise through exchanging uncertainty in one quantity for its conjugate quantity, such as the decreasing the quantum noise in the amplitude quadrature (e.g.\ by some factor $e^r$) by increasing the noise in the phase quadrature, while still obeying the Heisenberg Uncertainty Principle~\cite{}: $$(\frac{\sigma_{X_1}}{e^r}) (e^r\sigma_{X_2})\geq\frac{1}{2}$$. This is advantageous when the noise in one quantity matters more than the other, such as in interferometric detectors where, e.g.\ with homodyne readout, one quadrature is measured at the photodetector and noise in the other quadrature does not affect the measurement~\cite{}. A simple illustration of this is shown in Fig~\ref{fig:ballandstick_simple} where the trade-off of uncertainties is visualised as literally squeezing the noise ellipse.
+
+
+
+
+% production of squeezed states, PDC, give a citation to answer Ilya's question
+% in the abstract, a squeezing technology might produce any amount of squeezing, the energetic reality of gain and loss in a NL crystal creates threshold
+
+
+% just a paragraph about sidebands?, I do not go further into this because I do not use the formalism (preferring the operator+Interaction Picture which achieves the same effect of studying frequency offsets)
 
 
 	% An established technology to reduce shot noise at high frequencies is squeezing~\cite{danilishinQuantumMeasurementTheory2012,chuaQuantumEnhancementKm2015}. Squeezing manipulates the quantum state of light and the vacuum to trade-off phase uncertainty for amplitude uncertainty; this decreases shot noise by increasing quantum radiation pressure noise~\footnote{Squeezing only improves sensitivity if the interferometer readout is suitably designed to exploit the trade-off between shot noise and radiation pressure noise.}. Squeezed states of light can be created in a crystal with nonlinear polarisability by parametric down-conversion which annihilates a photon at a pump frequency and creates two entangled photons with ``squeezed" uncertainties. To conserve energy, the sum of the frequencies of the created photons must equal the pump frequency. This process is degenerate if the frequencies of the created photons are equal and is nondegenerate otherwise.
@@ -108,7 +143,7 @@ Although this derivation is widely available in the literature~\cite{}, I includ
 
 
 \subsection{Nondegenerate OPO}
-% succicnt analytic model, to show how to calculate covariances
+% susinct analytic model, to show how to calculate covariances
 
 \subsubsection{Threshold and idler loss}
 
@@ -116,12 +151,21 @@ Although this derivation is widely available in the literature~\cite{}, I includ
 
 \subsubsection{Recovering squeezing}
 
+
+
 \subsection{External squeezing in interferometric gravitational-wave detectors}
 
 % Generally speaking, the vacuum entering the main port of an arbitrary quantum noise--limited detector can be squeezed externally and injected via a Faraday isolator (a directional beam-splitter) to lower the quantum noise.
 
-\subsubsection{Technological limit: pump power} 
-% i.e. threshold
+% squeezing ellipse and signal arrow plot (+ show the effect of optical loss: injection, detection, intracavity)
+
+% separate optical losses: intracavity and detection
+% 10% detection, 15% internal in aLIGO (why is internal so high?) -- from Korobko talk
+
+
+% \subsubsection{Technological limit: pump power and stability} 
+% % i.e. threshold
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Chapter summary}
