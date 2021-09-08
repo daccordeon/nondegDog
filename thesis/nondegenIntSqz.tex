@@ -198,20 +198,28 @@ $$S_h(\Omega)=\frac{(\mathrm{S}_X(\Omega))_{2,2}}{\abs{\mathcal{T}(\Omega)}^2}.$
 
 
 
+% verified these results by repeating the model with 2x2 matrices and 4x4 matrices
+
+
+
 % \begin{align}
 % \gamma^b_\mathrm{tot}&=\gamma_R+\gamma_b\\
 % \hat{B}_\mathrm{out} &= \hat{B}_\mathrm{in} - \sqrt{2\gamma_R}\hat{b}\\
 % &\implies R^{(i)}(\Omega), T(\Omega)\\ S_h(\Omega)&= \frac{\sum_i \left| R^{(i)}(\Omega) \right|^2+\frac{R_{\mathrm{PD}}}{1-R_\mathrm{PD}}}{\left| T(\Omega) \right|^2}
 % \end{align}
 
+
+
+
 \section{Reduction to known systems}
 
 \subsection{Lossless, PT-symmetric limit}
 
-% symmetry broken by RP, repair by BAE but too complicated for here
+% symmetry broken by losses and RP, repair by BAE but too complicated for here
 
 \subsection{Nondegenerate OPO limit}
 
+% therefore mystery of the idler loss carries over: idler loss cannot be zero
 
 \section{Stability}
 
@@ -260,13 +268,15 @@ Radiation pressure and back-action evasion do not change threshold because the q
 % \section{Tolerance to optical losses}
 % this is repeated in the next chapter? but I need this to explain the behaviour with different readout?
 
-\section{Idler and combined signal-idler readout}
+\section{Preliminary work: idler and combined signal-idler readout}
 
 % stability and singularity threshold maintained (same denominator)
-
+% reduction to nOPO and dOPO (recovers squeezing)
 % tolerance to losses? see problem with position of signal readout tolerance above
 
+% showcase the reasons for further interest in this configuration
 
+% idler readout transfer functions: noise indep of pump phase but noise dep on relative phase of pump to linear combination of idler quadratures
 
 
 
@@ -282,7 +292,9 @@ Radiation pressure and back-action evasion do not change threshold because the q
 
 \section{Experimental constraints} %on parameter space
 
-% call back to optical loss
+% IFO parameter space -- Pcirc is fixed
+
+% what are realistic losses, what are ideal losses?
 
 
 % \section{Sensitivity optimisation}
@@ -296,33 +308,66 @@ Radiation pressure and back-action evasion do not change threshold because the q
 
 \section{Results}
 
+
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{}
+	\label{fig:}
+\end{figure}
+
 \subsection{Tolerance to optical loss}
 % show tolerance to each of the four sources
 
+% resistant to detection losses, which is a big deal, although Caves's amplifier could alleviate this more generally
+% resistant to signal loss, sensitive to arm loss, very sensitive to idler loss (SRM must be closed to idler through e.g. dichroic)
+
+% idler readout tolerance to losses (showcase preliminary results)
+
+\subsection{Optimal squeezing}
 
 
 \section{Feasibility for gravitational-wave detection}
+
+% stress that the goal of this thesis is not to provide a recommendation to the designers of future gravitational wave detectors of what parameters to use, that task is much harder and would require the modelling of many other effects. This section (and thesis) is only exploratory in nature, and my conclusion is that nIS warrants more study because it appears to be able to get close enough to the targets (without increasing power) and is comparable to optomechanical alternative, and more resistant to detection losses than degenerate internal squeezing (operated in the squeezing not anti-squeezing pump phase).
 
 % miao et al, 2018 astro target and mutrics
 
 % directly address the vagueness with ``is this configuration useful to GW detection'', talking about a particular parameter set or the best param set possible?
 
-% tolerance to different losses
-
 % motivation was kilohertz detection but works better as broadband detector?
 % cover two detector designs
 
-\subsection{Optimisation for kilohertz detection}
+    % Sensitivity target of 5e-25 from 1--4 kHz.
+    % 	With high squeezer ratio, i.e. 95\%, and ideal losses, then target can be hit for less than 1kHz of the band. With even higher squeezer ratio, i.e 99\%, and increased omegaS to move the peak into kHz (and corresponding increased gammaR), then the target can be hit for 1--3kHz.
+    % 		Bottom line: nIS can achieve the sensitivity target partially across the band, with more and more ideal conditions/optimisation of omegaS and gammaR necessary to widen the range that it achieves it at.
+    % 		Recommending a detector design isn't the goal of my project, but I do want to say something re: the sensitivity target. Right now, it sounds like nIS can achieve it at some peak frequency (under ideal conditions) but not from 1--4kHz for a Voyager-like detector.
 
-\subsection{Optimisation for broadband detection}
+
+\subsection{Application to kilohertz detection}
+
+% need to show curve
+
+% achieving target across the band looks very unlikely, but target might be achievable at a particular kilohertz frequency
+% note the limitations with the target (conditions on a particular EoS of the neutron star etc.)
+
+% mention mutricK's for optimisation? don't need to put everything in the thesis
+
+
+\subsection{Application to broadband detection}
+% optimisation?
 
 
 \section{Comparison to existing proposals}
 
 % overlay Fig. 5 from Li et al, 2020
+    % The key result is that I've found losses for nIS that replicate the results for sWLC: arm loss 75 ppm, idler loss 100 ppm. For these ideal losses, the peak sensitivity and bandwidth are better than sWLC.
+	   %  Are these loss values more realistic than the thermal and mechanical constraints of sWLC? I think so, but I need back-up on this.
+% all-optical approach is at least comparable to optomechanical approach
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Chapter summary}
+
 
 
