@@ -10,15 +10,21 @@
 % squeezing ellipse and signal arrow plot
 
 
+
+
 \section{Literature review}
 \jam{(justify novelty of proposal)}
 
+% claim: the modelling of this configuration has never been done as thoroughly as my work, explain why (recency of interest)
 
 % EPR experiments and ``EPR'' squeezing
 
 % \section{Analytic model}
 
 \section{Hamiltonian model}
+
+\jam{(Probably need to talk about my methodology more -- state that this derivation presented is the last of a long line of increasing complexity (more losses, radiation pressure, pump phase, etc.) and that I have verified at each stage that the model recovers the previous model. This allowed me to also consider the impact of each subsequent addition in isolation. Moreover, I should re-emphasise that it reduces to the lossless case in Li and follows the same path as the verified models of dIS and the OPOs. The point is that this derivation is not controversial.)}
+
 
 This derivation is based on the lossless model in Ref.~\cite{liBroadbandSensitivityImprovement2020} with the differential mode $\hat{a}$, the signal mode in the signal-recycling cavity $\hat{b}$, and the idler mode in the signal-recycling cavity $\hat{c}$. \jam{Approximations have already been made: single mode and semi-classical pump}. In that model, the only source of vacuum is into the $\hat{b}$ mode from the readout -- i.e. behind the signal-recycling mirror.
 To that model, I add in optical loss: (1) intra-cavity to each of the three modes $\hat{a}, \hat{b}, \hat{c}$ through loss ports \jam{(explain loss port, give a picture)} with transmissivity $T_{l,a}, T_{l,b}, T_{l,c}$, respectively; and (2) at the photodetector, through a beamsplitter with reflectivity $R_{PD}$ \jam{shown in fig}.
@@ -30,7 +36,7 @@ The full Hamiltonian of the system is given by: $$\hat{H}=\hat{H}_0+\hat{H}_\mat
 \begin{itemize}
 \item $\hat{H}_0=\hbar\omega_0(\hat{a}^\dagger\hat{a}+\frac{1}{2})+\hbar\omega_0(\hat{b}^\dagger\hat{b}+\frac{1}{2})+\hbar\omega_\mathrm{idler}(\hat{c}^\dagger\hat{c}+\frac{1}{2})$, the uncoupled behaviour of the optical modes, in the Interaction Picture, the model can ignore this behaviour (moving it from the operators onto the states) \jam{(is RWA also used?)} % and uses a rotating frame at the carrier frequency in order to ignore the evolution of the optical modes from $\hat{H}_0$ \jam{(be careful, are we? -- also, is RWA used?)}
 \item $\hat{H}_\mathrm{I}=i\hbar\omega_s(\hat{a}\hat{b}^\dag-\hat{a}^\dag\hat{b})+i\hbar\chi(\hat{b}^\dag\hat{c}^\dag-\hat{b}\hat{c})$, the interaction of the three optical modes $\hat{a}, \hat{b}, \hat{c}$, where a semi-classical approximation has been taken to the pump field \jam{(spell out what this means for $\chi$)} and a single-mode approximation to each of the cavity modes which are assumed to be on resonance \jam{(this needs more discussion, do more in deg. int. sqz. section)}
-\item $\hat{H}_\mathrm{GW}=-\alpha (\hat{x}-L_\mathrm{arm}h)(\frac{\hat{a}+\hat{a}^\dag}{\sqrt{2}})+\frac{1}{2\mu}\hat{p}^2$, \jam{($\alpha$ is $\alpha_\mathrm{GW}$, not the alpha in Li)} the coupling to the gravitational-wave signal $h(t)$
+\item $\hat{H}_\mathrm{GW}=-\alpha (\hat{x}-L_\mathrm{arm}h)(\frac{\hat{a}+\hat{a}^\dag}{\sqrt{2}})+\frac{1}{2\mu}\hat{p}^2$, \jam{($\alpha$ is $\alpha_\mathrm{GW}$, not the alpha in Li)} the coupling to the gravitational-wave signal $h(t)$ \jam{(Mention that authors disagree on the exact form of the RP term -- there are many equivalent methods to couple the GW signal, mirror mode, and optical mode~\cite{})}
 \item $\hat{H}_{\mathrm{BAE}}=-\alpha \hat{y}(\frac{\hat{c}+\hat{c}^\dag}{\sqrt{2}})-\frac{1}{2\mu}\hat{q}^2$, the PT-symmetry enabling, back-action evasion \jam{(clarify, what is BAE?)} mode
 \item $\hat{H}_{\gamma_R}$ \jam{(formula, state but just use Langevin terms)}, the readout of the $\hat{b}$ mode
 \item $\hat{H}_{\gamma_i}$ for $i=a,b,c$, the intra-cavity loss ports, these and $\hat{H}_{\gamma_R}$ give the standard \jam{(word choice)} Langevin terms in the Heisenberg-Langevin equations of motion \jam{(cite Gardiner and Collete?)}.
@@ -198,7 +204,7 @@ $$S_h(\Omega)=\frac{(\mathrm{S}_X(\Omega))_{2,2}}{\abs{\mathcal{T}(\Omega)}^2}.$
 
 
 
-% verified these results by repeating the model with 2x2 matrices and 4x4 matrices
+% verified these results by repeating the model with 2x2 matrices and 4x4 matrices, important to mention this because it is part of the methodology
 
 
 
@@ -210,21 +216,72 @@ $$S_h(\Omega)=\frac{(\mathrm{S}_X(\Omega))_{2,2}}{\abs{\mathcal{T}(\Omega)}^2}.$
 
 
 
+% should this be down in results section?
+% analyse typical nIS plot features before getting into different tests
+% plot: classic N, S, NSR; also noise budget plot
+% need to show some example plots here to set up those in the next section?
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Nondegenerate internal squeezing quantum noise and signal responses, and sensitivity.}
+	\label{fig:}
+\end{figure}
+
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Nondegenerate internal squeezing breakdown of quantum noise sources, plotting separate noise transfer functions for each loss port (this is akin to a typical ``noise budget''~\cite{} but not quite the same).}
+	\label{fig:}
+\end{figure}
+
 
 \section{Reduction to known systems}
 
+% show that this follows from the EoM but can be verified by looking at the plots
+
 \subsection{Lossless, PT-symmetric limit}
+
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Nondegenerate internal squeezing sensitivity showing the lossless limit.}
+	\label{fig:}
+\end{figure}
 
 % symmetry broken by losses and RP, repair by BAE but too complicated for here
 
 \subsection{Nondegenerate OPO limit}
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Nondegenerate internal squeezing shot noise response (i.e. quantum noise with radiation pressure turned off) showing the large arm loss limit.}
+	\label{fig:}
+\end{figure}
+
+% give best explanation of ITM T=0, but can admit that while the maths is clear the physics is not obvious -- potentially requires more thought
 
 % therefore mystery of the idler loss carries over: idler loss cannot be zero
 
+% full 4x4 matrix agrees, not just variance 1,1
+
 \section{Stability}
 
+% will need to review stability
+
+% plot: imaginary part of poles
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Stability of nondegenerate internal squeezing, showing the imaginary part of the poles of the transfer functions, when the imaginary part becomes positive the system becomes unstable~\cite{}.}
+	\label{fig:}
+\end{figure}
 
 \section{Singularity threshold}
+
+\jam{(Emphasise that this is original work and that it is a clever approach.)}
+
+% motivate this by the previous section's looking at poles, now looking at real poles that could be encountered, to avoid confusion with the complex poles that are always present I will call these real poles ``singularities''
+
 
 I have devised a definition of threshold: ``threshold is the (real) value of the squeezing parameter such that the anti-squeezed quadrature of the quantum noise has a singularity at some (real) frequency; if multiple singularities exist then the threshold is the smallest squeezer value''. Here, I am only looking for singularities that diverge to infinity (along all angles of approach). In order to reduce confusion, I do not call these ``poles'' since the quantum noise is not defined on $\mathbb{C}$. \jam{(Check this: looking at the imaginary part of the poles for stability and looking for real poles (i.e. poles on the real axis) for threshold are the same solutions, surely?)}
 % NB: I am calling the points "singularities" for now to avoid confusion, but they are just the poles of the transfer functions (against complex \[CapitalOmega]) at real \[Chi] such that they are on the real axis (and therefore real \[CapitalOmega]).
@@ -249,21 +306,56 @@ For dIS, by Eq.~\ref{eq:unified-threshold}, the definition reduces to dOPO thres
 For nIS, this definition reduces to nOPO threshold $(\Omega,\chi)\xrightarrow[\gamma_a\rightarrow\infty]{}(0,\sqrt{\gamma^b_\mathrm{tot}\gamma_c})$ and to the lossless threshold in the formal limit $(\Omega,\chi)\xrightarrow[\gamma_a=0,\gamma_c\rightarrow0]{}(0,\omega_s)$. This last limit makes sense from the stability \jam{(make sure stability already studied)} analysis, since the lossless system is marginally stable at threshold and this anti-squeezed singularity definition looks for when the poles are on the real axis.
 
 Radiation pressure and back-action evasion do not change threshold because the quantum noise transfer function denominator has the same positive zeros as the shot noise transfer function without radiation pressure (and BAE).
+% pump phase does not change threshold either
 
 % this resolves the mystery of idler loss
 
-\jam{(Threshold plots)}
 
-\subsubsection{Degenerate internal squeezing - different notions of threshold}
-%shouldn't this be in the dIS sub-chapter?
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Summary of considered configurations on threshold. \jam{(Is this necessary, just reference plots in other chapters?)}}
+	\label{fig:}
+\end{figure}
+
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Trajectory of singularities in (real) $(\Omega, \chi)$ space as losses are changed for nondegenerate internal squeezing (left) and, for reference, for degenerate internal squeezing (right). Degenerate and nondegenerate OPO behaviour is not interesting as thresholds remain at DC ($\Omega=0$) and are relatively simple: $\sqrt \gamma^b_\text{tot}$ and $\sqrt \gamma^b_\text{tot} \gamma^c_\text{tot}$, respectively.}
+	\label{fig:}
+\end{figure}
+
+% plot: OPO and lossless dIS, nIS on threshold
+% plot: trajectory of poles for lossy dIS and nIS -- maybe cut dIS because nIS should be the focus? 
+
+
+\subsection{Problem with definition}
+
+% make clear that knowing threshold just gives the physical bounds of the parameter space, it doesn't correspond to the optimal squeezing (see results section) for sensitivity improvement -- just as minimising N does not necessarily maximise SNR if signal is not considered. 
+
+\subsubsection{Disagreement between squeezed and anti-squeezed quadratures}
+% Degenerate internal squeezing - different notions of threshold
+%shouldn't this be in the dIS sub-chapter? no.
+
+% plot: both quadratures comparison (black-green plot)
+
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Degenerate internal squeeing difference between singularity threshold (that maximises anti-squeezing peak) and squeezing parameter that minimises peak squeezing.}
+	\label{fig:}
+\end{figure}
 
 \jam{(One explanation for the difference between position of the singularity of the anti-squeezed quadrature and the minimum of the squeezed quadrature is that the expression for the sloshing frequency in Korobko et al, 2019 is not valid at large arm losses. If this is so, then what does this fixed--sloshing frequency Hamiltonian correspond to? And for that system, why does the supposedly Gaussian squeezing not maximise antisqz at the frequency that it minimises squeezing? --> Look at pump phase and/or covariance matrix)}
+
 
 
 % \subsection{PT-symmetry}
 % % mention removing back-action evasion
 
+\subsection{Preliminary work: physical meaning of singularity threshold}
 
+% will this all evaporate when pump depletion is added? yes, its likely
 
 % \section{Tolerance to optical losses}
 % this is repeated in the next chapter? but I need this to explain the behaviour with different readout?
@@ -278,7 +370,20 @@ Radiation pressure and back-action evasion do not change threshold because the q
 
 % idler readout transfer functions: noise indep of pump phase but noise dep on relative phase of pump to linear combination of idler quadratures
 
+% plot: separate idler and signal readout, reduction to OPOs, combined reduction to dOPO
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Preliminary work: idler readout compared to signal readout. These readout schemes can not be run simultaneously due to measurement collapsing the entangled state of the signal and idler -- ``independent'' readouts here refers to if each was run separately. Idler readout appears promising at lower-than-kilohertz frequencies around $100$~Hz, especially when the readout rates are comparable.}
+	\label{fig:}
+\end{figure}
 
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Preliminary work: combined signal-idler readout, showing the limit of large arm loss that recovers a degenerate OPO (in the same manner that nondegenerate OPO combined readout looks like a degenerate OPO, shown in Section~\ref{}).}
+	\label{fig:}
+\end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -290,34 +395,52 @@ Radiation pressure and back-action evasion do not change threshold because the q
 \label{chp:science_case}
 % comparison to existing proposals
 
+% be clear about the scope of this project, I am not wanting to recommend the design of the next detector to be built, this is exploratory work into a configuration that has never been modelled this thoroughly before -- more would need to be done (e.g. add in external squeezing and thermal noise etc.) to make a proper judgement which is not my aim.
+
 \section{Experimental constraints} %on parameter space
+
+% will need to decide on a parameter set to make the rest of the plots: use LIGO Voyager at different readout rates? use the Li data set which is this already?
 
 % IFO parameter space -- Pcirc is fixed
 
 % what are realistic losses, what are ideal losses?
 
-
-% \section{Sensitivity optimisation}
-
-% % chosen metrics (mutrics), optimisation to hit astrophysical target
-% % Realistic experimental constraints
-
-% \subsection{Kilohertz detector}
-
-% \subsection{Broadband detector}
+% table: parameter sets to compare
+\begin{table}
+	\caption{Table of interferometer parameter sets, showing configuration and derived parameters. The parameter set from Ref.~\cite{} is based on LIGO~Voyager but directly sets the readout rate $\gamma_R$ and sloshing frequency $\omega_s$ and back-forms the corresponding physical lengths and reflectivities. \jam{(Freedoms in this process)}}
+	\label{tab:}
+\end{table}
 
 \section{Results}
 
 
+\subsection{Tolerance to optical loss}
+% plot: tolerance to each of the four sources, matrix plot each against readout rate
+% some way to mega matrix all of these, or just show sensitivity and not N and S separetely?
 \begin{figure}
 	\centering
 	% \includegraphics[width=\textwidth]{}
-	\caption{}
+	\caption{Nondegenerate internal squeezing tolerance to loss (1/4): detection loss.}
 	\label{fig:}
 \end{figure}
-
-\subsection{Tolerance to optical loss}
-% show tolerance to each of the four sources
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Nondegenerate internal squeezing tolerance to loss (2/4): signal mode, intra-cavity signal-recycling cavity loss.}
+	\label{fig:}
+\end{figure}
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Nondegenerate internal squeezing tolerance to loss (3/4): idler mode, intra-cavity signal-recycling cavity loss.}
+	\label{fig:}
+\end{figure}
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Nondegenerate internal squeezing tolerance to loss (4/4): intra-cavity arm cavity loss.}
+	\label{fig:}
+\end{figure}
 
 % resistant to detection losses, which is a big deal, although Caves's amplifier could alleviate this more generally
 % resistant to signal loss, sensitive to arm loss, very sensitive to idler loss (SRM must be closed to idler through e.g. dichroic)
@@ -326,6 +449,17 @@ Radiation pressure and back-action evasion do not change threshold because the q
 
 \subsection{Optimal squeezing}
 
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Nondegenerate internal squeezing optimal squeezing curve for sensitivity at probe frequency, i.e.\ plotting sensitivity and noise measured at a particular ``probe'' frequency for varying squeezing parameters and different detection losses.}
+	\label{fig:}
+\end{figure}
+
+% plot optimal squeezing curve (blue-green swoosh)
+% mention that this can be done for probe frequency, peak frequency, integral etc.
+
+% emphasise that threshold is not optimal squeezing for sensitivity
 
 \section{Feasibility for gravitational-wave detection}
 
@@ -346,24 +480,75 @@ Radiation pressure and back-action evasion do not change threshold because the q
 
 \subsection{Application to kilohertz detection}
 
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Nondegenerate internal squeezing sensitivity under ideal conditions, and under more realistic conditions. The sensitivity target (shown in red) can perhaps be achieved at a peak frequency but not realistically across the 1--4~kHz band. These conditions are for fixed circulating power in the arm cavity and no external squeezing.}
+	\label{fig:}
+\end{figure}
+
+% plot: curve optimised for kilohertz
+
 % need to show curve
 
 % achieving target across the band looks very unlikely, but target might be achievable at a particular kilohertz frequency
 % note the limitations with the target (conditions on a particular EoS of the neutron star etc.)
 
 % mention mutricK's for optimisation? don't need to put everything in the thesis
+% plot: curve optimised for mutricK?
 
 
 \subsection{Application to broadband detection}
 % optimisation?
 
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Nondegenerate internal squeezing sensitivity optimised for broadband detection (i.e.\ with integrated sensitivity from 0 to $\infty$ optimised).}
+	\label{fig:}
+\end{figure}
+% plot: curve optimised for broadband 
+
+% idler readout also looks quite promising but demands a lot more investigation before drawing strong conclusions
+
+
+% \section{Sensitivity optimisation}
+
+% % chosen metrics (mutrics), optimisation to hit astrophysical target
+% % Realistic experimental constraints
+
+% \subsection{Kilohertz detector}
+
+% \subsection{Broadband detector}
+
 
 \section{Comparison to existing proposals}
 
-% overlay Fig. 5 from Li et al, 2020
+\subsection{All-optical versus optomechanical configuration}
+
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Nondegenerate internal squeezing compared to stable optomechanical filtering. Errant \jam{(word choice)} factors of two in the sensitivity (perhaps from the scalar versus vector convention of the signal transfer function) and in the test mass mass (perhaps from different conventions of the reduced mass) are required. Uses data from Ref.~\cite{} with direct permission from the authors.}
+	\label{fig:}
+\end{figure}
+
+% don't overlay Fig. 5 from Li et al, 2020
+% plot: with data from Fig. 5 in Li
     % The key result is that I've found losses for nIS that replicate the results for sWLC: arm loss 75 ppm, idler loss 100 ppm. For these ideal losses, the peak sensitivity and bandwidth are better than sWLC.
 	   %  Are these loss values more realistic than the thermal and mechanical constraints of sWLC? I think so, but I need back-up on this.
 % all-optical approach is at least comparable to optomechanical approach
+
+% \subsubsection{}
+% The problem with making a judgement
+% emphasise that this result is not a clean decision, the best I can say is that they are comparable
+% forcasting future technological progress is hard to do rigourously or scientifically
+
+
+% do I need to include this? it would be nice
+% \subsection{Degenerate versus nondegenerate internal squeezing}
+% degenerate internal squeezing can be run in amplification regime if losses are high
+% nondegenerate is less sensitive to losses and could potentially use idler/combined readout to get ahead
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
