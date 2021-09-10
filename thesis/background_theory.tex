@@ -6,14 +6,13 @@
 
 % this chapter has a lot of ideas, need to figure out the logical flow -- look at research proposal and other theses --> talk to supes
 
-% do I need to start as far back as MJ's thesis? i.e. back at the quantisation of light, definition of quadratures etc.?
-% supervisors say no for honours thesis
+% do I need to start as far back as MJ's thesis? i.e. back at the quantisation of light, definition of quadratures etc.? --> supervisors say no for honours thesis
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % chapter introduction
 
 In this chapter, I will review the necessary physics to describe the quantum noise that affects interferometric gravitational-wave detectors. I will use the conventional treatment of quantum noise widely available in the quantum optics literature~\cite{Danilishin,MiaoQCRB}, which builds from the Heisenberg Uncertainty Principle to the quantum noise response of a detector. 
-I will then introduce the technique of squeezing, which can favourably manipulate the quantum noise. Then, demonstrate the Hamiltonian modelling of squeezing that I will continue to use throughout this thesis. I will derive the response of the well-studied optical parametric oscillator (OPO) in both the degenerate and nondegenerate cases. These models will be expanded upon by adding additional modes in later chapters, so it is well-worth carefully understanding the base model. Finally, I will explain how squeezing is currently used in Advanced LIGO to lower the quantum noise~\cite{} and set-up the motivation for the more complex uses of squeezing in the next chapter and in my work.
+I will then introduce the technique of squeezing, which can favourably manipulate the quantum noise. Then, I will demonstrate the Hamiltonian model of squeezing used throughout this thesis. I will derive the response of the well-studied optical parametric oscillator (OPO) in both the degenerate and nondegenerate cases. These models will be expanded upon by adding additional modes in later chapters, so it is well-worth carefully understanding the base model. Finally, I will explain how squeezing is currently used in Advanced LIGO to lower the quantum noise~\cite{} and set-up the motivation for the more complex uses of squeezing in the next chapter and in my work.
 
 % I will first review the background theory of quantum noise and squeezing in Chapter~\ref{chp:background_theory}, to have the tools to describe the quantum noise response of a detector. In this chapter, I will demonstrate the analytic, Hamiltonian modelling, that I will then use throughout the thesis, on the simple, well-known cases of degenerate and nondegenerate optical parametric oscillators (OPOs, i.e.\ squeezed cavities)~\cite{}. 
 
@@ -128,11 +127,11 @@ Squeezing refers to a broad range of technologies that all manipulate the quantu
 % production of squeezed states, PDC, give a citation to answer Ilya's question
 % Although I will model the crystal as a ``black-box'' that contributes some term to the Hamiltonian
 Optical squeezing can be achieved via a variety of techniques~\cite{}, but in this thesis I will focus on the production of squeezed states by shining light through nonlinear crystals~\cite{}. In a crystal with a quadratic (nonlinear) polarisability, i.e.\ when exposed to an electric field $\vec E$ it produces an electric field $\varepsilon_0 \sum_{n=0}^\infty \chi^{(n)} {\vec E}^n$~\cite{ ref in Kirk thesis?} \jam{(check this expression)} where the quadratic co-efficient dominates $\abs{\chi^{(2)}}\gg\abs{\chi^{(n)}},\; n\neq2$, the process of parametric down-conversion can occur~\cite{}. In this process, a photon of a \jam{(particular?)} ``pump'' frequency $\omega_p$ is annihilated to create two entangled, squeezed photons at lower frequencies $\omega_0,\; \omega_0+\Delta$ such that $\omega_p=2\omega_0+\Delta$ to conserve energy~\cite{}. The frequency difference $\Delta$, chosen by how the crystal is pumped, is typically small in comparison to the other frequencies in the system, and when $\Delta=0$ the produced photons are degenerate which dramatically changes the mode structure of the system (this will be revisited later); the energy level structure of the process is shown in Fig.~\ref{fig:PDC_deg_and_nondeg}. That the photons produced in parametric down-conversion are squeezed will be shown in the next section. %, but that they are entangled follows from their shared point of creation. 
-\jam{(Why does this happen in the crystal, what about quadratic nonlinearity makes squeezing happen?)}. Although this process can annihilate and create photons of many different frequencies \jam{(can it?)}, in the single-mode approximation that I maintain throughout this thesis I will only consider the down-conversion involving a particular pump frequency $2\omega_0+\Delta$ and carrier frequency $\omega_0$ -- that of the main laser in the interferometer (but more on that later). This is justified by the same reasoning as before, the cavities pick-out their resonant frequencies and all other frequencies can be ignored~\cite{}. And I assume that wherever the squeezer crystal is placed, the pump frequency and the two produced frequencies (called the signal $\omega_0$ and idler $\omega_0+\Delta$ frequencies) are resonant (i.e. the effects of detuning are not considered in this thesis).
+\jam{(Why does this happen in the crystal, what about quadratic nonlinearity makes squeezing happen?)}. Although this process can annihilate and create photons of many different frequencies \jam{(can it?)}, in the single-mode approximation that I maintain throughout this thesis I will only consider the down-conversion involving a particular pump frequency $2\omega_0+\Delta$ and carrier frequency $\omega_0$ -- that of the main laser in the interferometer (but more on that later). This is justified by the same reasoning as before, the cavities pick-out their resonant frequencies and all other frequencies can be ignored~\cite{}. And I assume that wherever the squeezer crystal is placed, the pump frequency and the two produced frequencies (called the signal~\footnote{There is potential for later confusion between the signal mode of light created by the squeezer and the light in the detector that contains the gravitational-wave signal. E.g.\ when talking about the signal transfer function, it can be that the light in the signal mode is measured to estimate the gravitational-wave signal, although the signal transfer function is named for the latter. These terms are too prevalent in the literature~\cite{} not to use them, but I have tried to be clear whenever necessary.} $\omega_0$ and idler $\omega_0+\Delta$ frequencies) are resonant (i.e. the effects of detuning are not considered in this thesis).
 
-Before constructing a Hamiltonian model of squeezing, I need to make three clarifications to reduce confusion. Firstly, although one can imagine a green laser beam incident on a crystal squeezing two slightly differently coloured red lasers also incident, squeezing is often used to squeeze the vacuum of virtual photons at the signal and idler (or just signal if degenerate) modes which can be initially confusing. Abstractly, this corresponds to the coherent amplitudes of the incident modes being zero, i.e.\ the ellipse in Fig.~\ref{fig:ballandstick_simple} instead being centred at the origin. This means that I need to distinguish between the squeezed vacuum from a squeezer and true vacuum, where the ellipse in Fig.~\ref{fig:ballandstick_simple} is circular and centred at the origin and corresponds to the $S_X=1$ value. 
+Before constructing a Hamiltonian model of squeezing, I need to make three clarifications to reduce confusion. Firstly, although one can imagine a green laser beam incident on a crystal squeezing two slightly differently coloured red lasers also incident, squeezing is often used to squeeze the vacuum of virtual photons at the signal and idler (or just the signal if degenerate) modes which can be initially confusing. Abstractly, this corresponds to the coherent amplitudes of the incident modes being zero, i.e.\ the ellipse in Fig.~\ref{fig:ballandstick_simple} instead being centred at the origin. This means that I need to distinguish between the squeezed vacuum from a squeezer and true vacuum, where the ellipse in Fig.~\ref{fig:ballandstick_simple} is circular and centred at the origin and corresponds to the $S_X=1$ value. 
 % can these latter general comments (frequency, dB) be moved into dOPO section where they will make more sense?
-Secondly, throughout this thesis I consider the quantum noise response of a detector and talk about the quantum noise being squeezed (suppressed) or anti-squeezed (amplified) at different frequencies. This should not be confused with the squeezer interacting with different frequencies, rather, the squeezer still interacts with the same frequencies of the single-mode approximation but the response considers the spectra of their respective quadratures (i.e.\ the distinction between the frequency annihilated by ${\hat a} (\Omega)$ and its spectrum with respect to frequency $\Omega$). Finally, in the squeezing literature, there is potential confusion when quantifying the amount of squeezing produced. If $S_X$ is scaled (squeezed) by a factor $e^{-r}$, like the first variance in Eq.~\ref{eq:HUP_squeezed}, then typically~\cite{} the quantum noise response $\sqrt S_X$ is plotted logarithmically in amplitude-decibels (dB) as $20 \log_{10}(\sqrt {S_X e^{-r}})=20 \log_{10}(\sqrt S_X) - 20\log_{10}(e^{r/2})$ with the vacuum ($S_X=1$) at $0$~dB. Given the potential confusion, I reserve the term ``squeezing factor'' for the parameter $\chi$ seen shortly in the Hamiltonian model, although it can refer to $e^r$ or $e^{r/2}$ or various other related quantities~\cite{}.
+Secondly, throughout this thesis I consider the quantum noise response of a detector and talk about the quantum noise being squeezed (suppressed) or ``anti-squeezed'' (amplified) at different frequencies. This should not be confused with the squeezer interacting with different frequencies, rather, the squeezer still interacts with the same frequencies of the single-mode approximation but the response considers the spectra of their respective quadratures (i.e.\ the distinction between the frequency annihilated by ${\hat a} (\Omega)$ and its spectrum with respect to frequency $\Omega$). Finally, in the squeezing literature, there is potential confusion when quantifying the amount of squeezing produced. If $S_X$ is scaled (squeezed) by a factor $e^{-r}$, like the first variance in Eq.~\ref{eq:HUP_squeezed}, then typically~\cite{} the quantum noise response $\sqrt S_X$ is plotted logarithmically in amplitude-decibels (dB) as $20 \log_{10}(\sqrt {S_X e^{-r}})=20 \log_{10}(\sqrt S_X) - 20\log_{10}(e^{r/2})$ with the vacuum ($S_X=1$) at $0$~dB. Given the potential confusion, I reserve the term ``squeezing factor'' for the parameter $\chi$ seen shortly in the Hamiltonian model, although it can refer to $e^r$ or $e^{r/2}$ or various other related quantities~\cite{}.
 
 % just a paragraph about sidebands?, I do not go further into this because I do not use the formalism (preferring the operator+Interaction Picture which achieves the same effect of studying frequency offsets)
 
@@ -161,6 +160,7 @@ In the literature, a distinction is sometimes made between when the squeezed fie
 To further simplify the model, I ignore the dynamics of the pump laser through approximating it as an un-depletable reservoir of photons. Formally, this means that I make a semi-classical approximation to the pump mode and then approximate its coherent amplitude as constant (the ``no pump depletion'' assumption). This approximation is widely used in the literature~\cite{} (although models with pump depletion accounted for exist~\cite{}) and is valid in the parameter regime that I remain in -- to be explained more later.
 
 \subsubsection{Analytic model}
+\label{sec:dOPO_model}
 % analytic model to demonstrate Hamiltonian method
 
 I derive the quantum noise response of a degenerate OPO using a Hamiltonian approach. Let the modes of this system be as shown in Fig.~\ref{fig:dOPO_config}: $\hat u$ for the pump at frequency $2\omega_0$, $\hat b$ for the signal (squeezed) cavity mode at frequency $\omega_0$ (assuming that $\hat b$ is resonant is where the single-mode approximation is made), $\hat n^L_b$ for the vacuum entering the intra-cavity loss port, $\hat B_\text{in}$ for the vacuum entering the readout port, $\hat B_\text{out}$ for the signal mode leaving the readout port, $\hat n^L_\text{PD}$ for the vacuum entering the detection loss port, and $\hat B_\text{PD}$ for the signal mode incident on the photodetector, i.e.\ after the detection loss port. I want to derive $\hat B_\text{PD}$ as a function of the vacuum inputs, to do so I will first solve for $\hat b$ and then propagate~\footnote{Spatial propagation is not part of this model, I mean that I will use the appropriate input/output relations~\cite{} to find the detected mode.} the solution to the photodetector. The Hamiltonian of this system is given by $\hat H = \hat H_0 + \hat H_I + \hat H_\gamma$ where $\hat H_0$ gives the decoupled dynamics of $\hat u, \hat b$, $\hat H_I$ gives the parametric down-conversion in the squeezer crystal, and $\hat H_\gamma$ gives the coupling through the readout and each loss port, these are as follows~\cite{}: \jam{(fill in readout term, look at Korobko?)}
@@ -171,26 +171,28 @@ I derive the quantum noise response of a degenerate OPO using a Hamiltonian appr
 \end{align}
 Where $x$ is the real coupling constant of the down-conversion, $\phi$ is the phase of the pump laser, $\text{h.c.}$ represents the Hermitian conjugate of the rest of the expression (and represents the reverse, second-harmonic generation~\cite{} process where two $\omega_0$ photons combine to make an $2\omega_0$ photon), and $\gamma_b, \gamma^b_R$ are the coupling rates through the intra-cavity loss port and the readout port respectively. These coupling rates (in Hz) are related to the transmission through their respective ports $T_{l,b}, T_R$ and the round-trip time for the cavity $\tau = \frac{L_\text{rt}}{c}$ ($L_\text{rt}$ is the round-trip length of the cavity) by $\gamma = -\frac{1}{2\tau}\log(1-T)$~\cite{}. The detection loss will be dealt with using an input/output relation later in the derivation, which is easier, although it could be written explicitly in the Hamiltonian~\cite{}. 
 
-For this Hamiltonian, the Heisenberg-Langevin equation-of-motion~\cite{} for $\hat b$, given by $\dot\hat b=-\frac{i}{\hbar}[\hat b,\hat H]$, is as follows (with the Langevin input/output terms coming from $H_\gamma$): $$\dot{\hat{b}}= -i\omega_0 \hat b+x e^{i\phi} \hat u\hat b^\dag - \gamma^b_\mathrm{tot} \hat{b} + \sqrt{2\gamma^b_R}\hat{B}_\mathrm{in} + \sqrt{2\gamma_b}\hat{n}^L_b.$$ Where $\gamma^b_\text{tot}=\gamma^b_\text{R}+\gamma_b$. Now, I make the semi-classical pump and no pump depletion approximations to $\hat u$ to turn it into some constant coherent amplitude $u$ (determined by the classical pump power~\cite{}) and group it with the coupling co-efficient $x$ to form the squeezer parameter $\chi = x u$. So far, all of this working has been in the Heisenberg picture. Entering the Interaction Picture and separating out the dynamics of $\hat H_0$ onto the states and leaving $\hat H - \hat H_0$ to evolve the operators, like entering a rotating frame at $\hat b \mapsto e^{-i\omega_0 t} \hat b$ for each operator, removes the $-i\omega_0 \hat b$ term from the equation-of-motion leaving: $$\dot{\hat{b}}= \chi e^{i\phi}\hat b^\dag - \gamma^b_\mathrm{tot} \hat{b} + \sqrt{2\gamma^b_R}\hat{B}_\mathrm{in} + \sqrt{2\gamma_b}\hat{n}^L_b.$$ Since I am interested in the quantum noise, I also take the fluctuating components of each of these operators (leaving the $\delta \hat b\mapsto\hat b$ implicit as mentioned in Section~\ref{}) to ignore the classical dynamics, but since each of the input modes are vacuum $\delta\hat{B}_\mathrm{in}=\hat{B}_\mathrm{in}$ and similarly for $\hat{n}^L_b$. \jam{(That the classical amplitude for $\hat b$ remains zero is not obvious, the squeezer starts lasing at threshold so I need to clarify.)} The result is that the equation-of-motion is the same for the fluctuating components.
+For this Hamiltonian, the Heisenberg-Langevin equation-of-motion~\cite{} for $\hat b$, given by $\dot{\hat b}=-\frac{i}{\hbar}[\hat b,\hat H]$ and the bosonic commutation relations ($[\hat Q_i,\hat Q_j^\dag]=\delta_{i,j}$ where the annihilation operator of field $i$ is $\hat Q_i$), is as follows (with the Langevin input/output terms coming from $H_\gamma$): $$\dot{\hat{b}}= -i\omega_0 \hat b+x e^{i\phi} \hat u\hat b^\dag - \gamma^b_\mathrm{tot} \hat{b} + \sqrt{2\gamma^b_R}\hat{B}_\mathrm{in} + \sqrt{2\gamma_b}\hat{n}^L_b.$$ Where $\gamma^b_\text{tot}=\gamma^b_\text{R}+\gamma_b$. Now, I make the semi-classical pump and no pump depletion approximations to $\hat u$ to turn it into some constant coherent amplitude $u$ (determined by the classical pump power~\cite{}) and group it with the coupling co-efficient $x$ to form the squeezer parameter $\chi = x u$. So far, all of this working has been in the Heisenberg picture. Entering the Interaction Picture and separating out the dynamics of $\hat H_0$ onto the states and leaving $\hat H - \hat H_0$ to evolve the operators, like entering a rotating frame at $\hat b \mapsto e^{-i\omega_0 t} \hat b$ for each operator, removes the $-i\omega_0 \hat b$ term from the equation-of-motion leaving: $$\dot{\hat{b}}= \chi e^{i\phi}\hat b^\dag - \gamma^b_\mathrm{tot} \hat{b} + \sqrt{2\gamma^b_R}\hat{B}_\mathrm{in} + \sqrt{2\gamma_b}\hat{n}^L_b.$$ Since I am interested in the quantum noise, I also take the fluctuating components of each of these operators (leaving the $\delta \hat b\mapsto\hat b$ implicit as mentioned in Section~\ref{}) to ignore the classical dynamics, but since each of the input modes are vacuum $\delta\hat{B}_\mathrm{in}=\hat{B}_\mathrm{in}$ and similarly for $\hat{n}^L_b$. \jam{(That the classical amplitude for $\hat b$ remains zero is not obvious, the squeezer starts lasing at threshold so I need to clarify.)} The result is that the equation-of-motion is the same for the fluctuating components.
 
 This equation-of-motion can then be solved algebraically via Fourier transform (where $\partial_t \mapsto -i \Omega$): $$(\gamma^b_\mathrm{tot}-i \Omega)\hat b(\Omega)=\chi e^{i\phi}\hat b^\dag(-\Omega)  + \sqrt{2\gamma^b_R}\hat{B}_\mathrm{in}(\Omega) + \sqrt{2\gamma_b}\hat{n}^L_b(\Omega).$$ Where $\Omega$ is now the angular frequency offset from $\omega_0$ due to the Interaction Picture/rotating frame. Algebraically, there are a few ways to arrive at the result, but I will demonstrate the linear algebra solution since it will be a useful method in the nondegenerate case where there are twice as many operators. Let $\vec{\hat{Q}}(\Omega)=[\hat{Q}(\Omega),\hat{Q}^\dag(-\Omega)]^\text{T}$ for each pair of annihilation/creation operators $\hat Q, \hat Q^\dag$ and take Hermitian conjugate and $\Omega\mapsto -\Omega$ of Eq.~\ref{} to find: 
 \begin{align}\vec{\hat b}(\Omega)&=\text{M}_b^{-1}\left(\sqrt{2\gamma^b_R}\vec{\hat{B}}_\mathrm{in}(\Omega) + \sqrt{2\gamma_b}\vec{\hat{n}}^L_b(\Omega)\right)\\
 \text{M}_b&=(\gamma^b_\mathrm{tot}-i \Omega)\text{I}-\chi \begin{bsmallmatrix}0 & e^{i\phi} \\e^{-i\phi} & 0\end{bsmallmatrix}.
 \end{align}
-Where $\text{I}$ is the 2 by 2 identity matrix. Using the input/output relation~\cite{} at the readout port: $$\vec{\hat{B}}_\mathrm{out}(\Omega)=\vec{\hat{B}}_\mathrm{in}(\Omega)-\sqrt{2\gamma^b_R}\vec{\hat b}(\Omega).$$ And the Beamsplitter Model of detection loss, with reflectivity $R_\text{PD}\in(0,1)$, before the photodetector: $$\vec{\hat{B}}_\mathrm{PD}(\Omega)=\sqrt{1-R_\text{PD}}\vec{\hat{B}}_\mathrm{out}(\Omega)+\sqrt{R_\text{PD}}\vec{\hat n}^L_\text{PD}(\Omega).$$ The light $\vec{\hat{B}}_\mathrm{PD}(\Omega)$ incident on the photodetector can be found, but since annihilation/creation operators are not observable, the quadratures (which are observable) need to be found. Let $\Gamma = \frac{1}{\sqrt2} \begin{bsmallmatrix}1 & 1 \\-i & i\end{bsmallmatrix}$ such that the quadratures associated with some $\hat{Q}(\Omega)$ are given by $\vec{\hat{X}}_Q(\Omega)=[\hat{X}_{Q,1}(\Omega),\hat{X}_{Q,2}(\Omega)]^\text{T}=\Gamma \vec{\hat{Q}}(\Omega)$ (note the difference to $\vec{\hat{Q}}(\Omega)$, this is a vector of quadratures each of which obey $\hat{X}^\dag(-\Omega)=\hat{X}(\Omega)$). Putting it all together, I find the measured quadratures to be: 
+Where $\text{I}$ is the 2 by 2 identity matrix. Using the input/output relation~\cite{} at the readout port: $$\label{eq:dOPO_IO_readout}\vec{\hat{B}}_\mathrm{out}(\Omega)=\vec{\hat{B}}_\mathrm{in}(\Omega)-\sqrt{2\gamma^b_R}\vec{\hat b}(\Omega).$$ And the Beamsplitter Model of detection loss, with reflectivity $R_\text{PD}\in(0,1)$, before the photodetector: $$\label{eq:dOPO_IO_PD}\vec{\hat{B}}_\mathrm{PD}(\Omega)=\sqrt{1-R_\text{PD}}\vec{\hat{B}}_\mathrm{out}(\Omega)+\sqrt{R_\text{PD}}\vec{\hat n}^L_\text{PD}(\Omega).$$ The light $\vec{\hat{B}}_\mathrm{PD}(\Omega)$ incident on the photodetector can be found, but since annihilation/creation operators are not observable, the quadratures (which are observable) need to be found. Let $\Gamma = \frac{1}{\sqrt2} \begin{bsmallmatrix}1 & 1 \\-i & i\end{bsmallmatrix}$ such that the quadratures associated with some $\hat{Q}(\Omega)$ are given by $\vec{\hat{X}}_Q(\Omega)=[\hat{X}_{Q,1}(\Omega),\hat{X}_{Q,2}(\Omega)]^\text{T}=\Gamma \vec{\hat{Q}}(\Omega)$ (note the difference to $\vec{\hat{Q}}(\Omega)$, this is a vector of quadratures each of which obey $\hat{X}^\dag(-\Omega)=\hat{X}(\Omega)$). Putting it all together, I find the measured quadratures to be: 
 \begin{align}
 \label{eq:dOPO_PD_as_fn_of_vac}
 \vec{\hat X}_\mathrm{PD}(\Omega)&=\sqrt{1-R_\text{PD}}\Gamma\left(\left(\text{I}-2\gamma^b_R\text{M}_b^{-1}\right)\Gamma^{-1}\vec{\hat X}_\mathrm{in}(\Omega)-2\sqrt{\gamma^b_R \gamma_b}\text{M}_b^{-1}\Gamma^{-1}\vec{\hat X}^L_b(\Omega)\right)\\
-&+\sqrt{R_\text{PD}}\text{I}\;\vec{\hat X}^L_\text{PD}(\Omega).
+&+\sqrt{R_\text{PD}}\text{I}\;\vec{\hat X}^L_\text{PD}(\Omega).\nonumber
 \end{align}
-Or, more compactly, as a linear combination of the three different (uncorrelated) vacuum sources, given by transfer matrices $\text{R}_\text{in},\text{R}^L_b, \text{R}^L_\text{PD}$ which can be derived from Eq.~\ref{eq:dOPO_PD_as_fn_of_vac}: $$\vec{\hat X}_\mathrm{PD}(\Omega)=\text{R}_\text{in}\vec{\hat X}_\mathrm{in}(\Omega)+\text{R}^L_b\vec{\hat X}^L_b(\Omega)+\text{R}^L_\text{PD}\vec{\hat X}^L_\text{PD}(\Omega).$$ This defines the quantum noise response of a detector as described abstractly in Section~\ref{sec:optical_loss_background}, where the total quantum noise measured at the photodetector is described by the spectral density matrix (Fourier domain covariance matrix): $$\text{S}_X(\Omega)=\text{R}_\text{in} \text{R}_\text{in}^\dag+\text{R}^L_b {\text{R}^L_b}^\dag+\text{R}^L_\text{PD}{\text{R}^L_\text{PD}}^\dag.$$ As in Section~\ref{sec:optical_loss_background}, the uncorrelated vacuum assumption was used to simplify $(\text{S}_X)_{i,j}(\Omega)\delta(\Omega-\Omega')=\ev{(\vec{\hat X}_\text{PD})_i(\Omega)\circ(\vec{\hat X}_\text{PD})_j^\dag(\Omega')}$ where $\ev{\ldots}$ is the vacuum expectation value as before. The diagonal elements of $\text{S}_X$ are the (Fourier domain) variances of ${\hat X}_{\mathrm{PD},1}(\Omega), {\hat X}_{\mathrm{PD},2}(\Omega)$ and the off-diagonal elements (noting that $\text{S}_X$ is manifestly Hermitian) give the covariance between the two quadratures.
+Or, more compactly, as a linear combination of the three different (uncorrelated) vacuum sources, given by transfer matrices $\text{R}_\text{in},\text{R}^L_b, \text{R}^L_\text{PD}$ which can be derived from Eq.~\ref{eq:dOPO_PD_as_fn_of_vac}: $$\vec{\hat X}_\mathrm{PD}(\Omega)=\text{R}_\text{in}\vec{\hat X}_\mathrm{in}(\Omega)+\text{R}^L_b\vec{\hat X}^L_b(\Omega)+\text{R}^L_\text{PD}\vec{\hat X}^L_\text{PD}(\Omega).$$ This defines the quantum noise response of a detector as described abstractly in Section~\ref{sec:optical_loss_background}, where the total quantum noise measured at the photodetector is described by the spectral density matrix (Fourier domain covariance matrix): $$\label{eq:dOPO_Sx_abstract}\text{S}_X(\Omega)=\text{R}_\text{in} \text{R}_\text{in}^\dag+\text{R}^L_b {\text{R}^L_b}^\dag+\text{R}^L_\text{PD}{\text{R}^L_\text{PD}}^\dag.$$ As in Section~\ref{sec:optical_loss_background}, the uncorrelated vacuum assumption was used to simplify $(\text{S}_X)_{i,j}(\Omega)\delta(\Omega-\Omega')=\ev{(\vec{\hat X}_\text{PD})_i(\Omega)\circ(\vec{\hat X}_\text{PD})_j^\dag(\Omega')}$ where $\ev{\ldots}$ is the vacuum expectation value as before. The diagonal elements of $\text{S}_X$ are the (Fourier domain) variances of ${\hat X}_{\mathrm{PD},1}(\Omega), {\hat X}_{\mathrm{PD},2}(\Omega)$ and the off-diagonal elements (noting that $\text{S}_X$ is manifestly Hermitian) give the covariance between the two quadratures.
 
-This demonstrates the Hamiltonian method that I will use throughout the rest of this thesis, with later configurations just adding more modes to the Hamiltonian. % Overall, the method is robust \jam{(why?)} and easy to perform computationally 
+This demonstrates the Hamiltonian method that I will use throughout the rest of this thesis, with later configurations just adding more modes to the Hamiltonian. % -- including those associated with the signal. % Overall, the method is robust \jam{(why?)} and easy to perform computationally 
 
-\subsubsection{Results: demonstrating squeezing}
+% Results
+\subsubsection{Demonstrating squeezing}
 
 Having now found the quantum noise response, I can demonstrate that parametric down-conversion leads to squeezing the variances of the measured quadratures $(\text{S}_X)_{1,1}, (\text{S}_X)_{2,2}$. Computing $\text{S}_X$ requires matrix algebra which I perform using Wolfram Mathematica~\cite{} throughout this thesis. Doing so shows that (in agreement with previous results~\cite{}): 
-$$\text{S}_X(\Omega)=\left[
+$$\label{eq:dOPO_full_freedom}
+\text{S}_X(\Omega)=\left[
 \begin{array}{cc}
  1+\frac{(1-R_\text{PD})4 \gamma^b_R \chi  \left(2 \gamma^b_\text{tot} \chi +\left({\gamma^b_\text{tot}}^2+\chi ^2+\Omega ^2\right) \cos (\phi )\right)}{\left({\gamma^b_\text{tot}}^2-\chi ^2\right)^2+2 \Omega ^2 \left({\gamma^b_\text{tot}}^2+\chi ^2\right)+\Omega ^4} 
  & \frac{(1-R_\text{PD})4 \gamma^b_R \chi  \left({\gamma^b_\text{tot}}^2+\chi ^2+\Omega ^2\right) \sin (\phi )}{\left({\gamma^b_\text{tot}}^2-\chi ^2\right)^2+2 \Omega ^2 \left({\gamma^b_\text{tot}}^2+\chi ^2\right)+\Omega ^4} \\
@@ -198,59 +200,203 @@ $$\text{S}_X(\Omega)=\left[
  & 1+\frac{(1-R_\text{PD})4 \gamma^b_R \chi  \left(2 \gamma^b_\text{tot} \chi -\left({\gamma^b_\text{tot}}^2+\chi ^2+\Omega ^2\right) \cos (\phi )\right)}{\left({\gamma^b_\text{tot}}^2-\chi ^2\right)^2+2 \Omega ^2 \left({\gamma^b_\text{tot}}^2+\chi ^2\right)+\Omega ^4} \\
 \end{array}
 \right].$$
-\jam{(Need to show that this reduces to the more familiar expression with just $(\gamma^b_\text{tot}-\chi)^2+\Omega^2$ denominator when $\phi=0$.)}
-The general form of $\text{S}_X(\Omega)$ is common to all configurations in this thesis: all elements are rational functions of $\Omega, \chi$, diagonal elements are often simpler when put in the form $1 + \Delta S$ since they are perturbations from the vacuum value of $1$, and off-diagonal elements (although real here, can be complex in general) obey the Hermitiancy of $\text{S}_X$. If the squeezer is turned off, $\chi=0$, then the output is just vacuum $\text{S}_X=\text{I}$. Looking at the Hamiltonian, only $\phi$ (and the sign of $\chi$, although I will try to keep $\chi$ non-negative and just vary the phase using $\phi$) will break the symmetry between the quadratures \jam{(what do I mean here, this is more obvious from the plots?)}. When $\phi=0$, then the covariance vanishes and the variance simplifies to: $$(\text{S}_X)_{1,1}(\Omega)=1+\frac{(1-R_\text{PD})4 \gamma^b_R \chi}{\left({\gamma^b_\text{tot}}-\chi\right)^2+\Omega ^2}.$$ With the other quadrature having $(\text{S}_X)_{2,2}=(\text{S}_X)_{1,1}|_{\chi\mapsto-\chi}$. From these expressions, by inspection for $\phi=0, \chi>0$, one quadrature ($\hat X_1$) has increased uncertainty while the other quadrature ($\hat X_2$) has decreased uncertainty that is less than the vacuum value of $1$, these are the anti-squeezed (amplified) and squeezed quadratures respectively. In the lossless case, $R_\text{PD}=0, \gamma_b=0, \gamma^b_\text{tot}=\gamma^b_R$, then the results satisfy the Heisenberg Uncertainty Principle as an equality: $$\label{eq:dOPO_HUP_sat}(\text{S}_X)_{1,1}(\text{S}_X)_{2,2}=\left(1+\frac{4 \gamma^b_R \chi}{\left(\gamma^b_R-\chi\right)^2+\Omega ^2}\right)\left(1-\frac{4 \gamma^b_R \chi}{\left(\gamma^b_R+\chi\right)^2+\Omega ^2}\right)=1.$$ And in the lossy case, as an inequality $(\text{S}_X)_{1,1}(\text{S}_X)_{2,2}\geq1$ \jam{(show this?)} which is an indication that optical losses decohere the system and can increase the overall uncertainty product. While understanding physically why parametric down-conversion produces squeezing~\cite{} is beyond the scope of this thesis, this derivation demonstrates it mathematically.
-
-There remain a few effects visible in this simpler model that will return in later models and are therefore worth examining, namely: (1) the effect and bounds on increasing the squeezer parameter $\chi$, (2) the effect of intra-cavity loss $\gamma^b_\text{tot}-\gamma^b_R$ versus detection loss $R_\text{PD}$, and (3) the effect of pump phase $\phi$. In the lossless case with $\phi=0$ given by Eq.~\ref{eq:dOPO_HUP_sat}, one can see that increasing $\chi$ increases the distance from the vacuum state of the flat part of the quantum noise response, symmetrically for squeezing and anti-squeezing when $\sqrt S_X$ is plotted logarithmically, shown in Fig.~\ref{fig:dOPO_variances}. In particular, the DC ($\Omega=0$) value of the anti-squeezed quadrature of the quantum noise is given by $1+\frac{4 \gamma^b_R \chi}{\left(\gamma^b_R-\chi\right)^2}$ which is singular at squeezer parameter $\chi_\text{thr}=\gamma^b_R$ at which point the squeezed quadrature is zero (to satisfy the Heisenberg Uncertainty Principle exactly). This point $\chi_\text{thr}$ is known as the threshold~\cite{} of the degenerate OPO and serves as a boundary of this model's physicality, in particular of the assumption of no pump depletion. The notion of threshold can be understood from the perspective of gains and losses inside the cavity: the squeezer creates photons in the cavity mode at a rate proportional to $\chi$ which are lost from the cavity at a rate $\gamma^b_R$ (in the lossless case), when $\chi=\chi_\text{thr}$ the gain and loss balance and the state of the system changes as beyond $\chi_\text{thr}$ net photons appears in the cavity mode and the OPO starts lasing~\cite{}.
-
-\jam{(Continue this threshold paragraph)}
+The general form of $\text{S}_X(\Omega)$ is common to all configurations in this thesis: all elements are rational functions of $\Omega$ and $\chi$, diagonal elements are often simpler when put in the form $1 + \Delta S$ since they are perturbations from the vacuum value of $1$, and off-diagonal elements (although real here they can be complex in general) obey the Hermitiancy of $\text{S}_X$. If the squeezer is turned off, $\chi=0$, then the output is just vacuum $\text{S}_X=\text{I}$. Looking at the Hamiltonian, only $\phi$ (and the sign of $\chi$, although I will try to keep $\chi$ non-negative and just vary the phase using $\phi$) will break the symmetry between the quadratures \jam{(what do I mean here, this is more obvious from the plots?)} -- observe that $(\text{S}_X)_{2,2}=(\text{S}_X)_{1,1}|_{\chi\mapsto-\chi}=(\text{S}_X)_{1,1}|_{\phi\mapsto\phi+\pi}$. When $\phi=0$, then the covariance vanishes and the variances simplify to: $$ \label{eq:dOPO_fixed_phase}
+\text{S}_X(\Omega)=\left[
+\begin{array}{cc}
+ 1+\frac{(1-R_\text{PD})4 \gamma^b_R \chi}{\left({\gamma^b_\text{tot}}-\chi\right)^2+\Omega ^2}
+ & 0 \\
+ 0
+ & 1-\frac{(1-R_\text{PD})4 \gamma^b_R \chi}{\left({\gamma^b_\text{tot}}+\chi\right)^2+\Omega ^2} \\
+\end{array}
+\right].$$ From this expression, by inspection for $\chi>0$, one quadrature ($\hat X_1$) has increased uncertainty while the other quadrature ($\hat X_2$) has decreased uncertainty below the vacuum value of $1$, these are the anti-squeezed (amplified) and squeezed quadratures respectively. Although the application of squeezing is clear: to decrease the quantum noise, anti-squeezing is also useful when the signal can be amplified as well -- to be discussed much later. In the lossless case, $R_\text{PD}=0, \gamma_b=0, \gamma^b_\text{tot}=\gamma^b_R$, then the results satisfy the Heisenberg Uncertainty Principle (at each frequency) as an equality: $$\label{eq:dOPO_HUP_sat}(\text{S}_X)_{1,1}(\text{S}_X)_{2,2}=\left(1+\frac{4 \gamma^b_R \chi}{\left(\gamma^b_R-\chi\right)^2+\Omega ^2}\right)\left(1-\frac{4 \gamma^b_R \chi}{\left(\gamma^b_R+\chi\right)^2+\Omega ^2}\right)=1.$$ And in the lossy case, as an inequality $(\text{S}_X)_{1,1}(\text{S}_X)_{2,2}\geq1$ \jam{(show this?)} which is an indication that optical losses decohere the system and can increase the overall uncertainty product \jam{(decoherence returns to vacuum, no?)}. While understanding physically why parametric down-conversion produces squeezing is beyond the scope of this thesis, see Ref.~\cite{} for an explanation, this derivation has shown it mathematically.
 
 \begin{figure}
 	\centering
 	% \includegraphics[width=\textwidth]{}
-	\caption{Degenerate OPO quantum noise response: showing squeezing and anti-squeezing, the effect of intra-cavity versus detection loss, and the notion of threshold.}
+	\caption{Degenerate OPO quantum noise response: showing squeezing and anti-squeezing, the effect of intra-cavity versus detection loss, and the notion of threshold. Showing variances (left panel) and covariance (right panel).}
 	\label{fig:dOPO_variances}
 \end{figure}
 
-% effect of different losses
-
-% effect of pump parameter
-
+There remain a few effects visible in this simpler model that will return in later models and are therefore worth examining, namely: (1) the effect and bounds on increasing the squeezer parameter $\chi$, (2) the effect of intra-cavity loss $\gamma_b$ versus detection loss $R_\text{PD}$, and (3) the effect of pump phase $\phi$. I discuss each of these in turn. % is this necessary to say?
 
 \subsubsection{Threshold}
-
 % in the abstract, a squeezing technology might produce any amount of squeezing, the energetic reality of gain and loss in a NL crystal creates threshold
-
 % pump depletion only matters near and above threshold
+Firstly, the effect of the squeezer parameter $\chi$. In the lossless case and with $\phi=0$, by Eq.~\ref{eq:dOPO_HUP_sat}, one can see that increasing $\chi$ increases the distance from the vacuum state of the flat part of the quantum noise response, symmetrically for squeezing and anti-squeezing when $\sqrt S_X$ is plotted logarithmically, shown in Fig.~\ref{fig:dOPO_variances} \jam{(explain this more once plot present)}. In particular, the DC ($\Omega=0$) value of the anti-squeezed quadrature of the quantum noise is given by $1+\frac{4 \gamma^b_R \chi}{\left(\gamma^b_R-\chi\right)^2}$ which is singular at squeezer parameter $\chi_\text{thr}=\gamma^b_R$, and at $\chi_\text{thr}$ the squeezed quadrature is zero at DC (to satisfy the Heisenberg Uncertainty Principle exactly), as shown in Fig.~\ref{fig:dOPO_variances}. This value $\chi_\text{thr}$ is known as the threshold~\cite{} of the degenerate OPO and serves as a boundary of this model's physicality, specifically of the assumption of no pump depletion. The notion of threshold can be understood from the perspective of gains and losses inside the cavity: the squeezer creates photons in the cavity mode at a rate $\chi$ which are lost from the cavity at a rate $\gamma^b_R$, when $\chi=\chi_\text{thr}$ the gain and loss balance and the state of the system changes as beyond $\chi_\text{thr}$ net photons appear in the cavity mode. Like a phase transition, beyond $\chi_\text{thr}$ this means that the OPO starts lasing~\cite{}. However, above, at, or just below threshold the loss of energy from the pump mode is significant and the approximation that it is an un-depletable reservoir is no longer valid~\cite{}. Therefore, all models of squeezers in cavity detectors in this thesis, which use the no pump depletion assumption as a simplification, have squeezer parameter bound to $\chi\in(0,\chi_\text{thr})$ (although, as seen in the lossless case, this can still allow arbitrarily large squeezing/anti-squeezing). Although this arises here as a limitation of the model, in reality we do/would not want to operate squeezers above threshold since the created large classical mode can damage the sensitive optics such as the photodetector that is designed to sense vacuum fluctuations~\cite{} -- and therefore staying below threshold is satisfactory. Moreover, in experiments, to avoid the system wandering above threshold some safety margin is often used, e.g.\ remaining below $70\%$ threshold as a rule-of-thumb~\cite{} and pushing $90,95,98\%$ etc.\ only in a well-controlled system~\cite{}. In the full model, with all losses and pump phase, threshold can be shown to be $\chi_\text{thr}=\gamma^b_\text{tot}$~\cite{} which makes sense from the gain-loss argument and recovers the lossless value in the appropriate limit. % set up singularity threshold?
+
+\subsubsection{Effect of losses}
+\jam{(Should these be subsubsections or not? Threshold is warranted but these just look like general results.)}
+% effect of different losses
+
+Secondly, the effect of detection loss $R_\text{PD}$ versus intra-cavity loss $\gamma_b$. Understanding the tolerance of a detector to various losses is important to judging its feasibility, the results here will apply generally. Detection loss $R_\text{PD}\in(0,1)$ simply gives a weighted average of the lossless variance and the vacuum, by Eq.~\ref{eq:dOPO_full_freedom}, and therefore increasing $R_\text{PD}$ just pulls both variances towards the constant $1$ ($0$~dB), as shown in Fig.~\ref{fig:dOPO_variances}. This shows a difference between the squeezed and anti-squeezed quadratures, however, since the DC value of $S_X$ on-threshold changes from $0$ and $\infty$ respectively to $R_\text{PD}$ and $\infty$ -- the singularity in the anti-squeezed quadrature is more robust than the zero in the squeezed quadrature. This indicates that the detection loss has increased the product in the Heisenberg Uncertainty Principle to being $>1$ at DC, and indeed at many \jam{(all?)} frequencies. Meanwhile, intra-cavity loss $\gamma_b$ acts like damping in an oscillator~\cite{}, which decreases the quality factor of the resonance peak, as the peak of each variance moves back towards vacuum and broadens -- meaning that there are frequencies for which the squeezing is improved by loss. Similarly, the presence of intra-cavity loss means that at threshold the squeezed quadrature no longer reaches zero at DC but the anti-squeezed quadrature remains singular. Since intra-cavity loss increases the total loss rate $\gamma^b_\text{tot}$, it also increases threshold $\chi_\text{thr}$ which contributes to the decrease in performance. This effect is not particularly interesting experimentally, however, as pump power could be increased to accommodate the loss. Therefore, henceforth I will compare the response at different losses with the ratio to threshold $\chi/\chi_\text{thr}$ fixed, i.e.\ I will calculate threshold in each case and change $\chi$ accordingly, unless stated otherwise. 
+% decoherences of co-variances --> need a figure?
+The effect on the covariance is similar, detection loss scales down the curve towards zero ($-\infty$ dB) and intra-cavity loss reduces the peak but broadens the response, as shown in Fig.~\ref{fig:dOPO_variances}.
+
+\subsubsection{Effect of pump phase}
+% effect of pump phase
+
+Finally, the effect of pump phase $\phi$. As mentioned above, the phase of the pump mode is what breaks the symmetry between the quadratures. From Eq.~\ref{eq:dOPO_full_freedom}, $(\text{S}_X)_{2,2}=(\text{S}_X)_{1,1}|_{\phi\mapsto\phi+\pi}$ and visa versa -- the quadratures switch under $\phi\mapsto\phi+\pi$. For other values of $\phi$, the anti-squeezing and squeezing occur on a different set of orthonormal basis vectors for the 2D space of quadratures: $\hat{X}_{\theta=\phi}$ and $\hat{X}_{\theta=\phi+\pi/2}$ respectively \jam{(this disagrees with the $\phi\mapsto\phi+\pi$ result above, this should be simple, fix this)} -- a rotation of the noise ellipse in Fig.~\ref{fig:ballandstick_simple}. And continuously changing $\phi\in(0,\pi)$ \jam{($\pi/2$?)} smoothly connects the squeezing and anti-squeezing behaviour. Alternatively, the pump phase can be fixed and the model can demonstrate this behaviour by a change-of-basis of the quadratures at the photodetector~\cite{}.
+
+
+% summary of dOPO
+The degenerate OPO provides a simple, well-studied configuration to witness many of the effects of placing a squeezer inside of a cavity. I have also demonstrated the method and some of the assumptions used throughout this thesis to model detectors. However, before I can move on to discussing how squeezing is used currently in interferometric detectors and how proposals have suggested to exploit it further for future detectors, I need to expand the above model and discuss the effects of including an additional mode -- the idler.
+
 
 \subsection{Nondegenerate OPO}
 % succinct analytic model, to show how to calculate covariances (requires 4x4 model)
 
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Nondegenerate OPO configuration is the same as the degenerate OPO in Fig.~\ref{fig:dOPO_config} but with an idler mode.}
+	\label{fig:nOPO_config}
+\end{figure}
+
+A nondegenerate optical parametric oscillator (OPO) is the same configuration as a degenerate OPO, except that the squeezer instead performs nondegenerate parametric down-conversion as shown in Fig.~\ref{fig:nOPO_config}: splitting the pump at frequency $2\omega_0+\Delta$ down into two separate, squeezed, and entangled modes at $\omega_0$ (the signal) and $\omega_0+\Delta,\; \Delta\neq0$ (the idler). Similarly to the degenerate case, this configuration is well-studied in the literature~\cite{}. I show an abridged derivation of the quantum noise response here because the main model later in this thesis is fundamentally a nondegenerate OPO with an additional mode and that derivation will build on this one. Moreover, much of the behaviour of the nondegenerate OPO is ``inherited'' by the later configuration.
+
+\subsubsection{Analytic model}
+
+I follow the same Hamiltonian method to derive the quantum noise response as Section~\ref{sec:dOPO_model}, and will abridge many of the steps here as they are exactly the same. Let the modes of the system be as described in Section~\ref{sec:dOPO_model} but with the pump mode $\hat u$ now at $2\omega_0+\Delta$ and the addition of $\hat c$ for the idler cavity mode at $\omega_0+\Delta$ (assumed on-resonance by the single-mode approximation) as well as its associated input vacuum fields $\hat n^L_c, \hat C_\text{in}, \hat n^L_\text{c,PD}$ and output fields $\hat C_\text{out}, \hat C_\text{PD}$ that are direct analogues of the signal mode's $\hat n^L_b, \hat B_\text{in}, \hat n^L_\text{b,PD}, \hat B_\text{out}, \hat B_\text{PD}$ respectively. The Hamiltonian of the system is $\hat H = \hat H_0+\hat H_I+\hat H_\gamma$ with \jam{(fill in Langevin Hamiltonian)}
+\begin{align}
+\hat H_0 &= \hbar \omega_0 \hat b^\dag \hat b + \hbar (\omega_0+\Delta) \hat c^\dag \hat c + \hbar (2\omega_0+\Delta) \hat u^\dag \hat u\\
+\hat H_I &= \hbar \frac{x}{2} e^{i\phi} \hat u \hat b^\dag \hat c^\dag + \text{h.c.}\\
+\hat H_\gamma &= \int \ldots .
+\end{align}
+Where $\phi$ is $\pi/2$ ahead of the phase in the previous section \jam{(explain why this inconsistency that doesn't matter?)} and $\gamma^c_\text{tot}=\gamma^c_R+\gamma_c$ are the idler's coupling rates through the different ports, determined by the transmittivities $T_{R,c}, T_{l,c}$ for the readout and loss port, respectively. Although $\Delta$ is assumed small compared to $\omega_0$, dichroic optics can be manufactured that have different transmittivities for the signal and idler modes~\cite{} -- but the default is to assume symmetric transmission and therefore symmetric loss between the modes. The Heisenberg-Langevin equations-of-motion for $\hat b, \hat c$ can then be found as before, where I again assume the semi-classical and no pump depletion approximations to the pump mode $\hat u\mapsto u=2\chi/x$, enter the Interaction Picture to ignore the effect of $\hat H_0$, and take fluctuating components but leave the $\delta \hat Q(t)$ implicit in the notation,
+$$\begin{cases}
+\dot{\hat{b}}=-i\chi e^{i\phi}\hat{c}^\dagger - \gamma^b_\mathrm{tot} \hat{b} + \sqrt{2\gamma^b_R}\hat{B}_\mathrm{in} + \sqrt{2\gamma_b}\hat{n}^L_b\\
+\dot{\hat{c}}=-i\chi e^{i\phi}\hat{b}^\dagger - \gamma^c_\mathrm{tot} \hat{c} + \sqrt{2\gamma^c_R}\hat{C}_\mathrm{in} + \sqrt{2\gamma_c}\hat{n}^L_c.
+\end{cases}$$
+To solve these equations-of-motion, I take Fourier transforms of them and collapse the four resulting equations (counting the conjugate equations for $\hat b^\dag(-\Omega), \hat c^\dag(-\Omega)$) into one vector equation where $\vec{\hat b}=[\hat b(\Omega), \hat b^\dag(-\Omega), \hat c(\Omega), \hat c^\dag(-\Omega)]^\text{T}$ and similarly for each port,
+\begin{align}
+\text{M}_b\vec{\hat b}(\Omega)&=\sqrt{2}\begin{bsmallmatrix}
+\sqrt{\gamma^b_R} & 0 & 0 & 0 \\
+0 & \sqrt{\gamma^b_R} & 0 & 0 \\
+0 & 0 & \sqrt{\gamma^c_R} & 0 \\
+0 & 0 & 0 & \sqrt{\gamma^c_R}
+\end{bsmallmatrix}\vec{\hat B}_\mathrm{in}(\Omega) + \sqrt{2}\begin{bsmallmatrix}
+\sqrt{\gamma_b} & 0 & 0 & 0 \\
+0 & \sqrt{\gamma_b} & 0 & 0 \\
+0 & 0 & \sqrt{\gamma_c} & 0 \\
+0 & 0 & 0 & \sqrt{\gamma_c}
+\end{bsmallmatrix}\vec{\hat n}^L_b(\Omega)\\
+\text{M}_b&=\begin{bsmallmatrix}
+\gamma^b_\mathrm{tot} & 0 & 0 & 0 \\
+0 & \gamma^b_\mathrm{tot} & 0 & 0 \\
+0 & 0 & \gamma^c_\mathrm{tot} & 0 \\
+0 & 0 & 0 & \gamma^c_\mathrm{tot} 
+\end{bsmallmatrix}-i\Omega \text{I}+\chi \begin{bsmallmatrix}
+0 & 0 & 0 & i e^{i\phi} \\
+0 & 0 & -i e^{-i\phi} & 0 \\
+0 & i e^{i\phi} & 0 & 0 \\
+-i e^{-i\phi} & 0 & 0 & 0
+\end{bsmallmatrix}.
+\end{align}
+Where $\text{I}$ is now the 4 by 4 identity matrix. Applying input/output relations at the readout port and at the detection loss beamsplitter (for which the loss is assumed symmetric between the signal and idler), given by formulae similar to Eqs.~\ref{eq:dOPO_IO_readout}~\ref{eq:dOPO_IO_PD}, the quadratures at the photodiode can be found to be:
+\begin{align}
+\vec{\hat X}_\mathrm{PD}(\Omega)&=\text{R}_\text{in}\vec{\hat X}_\mathrm{in}(\Omega)+\text{R}^L_b\vec{\hat X}^L_b(\Omega)+\text{R}^L_\text{PD}\vec{\hat X}^L_\text{PD}(\Omega)\\
+\text{R}_\text{in}&=\sqrt{1-R_\text{PD}}\Gamma(\text{I}-\sqrt 2\begin{bsmallmatrix}
+\sqrt{\gamma^b_R} & 0 & 0 & 0 \\
+0 & \sqrt{\gamma^b_R} & 0 & 0 \\
+0 & 0 & \sqrt{\gamma^c_R} & 0 \\
+0 & 0 & 0 & \sqrt{\gamma^c_R}
+\end{bsmallmatrix}\text{M}_b^{-1}\sqrt{2}\begin{bsmallmatrix}
+\sqrt{\gamma^b_R} & 0 & 0 & 0 \\
+0 & \sqrt{\gamma^b_R} & 0 & 0 \\
+0 & 0 & \sqrt{\gamma^c_R} & 0 \\
+0 & 0 & 0 & \sqrt{\gamma^c_R}
+\end{bsmallmatrix})\Gamma^{-1}\\
+\text{R}^L_b&=-\sqrt{1-R_\text{PD}}\Gamma\sqrt 2\begin{bsmallmatrix}
+\sqrt{\gamma^b_R} & 0 & 0 & 0 \\
+0 & \sqrt{\gamma^b_R} & 0 & 0 \\
+0 & 0 & \sqrt{\gamma^c_R} & 0 \\
+0 & 0 & 0 & \sqrt{\gamma^c_R}
+\end{bsmallmatrix}\text{M}_b^{-1}\sqrt{2}\begin{bsmallmatrix}
+\sqrt{\gamma_b} & 0 & 0 & 0 \\
+0 & \sqrt{\gamma_b} & 0 & 0 \\
+0 & 0 & \sqrt{\gamma_c} & 0 \\
+0 & 0 & 0 & \sqrt{\gamma_c}
+\end{bsmallmatrix}\Gamma^{-1}\\
+\text{R}^L_\text{PD}&=\sqrt{R_\text{PD}} \text{I}\\
+\Gamma&= \frac{1}{\sqrt2}\begin{bsmallmatrix}
+1 & 1 & 0 & 0 \\
+-i & i & 0 & 0 \\
+0 & 0 & 1 & 1 \\
+0 & 0 & -i & i
+\end{bsmallmatrix}.
+\end{align}
+Where $\vec{\hat X}=[\hat X_{b,1},\hat X_{b,2},\hat X_{c,1},\hat X_{c,2}]^\text{T}$ now contains the quadratures of both signal and idler.
+
+The total quantum noise response is given by $\text{S}_X=\text{R}_\text{in} \text{R}_\text{in}^\dag + \ldots$ as in Eq.~\ref{eq:dOPO_Sx_abstract} where uncorrelated vacuum between the signal and idler modes is assumed (and is valid~\cite{} throughout this thesis), computing the matrix algebra (which can be verified by the literature~\cite{}) shows that 
+$$\label{eq:nOPO_full_freedom}
+\text{S}_X(\Omega)=\begin{bsmallmatrix}
+1+\frac{8 \gamma^b_R {\gamma^c_\text{tot}} (1-R_\text{PD}) \chi ^2}{\left({\gamma^b_\text{tot}} {\gamma^c_\text{tot}}-\chi ^2\right)^2+\Omega ^2 \left({\gamma^b_\text{tot}}^2+{\gamma^c_\text{tot}}^2+2 \chi ^2\right)+\Omega ^4} & 0 & S_{3,1}^* & S_{4,1}^* \\
+0 & S_{1,1} & S_{4,1}^* & -S_{3,1}^* \\
+-\frac{\sin (\phi )4 (1-R_\text{PD}) \chi  \sqrt{\gamma^b_R \gamma^c_R}  \left(\chi ^2+\Omega^2+\gamma^b_\text{tot}\gamma^c_\text{tot}+i\Omega\left(\gamma^c_\text{tot}-\gamma^b_\text{tot}\right)\right)}{\left({\gamma^b_\text{tot}} {\gamma^c_\text{tot}}-\chi ^2\right)^2+\Omega ^2 \left({\gamma^b_\text{tot}}^2+{\gamma^c_\text{tot}}^2+2 \chi ^2\right)+\Omega ^4} & S_{4,1} & 1+\frac{8 {\gamma^b_\text{tot}} \gamma^c_R (1-R_\text{PD}) \chi ^2}{\left({\gamma^b_\text{tot}} {\gamma^c_\text{tot}}-\chi ^2\right)^2+\Omega ^2 \left({\gamma^b_\text{tot}}^2+{\gamma^c_\text{tot}}^2+2 \chi ^2\right)+\Omega ^4} & 0\\
+\frac{\cos (\phi ) 4 (1-R_\text{PD}) \chi  \sqrt{\gamma^b_R \gamma^c_R} \left(\chi ^2+\Omega^2+\gamma^b_\text{tot}\gamma^c_\text{tot}+i\Omega\left(\gamma^c_\text{tot}-\gamma^b_\text{tot}\right)\right)}{\left({\gamma^b_\text{tot}} {\gamma^c_\text{tot}}-\chi ^2\right)^2+\Omega ^2 \left({\gamma^b_\text{tot}}^2+{\gamma^c_\text{tot}}^2+2 \chi ^2\right)+\Omega ^4} & -S_{3,1} & 0 & S_{3,3}
+\end{bsmallmatrix}.$$
+Where $\text{S}_X$ is divided into four 2 by 2 blocks, in the upper-left the signal variances and signal-signal covariance (which is zero) form the equivalent of the signal-only degenerate case matrix in Eq.~\ref{eq:dOPO_full_freedom}, in the bottom-right the idler variances and idler-idler covariance (also zero), and in the off-diagonal blocks the signal-idler covariances which are not-zero but all closely related. Some similarities to the degenerate case in Eq.~\ref{eq:dOPO_full_freedom} are seen: all expressions are rational functions, the variances are simplest in the form $1+\chi (\ldots)$ which makes explicit that the displacement from the vacuum depends on $\chi$ and vanishes when the squeezer is off, and the covariances obey the Hermitiancy of $\text{S}_X$ and vanish when the squeezer is off. 
+
+\subsubsection{Results: differences from degenerate case, threshold, and losses}
 
 \begin{figure}
 	\centering
 	% \includegraphics[width=\textwidth]{}
-	\caption{Nondegenerate OPO quantum noise response: showing anti-squeezing, the effect of different losses, and threshold.}
-	\label{fig:}
+	\caption{Nondegenerate OPO quantum noise ellipse sketch \jam{(wording)}.}
+	\label{fig:nOPO_noise_ellipse}
 \end{figure}
 
-\subsubsection{Threshold}
 
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Nondegenerate OPO quantum noise response: showing anti-squeezing, the effect of different losses, and threshold. \jam{(signal and idler readout? covariances.)}}
+	\label{fig:nOPO_variances}
+\end{figure}
+
+% effect of losses, non-effect of pump phase
 % resolution of the mystery of zero idler loss
+But, the differences from the degenerate case are more interesting: all variances are now anti-squeezed and do not depend on the pump phase and while the covariances of each of the signal and idler modes are zero, the two modes are correlated. These differences must come from the change in degeneracy of the parametric down-conversion which explains the change in the covariances, the photons created at the same moment are entangled regardless of what field they belong to, but does not clearly physically explain why only anti-squeezing is seen for the nondegenerate case~\cite{}. That the variances are independent of pump phase (and therefore the sign of $\chi$) sounds reasonable \jam{(wording)} to follow from there only being anti-squeezing, so the noise ellipse in Fig.~\ref{fig:nOPO_noise_ellipse} is symmetric up to the loss rates. Despite these differences, the effects of: (1) the squeezer parameter $\chi$ and (2) the different losses are similar to the degenerate case, as shown in Fig.~\ref{fig:nOPO_variances} where the overall shape of the anti-squeezed curves is similar to Fig.~\ref{fig:dOPO_variances}. 
+Firstly, considering the DC ($\Omega=0$) response of any of the variances (since they all share a denominator), the anti-squeezing is flat near DC and increases as $\chi$ is increased but is singular at $\chi_\text{thr}=\sqrt{\gamma^b_\text{tot}\gamma^c_\text{tot}}$, the geometric mean of the total loss rates for each mode. This means that anti-squeezing in the signal mode is limited by losses in the idler mode and visa versa, meaning that the squeezer can not be turned on and remain below threshold without some idler loss (or readout rate) -- a feature that will persist later. From the gain-loss understanding of threshold, each of the signal and idler experiences the same gain $\chi$~\footnote{There is a factor of two difference between this value of $\chi$ and the degenerate case.} but separate losses, and threshold occurs not when both experience more gain than loss but when the two do so on-average. \jam{(why doesn't lasing start in one mode and not the other when losses are asymmetric?)} Otherwise, this threshold is similar to the degenerate case and bounds the squeezer parameter to prevent lasing~\cite{}. 
+Secondly, the different losses behave similarly as the degenerate case: the detection loss scales the variances and covariances back towards their vacuum values of $1$ and $0$ respectively and the intra-cavity losses reduce and broaden the peak of the response, shown in Fig.~\ref{fig:nOPO_variances}. Like threshold, the idler losses affect the signal variances and visa versa, but there are some differences, e.g.\ $\gamma^b_R {\gamma^c_\text{tot}}$ in the numerator of $S_{1,1}$ in Eq.~\ref{eq:nOPO_full_freedom} means that idler loss is less impactful than signal loss to the signal variance \jam{(this is not good to my conclusion that nIS is tolerant to signal loss but not idler loss, need to explain here or there what causes the difference -- it might be the signal transfer function)}. 
 
-\subsubsection{Reality of covariance measurements}
-% clarify measurement of non-Hermitian X(Omega) and normal operators, set up covariance 
-% cite Schori
 
 \subsubsection{Recovering squeezing}
-% this can be merged with the previous subsubsection?
+% is this directly relevant to the thesis? yes, to the combined readout preliminary work.
+% \subsubsection{Reality of covariance measurements}
+% % already spoken about this?
+% % clarify measurement of non-Hermitian X(Omega) and normal operators, set up covariance 
+% % cite Schori
 
 \begin{figure}
 	\centering
 	% \includegraphics[width=\textwidth]{}
 	\caption{Nondegenerate OPO with combined readout, i.e.\ measurement of the combined quadrature in Eq.~\ref{}, showing how the nondegenerate case can use the correlations between the signal and idler to recover squeezing and behave like the degenerate case.}
-	\label{fig:}
+	\label{fig:nOPO_combined_readout}
 \end{figure}
+
+These features of the nondegenerate OPO reviewed so far are well-known~\cite{} and useful to know in order to recognise them in later configurations, but there is one remaining feature that is worth discussing to understand the broader significance of the configuration and to motivate some of the preliminary work \jam{(check if still preliminary)} at the end of this thesis: combining the measurement of the signal and idler modes. The motivation for combining the measurement is that if the signal is measured but the idler mode leaks out of the cavity through the readout port, then that loss decoheres the signal measurement. But if that leaking-out idler mode could be measured then perhaps the loss could be instead put to work \jam{colloquial}. Consider a linear combination of the four quadratures at the photodetector: $$\hat X_\text{com}=\begin{bsmallmatrix}\cos(\psi_2)\cos(\psi_0) & \cos(\psi_2)\sin(\psi_0) & \sin(\psi_2)\cos(\psi_1) & \sin(\psi_2)\sin(\psi_1)\end{bsmallmatrix}\vec{\hat X}_\text{PD}.$$ \jam{(replace with vector Xcom?)}
+Where the combination has been normalised such that the vacuum variance remains $1$~\footnote{In experiments~\cite{Schori2001}, the combination is often un-normalised and so should be compared to a higher vacuum value, e.g.\ $2$ for $\hat X_{b,1} + \hat X_{c,1}$.}. This operator is observable and its variance can be physically measured by combining the different modes at appropriate beamsplitters etc.~\cite{Schori2001}. \jam{(how do you physically combine the two modes if they are at different frequencies, do you just expose the PD to both?)} For example, for $\psi_2=\pi/4,\psi_1=\psi_0=0$, then the combined variance is:
+\begin{align}S_\text{com}&=\frac{1}{2}S_{1,1}+\frac{1}{2}S_{3,3}+\frac{1}{2}(S_{1,3}+S_{3,1})\\
+&=\frac{1}{2}S_{1,1}+\frac{1}{2}S_{3,3}+\text{Re}[S_{3,1}].\end{align}
+Which is how the covariances can be indirectly measured.
+\jam{(continue from here)}
+
+
+
+
+
+
+
+
+\jam{(clarify that signal and idler cannot be measured separately simultaneously because they are correlated and measurement will destroy correlations)}
+
+
+% optimising the combination angles to minimise the combined variance is known as a Weiner filter for the noise
+
+
+% EPR significance <-- single sentence, not relevant to thesis
+
 
 
 
@@ -283,6 +429,10 @@ There remain a few effects visible in this simpler model that will return in lat
 
 % \subsubsection{Technological limit: pump power and stability} 
 % % i.e. threshold
+
+\subsubsection{Caves's Amplifier}
+
+% motivate investigation of nIS, also dIS using anti-squeezing
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
