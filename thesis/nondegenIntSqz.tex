@@ -2,6 +2,7 @@
 \label{chp:nIS_analytics}
 
 % results: interpret deep and far, and be very critical of assessing your approach
+% present analysis of model and decisions/approximations made
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % chapter introduction
@@ -13,7 +14,9 @@
 
 
 \section{Literature review}
-\jam{(justify novelty of proposal)}
+
+% a gap in the literature, should be much shorter than the review at the start of chapter 3 -- maybe combine it with that one?
+% Although nondegenerate OPOs have long been studied for EPR~\cite{Reid,Schori} and other applications~\cite{?}. 
 
 % claim: the modelling of this configuration has never been done as thoroughly as my work, explain why (recency of interest)
 
@@ -362,11 +365,14 @@ Radiation pressure and back-action evasion do not change threshold because the q
 
 \section{Preliminary work: idler and combined signal-idler readout}
 
+\jam{(how preliminary is this? I understand idler readout's threshold, stability, limits, tolerance to losses, and performance against readout rates. no, I don't physically understand the profile, but I have a lot of characterisation)}
+
 % stability and singularity threshold maintained (same denominator)
 % reduction to nOPO and dOPO (recovers squeezing)
 % tolerance to losses? see problem with position of signal readout tolerance above
 
 % showcase the reasons for further interest in this configuration
+% David Ottaway: the frequencies where the idler is improving low freq sensitivity might fit into the band of InGaaAs photodetectors where the sensitivity at 2 um can be improved (currently this is a problem i.e low Quantum efficiency of photodetectors at 2um) - Vaishali
 
 % idler readout transfer functions: noise indep of pump phase but noise dep on relative phase of pump to linear combination of idler quadratures
 
@@ -381,7 +387,14 @@ Radiation pressure and back-action evasion do not change threshold because the q
 \begin{figure}
 	\centering
 	% \includegraphics[width=\textwidth]{}
-	\caption{Preliminary work: combined signal-idler readout, showing the limit of large arm loss that recovers a degenerate OPO (in the same manner that nondegenerate OPO combined readout looks like a degenerate OPO, shown in Section~\ref{}).}
+	\caption{Preliminary work: combined signal-idler readout, showing the limit of large arm loss that recovers a degenerate OPO (in the same manner that the nondegenerate OPO Weiner filter recovers a degenerate OPO, shown in Section~\ref{}).}
+	\label{fig:}
+\end{figure}
+
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Preliminary work: Weiner filter for the quantum noise--limited sensitivity using the combined signal-idler readout.}
 	\label{fig:}
 \end{figure}
 
@@ -445,7 +458,15 @@ Radiation pressure and back-action evasion do not change threshold because the q
 % resistant to detection losses, which is a big deal, although Caves's amplifier could alleviate this more generally
 % resistant to signal loss, sensitive to arm loss, very sensitive to idler loss (SRM must be closed to idler through e.g. dichroic)
 
+
 % idler readout tolerance to losses (showcase preliminary results)
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Nondegenerate internal squeezing, idler readout, tolerance to losses.}
+	\label{fig:}
+\end{figure}
+
 
 \subsection{Optimal squeezing}
 

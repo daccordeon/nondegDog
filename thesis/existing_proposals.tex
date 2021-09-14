@@ -2,15 +2,52 @@
 \label{chp:proposals}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % chapter introduction
-
 % Beyond better external squeezing, there are many \jam{(are there?)} existing proposals to improve the kilohertz sensitivity of gravitational-wave detectors. In the next two chapters, I examine two of the front-runners: degenerate internal squeezing and stable optomechanical filtering.
+% demonstrate modelling again, for the third and last time before my model -- much of the maths should be quite familiar by now
+% set-up the problem: how do these configs get past the four factors in the introduction and why aren't they good enough for kilohertz sensitivity
+
+In this chapter, I consider some of the existing solutions to solve the problem of increasing kilohertz sensitivity outlined in Section~\ref{}. After first summarising the literature on the matter, I focus on two recent proposals that look promising: degenerate internal squeezing~\cite{} and stable optomechanical filtering~\cite{}. I use the tools of the previous chapter to understand degenerate internal squeezing and once again demonstrate how I will model the configuration in my research. Although I discuss stable optomechanical filtering using the same ideas, I do not present a model of it for reasons that will become clear. 
+%Stable optomechanical filtering is the optomechanical analogue of my all-optical configuration which implies that there is . 
+While promising, both these existing proposals have problems with their tolerance to different losses: optical loss and thermal noise, respectively. These issues motivate my research into a configuration which is closely related to these proposals but might be able to overcome these issues, and therefore better improve kilohertz sensitivity.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Literature review}
 
-\jam{(justify somewhere that these are the front-runners and that there are not other configurations that I should be considering -- literature review!)}
+\jam{(Look up what is required of a literature review, need more citations!, all I want out of this is why I am only looking at these two configurations)}
 
+% intro: beyond external changes (external squeezing and caves's amplifier) to interferometer and increasing circulating power
+How to improve the kilohertz sensitivity of gravitational-wave detectors has been considered already in the literature~\cite{}. Any proposal to do so without increasing circulating power or degrading existing sensitivity must overcome the Mizuno Limit, outlined in Section~\ref{}, through some non-classical technique \jam{(why is cancelling phase non-classical?)}. Broadband improvement is possible through external modifications to the interferometer such as external squeezing and Caves's amplification (both of which use squeezing to overcome the Mizuno Limit) already discussed, but I am interested in techniques that directly address kilohertz sensitivity. In this review, I will summarise: (1) the existing, first \jam{(do any remain?)} and second generation gravitational-wave detectors around the world, (2) the future third generation detectors under conceptualisation and construction, (3) the existing proposals that use internal squeezing, (4) the existing proposals that use optomechanical filtering, and (5) some of the other existing proposals. %However, I will refrain from a thorough technical explanation of these configurations, which will be given later in this chapter. 
+
+\jam{(Need to do more reading to write this section convincingly + talk to the supes, maybe use a few review articles?)}
+% existing detectors
+The network of existing (operational) gravitational-wave detectors consists of: Advanced~LIGO~\cite{} (Hanford~\cite{} and Livingston~\cite{} sites), Advanced~Virgo~\cite{}, KAGRA~\cite{}, and GEO600~\cite{}. All of these follow the interferometer design discussed in Section~\ref{} with the only major change relevant for quantum noise \jam{(big claim, check this)} being the use of external squeezing in Advanced~LIGO, discussed in Section~\ref{}. I will consider Advanced~LIGO as the example from this generation, henceforth. 
+\jam{(Need to say more for a literature review?)}
+% 3rd generation detectors: LIGO Voyager, NEMO, Einstein Telscope, Cosmic Explorer --> why I will focus on the Voyager parameter set (no increased circulating power, no change in arm lengths)
+The proposed next, third generation of \jam{(ground-based?)} detectors consists of: LIGO~Voyager~\cite{}, NEMO~\cite{}, Einstein~Telescope~\cite{}, and Cosmic~Explorer~\cite{} \jam{(check this, Voyager vs CE is 2.5 versus 3, no?)}. These still use the same interferometer design (with the exception of NEMO~\cite{}) \jam{(check this)} but differ from the previous generation in a number of interferometer parameters including circulating power, arm length, test mass mass, carrier wavelength, and transmissivities of the initial test mass and the signal-recycling mirror~\cite{}. 
+The later detectors, Einstein~Telescope and Cosmic~Explorer, are proposed to have significantly longer arm lengths and higher circulating powers than LIGO~Voyager or the current generation of detectors. 
+I will consider the feasibility of configurations using the LIGO~Voyager parameter set~\cite{} because it will be the first of these future detectors to come online~\cite{} -- as it is a series of upgrades to the existing Advanced~LIGO detectors \jam{(surely both of them?)}. Moreover, variations of this parameter set have been used in the literature to assess the configurations in this chapter~\cite{Li2020,Miao2018,Adya2020}. In particular I will use: $3$~MW circulating power, $4$~km arms, $56$~m signal-recycling cavity, $200$~kg test masses, and $2~\mu\text{m}$ carrier wavelength~\footnote{There is much debate about using $2$ versus $1.064~\mu\text{m}$ which is summarised in Ref.~\cite{} and not worth explaining here as my models are too simplified to compare the two, e.g.\ with respect to frequency-dependent photodiode efficiencies~\cite{}. \jam{(is there more I can say here?)}}, but will vary the transmissivities away from their values of $0.002$ for the initial test mass and $0.046$ for the signal-recycling mirror to test the effects of changing the respective coupling rates~\footnote{There is a subtlety here in that these parameters might be biased against one configuration over another. I have tried to overcome this by changing the coupling rates between the modes which appears to produce the most dramatic change to the sensitivity curve. \jam{(see Fig...?)}}. 
+\jam{(Need to say more for a literature review?)}
+
+% separate from these defined detectors is a literature of different possible configurations and proposals for these and future detectors.
+The future detectors mentioned above are all those with established science-cases and detailed proposals, separate from them is a literature full of alternative proposals and exploratory work which could be realised in a non-specific future detector -- which is where my work fits into. %~\footnote{It is worth clarifying here that I am not aiming to produce a complete proposal for a future detector either, only explore the space of designs}.
+% degenerate internal squeezing
+One such proposal is degenerate internal squeezing~\cite{Korobko2019,Adya2020}, which is being considered for NEMO~\cite{}. 
+Degenerate internal squeezing was first proposed in Ref.~\cite{Korobko2019} and has been subsequently characterised in Refs.~\cite{Adya2020,Korobko?,}. 
+I will explain this configuration thoroughly later, but it suffices to say that internal squeezing places a squeezer inside the signal-recycling cavity, turning the two-cavity system into an OPO coupled to the arm cavity. Unlike external squeezing, where only the readout port vacuum is squeezed, degenerate internal squeezing can also squeeze the intra-cavity noises and the gravitational-wave signal. Although de-amplifying (squeezing) the signal is not ideal, the reduction in the quantum noise is significant enough to produce an improvement in sensitivity (signal-to-noise ratio) -- at kilohertz if the interferometer parameters are chosen correctly~\cite{}. Degenerate internal squeezing is sensitive to intra-cavity and detection losses, however, since these losses reduce the signal but amplify the noise. 
+Interest in degenerate internal squeezing continues today~\cite{KorobkoTalk} for its ability to be switched into an anti-squeezing regime in the high loss limit~\footnote{This limit is far beyond the expected losses in future detectors, but the interest in it is to show the ability to optimise degenerate internal squeezing to different configurations.}, similarly to a Caves's amplifier, see Section~\ref{}, except that it interacts with signal and intra-cavity losses. 
+% is there any GW community interest in nondegenerate squeezing?
+But nondegenerate internal squeezing, where the internal squeezing is operated nondegenerately, is an alternative that has not yet been thoroughly considered~\cite{} -- I will identify this gap in the literature in Section~\ref{} \jam{(haven't I identified it here?)}. 
+
+% optomechanical filtering: unstable~\cite{Miao2015,Miao2018,Page2018} and stable~\cite{Li2020,Li2021}
+\jam{(review Miao 2015, research journals)}
+Another configuration, even more popular in the literature than internal squeezing, is stable optomechanical filtering~\cite{Li2020,Li2021,Miao2015,Miao2018,Page2018}. Optomechanical filtering in the signal-recycling cavity of an interferometer was first proposed in Ref.~\cite{Miao2015} in an unstable configuration. Again, I will explain this in more detail later, but for now \jam{is this necessary?}, this configuration couples the optical mode in the signal-recycling cavity to a mechanical mode. The optomechanical coupling can be chosen such that the filter cavity that the signal-recycling cavity becomes imparts the opposite round-trip phase to the arm cavity, which broadens the arm cavity resonance (the ``white-light cavity'' idea~\cite{}). When the readout occurs via the mechanical mode, the system is unstable and needs a feedback control system, this unstable system was further investigated in Refs.~\cite{Miao2018,Page2018,}. But if the readout is changed back to the signal-recycling cavity optical mode, then the system becomes stable, which has been investigated in Refs.~\cite{Li2020,Li2021} and produces broadband sensitivity improvement in the lossless case. Both unstable and stable systems have stringent mechanical requirements to keep the thermal noise low, however, requiring high mechanical quality factor and low thermal noise~\cite{}. Research is currently underway into different optomechanical techniques to achieve the demands of this configuration, such as optical springs~\cite{}, cat-flap resonators~\cite{}, and \jam{(... look at Miao, Page references)}.
+
+% other configurations + configurations not based on the Michelson interferometer: speed-meters etc.
+Finally, there are still more proposals for kilohertz improvement~\cite{,,}, some of which are not even based on the Michelson interferometer~\cite{}. I am not aware of all that has been suggested, but some of the configurations that continue to generate interest in the literature are \jam{(..., ..., and ... . read up to fill this in!)}. 
+% this is just an honours project 
+However, the time constraints of my research have only allowed me to consider the two above classes of existing proposals. These are the most related configurations to my own work, since nondegenerate internal squeezing is to degenerate internal squeezing as the nondegenerate OPO is to the degenerate OPO, and nondegenerate internal squeezing is an all-optical analogue of the stable optomechanical filtering. % I can't claim that they are frontrunners, what evidence?
+Therefore, that I only consider them should not be taken as a claim of their superior feasibility to the rest of the literature but as a result of finite time and relevance. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -20,43 +57,75 @@
 	\centering
 	% \includegraphics[width=\textwidth]{}
 	\caption{Degenerate internal squeezing configuration.}
-	\label{fig:}
+	\label{fig:dIS_config}
 \end{figure}
 
 % squeezing ellipse and signal arrow plot (+ show the effect of optical loss: detection and intracavity)
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Degenerate internal squeezing noise ellipse and signal arrow, compare to external squeezing in Fig.~\ref{fig:extSqz_ellipse_arrow} and Caves's amplifier in Fig.~\ref{fig:Cavess_amplifier}.}
+	\label{fig:dIS_ellipse_and_arrow}
+\end{figure}
+
+% has been explained many times before, but do it again here because it is the main reference
+% how does this configuration beat the Mizuno limit (four factors in the introduction)? --> squeezing
+Degenerate internal squeezing consists of a degenerate squeezer placed inside the signal-recycling cavity of an interferometer such that it squeezes the signal mode at the carrier frequency~\cite{}, as shown in Fig.~\ref{fig:dIS_config}. The internal placement means that it squeezes the gravitational-wave signal and the vacuum from the signal-recycling mirror readout and the intra-cavity loss ports. Although in a single-pass of the squeezer the signal and noise are squeezed equally~\footnote{Squeezing the signal is shorthand for the de-amplification of signal resulting from squeezing the noise. \jam{(clarify)}}, because the signal originates in the arms and the noise originates inside each cavity and outside, the overall amount of squeezing produced is different -- they see the squeezer differently, as shown in Fig.~\ref{fig:dIS_config}. The overall effect is to de-amplify the signal but squeeze the noise more such that the sensitivity improves, as shown in Fig.~\ref{fig:dIS_ellipse_and_arrow}. Where the improvement overcomes the Mizuno Limit from Section~\ref{} through the use of squeezing. However, this improvement only occurs around the ``sloshing'' frequency~\cite{}, the coupling frequency of the two cavities, which will be shown. 
+
+In this section, I present a model of degenerate internal squeezing and discuss its behaviour, which exists in the literature~\cite{} but is less understood than the OPOs. I demonstrate this analysis here to bridge from the OPOs in the previous chapter to my work on nondegenerate internal squeezing in the next chapter. The structure of the results presented here will be mirrored in the next chapter which should make those later results more convincing.  % what do I intend the reader to get out of it?
 
 	% A proposed technology to further reduce shot noise is degenerate internal squeezing where a degenerate squeezer is included inside the signal-recycling cavity as shown in the left panel of Fig.~\ref{fig:coupled_cavities}~\cite{korobkoQuantumExpanderGravitationalwave2019,adyaQuantumEnhancedKHz2020}.
 	% To simplify modelling this configuration, the two coupled optical modes of concern, the differential mode from the arm cavities and the mode in the signal-recycling cavity, are approximated as coming from a pair of coupled cavities as shown in the right panel of Fig.~\ref{fig:coupled_cavities}. The quantum noise enters with the vacuum into the signal-recycling cavity, but the signal arises in the arm cavity and so sees the squeezer differently. This difference leads to no change in sensitivity at low frequencies and improved sensitivity at high frequencies around the resonance of the signal-recycling cavity as shown in Fig.~\ref{fig:sensitivity_curve}. The improvement occurs around the signal-recycling cavity resonance as this is where the most quantum noise field is present inside the cavity and so is where the internal squeezer produces the most squeezing. The resulting noise reduction is sufficient to overcome the de-amplification of the signal due to squeezing. The overall sensitivity improvement from degenerate internal squeezing is limited by optical loss in the interferometer and at the photodetector~\cite{korobkoQuantumExpanderGravitationalwave2019}. 
 
-% \subsection{Internal squeezing}
-
-% internal squeezing = two coupled cavities
-
-% Korobko et al, 2019
 
 \subsection{Analytic model}
 
-This derivation is available in Ref.~\cite{}, but I include it here to demonstrate the Hamiltonian method I use later on and to directly compare the results. \jam{Appendix?}
+\jam{(is this model necessary?)}
 
 % I have verified this model against Korobko
+I construct a Hamiltonian model of degenerate internal squeezing using the formalism from Chapter~\ref{chp:background_theory}. This model is based on that available in Ref.~\cite{Korobko2019} and can be verified against that reference. I include it here to again demonstrate the Hamiltonian method that I later use in my work, particularly the radiation pressure, gravitational-wave signal, and the system's stability \jam{(repetition with section intro)}. By turning the squeezer off, this model recovers the interferometer in Section~\ref{} which is how Figs.~\ref{,} were produced. 
 
-% with radiation pressure and pump phase
+Since degenerate internal squeezing is equivalent to a degenerate OPO coupled to the arm cavity, I use the degenerate OPO model in Section~\ref{} and add the extra modes associated with the arms, shown in Fig.~\ref{fig:dIS_config}. Let the signal-recycling cavity and output modes be labelled as before and let the arm cavity mode at carrier frequency $\omega_0$ be $\hat a$ (resonant in the single-mode approximation) with intra-cavity loss $T_{l,a}$ into vacuum $\hat n^L_a$. Let the gravitational-wave signal $h(t)$ be coupled to the arm cavity mode by the test mass mechanical mode given by displacement $\hat x$ and momentum $\hat p$. 
+The Hamiltonian of this system is $\hat H = \hat H_0 + \hat H_I + \hat H_\gamma + \hat H_\text{GW}$ where~\cite{}
+\jam{(fill in Langevin Hamiltonian)}
+\begin{align}
+\hat H_0 &= \hbar \omega_0 \hat a^\dag \hat a + \hbar \omega_0 \hat b^\dag \hat b + \hbar 2\omega_0 \hat u^\dag \hat u\\
+\hat H_I &= \hbar \frac{x}{2} e^{i\phi} \hat u (\hat b^\dag)^2 + \text{h.c.}\\
+\hat H_\gamma &= \int \ldots \\
+\hat H_\text{GW} &= -\alpha (\hat{x}-L_\mathrm{arm}h(t))(\frac{\hat{a}+\hat{a}^\dag}{\sqrt{2}})+\frac{1}{2\mu}\hat{p}^2 \\
+\end{align}
+% \beta = \frac{\alpha L_\mathrm{arm}}{\sqrt{2}\hbar}, \beta = \sqrt{\frac{2 P_\text{circ} L_\text{arm} \omega_0}{\hbar c}}, \alpha = \sqrt{2} \hbar/L_arm= \sqrt{\frac{4 P_\text{circ} \omega_0 \hbar}{c  L_\text{arm}}}
+% multiple different hamiltonians for RP
+Where $\alpha=\sqrt{\frac{4 P_\text{circ} \omega_0 \hbar}{c  L_\text{arm}}}$ \jam{(check this)} is the coupling strength to the gravitational-wave signal~\cite{}, that it scales with circulating power $P_\text{circ}$ is why power matters \jam{(say more?)}, and $\mu=M/4$ is the reduced mass of the test masses~\cite{}. There are many equivalent formulations of radiation pressure~\cite{optomechanics textbook}, the above is taken from Ref.~\cite{Li2020,original source?}. 
+The Heisenberg-Langevin equations for $\hat a, \hat b, \hat x$ and $\hat p$ can be found using the bosonic commutation relations as before~\cite{} and the canonical commutation relation $[\hat x,\hat p]=i\hbar$~\cite{}. I make the same set of approximations to the pump mode as Section~\ref{} and enter the Interaction Picture and take fluctuating components as before.
+
+\jam{pick up from here}
+
 
 % problem with omega_s formula
 
 
-% difference to caves's amplifier
 
-% optimal squeezing curves against loss, in really high loss should antisqueeze
 
-\subsection{Reduction to degenerate OPO}
+\subsection{Results}
+% threshold, radiation pressure, and pump phase
+% The behaviour against different parameters will be similar to that seen for the degenerate OPO in Section~\ref{}.
+
+% threshold, lossless threshold but leave lossy threshold to research chapters?
+
+% stability
+
+% improvement only around sloshing frequency
+
+% similarly to external squeezing, improving shot noise worsens radiation-pressure noise.
 
 \begin{figure}
 	\centering
 	% \includegraphics[width=\textwidth]{}
-	\caption{Degenerate internal squeezing shot noise response in the limit of large arm loss compared to the theoretical limiting degenerate OPO with fully reflective ITM.}
+	\caption{Degenerate internal squeezing quantum noise and gravitational-wave signal responses (transfer functions) and sensitivity. Showing threshold and the effect of pump phase. \jam{(Which parameter set to use? Could show for Korobko and Li, matrix?)}}
 	\label{fig:}
 \end{figure}
+
 
 \subsection{Problems with proposal - vulnerability to optical loss}
 
@@ -68,10 +137,26 @@ This derivation is available in Ref.~\cite{}, but I include it here to demonstra
 \end{figure}
 
 
+% effect of optical losses is similar to dOPO: detection pulls and intra-cavity broadens?
+
+% arm cavity loss gives reduction to dOPO
+\subsubsection{Reduction to degenerate OPO}
+
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Degenerate internal squeezing shot noise response in the limit of large arm loss compared to the theoretical limiting degenerate OPO with fully reflective ITM.}
+	\label{fig:}
+\end{figure}
+
+
 
 \subsection{Connection to nondegenerate internal squeezing}
 
-% at high enough losses, it becomes optimal to instead anti-squeeze internally, this means that you might as well use nondegenerate internal squeezing because then you can anti-squeeze and potentially exploit the correlations
+% optimal squeezing curves against loss, in really high loss should antisqueeze, optimising can also use the external sqz and caves's amplifier (cite Korobko talk) 
+% at high enough losses, it becomes optimal to instead anti-squeeze internally, this means that you might as well use nondegenerate internal squeezing because then you can anti-squeeze and potentially exploit the correlations using a combined readout
+% difference to caves's amplifier
+
 
 	% Nondegenerate internal squeezing, where the internal squeezer is instead nondegenerate, has
 	% been proposed as an alternative to degenerate internal squeezing~\cite{yapadyaPersonalCommunication}, although a comprehensive analysis of nondegenerate internal squeezing is yet to be done~\cite{liBroadbandSensitivityImprovement2020}. Because nondegenerate squeezing results in two entangled photons with different frequencies, these photons will not interfere with each other in the same manner as the degenerate case. Without this interference, nondegenerate internal squeezing increases the signal and the noise instead of decreasing them like the degenerate case. Therefore, nondegenerate internal squeezing is predicted to be more resistant to photodetector loss since the signal amplitude is greater. This project aims to investigate the potential benefits of nondegenerate internal squeezing over degenerate internal squeezing.
@@ -87,6 +172,11 @@ This derivation is available in Ref.~\cite{}, but I include it here to demonstra
 	\caption{Stable optomechanical filtering (white-light cavity) configuration.}
 	\label{fig:}
 \end{figure}
+
+% how does this configuration beat the Mizuno limit (four factors in the introduction)? --> cancels arm cavity resonance
+
+% I ommit the model of this configuration here, because in the lossless case it is exactly the model in the next chapter, see Section~\ref{}.
+% but I need to talk about their results? in particular, the exceptional point of PT-symmetric, stability, and sensitivity at threshold. maybe do show a lossless, shot-noise only model -- better yet, cite the results in their paper and reference the next section for further explanation?
 
 % Li et al, 2020
 
@@ -117,10 +207,14 @@ This derivation is available in Ref.~\cite{}, but I include it here to demonstra
 	\label{fig:}
 \end{figure}
 
+% equivalent mode structures, just the different noise sources
+
 	% Nondegenerate internal squeezing is also motivated by a connection between it and the use of
 	% a stable optomechanical filter cavity to improve high-frequency sensitivity~\cite{yapadyaPersonalCommunication,liBroadbandSensitivityImprovement2020}. The Hamiltonians of the two systems are equivalent under some mapping of the creation and annihilation operators of certain optical fields to certain mechanical fields. This connection exploits the fact that the nondegenerate squeezer interacts with three distinct frequencies to introduce a symmetry into the all-optical system that the optomechanical system has. This means that using nondegenerate internal squeezing may achieve the benefits of a stable optomechanical filter cavity without the optomechanical drawbacks of requiring cryogenic (around 4~K~\cite{miaoEnhancingBandwidthGravitationalWave2015}) environmental temperature and high mechanical quality factor. Therefore, understanding stable optomechanical filtering should lead to a better understanding of what nondegenerate internal squeezing might achieve.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Chapter summary}
+
+% there are solutions in the literature to improving kilohertz sensitivity, but they have their problems
 
 
