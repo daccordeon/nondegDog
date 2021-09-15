@@ -4,6 +4,8 @@
 % results: interpret deep and far, and be very critical of assessing your approach
 % present analysis of model and decisions/approximations made
 
+% separate this into multiple .tex files once structure finalised
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % chapter introduction
 
@@ -332,7 +334,7 @@ Radiation pressure and back-action evasion do not change threshold because the q
 % plot: trajectory of poles for lossy dIS and nIS -- maybe cut dIS because nIS should be the focus? 
 
 
-\subsection{Problem with definition}
+\subsection{Problems with definition}
 
 % make clear that knowing threshold just gives the physical bounds of the parameter space, it doesn't correspond to the optimal squeezing (see results section) for sensitivity improvement -- just as minimising N does not necessarily maximise SNR if signal is not considered. 
 
@@ -356,47 +358,14 @@ Radiation pressure and back-action evasion do not change threshold because the q
 % \subsection{PT-symmetry}
 % % mention removing back-action evasion
 
-\subsection{Preliminary work: physical meaning of singularity threshold}
+\subsection{Physical meaning of singularity threshold}
+% Preliminary work? should be subsubsection?
 
 % will this all evaporate when pump depletion is added? yes, its likely
 
 % \section{Tolerance to optical losses}
 % this is repeated in the next chapter? but I need this to explain the behaviour with different readout?
 
-\section{Preliminary work: idler and combined signal-idler readout}
-
-\jam{(how preliminary is this? I understand idler readout's threshold, stability, limits, tolerance to losses, and performance against readout rates. no, I don't physically understand the profile, but I have a lot of characterisation)}
-
-% stability and singularity threshold maintained (same denominator)
-% reduction to nOPO and dOPO (recovers squeezing)
-% tolerance to losses? see problem with position of signal readout tolerance above
-
-% showcase the reasons for further interest in this configuration
-% David Ottaway: the frequencies where the idler is improving low freq sensitivity might fit into the band of InGaaAs photodetectors where the sensitivity at 2 um can be improved (currently this is a problem i.e low Quantum efficiency of photodetectors at 2um) - Vaishali
-
-% idler readout transfer functions: noise indep of pump phase but noise dep on relative phase of pump to linear combination of idler quadratures
-
-% plot: separate idler and signal readout, reduction to OPOs, combined reduction to dOPO
-\begin{figure}
-	\centering
-	% \includegraphics[width=\textwidth]{}
-	\caption{Preliminary work: idler readout compared to signal readout. These readout schemes can not be run simultaneously due to measurement collapsing the entangled state of the signal and idler -- ``independent'' readouts here refers to if each was run separately. Idler readout appears promising at lower-than-kilohertz frequencies around $100$~Hz, especially when the readout rates are comparable.}
-	\label{fig:}
-\end{figure}
-
-\begin{figure}
-	\centering
-	% \includegraphics[width=\textwidth]{}
-	\caption{Preliminary work: combined signal-idler readout, showing the limit of large arm loss that recovers a degenerate OPO (in the same manner that the nondegenerate OPO Weiner filter recovers a degenerate OPO, shown in Section~\ref{}).}
-	\label{fig:}
-\end{figure}
-
-\begin{figure}
-	\centering
-	% \includegraphics[width=\textwidth]{}
-	\caption{Preliminary work: Weiner filter for the quantum noise--limited sensitivity using the combined signal-idler readout.}
-	\label{fig:}
-\end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -459,13 +428,6 @@ Radiation pressure and back-action evasion do not change threshold because the q
 % resistant to signal loss, sensitive to arm loss, very sensitive to idler loss (SRM must be closed to idler through e.g. dichroic)
 
 
-% idler readout tolerance to losses (showcase preliminary results)
-\begin{figure}
-	\centering
-	% \includegraphics[width=\textwidth]{}
-	\caption{Nondegenerate internal squeezing, idler readout, tolerance to losses.}
-	\label{fig:}
-\end{figure}
 
 
 \subsection{Optimal squeezing}
@@ -532,17 +494,13 @@ Radiation pressure and back-action evasion do not change threshold because the q
 \end{figure}
 % plot: curve optimised for broadband 
 
-% idler readout also looks quite promising but demands a lot more investigation before drawing strong conclusions
-
+% kilohertz detection was the aim of the thesis but it looks like nIS might be more useful for a different purpose, set up idler readout chapter
 
 % \section{Sensitivity optimisation}
 
 % % chosen metrics (mutrics), optimisation to hit astrophysical target
 % % Realistic experimental constraints
 
-% \subsection{Kilohertz detector}
-
-% \subsection{Broadband detector}
 
 
 \section{Comparison to existing proposals}
@@ -571,11 +529,148 @@ Radiation pressure and back-action evasion do not change threshold because the q
 % do I need to include this? it would be nice
 % \subsection{Degenerate versus nondegenerate internal squeezing}
 % degenerate internal squeezing can be run in amplification regime if losses are high
-% nondegenerate is less sensitive to losses and could potentially use idler/combined readout to get ahead
+% nondegenerate is less sensitive to losses and could potentially use idler/combined readout to get ahead --> next chapter
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Chapter summary}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Idler and combined readout schemes for nondegenerate internal squeezing}
+\label{chp:idler_readout}
+% only a short chapter!
+
+% chronological does not matter, make this flow from the previous chapter --> emergence of a new possibility separate from initial interest in kilohertz sensitivity
+
+\jam{(how preliminary is this work? I understand idler readout's threshold, stability, limits, tolerance to losses, and performance against readout rates. no, I don't physically understand the profile, but I have a lot of characterisation)}
+
+\section{Analytic model}
+% short section
+% review idler and combined signal-idler readout from nOPO chapter
+
+
+\section{Results}
+% mirror chapters 4,5
+
+\subsection{Stability and threshold}
+
+% stability and singularity threshold maintained (same denominator)
+
+
+\subsection{Reduction to OPOs}
+
+% reduction to nOPO and dOPO (recovers squeezing)
+
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Nondegenerate internal squeezing, idler readout recovers nondegenerate OPO (also shows tolerance to arm cavity intra-cavity loss).}
+	\label{fig:}
+\end{figure}
+
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Preliminary work: combined signal-idler readout, showing the limit of large arm loss that recovers a degenerate OPO (in the same manner that the nondegenerate OPO Weiner filter recovers a degenerate OPO, shown in Section~\ref{}).}
+	\label{fig:}
+\end{figure}
+
+% split into own section?
+\subsection{Idler readout tolerance to losses}
+
+% why focus on idler readout, combined readout is largely left to future work
+
+% idler readout tolerance to losses (showcase preliminary results)
+% decrease in peak sensitivity, large increase in bandwidth
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Nondegenerate internal squeezing, idler readout tolerance to signal mode intra-cavity loss.}
+	\label{fig:}
+\end{figure}
+
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Nondegenerate internal squeezing, idler readout tolerance to idler and detection losses.}
+	\label{fig:}
+\end{figure}
+
+% tolerance to losses? see problem with position of signal readout tolerance above
+
+\subsection{Idler readout tolerance to pump power and phase}
+% stability of idler readout against pump power and phase: how sensitive is the scheme to ratio of threshold and $\phi$ (when $\psi$ combination angles fixed), give value in $\%$ and radians.
+
+
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Nondegenerate internal squeezing, idler readout tolerance to pump power (squeezer parameter $\chi$).}
+	\label{fig:}
+\end{figure}
+
+% idler readout transfer functions: noise indep of pump phase but noise dep on relative phase of pump to linear combination of idler quadratures
+
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Nondegenerate internal squeezing, idler readout tolerance to pump phase $\phi$ with combination angle $\psi_1$ fixed.}
+	\label{fig:}
+\end{figure}
+
+
+\section{Idler readout comparison to signal readout}
+
+% plot: separate idler and signal readout, reduction to OPOs, combined reduction to dOPO
+% tradeoff of bandwidth and DC peak sensitivity + interaction with RP
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	% why is the peak moving? threshold should not be a factor since ratio fixed?
+	% showcase same lines without RP?
+	\caption{Idler readout compared to signal readout. Idler readout appears promising at lower-than-kilohertz frequencies around $100$~Hz, especially when the readout rates are comparable. \jam{(check whether incoherent readout is possible when the modes are correlated, does measurement collapse the entanglement?)}}
+	\label{fig:}
+\end{figure}
+
+% is this true: These readout schemes can not be run simultaneously due to measurement collapsing the entangled state of the signal and idler -- ``independent'' readouts here refers to if each was run separately?
+
+
+\section{Gravitational-wave sub-kilohertz detection science case for idler readout}
+
+% idler readout also looks quite promising but demands a lot more investigation before drawing strong conclusions, need to be critical of my methodology and approach
+% nondegenerate is less sensitive to losses and could potentially use idler/combined readout to get ahead
+
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Nondegenerate internal squeezing, idler readout for LIGO~Voyager parameter set for losses with different levels of realism and different readout rates, compared against sensitivity target.}
+	\label{fig:}
+\end{figure}
+
+% showcase the reasons for further interest in this configuration
+% Since $\Delta$ does not affect the sensitivity as long as $\Delta \ll \omega_0$, the idler frequency can be chosen to best suit the current photodetector technology, e.g.\ photodiodes at $2 \mu\text{m}$ suffer from low quantum efficiency~\cite{} so although the signal mode might be at $2 \mu\text{m}$ for separate reasons~\cite{}, the idler wavelength can be chosen to optimise the readout.
+% David Ottaway: the frequencies where the idler is improving low freq sensitivity might fit into the band of InGaaAs photodetectors where the sensitivity at 2 um can be improved (currently this is a problem i.e low Quantum efficiency of photodetectors at 2um) - Vaishali
+
+\begin{figure}
+	\centering
+	% \includegraphics[width=\textwidth]{}
+	\caption{Preliminary work: nondegenerate internal squeezing, combined readout for LIGO~Voyager parameter set for losses with different levels of realism and different readout rates, compared against sensitivity target.}
+	\label{fig:}
+\end{figure}
+
+% combined (coherent) readout is even more interesting than swapping between signal and idler readout because the correlations can be used to potentially achieve even greater sensitivity
+% give a sense that this exploration is not yet finished but is quite promising
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Chapter summary}
+
 
 
 
