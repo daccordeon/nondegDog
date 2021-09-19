@@ -295,6 +295,9 @@ $$S_h(\Omega)=\frac{(\mathrm{S}_X(\Omega))_{2,2}}{\abs{\mathcal{T}(\Omega)}^2}.$
 
 % motivate this by the previous section's looking at poles, now looking at real poles that could be encountered, to avoid confusion with the complex poles that are always present I will call these real poles ``singularities''
 
+% $\Omega^2$ factor in RP denominator is the resonance, but is unrelated to the squeezer
+
+
 
 I have devised a definition of threshold: ``threshold is the (real) value of the squeezing parameter such that the anti-squeezed quadrature of the quantum noise has a singularity at some (real) frequency; if multiple singularities exist then the threshold is the smallest squeezer value''. Here, I am only looking for singularities that diverge to infinity (along all angles of approach). In order to reduce confusion, I do not call these ``poles'' since the quantum noise is not defined on $\mathbb{C}$. \jam{(Check this: looking at the imaginary part of the poles for stability and looking for real poles (i.e. poles on the real axis) for threshold are the same solutions, surely?)}
 % NB: I am calling the points "singularities" for now to avoid confusion, but they are just the poles of the transfer functions (against complex \[CapitalOmega]) at real \[Chi] such that they are on the real axis (and therefore real \[CapitalOmega]).
@@ -552,6 +555,8 @@ Radiation pressure and back-action evasion do not change threshold because the q
 \label{chp:idler_readout}
 % only a short chapter!
 
+% idle(r?) hands are the devil's playthings
+
 % chronological does not matter, make this flow from the previous chapter --> emergence of a new possibility separate from initial interest in kilohertz sensitivity
 
 \jam{(how preliminary is this work? I understand idler readout's threshold, stability, limits, tolerance to losses, and performance against readout rates. no, I don't physically understand the profile, but I have a lot of characterisation)}
@@ -647,6 +652,13 @@ Radiation pressure and back-action evasion do not change threshold because the q
 \end{figure}
 
 % is this true: These readout schemes can not be run simultaneously due to measurement collapsing the entangled state of the signal and idler -- ``independent'' readouts here refers to if each was run separately?
+
+% The latest idler readout plots:
+% (Plot 1) Dashed lines are without radiation pressure. The result is that the signal transfer function improvement with idler readout persists at low frequencies but radiation pressures means that there's no sensitivity improvement. 
+% (Plots 2-3) Zoom-in on peak frequency, which changes with the readout rate. This is because the singularity threshold frequency depends on the losses, although I normalise the squeezer parameter to the singularity threshold value I don't normalise the frequency axis. The singularity frequencies here are: {853, 1624, 3534, 4763} (truncated at the decimal point). Plot 2 is for 95% of the squeezer parameter threshold; Plot 3 is on squeezer parameter threshold (where limited resolution means that the peak is finite). 
+% (Plots 4-5) Tolerance to pump power. Showing the effect of changing the ratio to threshold by plus/minus 4%. The effect appears larger at smaller idler readout rates with fixed signal readout rate (Plot 4) and negligible when idler readout is large and signal readout is varied (Plot 5). I suspect that this is due to the likeness to the lossless case with no idler readout (Li et al, 2020) where 100% threshold is dramatic compared to 90% threshold -- compared to at large readout rates where 90-100% threshold is largely the same. Why low signal readout does not produce the same effect is because it is further from that lossless configuration, but I am less confident about this.
+% The regime that is most promising is for readout rates roughly equal, so this effect for low idler readout's is less of an issue, and it appears similar to the signal readout anyway. 
+% (Plot 6) Tolerance to pump phase. Fixing the combination angle psi1=pi/2 and changing the pump phase phi from pi/2 by plus/minus pi/4. Plot 6 is labelled as "combined" but the angles are selecting idler readout only. The effect is that the sensitivity seems tolerant to pump phase, independently of the readout rates (which surprised me, recall that psi1=phi is optimal for signal but the change is small). 
 
 
 \section{Gravitational-wave sub-kilohertz detection science case for idler readout}
