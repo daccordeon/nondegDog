@@ -3,11 +3,18 @@
 
 % results: interpret deep and far, and be very critical of assessing your approach
 % present analysis of model and decisions/approximations made
+% think about the story!
+% systematic and diligence
 
 % separate this into multiple .tex files once structure finalised
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % chapter introduction
+
+\jam{(need to fix up mentions of nondegenerate internal squeezing in background chapters, either explain it earlier or do not confuse the reader)}
+
+
+% combine the all-optical approach of dIS with the mode structure of sWLC
 
 
 % squeezing ellipse and signal arrow plot
@@ -21,6 +28,8 @@
 % Although nondegenerate OPOs have long been studied for EPR~\cite{Reid,Schori} and other applications~\cite{?}. 
 
 % claim: the modelling of this configuration has never been done as thoroughly as my work, explain why (recency of interest)
+
+% cite personal communication?
 
 % EPR experiments and ``EPR'' squeezing
 
@@ -324,7 +333,8 @@ For nIS, this definition reduces to nOPO threshold $(\Omega,\chi)\xrightarrow[\g
 Radiation pressure and back-action evasion do not change threshold because the quantum noise transfer function denominator has the same positive zeros as the shot noise transfer function without radiation pressure (and BAE).
 % pump phase does not change threshold either
 
-% this resolves the mystery of idler loss
+% this resolves the mystery of idler loss --> means that lossless nIS is necessarily above threshold and therefore not allowed in this model except in formal limits, pump depletion would need to be added in to properly compare to sWLC
+
 
 
 \begin{figure}
@@ -555,7 +565,9 @@ Radiation pressure and back-action evasion do not change threshold because the q
 \label{chp:idler_readout}
 % only a short chapter!
 
-% idle(r?) hands are the devil's playthings
+
+% section 3-B in Li 2021 has noticed this already! 
+
 
 % chronological does not matter, make this flow from the previous chapter --> emergence of a new possibility separate from initial interest in kilohertz sensitivity
 
@@ -640,6 +652,9 @@ Radiation pressure and back-action evasion do not change threshold because the q
 
 \section{Idler readout comparison to signal readout}
 
+% section 3-B in Li 2021 has noticed this already! ``In the course of this work, I became aware of a related result in Ref.~\cite{Li2021} for the optomechanical analogue of this configuration.''
+
+
 % plot: separate idler and signal readout, reduction to OPOs, combined reduction to dOPO
 % tradeoff of bandwidth and DC peak sensitivity + interaction with RP
 \begin{figure}
@@ -655,11 +670,10 @@ Radiation pressure and back-action evasion do not change threshold because the q
 
 % The latest idler readout plots:
 % (Plot 1) Dashed lines are without radiation pressure. The result is that the signal transfer function improvement with idler readout persists at low frequencies but radiation pressures means that there's no sensitivity improvement. 
-% (Plots 2-3) Zoom-in on peak frequency, which changes with the readout rate. This is because the singularity threshold frequency depends on the losses, although I normalise the squeezer parameter to the singularity threshold value I don't normalise the frequency axis. The singularity frequencies here are: {853, 1624, 3534, 4763} (truncated at the decimal point). Plot 2 is for 95% of the squeezer parameter threshold; Plot 3 is on squeezer parameter threshold (where limited resolution means that the peak is finite). 
-% (Plots 4-5) Tolerance to pump power. Showing the effect of changing the ratio to threshold by plus/minus 4%. The effect appears larger at smaller idler readout rates with fixed signal readout rate (Plot 4) and negligible when idler readout is large and signal readout is varied (Plot 5). I suspect that this is due to the likeness to the lossless case with no idler readout (Li et al, 2020) where 100% threshold is dramatic compared to 90% threshold -- compared to at large readout rates where 90-100% threshold is largely the same. Why low signal readout does not produce the same effect is because it is further from that lossless configuration, but I am less confident about this.
+% (Plots 2-3) Zoom-in on peak frequency, which changes with the readout rate. This is because the singularity threshold frequency depends on the losses, although I normalise the squeezer parameter to the singularity threshold value I don't normalise the frequency axis. The singularity frequencies here are: {853, 1624, 3534, 4763} Hz (truncated at the decimal point). Plot 2 is for 95% of the squeezer parameter threshold; Plot 3 is on squeezer parameter threshold (where limited resolution means that the peak is finite). When the signal readout is turned off, the effect is smaller but non-zero.
+% (Plots 4-5) Tolerance to pump power. Showing the effect of changing the ratio to threshold by plus/minus 4%. The effect appears larger at smaller idler readout rates with fixed signal readout rate (Plot 4) and negligible when idler readout is large and signal readout is varied (Plot 5). I suspect that this is due to the likeness to the lossless case with no idler readout (Li et al, 2020) where 100% threshold is dramatic compared to 90% threshold -- compared to at large readout rates where 90 and 100% threshold are largely the same. Why low signal readout does not produce the same effect is because it is further from that lossless configuration, but I am less confident about this.
 % The regime that is most promising is for readout rates roughly equal, so this effect for low idler readout's is less of an issue, and it appears similar to the signal readout anyway. 
 % (Plot 6) Tolerance to pump phase. Fixing the combination angle psi1=pi/2 and changing the pump phase phi from pi/2 by plus/minus pi/4. Plot 6 is labelled as "combined" but the angles are selecting idler readout only. The effect is that the sensitivity seems tolerant to pump phase, independently of the readout rates (which surprised me, recall that psi1=phi is optimal for signal but the change is small). 
-
 
 \section{Gravitational-wave sub-kilohertz detection science case for idler readout}
 
