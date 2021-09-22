@@ -36,16 +36,16 @@ The only direct mention of nondegenerate internal squeezing \jam{(that I could f
 
 \begin{figure}
 	\centering
-	% \includegraphics[width=\textwidth]{}
+	\includegraphics[width=\textwidth]{nIS_config.pdf}
 	% squeezing ellipse and signal arrow plot
-	\caption{Nondegenerate internal squeezing configuration, all modes are labelled. Showing the system's response using the signal arrow and noise ellipse representation from Fig.~\ref{}.}
+	\caption{\jam{(Draft figure, needs idler mode and labels)} Nondegenerate internal squeezing configuration, all modes are labelled. Showing the system's response using the signal arrow and noise ellipse representation from Fig.~\ref{}.}
 	\label{fig:nIS_config}
 \end{figure}
 
 Nondegenerate internal squeezing consists of a nondegenerate squeezer placed inside the signal-recycling cavity of an interferometer, as shown in Fig.~\ref{fig:nIS_config} \jam{(have said this a few times already)}. In the single-mode approximation, I consider the signal and idler modes resonant in the signal-recycling cavity, where the signal mode of the squeezer is at the carrier frequency $\omega_0$ and is resonant in the arms, while the idler mode at $\omega_0+\Delta$ is assumed not resonant in the arms. 
 I model this configuration using the Hamiltonian method demonstrated several times in this thesis, where this model combines the nondegenerate OPO model in Section~\ref{sec:nOPO} and the degenerate internal squeezing model in Section~\ref{sec:dIS_model}. There are no steps that have not already appeared in this thesis. This model is also based on and verified against Ref.~\cite{Li2020} in the lossless case. 
 % \jam{(Probably need to talk about my methodology more -- state that this derivation presented is the last of a long line of increasing complexity (more losses, radiation pressure, pump phase, etc.) and that I have verified at each stage that the model recovers the previous model. This allowed me to also consider the impact of each subsequent addition in isolation. Moreover, I should re-emphasise that it reduces to the lossless case in Li and follows the same path as the verified models of dIS and the OPOs. The point is that this derivation is not controversial.)}
-My methodology when constructing this model was to progressively add each complication to the lossless model in Ref.~\cite{Li2020}, such as optical loss in each mode, radiation pressure, and pump phase. At each stage, I verified that the model recovered the previous stage in the appropriate limits. This allowed me to study the effect of each complication one at a time, however, re-deriving the sensitivity each time was inefficient. \jam{(need to be more critical of the approach?)} I present the complete model here for brevity.
+My methodology when constructing this model was to progressively add each complication to the lossless model in Ref.~\cite{Li2020}, such as optical loss in each mode, radiation pressure, and pump phase. At each stage, I verified that the model recovered the previous stage in the appropriate limits. This allowed me to study the effect of each complication one at a time, however, re-deriving the sensitivity each time was inefficient. I understand the sensitivity by looking at the signal and noise responses separately, and show all three whenever possible. \jam{(need to be more critical of the approach?)} I present the complete model here for brevity.
 
 Let the modes be labelled as shown in Fig.~\ref{fig:nIS_config}, i.e.\ as in Section~\ref{sec:dIS_model} but with the addition of $\hat c$ for the idler mode as in Section~\ref{sec:nOPO}. The Hamiltonian of this system is $\hat H = \hat H_0 + \hat H_I + \hat H_\gamma + \hat H_\text{GW}$ where~\cite{} \jam{(fill in Langevin Hamiltonian)}
 \begin{align}
@@ -54,8 +54,9 @@ Let the modes be labelled as shown in Fig.~\ref{fig:nIS_config}, i.e.\ as in Sec
 \hat H_\gamma &= \int \ldots \\
 \hat H_\text{GW} &= -\alpha (\hat{x}-L_\mathrm{arm}h(t))(\frac{\hat{a}+\hat{a}^\dag}{\sqrt{2}})+\frac{1}{2\mu}\hat{p}^2.
 \end{align}
-Where there is vacuum entering the system intra-cavity to all three modes $\hat n^L_a, \hat n^L_b, \hat n^L_c$, at the readout port $\hat B_\text{in}, \hat C_\text{in}$, and in the detection chain $\hat n^L_\text{PD}$ which will be included later. 
-The Heisenberg-Langevin equations-of-motion for these operators can be found as before, using the bosonic and canonical commutation relations with all other commutators zero. I again (1) make semi-classical and no-pump-depletion approximations to simplify the pump mode $\hat u\mapsto u=2\chi/x$, (2) enter the Interaction Picture to ignore $\hat H_0$, and (3) take fluctuating components of each operator but keep the fact implicit in the notation because it does not change the equations-of-motion \jam{(prove this?)}. I find the equations-of-motion to be
+As before, $\hat H_0$ describes the decoupled optical system, $\hat H_I$ describes the interaction between the three intra-cavity modes, $\hat H_\gamma$ describes the input/output coupling through the readout and loss ports listed below, and $\hat H_\text{GW}$ describes the coupling to the gravitational-wave signal and the evolution of the test mass mechanical mode.
+There is vacuum entering the system intra-cavity to all three modes $\hat n^L_a, \hat n^L_b, \hat n^L_c$, at the readout port $\hat B_\text{in}, \hat C_\text{in}$, and in the detection chain $\hat n^L_\text{PD}$ which will be included later. Only the vacuum entering the readout port is present in the lossless model.
+The Heisenberg-Langevin equations-of-motion for these operators can be found as before, using the bosonic and canonical commutation relations with all other commutators zero. I again (1) make the semi-classical and no-pump-depletion approximations to simplify the pump mode $\hat u\mapsto u=2\chi/x$, these approximations are valid below threshold, (2) enter the Interaction Picture to ignore $\hat H_0$, and (3) take fluctuating components of each operator but keep it implicit in the notation because it does not change the equations-of-motion \jam{(prove this?)}. I find the equations-of-motion to be
 \begin{equation}
 \begin{cases}
 \dot{\hat{a}}=-\omega_s\hat{b} - \gamma_a \hat{a} + \sqrt{2\gamma_a}\hat{n}^L_a+\frac{i}{\hbar}\alpha(\hat{x}-L_\mathrm{arm}h)\frac{1}{\sqrt{2}}\\
@@ -65,201 +66,154 @@ The Heisenberg-Langevin equations-of-motion for these operators can be found as 
 \dot{\hat{p}}=\alpha(\frac{\hat{a}+\hat{a}^\dag}{\sqrt{2}}).
 \end{cases}
 \end{equation}
-I solve these equations in the Fourier domain. Let $\vec{\hat b}(\Omega)=[\hat b(\Omega), \hat b^\dag(-\Omega), \hat c(\Omega), \hat c^\dag(-\Omega)]^\text{T}$ with similar signal-idler vectorisation for each other mode as in Section~\ref{sec:nOPO} and $\vec{\hat a}(\Omega)=[\hat a(\Omega), \hat a^\dag(-\Omega),0,0]^\text{T},\quad \vec h(\Omega)=\tilde h(\Omega) [1,1,0,0]^\text{T}$ and similarly for $\vec{\hat n}^L_a(\Omega)$. I find that ...
+I solve these equations in the Fourier domain with simplified notation $\tilde{\delta\hat{Q}}(\Omega)\mapsto\hat{Q}(\Omega)$. Let $\vec{\hat b}(\Omega)=[\hat b(\Omega), \hat b^\dag(-\Omega), \hat c(\Omega), \hat c^\dag(-\Omega)]^\text{T}$ with similar signal-idler vectorisation for each other mode as in Section~\ref{sec:nOPO} and $\vec{\hat a}(\Omega)=[\hat a(\Omega), \hat a^\dag(-\Omega),0,0]^\text{T},\quad \vec h(\Omega)=\tilde h(\Omega) [1,1,0,0]^\text{T}$ and similarly for $\vec{\hat n}^L_a(\Omega)$. Solving the resulting algebraic equations, I find that
+\begin{align}
+\mathrm{M}_b\vec{\hat{b}}(\Omega)&= \omega_s\begin{bsmallmatrix}
+1 &  &  &  \\
+ & 1 &  &  \\
+ &  & 0 &  \\
+ &  &  & 0
+\end{bsmallmatrix}\mathrm{M}_a^{-1}\left(\sqrt{2\gamma_a}\begin{bsmallmatrix}
+1 &  &  &  \\
+ & 1 &  &  \\
+ &  & 0 &  \\
+ &  &  & 0
+\end{bsmallmatrix}\vec{\hat{n}}^L_a(\Omega)-i\beta\begin{bsmallmatrix}
+1 &  &  &  \\
+ & -1 &  &  \\
+ &  & 0 &  \\
+ &  &  & 0
+\end{bsmallmatrix}\vec{h}(\Omega)\right)\\&+ \sqrt{2}\begin{bsmallmatrix}
+\sqrt{\gamma^b_R} &  &  &  \\
+ & \sqrt{\gamma^b_R} &  &  \\
+ &  & \sqrt{\gamma^c_R} &  \\
+ &  &  & \sqrt{\gamma^c_R}
+\end{bsmallmatrix}\vec{\hat B}_\mathrm{in}(\Omega) + \sqrt{2}\begin{bsmallmatrix}
+\sqrt{\gamma_b} &  &  &  \\
+ & \sqrt{\gamma_b} &  &  \\
+ &  & \sqrt{\gamma_c} &  \\
+ &  &  & \sqrt{\gamma_c}
+\end{bsmallmatrix}\vec{\hat n}^L_b(\Omega)\\
+\mathrm{M}_a &= (\gamma_a-i\Omega)\mathrm{I}+\frac{i\rho}{\Omega^2 \sqrt{2}}\begin{bsmallmatrix}
+1 & 1 &  &  \\
+-1 & -1 &  &  \\
+ &  & 0 &  \\
+ &  &  & 0
+\end{bsmallmatrix}\\
+\text{M}_b&=\begin{bsmallmatrix}
+\gamma^b_\mathrm{tot} &  &  &  \\
+ & \gamma^b_\mathrm{tot} &  &  \\
+ &  & \gamma^c_\mathrm{tot} &  \\
+ &  &  & \gamma^c_\mathrm{tot} 
+\end{bsmallmatrix}-i\Omega \text{I}+\chi \begin{bsmallmatrix}
+0 &  &  & i e^{i\phi} \\
+ & 0 & -i e^{-i\phi} &  \\
+ & i e^{i\phi} & 0 &  \\
+-i e^{-i\phi} &  &  & 0
+\end{bsmallmatrix}+\omega_s^2\begin{bsmallmatrix}
+1 &  &  &  \\
+ & 1 &  &  \\
+ &  & 0 &  \\
+ &  &  & 0
+\end{bsmallmatrix}\text{M}_a^{-1}\begin{bsmallmatrix}
+1 &  &  &  \\
+ & 1 &  &  \\
+ &  & 0 &  \\
+ &  &  & 0
+\end{bsmallmatrix}.
+\end{align}
+Where $\beta, \rho$ are from Eq.~\ref{eq:beta_and_rho}, $\text{I}$ is the 4 by 4 identity matrix, and all off-diagonal terms in each matrix are zero unless otherwise shown \jam{(is this clear or would it be better to include them explicitly?)}. Using $\Gamma= \frac{1}{\sqrt2}\begin{bsmallmatrix}
+1 & 1 &  &  \\
+-i & i &  &  \\
+ &  & 1 & 1 \\
+ &  & -i & i
+\end{bsmallmatrix}$ and the input/output relations at the readout port and the detection loss port given by Eq.~\ref{eq:nOPO_IO_relations}, I find the signal and idler quadratures~\footnote{Where $\vec{\hat X}(\Omega)=[\hat X_{b,1}(\Omega),\hat X_{b,2}(\Omega),\hat X_{c,1}(\Omega),\hat X_{c,2}(\Omega)]^\text{T}$, as in Section~\ref{sec:nOPO}.} at the photodetector to be
+\begingroup
+\allowdisplaybreaks
+\begin{align}
+\vec{\hat X}_\mathrm{PD}(\Omega)&=\text{T}\vec h(\Omega)+\text{R}_\text{in}\vec{\hat X}_\mathrm{in}(\Omega)+\text{R}^L_a\vec{\hat X}^L_a(\Omega)+\text{R}^L_b\vec{\hat X}^L_b(\Omega)+\text{R}^L_\text{PD}\vec{\hat X}^L_\text{PD}(\Omega)\\
+\text{T}&=-\sqrt{1-R_\text{PD}}\omega_s(-i\beta)\Gamma \sqrt{2}\begin{bsmallmatrix}
+\sqrt{\gamma^b_R} &  &  &  \\
+ & \sqrt{\gamma^b_R} &  &  \\
+ &  & \sqrt{\gamma^c_R} &  \\
+ &  &  & \sqrt{\gamma^c_R}
+\end{bsmallmatrix}\text{M}_b^{-1}\begin{bsmallmatrix}
+1 &  &  &  \\
+ & 1 &  &  \\
+ &  & 0 &  \\
+ &  &  & 0
+\end{bsmallmatrix}\text{M}_a^{-1}\begin{bsmallmatrix}
+1 &  &  &  \\
+ & -1 &  &  \\
+ &  & 0 &  \\
+ &  &  & 0
+\end{bsmallmatrix}\\
+\text{R}_\text{in}&=\sqrt{1-R_\text{PD}}\Gamma\left(\text{I}-2\begin{bsmallmatrix}
+\sqrt{\gamma^b_R} &  &  &  \\
+ & \sqrt{\gamma^b_R} &  &  \\
+ &  & \sqrt{\gamma^c_R} &  \\
+ &  &  & \sqrt{\gamma^c_R}
+\end{bsmallmatrix}\text{M}_b^{-1}\begin{bsmallmatrix}
+\sqrt{\gamma^b_R} &  &  &  \\
+ & \sqrt{\gamma^b_R} &  &  \\
+ &  & \sqrt{\gamma^c_R} &  \\
+ &  &  & \sqrt{\gamma^c_R}
+\end{bsmallmatrix}\right)\Gamma^{-1}\\
+\text{R}^L_a&=-\sqrt{1-R_\text{PD}}\omega_s\Gamma 2\sqrt{\gamma_a}\begin{bsmallmatrix}
+\sqrt{\gamma^b_R} &  &  &  \\
+ & \sqrt{\gamma^b_R} &  &  \\
+ &  & \sqrt{\gamma^c_R} &  \\
+ &  &  & \sqrt{\gamma^c_R}
+\end{bsmallmatrix}\text{M}_b^{-1}\begin{bsmallmatrix}
+1 &  &  &  \\
+ & 1 &  &  \\
+ &  & 0 &  \\
+ &  &  & 0
+\end{bsmallmatrix}\text{M}_a^{-1}\begin{bsmallmatrix}
+1 &  &  &  \\
+ & 1 &  &  \\
+ &  & 0 &  \\
+ &  &  & 0
+\end{bsmallmatrix}\Gamma^{-1}\\
+\text{R}^L_b&=-\sqrt{1-R_\text{PD}}\Gamma 2\begin{bsmallmatrix}
+\sqrt{\gamma^b_R} &  &  &  \\
+ & \sqrt{\gamma^b_R} &  &  \\
+ &  & \sqrt{\gamma^c_R} &  \\
+ &  &  & \sqrt{\gamma^c_R}
+\end{bsmallmatrix}\text{M}_b^{-1}\begin{bsmallmatrix}
+\sqrt{\gamma^b_R} &  &  &  \\
+ & \sqrt{\gamma^b_R} &  &  \\
+ &  & \sqrt{\gamma^c_R} &  \\
+ &  &  & \sqrt{\gamma^c_R}
+\end{bsmallmatrix}\Gamma^{-1}\\
+\text{R}^L_\text{PD}&=\sqrt{R_\text{PD}} \text{I}.
+\end{align}
+\endgroup
+The total quantum noise is given by the spectral density matrix Eq.~\ref{eq:total_noise_matrix}, which simplifies, assuming uncorrelated vacuum at each loss port, to
+\begin{equation}
+\text{S}_X=\text{R}_\text{in}\text{R}_\text{in}^\dag+\text{R}^L_a{\text{R}^L_a}^\dag+\text{R}^L_b{\text{R}^L_b}^\dag+\text{R}^L_\text{PD}{\text{R}^L_\text{PD}}^\dag.
+\end{equation} % same expression as dIS
+Which is divided into 2 by 2 blocks of signal-signal, signal-idler, and idler-idler (co)variances as in Section~\ref{sec:nOPO}.
+The vector of signal transfer functions, with respect to $\tilde h(\Omega)$, to each signal and idler quadrature at the photodetector is
+\begin{equation}
+\text{T}\begin{bsmallmatrix}1 \\1\\0\\0\end{bsmallmatrix} = \frac{2 \beta \sqrt{1-R_\text{PD}} \omega_s}{(\gamma_a-i \Omega ) \left(\chi ^2-(\gamma^b_\text{tot}-i\Omega) (\gamma^c_\text{tot}-i\Omega)\right)-\omega_s^2 (\gamma^c_\text{tot}-i \Omega )} \begin{bsmallmatrix}0 \\-\sqrt{\gamma^b_R}(\gamma^c_\text{tot}-i\Omega)\\\sqrt{\gamma^c_R}\chi\cos(\phi)\\\sqrt{\gamma^c_R}\chi\sin(\phi)\end{bsmallmatrix}.
+\end{equation}
+Therefore, there is gravitational-wave signal in the second signal quadrature and each idler quadrature. For simplicity and to compare to Ref.~\cite{Li2020}, here I will consider measuring the second signal quadrature which I will refer to as signal readout, henceforth. However, this is not necessarily the optimum readout of the signal quadratures since the noise might be sufficiently lower in the first quadrature to preference a combined measurement. I will consider this and other readout schemes, such as measurements of the idler quadratures and combinations of the signal and idler quadratures, like in Section~\ref{sec:nOPO_combined_readout}, in Chapter~\ref{chp:idler_readout}.
+Therefore, the sensitivity of the signal readout scheme, where $\sqrt{S_h}$ is the noise-to-signal ratio, is
+\begin{equation}
+S_h = \frac{(\text{S}_X)_{2,2}}{\abs{\left(\text{T}\begin{bsmallmatrix}1 \\1\\0\\0\end{bsmallmatrix}\right)_2}^2}.
+\end{equation}
+% verified these results by repeating the model with 2x2 matrices and 4x4 matrices, important to mention this because it is part of the methodology
+I have verified this result by repeating the derivation, instead using 2 by 2 matrices~\footnote{This is not a physically meaningful difference, but it separates the signal and idler such that the derivations are not identical.}, and will also compare it to known limits below. %in Section~\ref{sec:nOPO_reduction}.
 
 
+\section{Results}
+
+\subsection{General performance}
 
 \jam{(continue from here)}
 
-
-This derivation is based on the lossless model in Ref.~\cite{liBroadbandSensitivityImprovement2020} with the differential mode $\hat{a}$, the signal mode in the signal-recycling cavity $\hat{b}$, and the idler mode in the signal-recycling cavity $\hat{c}$. \jam{Approximations have already been made: single mode and semi-classical pump}. In that model, the only source of vacuum is into the $\hat{b}$ mode from the readout -- i.e. behind the signal-recycling mirror.
-To that model, I add in optical loss: (1) intra-cavity to each of the three modes $\hat{a}, \hat{b}, \hat{c}$ through loss ports \jam{(explain loss port, give a picture)} with transmissivity $T_{l,a}, T_{l,b}, T_{l,c}$, respectively; and (2) at the photodetector, through a beamsplitter with reflectivity $R_{PD}$ \jam{shown in fig}.
-To study the low-frequency quantum noise, I introduce radiation pressure effects through coupling the gravitational-wave signal $h(t)$ to the end test-mass mirror motion $\hat{x}$ with associated momentum $\hat{p}$.
-Following the advice \jam{(word choice)} in Ref.~\cite{liBroadbandSensitivityImprovement2020}, I also couple the $\hat{c}$ mode to a back-action evading mechanical mode $\hat{y}$ with momentum $\hat{q}$ and negative effective mass $-\mu$. This is done to retain the PT-symmetry of the system with the P symmetry now exchanging $\hat{a}\leftrightarrow\hat{c}$ and $\hat{x}\leftrightarrow\hat{y}$.
-
-The full Hamiltonian of the system is given by: $$\hat{H}=\hat{H}_0+\hat{H}_\mathrm{I}+\hat{H}_{\mathrm{GW}}+\hat{H}_{\mathrm{BAE}}+\hat{H}_{\gamma_R}+\hat{H}_{\gamma_a}+\hat{H}_{\gamma_b}+\hat{H}_{\gamma_c}.$$ Where each term describes:
-\begin{itemize}
-\item $\hat{H}_0=\hbar\omega_0(\hat{a}^\dagger\hat{a}+\frac{1}{2})+\hbar\omega_0(\hat{b}^\dagger\hat{b}+\frac{1}{2})+\hbar\omega_\mathrm{idler}(\hat{c}^\dagger\hat{c}+\frac{1}{2})$, the uncoupled behaviour of the optical modes, in the Interaction Picture, the model can ignore this behaviour (moving it from the operators onto the states) \jam{(is RWA also used?)} % and uses a rotating frame at the carrier frequency in order to ignore the evolution of the optical modes from $\hat{H}_0$ \jam{(be careful, are we? -- also, is RWA used?)}
-\item $\hat{H}_\mathrm{I}=i\hbar\omega_s(\hat{a}\hat{b}^\dag-\hat{a}^\dag\hat{b})+i\hbar\chi(\hat{b}^\dag\hat{c}^\dag-\hat{b}\hat{c})$, the interaction of the three optical modes $\hat{a}, \hat{b}, \hat{c}$, where a semi-classical approximation has been taken to the pump field \jam{(spell out what this means for $\chi$)} and a single-mode approximation to each of the cavity modes which are assumed to be on resonance \jam{(this needs more discussion, do more in deg. int. sqz. section)}
-\item $\hat{H}_\mathrm{GW}=-\alpha (\hat{x}-L_\mathrm{arm}h)(\frac{\hat{a}+\hat{a}^\dag}{\sqrt{2}})+\frac{1}{2\mu}\hat{p}^2$, \jam{($\alpha$ is $\alpha_\mathrm{GW}$, not the alpha in Li)} the coupling to the gravitational-wave signal $h(t)$ \jam{(Mention that authors disagree on the exact form of the RP term -- there are many equivalent methods to couple the GW signal, mirror mode, and optical mode~\cite{})}
-\item $\hat{H}_{\mathrm{BAE}}=-\alpha \hat{y}(\frac{\hat{c}+\hat{c}^\dag}{\sqrt{2}})-\frac{1}{2\mu}\hat{q}^2$, the PT-symmetry enabling, back-action evasion \jam{(clarify, what is BAE?)} mode
-\item $\hat{H}_{\gamma_R}$ \jam{(formula, state but just use Langevin terms)}, the readout of the $\hat{b}$ mode
-\item $\hat{H}_{\gamma_i}$ for $i=a,b,c$, the intra-cavity loss ports, these and $\hat{H}_{\gamma_R}$ give the standard \jam{(word choice)} Langevin terms in the Heisenberg-Langevin equations of motion \jam{(cite Gardiner and Collete?)}.
-\end{itemize}
-
-From this Hamiltonian $\hat{H}$, I find the Heisenberg-Langevin equations of motion in the Interaction Picture (separating away the evolution with respect to $\hat{H}_0$):
-$$\begin{cases}
-\dot{\hat{a}}=-\omega_s\hat{b} - \gamma_a \hat{a} + \sqrt{2\gamma_a}\hat{n}^L_a+\frac{i}{\hbar}\alpha(\hat{x}-L_\mathrm{arm}h)\frac{1}{\sqrt{2}}\\
-\dot{\hat{b}}=\omega_s\hat{a} + \chi\hat{c}^\dagger - \gamma^b_\mathrm{tot} \hat{b} + \sqrt{2\gamma_R}\hat{B}_\mathrm{in} + \sqrt{2\gamma_b}\hat{n}^L_b\\
-\dot{\hat{c}}=\chi\hat{b}^\dagger - \gamma_c \hat{c} + \sqrt{2\gamma_c}\hat{n}^L_c + \frac{i}{\hbar}\alpha \hat{y}\frac{1}{\sqrt{2}}\\
-\dot{\hat{x}}=\frac{1}{\mu}\hat{p},\quad \dot{\hat{p}}=\alpha(\frac{\hat{a}+\hat{a}^\dag}{\sqrt{2}})\\
-\dot{\hat{y}}=-\frac{1}{\mu}\hat{q},\quad \dot{\hat{q}}=\alpha(\frac{\hat{c}+\hat{c}^\dag}{\sqrt{2}})
-\end{cases}$$
-I separate out the fluctuating part of each mode $\hat{a}(t)=\langle\hat{a}\rangle+\delta\hat{a}(t)$ from its time average (or large classical motion) $\langle\hat{a}\rangle$. This does not change the form of the equations. \jam{(Why? This is not clear, the LHS does not change but the time-averages remain)} 
-% solving the equations
-In Fourier space, these equations become (with the simplified notation $\tilde{\delta\hat{Q}}(\Omega)\mapsto\hat{Q}(\Omega)$ and sign convention $\partial_t\mapsto-i\Omega$):
-\begin{equation}
-\begin{cases}
-\label{eq:nIS-2}
--i\Omega\hat{a}(\Omega)=-\omega_s\hat{b}(\Omega) - \gamma_a \hat{a}(\Omega) + \sqrt{2\gamma_a}\hat{n}^L_a(\Omega)+i(\frac{1}{-\Omega^2}\rho_\mathrm{RP}(\frac{\hat{a}(\Omega)+\hat{a}^\dag(-\Omega)}{\sqrt{2}})-\beta\tilde{h}(\Omega))\\
--i\Omega\hat{b}(\Omega)=\omega_s\hat{a}(\Omega) + \chi\hat{c}^\dagger(-\Omega) - \gamma^b_\mathrm{tot} \hat{b}(\Omega) + \sqrt{2\gamma_R}\hat{B}_\mathrm{in}(\Omega) + \sqrt{2\gamma_b}\hat{n}^L_b(\Omega)\\
--i\Omega\hat{c}(\Omega)=\chi\hat{b}^\dagger(-\Omega) - \gamma_c \hat{c}(\Omega) + \sqrt{2\gamma_c}\hat{n}^L_c(\Omega) + \frac{-i}{-\Omega^2}\rho_\mathrm{BAE}(\frac{\hat{c}(\Omega)+\hat{c}^\dag(-\Omega)}{\sqrt{2}}).
-\end{cases}
-\end{equation}
-
-Where $\beta=\frac{\alpha L_\mathrm{arm}}{\sqrt{2}\hbar}$ and $\rho_\mathrm{RP}=\rho_\mathrm{BAE}=\frac{\alpha^2}{\sqrt{2}\hbar\mu}$ where the radiation pressure (RP) and back-action evasion (BAE) effects have been separated even though the coupling constant is the same, for PT-symmetry.
-
-Solving these Equations~\ref{eq:nIS-2} for simultaneous solutions of the $\hat{Q}(\Omega)$ and $\hat{Q}^\dag(-\Omega)$ fields is easier when expressed in matrix form. Let $\vec{\hat{Q}}(\Omega)=[\hat{Q}(\Omega),\hat{Q}^\dag(-\Omega)]^T$, then the above equations can be re-written as:
-$$\begin{cases}
-\label{eq:nIS-3}
-((\gamma_a-i\Omega)\mathrm{I}+\frac{i\rho_\mathrm{RP}}{\Omega^2 \sqrt{2}}\begin{bsmallmatrix}
-1 & 1 \\ 
--1 & -1
-\end{bsmallmatrix})\vec{\hat{a}}(\Omega)=-\omega_s\vec{\hat{b}}(\Omega) + \sqrt{2\gamma_a}\vec{\hat{n}}^L_a(\Omega)-i\beta\begin{bsmallmatrix}
-1 & 0 \\ 
-0 & -1
-\end{bsmallmatrix}\vec{\tilde{h}}(\Omega)\\
-(\gamma^b_\mathrm{tot}-i\Omega)\vec{\hat{b}}(\Omega)=\omega_s\vec{\hat{a}}(\Omega) + \chi\begin{bsmallmatrix}
-0 & 1 \\ 
-1 & 0
-\end{bsmallmatrix}\vec{\hat{c}}(\Omega) + \sqrt{2\gamma_R}\vec{\hat{B}}_\mathrm{in}(\Omega) + \sqrt{2\gamma_b}\vec{\hat{n}}^L_b(\Omega)\\
-((\gamma_c-i\Omega)\mathrm{I}-\frac{i\rho_\mathrm{BAE}}{\Omega^2\sqrt{2}}\begin{bsmallmatrix}
-1 & 1 \\ 
--1 & -1
-\end{bsmallmatrix})\vec{\hat{c}}(\Omega)=\chi\begin{bsmallmatrix}
-0 & 1 \\ 
-1 & 0
-\end{bsmallmatrix}\vec{\hat{b}}(\Omega) + \sqrt{2\gamma_c}\vec{\hat{n}}^L_c(\Omega).
-\end{cases}$$
-
-Where $\mathrm{I}$ is the $2\times2$ identity matrix. Solving for $\vec{\hat{b}}(\Omega)$, these give
-\begin{align}
-\vec{\hat{b}}(\Omega)=\mathrm{M}_b^{-1}( &\omega_s\mathrm{M}_a^{-1}(\sqrt{2\gamma_a}\vec{\hat{n}}^L_a(\Omega)-i\beta\begin{bsmallmatrix}
-1 & 0 \\ 
-0 & -1
-\end{bsmallmatrix}\vec{\tilde{h}}(\Omega)) + \chi\begin{bsmallmatrix}
-0 & 1 \\ 
-1 & 0
-\end{bsmallmatrix}\mathrm{M}_c^{-1}\sqrt{2\gamma_c}\vec{\hat{n}}^L_c(\Omega)\\&+ \sqrt{2\gamma_R}\vec{\hat{B}}_\mathrm{in}(\Omega) + \sqrt{2\gamma_b}\vec{\hat{n}}^L_b(\Omega)).
-\end{align}
-Where the matrices $\mathrm{M}_i,\; i=a,b,c$ are given by:
-\begin{equation}
-\begin{cases}
-\mathrm{M}_a = (\gamma_a-i\Omega)\mathrm{I}+\frac{i\rho_\mathrm{RP}}{\Omega^2 \sqrt{2}}\begin{bsmallmatrix}
-1 & 1 \\ 
--1 & -1
-\end{bsmallmatrix}\\
-\mathrm{M}_b = (\gamma^b_\mathrm{tot}-i\Omega)\mathrm{I} + \omega_s^2 \mathrm{M}_a^{-1} - \chi^2\begin{bsmallmatrix}
-0 & 1 \\ 
-1 & 0
-\end{bsmallmatrix} \mathrm{M}_c^{-1} \begin{bsmallmatrix}
-0 & 1 \\ 
-1 & 0
-\end{bsmallmatrix}\\
-\mathrm{M}_c = (\gamma_c-i\Omega)\mathrm{I}-\frac{i\rho_\mathrm{BAE}}{\Omega^2\sqrt{2}}\begin{bsmallmatrix}
-1 & 1 \\ 
--1 & -1
-\end{bsmallmatrix}.
-\end{cases}
-\end{equation}
-
-Having found the light inside the cavities, I want to find the light at the photodetector. The light right outside and travelling away from the signal-recycling mirror is given by the Input/Output (I/O) relation: $\hat{B}_\mathrm{out}=\hat{B}_\mathrm{in}-\sqrt{2\gamma_R}\hat{b}$. Using the beamsplitter model of detection loss at the photodiode, for a beamsplitter of reflectivity $R_\mathrm{PD}$, the quadratures of light at the photodetector are given by: $\vec{\hat{X}}_\mathrm{PD}=\sqrt{R_\mathrm{PD}} \vec{\hat{X}}_\mathrm{PD}^L + \sqrt{1-R_\mathrm{PD}} \vec{\hat{X}}_{B_\mathrm{out}}$. Where $\vec{\hat{X}}_Q=\Gamma \vec{\hat{Q}}=[\hat{X}_{1,Q},\hat{X}_{2,Q}]^T$ for $\hat{X}_{i,Q}$ the ith quadrature of $Q$ and $\Gamma=\frac{1}{\sqrt{2}}\begin{bsmallmatrix}
-1 & 1 \\ 
--i & i\end{bsmallmatrix}$ the quadrature matrix.
-Putting everything together, I find the quadratures of the light at the photodetector to be given by:
-\begin{align}
-\vec{\hat{X}}_\mathrm{PD}(\Omega)&=
-% \sqrt{R_\mathrm{PD}} \vec{\hat{X}}_\mathrm{PD}^L(\Omega) + \sqrt{1-R_\mathrm{PD}} \Gamma(\hat{B}_\mathrm{in}(\Omega)-\sqrt{2\gamma_R}\hat{b}(\Omega))\\
-% &=  \sqrt{R_\mathrm{PD}} \vec{\hat{X}}_\mathrm{PD}^L(\Omega) + \sqrt{1-R_\mathrm{PD}} \Gamma(\mathrm{I}-2\gamma_R\mathrm{M}_b^{-1})\Gamma^{-1}\vec{\hat{X}}_{B_\mathrm{in}}(\Omega)\\
-% &-\sqrt{1-R_\mathrm{PD}} \Gamma\sqrt{2\gamma_R}\mathrm{M}_b^{-1}
-% (\omega_s\mathrm{M}_a^{-1}\sqrt{2\gamma_a}\vec{\hat{n}}^L_a(\Omega)
-% -\omega_s\mathrm{M}_a^{-1}i\beta\begin{bsmallmatrix}
-% 1 & 0 \\ 
-% 0 & -1
-% \end{bsmallmatrix}\vec{\tilde{h}}(\Omega) \\& \hspace{5cm}+ \chi\begin{bsmallmatrix}
-% 0 & 1 \\ 
-% 1 & 0
-% \end{bsmallmatrix}\mathrm{M}_c^{-1}\sqrt{2\gamma_c}\vec{\hat{n}}^L_c(\Omega) + \sqrt{2\gamma_b}\vec{\hat{n}}^L_b(\Omega))\\&=
-\mathrm{R_{in}}\vec{\hat{X}}_{B_\mathrm{in}}(\Omega)
-+ \mathrm{R}^L_a\vec{\hat{X}}^L_a(\Omega)
-+ \mathrm{R}^L_b\vec{\hat{X}}^L_b(\Omega)
-+ \mathrm{R}^L_c\vec{\hat{X}}^L_c(\Omega)
-+ \mathrm{R}^L_\mathrm{PD}\vec{\hat{X}}_\mathrm{PD}^L(\Omega)
-+ \mathrm{T}\vec{\tilde{h}}(\Omega).
-\end{align}
-
-Where $\vec{\hat{X}}_{B_\mathrm{in}}(\Omega)$ is the quadrature vector of the vacuum from the main vacuum port behind the signal-recycling mirror, $\vec{\hat{X}}^L_a(\Omega)$ is the vacuum from the $\hat{a}$ intra-cavity loss, etc.. And where the transfer function matrices $\mathrm{R}_i, \mathrm{T}$ for the noises and signal, respectively, are given by the following (where the frequency dependence is inside each $\mathrm{M}_i^{-1}$):
-\begin{equation}
-\begin{cases}
-\mathrm{R_{in}}=\sqrt{1-R_\mathrm{PD}} \Gamma(\mathrm{I}-2\gamma_R\mathrm{M}_b^{-1})\Gamma^{-1}\\
-\mathrm{R}^L_a=-\sqrt{1-R_\mathrm{PD}} 2\sqrt{\gamma_R\gamma_c}\omega_s\Gamma\mathrm{M}_b^{-1}\mathrm{M}_a^{-1}\Gamma^{-1}\\
-\mathrm{R}^L_b=-\sqrt{1-R_\mathrm{PD}} 2\sqrt{\gamma_R\gamma_b}\Gamma\mathrm{M}_b^{-1}\Gamma^{-1}\\
-\mathrm{R}^L_c=-\sqrt{1-R_\mathrm{PD}} 2\sqrt{\gamma_R\gamma_c}\chi\Gamma\mathrm{M}_b^{-1}\begin{bsmallmatrix}
-0 & 1 \\ 
-1 & 0
-\end{bsmallmatrix}\mathrm{M}_c^{-1}\Gamma^{-1}\\
-\mathrm{R}^L_\mathrm{PD}=\sqrt{R_\mathrm{PD}}\\
-\mathrm{T}=\sqrt{1-R_\mathrm{PD}} \sqrt{2\gamma_R}i\omega_s\beta \Gamma\mathrm{M}_b^{-1}\mathrm{M}_a^{-1}\begin{bsmallmatrix}
-1 & 0 \\ 
-0 & -1
-\end{bsmallmatrix}.
-\end{cases}
-\end{equation} 
-
-
-\jam{(set up the combined noise, spectral densities matrix Sx)}
-
-\begin{equation}
-\mathrm{S}_X(\Omega)2\pi\delta(\Omega-\Omega')=\ev{\vec{\hat{X}}_\mathrm{PD}(\Omega)\cdot\vec{\hat{X}}_\mathrm{PD}(\Omega')^\dag}
-\end{equation}
-
-\jam{(explain uncorrelated vacuum assumption -- i and j are not indices of vectors)}
-
-\begin{equation}
-\ev{\vec{\hat{X}}_{(i)}(\Omega)\cdot\vec{\hat{X}}_{(j)}(\Omega')^\dag}=\delta_{i,j}\mathrm{I}\,2\pi\delta(\Omega-\Omega'),\quad \mathrm{S_{vac}}=\mathrm{I}=\begin{bsmallmatrix}
-1 & 0 \\ 
-0 & 1
-\end{bsmallmatrix}
-\end{equation}
-
-\jam{(versus single-sided power spectral density of single function, not a vector: $A\circ B=\frac{1}{2}(A\cdot B+B\cdot A)$, check factors of two again --> single sided, vac=1, quadratures normalised as 1/rt2, quadrature is Hermitian and therefore commutes with its dagger)}
-
-
-\begin{equation}
-\mathcal{S}_X(\Omega)2\pi\delta(\Omega-\Omega')=(\text{S}_X)_{2,2}(\Omega)2\pi\delta(\Omega-\Omega')=\ev{\hat{X}_{\mathrm{PD},2}(\Omega)\circ\hat{X}_{\mathrm{PD},2}(\Omega')^\dag},\quad \mathcal{S}_\mathrm{vac}=1
-\end{equation}
-
-\begin{equation}
-\mathcal{T}(\Omega)=(\mathrm{T}.\begin{bsmallmatrix}
-1\\ 
-1
-\end{bsmallmatrix})_2
-\end{equation}
-
-I define the sensitivity of the detector to be the noise-to-signal ratio, i.e. the ratio of the noise and signal transfer functions (or, the signal-normalised noise).
-Assuming that we measure the second quadrature, e.g. via balanced homodyne readout \jam{(address optimisation of quadrature angle, might not be 2 just because signal is only there. Also, need to describe homodyne readout somewhere)}, this gives:
-$$S_h(\Omega)=\frac{(\mathrm{S}_X(\Omega))_{2,2}}{\abs{\mathcal{T}(\Omega)}^2}.$$
-
-
-
-
-\jam{(continue writing up derivation...)}
-
-\jam{(back up and include pump phase in model to show its non-effect)}
-
-\jam{(factor of 2 disagreement with Li?)}
-
-% verified these results by repeating the model with 2x2 matrices and 4x4 matrices, important to mention this because it is part of the methodology
-
-
-
-% \begin{align}
-% \gamma^b_\mathrm{tot}&=\gamma_R+\gamma_b\\
-% \hat{B}_\mathrm{out} &= \hat{B}_\mathrm{in} - \sqrt{2\gamma_R}\hat{b}\\
-% &\implies R^{(i)}(\Omega), T(\Omega)\\ S_h(\Omega)&= \frac{\sum_i \left| R^{(i)}(\Omega) \right|^2+\frac{R_{\mathrm{PD}}}{1-R_\mathrm{PD}}}{\left| T(\Omega) \right|^2}
-% \end{align}
-
-
+% explain the effect of each parameter (except leave tolerance to losses to science case chapter)
 
 % should this be down in results section? --> this is a results chapter, maybe include a short section discussing the general performance (separate from the science case analysis in chapter 5?)
 % analyse typical nIS plot features before getting into different tests
@@ -267,38 +221,40 @@ $$S_h(\Omega)=\frac{(\mathrm{S}_X(\Omega))_{2,2}}{\abs{\mathcal{T}(\Omega)}^2}.$
 % need to show some example plots here to set up those in the next section?
 \begin{figure}
 	\centering
-	% \includegraphics[width=\textwidth]{}
+	\includegraphics[width=\textwidth]{nIS_N_S_NSR.pdf}
 	\caption{Nondegenerate internal squeezing quantum noise and signal responses, and sensitivity.}
 	\label{fig:}
 \end{figure}
 
 \begin{figure}
 	\centering
-	% \includegraphics[width=\textwidth]{}
+	\includegraphics[width=\textwidth]{nIS_sigRO_noise_budget.pdf}
 	\caption{Nondegenerate internal squeezing breakdown of quantum noise sources, plotting separate noise transfer functions for each loss port (this is akin to a typical ``noise budget''~\cite{} but not quite the same).}
 	\label{fig:}
 \end{figure}
 
 
-\section{Reduction to known systems}
+\subsection{Reduction to known systems}
+\label{sec:nOPO_reduction}
 
 % show that this follows from the EoM but can be verified by looking at the plots
 
-\subsection{Lossless, PT-symmetric limit}
+\subsubsection{Lossless, PT-symmetric limit}
 
 \begin{figure}
 	\centering
 	% \includegraphics[width=\textwidth]{}
-	\caption{Nondegenerate internal squeezing sensitivity showing the lossless limit.}
+	\caption{Nondegenerate internal squeezing sensitivity showing the lossless limit. \jam{(Could be already covered in nISNSNSR.pdf use code from Li et al 2020, Fig 5 to make comparison really convincing)}}
 	\label{fig:}
 \end{figure}
 
+\jam{(factor of 2 disagreement with Li in result?)}
 % symmetry broken by losses and RP, repair by BAE but too complicated for here
 
-\subsection{Nondegenerate OPO limit}
+\subsubsection{Nondegenerate OPO limit}
 \begin{figure}
 	\centering
-	% \includegraphics[width=\textwidth]{}
+	\includegraphics[width=\textwidth]{nIS_nOPO_limit.pdf}
 	\caption{Nondegenerate internal squeezing shot noise response (i.e. quantum noise with radiation pressure turned off) showing the large arm loss limit.}
 	\label{fig:}
 \end{figure}
@@ -309,17 +265,19 @@ $$S_h(\Omega)=\frac{(\mathrm{S}_X(\Omega))_{2,2}}{\abs{\mathcal{T}(\Omega)}^2}.$
 
 % full 4x4 matrix agrees, not just variance 1,1
 
-\section{Stability}
+\subsection{Stability}
 
 % will need to review stability
 
 % plot: imaginary part of poles
 \begin{figure}
 	\centering
-	% \includegraphics[width=\textwidth]{}
+	\includegraphics[width=\textwidth]{nIS_stability.pdf}
 	\caption{Stability of nondegenerate internal squeezing, showing the imaginary part of the poles of the transfer functions, when the imaginary part becomes positive the system becomes unstable~\cite{}.}
 	\label{fig:}
 \end{figure}
+
+% effect of RP, pump phase
 
 \section{Singularity threshold}
 \label{sec:singularity_threshold}
@@ -364,13 +322,14 @@ Radiation pressure and back-action evasion do not change threshold because the q
 \begin{figure}
 	\centering
 	% \includegraphics[width=\textwidth]{}
-	\caption{Summary of considered configurations on threshold. \jam{(Is this necessary, just reference plots in other chapters?)}}
+	\caption{Sensitivity of configurations on threshold. \jam{(Is this necessary, instead just reference plots in other chapters?)}}
 	\label{fig:}
 \end{figure}
 
 \begin{figure}
 	\centering
-	% \includegraphics[width=\textwidth]{}
+	\includegraphics[width=\textwidth]{nIS_threshold.pdf}
+    \includegraphics[width=\textwidth]{dIS_threshold.pdf}
 	\caption{Trajectory of singularities in (real) $(\Omega, \chi)$ space as losses are changed for nondegenerate internal squeezing (left) and, for reference, for degenerate internal squeezing (right). Degenerate and nondegenerate OPO behaviour is not interesting as thresholds remain at DC ($\Omega=0$) and are relatively simple: $\sqrt \gamma^b_\text{tot}$ and $\sqrt \gamma^b_\text{tot} \gamma^c_\text{tot}$, respectively.}
 	\label{fig:}
 \end{figure}
@@ -391,7 +350,7 @@ Radiation pressure and back-action evasion do not change threshold because the q
 
 \begin{figure}
 	\centering
-	% \includegraphics[width=\textwidth]{}
+	\includegraphics[width=\textwidth]{dIS_threshold_quadratures.pdf}
 	\caption{Degenerate internal squeeing difference between singularity threshold (that maximises anti-squeezing peak) and squeezing parameter that minimises peak squeezing.}
 	\label{fig:}
 \end{figure}
@@ -450,25 +409,25 @@ Radiation pressure and back-action evasion do not change threshold because the q
 % some way to mega matrix all of these, or just show sensitivity and not N and S separetely?
 \begin{figure}
 	\centering
-	% \includegraphics[width=\textwidth]{}
+	\includegraphics[width=\textwidth]{nIS_sigRO_tolerance_Rpd.pdf}
 	\caption{Nondegenerate internal squeezing tolerance to loss (1/4): detection loss.}
 	\label{fig:}
 \end{figure}
 \begin{figure}
 	\centering
-	% \includegraphics[width=\textwidth]{}
+	\includegraphics[width=\textwidth]{nIS_sigRO_tolerance_Tlb.pdf}
 	\caption{Nondegenerate internal squeezing tolerance to loss (2/4): signal mode, intra-cavity signal-recycling cavity loss.}
 	\label{fig:}
 \end{figure}
 \begin{figure}
 	\centering
-	% \includegraphics[width=\textwidth]{}
+	\includegraphics[width=\textwidth]{nIS_signalRO_tolerance_Tlc.pdf}
 	\caption{Nondegenerate internal squeezing tolerance to loss (3/4): idler mode, intra-cavity signal-recycling cavity loss.}
 	\label{fig:}
 \end{figure}
 \begin{figure}
 	\centering
-	% \includegraphics[width=\textwidth]{}
+	\includegraphics[width=\textwidth]{nIS_sigRO_tolerance_Tla.pdf}
 	\caption{Nondegenerate internal squeezing tolerance to loss (4/4): intra-cavity arm cavity loss.}
 	\label{fig:}
 \end{figure}
@@ -483,7 +442,7 @@ Radiation pressure and back-action evasion do not change threshold because the q
 
 \begin{figure}
 	\centering
-	% \includegraphics[width=\textwidth]{}
+	\includegraphics[width=\textwidth]{nIS_optimum_squeezing.pdf}
 	\caption{Nondegenerate internal squeezing optimal squeezing curve for sensitivity at probe frequency, i.e.\ plotting sensitivity and noise measured at a particular ``probe'' frequency for varying squeezing parameters and different detection losses.}
 	\label{fig:}
 \end{figure}
@@ -514,8 +473,8 @@ Radiation pressure and back-action evasion do not change threshold because the q
 
 \begin{figure}
 	\centering
-	% \includegraphics[width=\textwidth]{}
-	\caption{Nondegenerate internal squeezing sensitivity under ideal conditions, and under more realistic conditions. The sensitivity target (shown in red) can perhaps be achieved at a peak frequency but not realistically across the 1--4~kHz band. These conditions are for fixed circulating power in the arm cavity and no external squeezing.}
+	% \includegraphics[width=\textwidth]{nIS_ideal_losses.pdf}
+	\caption{\jam{(Add in curve with more realistic losses)} Nondegenerate internal squeezing sensitivity under ideal conditions, and under more realistic conditions. The sensitivity target (shown in red) can perhaps be achieved at a peak frequency but not realistically across the 1--4~kHz band. These conditions are for fixed circulating power in the arm cavity and no external squeezing.}
 	\label{fig:}
 \end{figure}
 
@@ -558,13 +517,13 @@ Radiation pressure and back-action evasion do not change threshold because the q
 
 \begin{figure}
 	\centering
-	% \includegraphics[width=\textwidth]{}
-	\caption{Nondegenerate internal squeezing compared to stable optomechanical filtering. Errant \jam{(word choice)} factors of two in the sensitivity (perhaps from the scalar versus vector convention of the signal transfer function) and in the test mass mass (perhaps from different conventions of the reduced mass) are required. Uses data from Ref.~\cite{} with direct permission from the authors.}
+	\includegraphics[width=\textwidth]{nIS_compared_to_singleCav.pdf}
+	\caption{\jam{(Add in curves from Li et al, 2020 Fig. 5 notebook)} Nondegenerate internal squeezing compared to stable optomechanical filtering. Errant \jam{(word choice)} factors of two in the sensitivity (perhaps from the scalar versus vector convention of the signal transfer function) and in the test mass mass (perhaps from different conventions of the reduced mass) are required. Uses data from Ref.~\cite{} with direct permission from the authors.}
 	\label{fig:}
 \end{figure}
 
 % don't overlay Fig. 5 from Li et al, 2020
-% plot: with data from Fig. 5 in Li
+% plot: with data from Fig. 5 in Li --> extract the plot and don't mess with the .nb further!
     % The key result is that I've found losses for nIS that replicate the results for sWLC: arm loss 75 ppm, idler loss 100 ppm. For these ideal losses, the peak sensitivity and bandwidth are better than sWLC.
 	   %  Are these loss values more realistic than the thermal and mechanical constraints of sWLC? I think so, but I need back-up on this.
 % all-optical approach is at least comparable to optomechanical approach
@@ -574,6 +533,7 @@ Radiation pressure and back-action evasion do not change threshold because the q
 % emphasise that this result is not a clean decision, the best I can say is that they are comparable
 % forcasting future technological progress is hard to do rigourously or scientifically
 
+% ultimately: is the all-optical approach viable? yes!
 
 % do I need to include this? it would be nice --> above comparison is the focus though
 \subsection{Degenerate versus nondegenerate internal squeezing}
@@ -593,9 +553,9 @@ Radiation pressure and back-action evasion do not change threshold because the q
 \label{chp:idler_readout}
 % only a short chapter!
 
+% justify why this is a separate chapter
 
-% section 3-B in Li 2021 has noticed this already! 
-
+% section 3-B in Li 2021 has noticed this already! --> but their idler has to read out the mechanical mode!
 
 % chronological does not matter, make this flow from the previous chapter --> emergence of a new possibility separate from initial interest in kilohertz sensitivity
 
@@ -627,8 +587,8 @@ Radiation pressure and back-action evasion do not change threshold because the q
 
 \begin{figure}
 	\centering
-	% \includegraphics[width=\textwidth]{}
-	\caption{Preliminary work: combined signal-idler readout, showing the limit of large arm loss that recovers a degenerate OPO (in the same manner that the nondegenerate OPO Weiner filter recovers a degenerate OPO, shown in Section~\ref{}).}
+	\includegraphics[width=\textwidth]{nIS_combinedRO_dOPO_limit.pdf}
+	\caption{Preliminary work: combined signal-idler readout, showing the limit of large arm loss that recovers a degenerate OPO (in the same manner that the nondegenerate OPO Weiner filter recovers a degenerate OPO, shown in Section~\ref{}). \jam{(Just show noise response?)}}
 	\label{fig:}
 \end{figure}
 
@@ -643,15 +603,16 @@ Radiation pressure and back-action evasion do not change threshold because the q
 % decrease in peak sensitivity, large increase in bandwidth
 \begin{figure}
 	\centering
-	% \includegraphics[width=\textwidth]{}
+	\includegraphics[width=\textwidth]{nIS_idlerRO_tolerance_Tlb.pdf}
 	\caption{Nondegenerate internal squeezing, idler readout tolerance to signal mode intra-cavity loss.}
 	\label{fig:}
 \end{figure}
 
 \begin{figure}
 	\centering
-	% \includegraphics[width=\textwidth]{}
-	\caption{Nondegenerate internal squeezing, idler readout tolerance to idler and detection losses.}
+	\includegraphics[width=\textwidth]{nIS_idlerRO_tolerance_Tlc.pdf}
+    \includegraphics[width=\textwidth]{nIS_idlerRO_tolerance_Rpd.pdf} 
+	\caption{Nondegenerate internal squeezing, idler readout tolerance to idler and detection losses. \jam{(Separate figures)}}
 	\label{fig:}
 \end{figure}
 
@@ -663,7 +624,7 @@ Radiation pressure and back-action evasion do not change threshold because the q
 
 \begin{figure}
 	\centering
-	% \includegraphics[width=\textwidth]{}
+	\includegraphics[width=\textwidth]{nIS_ROs_tolerance_chi.pdf} % mention what happens when idler readout rate is kept high and signal rate is varied, see nIS_ROs_tolerance_chi_large_idler_ROrate.pdf
 	\caption{Nondegenerate internal squeezing, idler readout tolerance to pump power (squeezer parameter $\chi$).}
 	\label{fig:}
 \end{figure}
@@ -672,10 +633,12 @@ Radiation pressure and back-action evasion do not change threshold because the q
 
 \begin{figure}
 	\centering
-	% \includegraphics[width=\textwidth]{}
-	\caption{Nondegenerate internal squeezing, idler readout tolerance to pump phase $\phi$ with combination angle $\psi_1$ fixed.}
+	\includegraphics[width=\textwidth]{nIS_ROs_tolerance_phi.pdf}
+	\caption{Nondegenerate internal squeezing, idler readout tolerance to pump phase $\phi$ with combination angle $\psi_1$ fixed, compared to signal readout's tolerance. \jam{(sequencing of plots?)}}
 	\label{fig:}
 \end{figure}
+
+% check squeezing?
 
 
 \section{Idler readout comparison to signal readout}
@@ -687,7 +650,7 @@ Radiation pressure and back-action evasion do not change threshold because the q
 % tradeoff of bandwidth and DC peak sensitivity + interaction with RP
 \begin{figure}
 	\centering
-	% \includegraphics[width=\textwidth]{}
+	\includegraphics[width=\textwidth]{nIS_signal_vs_idler_ROs.pdf}
 	% why is the peak moving? threshold should not be a factor since ratio fixed?
 	% showcase same lines without RP?
 	\caption{Idler readout compared to signal readout. Idler readout appears promising at lower-than-kilohertz frequencies around $100$~Hz, especially when the readout rates are comparable. \jam{(check whether incoherent readout is possible when the modes are correlated, does measurement collapse the entanglement?)}}

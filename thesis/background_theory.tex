@@ -141,7 +141,7 @@ A simple illustration of this is shown in Fig~\ref{fig:ballandstick_simple} wher
 
 % production of squeezed states, PDC, give a citation to answer Ilya's question
 % Although I will model the crystal as a ``black-box'' that contributes some term to the Hamiltonian
-Optical squeezing can be achieved via a variety of techniques~\cite{}, but in this thesis, I will focus on the production of squeezed states by shining light through nonlinear crystals~\cite{}. Consider a crystal with a quadratic (therefore, nonlinear) polarisability, i.e.\ when exposed to an electric field $\vec E$ it produces an electric field $\varepsilon_0 \sum_{n=0}^\infty \chi^{(n)} {\vec E}^n$~\cite{ ref in Kirk thesis?} \jam{(check this expression, what is ${\vec E}^n$?)} where the quadratic co-efficient dominates $\abs{\chi^{(2)}}\gg\abs{\chi^{(n)}},\; n\neq2$. In such a crystal, the process of parametric down-conversion can occur~\cite{}, where a photon of a \jam{(particular?)} pump frequency $\omega_p$ is annihilated to create two entangled, squeezed photons at lower frequencies $\omega_0,\; \omega_0+\Delta$ such that $\omega_p=2\omega_0+\Delta$ to conserve energy~\cite{}. The frequency difference $\Delta$, chosen by how the crystal is pumped, is typically small in comparison to the other frequencies in the system, and when $\Delta=0$ the produced photons are degenerate which dramatically changes the mode structure of the system; the energy level structure of the process is shown in Fig.~\ref{fig:PDC_deg_and_nondeg}. I will show that the photons produced in parametric down-conversion are squeezed in the next section. %, but that they are entangled follows from their shared point of creation. 
+Optical squeezing can be achieved via a variety of techniques~\cite{}, but in this thesis, I will focus on the production of squeezed states by shining light through nonlinear crystals~\cite{}. Consider a crystal with a quadratic (therefore, nonlinear) polarisability, i.e.\ when exposed to an electric field $\vec E$ it produces an electric field $\varepsilon_0 \sum_{n=0}^\infty \chi^{(n)} {\vec E}^n$~\cite{ ref in Kirk thesis?} \jam{(check this expression, what is ${\vec E}^n$?)} where the quadratic co-efficient dominates $\abs{\chi^{(2)}}\gg\abs{\chi^{(n)}},\; n\neq2$~\footnote{$\chi^{(2)}$ is used to label the squeezer crystal, henceforth.}. In such a crystal, the process of parametric down-conversion can occur~\cite{}, where a photon of a \jam{(particular?)} pump frequency $\omega_p$ is annihilated to create two entangled, squeezed photons at lower frequencies $\omega_0,\; \omega_0+\Delta$ such that $\omega_p=2\omega_0+\Delta$ to conserve energy~\cite{}. The frequency difference $\Delta$, chosen by how the crystal is pumped, is typically small in comparison to the other frequencies in the system, and when $\Delta=0$ the produced photons are degenerate which dramatically changes the mode structure of the system; the energy level structure of the process is shown in Fig.~\ref{fig:PDC_deg_and_nondeg}. I will show that the photons produced in parametric down-conversion are squeezed in the next section. %, but that they are entangled follows from their shared point of creation. 
 \jam{(but why does quadratic nonlinearity make PDC happen? - Ilya's question)}. Although this process can create photons of many different frequencies \jam{(can it?)}, I use a single-mode approximation throughout this thesis that only considers the process involving a particular pump frequency $2\omega_0+\Delta$, carrier frequency $\omega_0$, and frequency difference $\Delta$. This is justified by the same reasoning as in Section~\ref{sec:coupled_cavity_approximation} \jam{(do I need to say it again?)}, %, the cavities select their resonant frequencies and all other frequencies can be ignored~\cite{}. 
 which means that I assume that wherever the squeezer crystal is placed, the pump frequency and the two produced frequencies (called the signal~\footnote{There is potential confusion between the signal mode of light created by the squeezer and the light in the detector that contains the gravitational-wave signal. %E.g.\ when talking about the signal transfer function, it can be that the light in the signal mode is measured to estimate the gravitational-wave signal, although the signal transfer function is named for the latter. 
 These terms are too prevalent in the literature~\cite{} not to use them, but I have tried to be clear whenever necessary.} $\omega_0$ and idler $\omega_0+\Delta$ frequencies) are resonant.
@@ -192,7 +192,7 @@ The Hamiltonian of this system is given by $\hat H = \hat H_0 + \hat H_I + \hat 
 \end{align}
 Where $x$ is the real coupling constant of the down-conversion, $\phi$ is the phase of the pump laser, $\text{h.c.}$ represents the Hermitian conjugate of the rest of the expression~\footnote{This represents the reverse process, second-harmonic generation~\cite{}, where two $\omega_0$ photons combine to make a $2\omega_0$ photon}, and $\gamma_b, \gamma^b_R$ are the coupling rates through the intra-cavity loss port and the readout port, respectively. These coupling rates are related to the transmission through their respective ports $T_{l,b}, T_R$ and the round-trip time for the cavity $\tau = \frac{L_\text{rt}}{c}$, where $L_\text{rt}$ is the round-trip length of the cavity, by $\gamma = -\frac{1}{2\tau}\log(1-T)$~\cite{}. The detection loss in the output chain of optics will be included later in the derivation, instead of explicitly in the Hamiltonian. 
 
-For this Hamiltonian, the Heisenberg-Langevin~\footnote{The Langevin input/output terms come from $H_\gamma$, but fundamentally this is still the Heisenberg equation-of-motion.} equation-of-motion~\cite{} for $\hat b$, given by $\dot{\hat b}=-\frac{i}{\hbar}[\hat b,\hat H]$ and the bosonic commutation relations~\footnote{$[\hat Q_i,\hat Q_j^\dag]=\delta_{i,j}$ where the annihilation operator of field $i$ is $\hat Q_i$.}, is 
+For this Hamiltonian, the Heisenberg-Langevin~\footnote{The Langevin input/output terms come from $H_\gamma$, but fundamentally this is still the Heisenberg equation-of-motion.} equation-of-motion~\cite{GardinerCollete} for $\hat b$, given by $\dot{\hat b}=-\frac{i}{\hbar}[\hat b,\hat H]$ and the bosonic commutation relations~\footnote{$[\hat Q_i,\hat Q_j^\dag]=\delta_{i,j}$ where the annihilation operator of field $i$ is $\hat Q_i$.}, is 
 \begin{equation}
 \dot{\hat{b}}= -i\omega_0 \hat b+x e^{i\phi} \hat u\hat b^\dag - \gamma^b_\mathrm{tot} \hat{b} + \sqrt{2\gamma^b_R}\hat{B}_\mathrm{in} + \sqrt{2\gamma_b}\hat{n}^L_b.
 \end{equation}
@@ -234,7 +234,11 @@ From which the quadratures of the light can be found in terms of the input field
 \end{align}
 I.e.\ given by transfer matrices $\text{R}_\text{in},\text{R}^L_b, \text{R}^L_\text{PD}$, as a linear combination of the three (uncorrelated) vacuum sources.
 
-This defines the quantum noise response of the degenerate OPO, where the total quantum noise measured at the photodetector is described by the spectral density matrix (an extension of the spectral density $S_X$ described in Section~\ref{sec:optical_loss_background}) \begin{equation}\label{eq:dOPO_Sx_abstract}\text{S}_X(\Omega)=\text{R}_\text{in} \text{R}_\text{in}^\dag+\text{R}^L_b {\text{R}^L_b}^\dag+\text{R}^L_\text{PD}{\text{R}^L_\text{PD}}^\dag.\end{equation} Where the uncorrelated vacuum assumption was used to simplify $(\text{S}_X)_{i,j}(\Omega)\delta(\Omega-\Omega')=\ev{(\vec{\hat X}_\text{PD})_i(\Omega)\circ(\vec{\hat X}_\text{PD})_j^\dag(\Omega')}$ where $\ev{\ldots}$ is the vacuum expectation value, as before. The diagonal elements of $\text{S}_X$ are the (Fourier domain) variances (labelled $S_X$ in Section~\ref{sec:optical_loss_background}) of ${\hat X}_{\mathrm{PD},1}(\Omega), {\hat X}_{\mathrm{PD},2}(\Omega)$ and the off-diagonal elements (where $\text{S}_X$ is manifestly Hermitian by Eq.~\ref{eq:dOPO_Sx_abstract}) give the covariance between the two quadratures.
+This defines the quantum noise response of the degenerate OPO, where the total quantum noise measured at the photodetector is described by the spectral density matrix (an extension of the spectral density $S_X$ described in Section~\ref{sec:optical_loss_background}) \begin{equation}\label{eq:dOPO_Sx_abstract}\text{S}_X(\Omega)=\text{R}_\text{in} \text{R}_\text{in}^\dag+\text{R}^L_b {\text{R}^L_b}^\dag+\text{R}^L_\text{PD}{\text{R}^L_\text{PD}}^\dag.\end{equation} Where the uncorrelated vacuum assumption was used to simplify 
+\begin{equation}\label{eq:total_noise_matrix}
+(\text{S}_X)_{i,j}(\Omega)\delta(\Omega-\Omega')=\ev{(\vec{\hat X}_\text{PD})_i(\Omega)\circ(\vec{\hat X}_\text{PD})_j^\dag(\Omega')}.
+\end{equation}
+Where $\ev{\ldots}$ is the vacuum expectation value, as before. The diagonal elements of $\text{S}_X$ are the (Fourier domain) variances (labelled $S_X$ in Section~\ref{sec:optical_loss_background}) of ${\hat X}_{\mathrm{PD},1}(\Omega), {\hat X}_{\mathrm{PD},2}(\Omega)$ and the off-diagonal elements (where $\text{S}_X$ is manifestly Hermitian by Eq.~\ref{eq:dOPO_Sx_abstract}) give the covariance between the two quadratures.
 
 This demonstrates the Hamiltonian method that I will use throughout the rest of this thesis, with later configurations just adding more terms/modes to the Hamiltonian. % -- including those associated with the signal. % Overall, the method is robust \jam{(why?)} and easy to perform computationally 
 
@@ -362,7 +366,18 @@ To solve these equations-of-motion, I take Fourier transforms and collapse them 
 -i e^{-i\phi} & 0 & 0 & 0
 \end{bsmallmatrix}.
 \end{align}
-Where $\text{I}$ is now the 4 by 4 identity matrix. Applying input/output relations at the readout port and at the detection loss beamsplitter~\footnote{I assume that the detection loss is symmetric between the signal and idler, although this is not necessary.}, given by formulae similar to Eqs.~\ref{eq:dOPO_IO_readout}~\ref{eq:dOPO_IO_PD}, the quadratures at the photodiode can be found to be
+Where $\text{I}$ is now the 4 by 4 identity matrix. The input/output relations at the readout port and at the detection loss beamsplitter~\footnote{I assume that the detection loss $R_\text{PD}$ is symmetric between the signal and idler, although this is not necessary.}, are given by formulae similar to Eqs.~\ref{eq:dOPO_IO_readout}~\ref{eq:dOPO_IO_PD}
+\begin{align}
+\label{eq:nOPO_IO_relations}
+\vec{\hat{B}}_\mathrm{out}(\Omega)&=\vec{\hat{B}}_\mathrm{in}(\Omega)-\sqrt{2}\begin{bsmallmatrix}
+\sqrt{\gamma^b_R} & 0 & 0 & 0 \\
+0 & \sqrt{\gamma^b_R} & 0 & 0 \\
+0 & 0 & \sqrt{\gamma^c_R} & 0 \\
+0 & 0 & 0 & \sqrt{\gamma^c_R}
+\end{bsmallmatrix}\vec{\hat b}(\Omega)\\
+\vec{\hat{B}}_\mathrm{PD}(\Omega)&=\sqrt{1-R_\text{PD}}\vec{\hat{B}}_\mathrm{out}(\Omega)+\sqrt{R_\text{PD}}\vec{\hat n}^L_\text{PD}(\Omega).
+\end{align}
+Using these, I find the quadratures at the photodiode to be
 \begin{align}
 \vec{\hat X}_\mathrm{PD}(\Omega)&=\text{R}_\text{in}\vec{\hat X}_\mathrm{in}(\Omega)+\text{R}^L_b\vec{\hat X}^L_b(\Omega)+\text{R}^L_\text{PD}\vec{\hat X}^L_\text{PD}(\Omega)\\
 \text{R}_\text{in}&=\sqrt{1-R_\text{PD}}\Gamma(\text{I}-\sqrt 2\begin{bsmallmatrix}
@@ -430,6 +445,7 @@ Secondly, the different losses behave similarly as the degenerate case: the dete
 
 
 \subsubsection{Recovering squeezing}
+\label{sec:nOPO_combined_readout}
 % is this directly relevant to the thesis? yes, to the combined readout preliminary work.
 % \subsubsection{Reality of covariance measurements}% already spoken about this?
 % % clarify measurement of non-Hermitian X(Omega) and normal operators, set up covariance 

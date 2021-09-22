@@ -1,4 +1,186 @@
-\section{Appendix A: Nondegenerate internal squeezing, shot noise only}
+\section{Appendix A: Nondegenerate internal squeezing, 2x2 matrix model}
+
+\jam{(For reference only, delete this from the actual thesis)}
+This derivation is based on the lossless model in Ref.~\cite{liBroadbandSensitivityImprovement2020} with the differential mode $\hat{a}$, the signal mode in the signal-recycling cavity $\hat{b}$, and the idler mode in the signal-recycling cavity $\hat{c}$. \jam{Approximations have already been made: single mode and semi-classical pump}. In that model, the only source of vacuum is into the $\hat{b}$ mode from the readout -- i.e. behind the signal-recycling mirror.
+To that model, I add in optical loss: (1) intra-cavity to each of the three modes $\hat{a}, \hat{b}, \hat{c}$ through loss ports \jam{(explain loss port, give a picture)} with transmissivity $T_{l,a}, T_{l,b}, T_{l,c}$, respectively; and (2) at the photodetector, through a beamsplitter with reflectivity $R_{PD}$ \jam{shown in fig}.
+To study the low-frequency quantum noise, I introduce radiation pressure effects through coupling the gravitational-wave signal $h(t)$ to the end test-mass mirror motion $\hat{x}$ with associated momentum $\hat{p}$.
+Following the advice \jam{(word choice)} in Ref.~\cite{liBroadbandSensitivityImprovement2020}, I also couple the $\hat{c}$ mode to a back-action evading mechanical mode $\hat{y}$ with momentum $\hat{q}$ and negative effective mass $-\mu$. This is done to retain the PT-symmetry of the system with the P symmetry now exchanging $\hat{a}\leftrightarrow\hat{c}$ and $\hat{x}\leftrightarrow\hat{y}$.
+
+The full Hamiltonian of the system is given by: $$\hat{H}=\hat{H}_0+\hat{H}_\mathrm{I}+\hat{H}_{\mathrm{GW}}+\hat{H}_{\mathrm{BAE}}+\hat{H}_{\gamma_R}+\hat{H}_{\gamma_a}+\hat{H}_{\gamma_b}+\hat{H}_{\gamma_c}.$$ Where each term describes:
+\begin{itemize}
+\item $\hat{H}_0=\hbar\omega_0(\hat{a}^\dagger\hat{a}+\frac{1}{2})+\hbar\omega_0(\hat{b}^\dagger\hat{b}+\frac{1}{2})+\hbar\omega_\mathrm{idler}(\hat{c}^\dagger\hat{c}+\frac{1}{2})$, the uncoupled behaviour of the optical modes, in the Interaction Picture, the model can ignore this behaviour (moving it from the operators onto the states) \jam{(is RWA also used?)} % and uses a rotating frame at the carrier frequency in order to ignore the evolution of the optical modes from $\hat{H}_0$ \jam{(be careful, are we? -- also, is RWA used?)}
+\item $\hat{H}_\mathrm{I}=i\hbar\omega_s(\hat{a}\hat{b}^\dag-\hat{a}^\dag\hat{b})+i\hbar\chi(\hat{b}^\dag\hat{c}^\dag-\hat{b}\hat{c})$, the interaction of the three optical modes $\hat{a}, \hat{b}, \hat{c}$, where a semi-classical approximation has been taken to the pump field \jam{(spell out what this means for $\chi$)} and a single-mode approximation to each of the cavity modes which are assumed to be on resonance \jam{(this needs more discussion, do more in deg. int. sqz. section)}
+\item $\hat{H}_\mathrm{GW}=-\alpha (\hat{x}-L_\mathrm{arm}h)(\frac{\hat{a}+\hat{a}^\dag}{\sqrt{2}})+\frac{1}{2\mu}\hat{p}^2$, \jam{($\alpha$ is $\alpha_\mathrm{GW}$, not the alpha in Li)} the coupling to the gravitational-wave signal $h(t)$ \jam{(Mention that authors disagree on the exact form of the RP term -- there are many equivalent methods to couple the GW signal, mirror mode, and optical mode~\cite{})}
+\item $\hat{H}_{\mathrm{BAE}}=-\alpha \hat{y}(\frac{\hat{c}+\hat{c}^\dag}{\sqrt{2}})-\frac{1}{2\mu}\hat{q}^2$, the PT-symmetry enabling, back-action evasion \jam{(clarify, what is BAE?)} mode
+\item $\hat{H}_{\gamma_R}$ \jam{(formula, state but just use Langevin terms)}, the readout of the $\hat{b}$ mode
+\item $\hat{H}_{\gamma_i}$ for $i=a,b,c$, the intra-cavity loss ports, these and $\hat{H}_{\gamma_R}$ give the standard \jam{(word choice)} Langevin terms in the Heisenberg-Langevin equations of motion \jam{(cite Gardiner and Collete?)}.
+\end{itemize}
+
+From this Hamiltonian $\hat{H}$, I find the Heisenberg-Langevin equations of motion in the Interaction Picture (separating away the evolution with respect to $\hat{H}_0$):
+$$\begin{cases}
+\dot{\hat{a}}=-\omega_s\hat{b} - \gamma_a \hat{a} + \sqrt{2\gamma_a}\hat{n}^L_a+\frac{i}{\hbar}\alpha(\hat{x}-L_\mathrm{arm}h)\frac{1}{\sqrt{2}}\\
+\dot{\hat{b}}=\omega_s\hat{a} + \chi\hat{c}^\dagger - \gamma^b_\mathrm{tot} \hat{b} + \sqrt{2\gamma_R}\hat{B}_\mathrm{in} + \sqrt{2\gamma_b}\hat{n}^L_b\\
+\dot{\hat{c}}=\chi\hat{b}^\dagger - \gamma_c \hat{c} + \sqrt{2\gamma_c}\hat{n}^L_c + \frac{i}{\hbar}\alpha \hat{y}\frac{1}{\sqrt{2}}\\
+\dot{\hat{x}}=\frac{1}{\mu}\hat{p},\quad \dot{\hat{p}}=\alpha(\frac{\hat{a}+\hat{a}^\dag}{\sqrt{2}})\\
+\dot{\hat{y}}=-\frac{1}{\mu}\hat{q},\quad \dot{\hat{q}}=\alpha(\frac{\hat{c}+\hat{c}^\dag}{\sqrt{2}})
+\end{cases}$$
+I separate out the fluctuating part of each mode $\hat{a}(t)=\langle\hat{a}\rangle+\delta\hat{a}(t)$ from its time average (or large classical motion) $\langle\hat{a}\rangle$. This does not change the form of the equations. \jam{(Why? This is not clear, the LHS does not change but the time-averages remain)} 
+% solving the equations
+In Fourier space, these equations become (with the simplified notation $\tilde{\delta\hat{Q}}(\Omega)\mapsto\hat{Q}(\Omega)$ and sign convention $\partial_t\mapsto-i\Omega$):
+\begin{equation}
+\begin{cases}
+\label{eq:nIS-2}
+-i\Omega\hat{a}(\Omega)=-\omega_s\hat{b}(\Omega) - \gamma_a \hat{a}(\Omega) + \sqrt{2\gamma_a}\hat{n}^L_a(\Omega)+i(\frac{1}{-\Omega^2}\rho_\mathrm{RP}(\frac{\hat{a}(\Omega)+\hat{a}^\dag(-\Omega)}{\sqrt{2}})-\beta\tilde{h}(\Omega))\\
+-i\Omega\hat{b}(\Omega)=\omega_s\hat{a}(\Omega) + \chi\hat{c}^\dagger(-\Omega) - \gamma^b_\mathrm{tot} \hat{b}(\Omega) + \sqrt{2\gamma_R}\hat{B}_\mathrm{in}(\Omega) + \sqrt{2\gamma_b}\hat{n}^L_b(\Omega)\\
+-i\Omega\hat{c}(\Omega)=\chi\hat{b}^\dagger(-\Omega) - \gamma_c \hat{c}(\Omega) + \sqrt{2\gamma_c}\hat{n}^L_c(\Omega) + \frac{-i}{-\Omega^2}\rho_\mathrm{BAE}(\frac{\hat{c}(\Omega)+\hat{c}^\dag(-\Omega)}{\sqrt{2}}).
+\end{cases}
+\end{equation}
+
+Where $\beta=\frac{\alpha L_\mathrm{arm}}{\sqrt{2}\hbar}$ and $\rho_\mathrm{RP}=\rho_\mathrm{BAE}=\frac{\alpha^2}{\sqrt{2}\hbar\mu}$ where the radiation pressure (RP) and back-action evasion (BAE) effects have been separated even though the coupling constant is the same, for PT-symmetry.
+
+Solving these Equations~\ref{eq:nIS-2} for simultaneous solutions of the $\hat{Q}(\Omega)$ and $\hat{Q}^\dag(-\Omega)$ fields is easier when expressed in matrix form. Let $\vec{\hat{Q}}(\Omega)=[\hat{Q}(\Omega),\hat{Q}^\dag(-\Omega)]^T$, then the above equations can be re-written as:
+$$\begin{cases}
+\label{eq:nIS-3}
+((\gamma_a-i\Omega)\mathrm{I}+\frac{i\rho_\mathrm{RP}}{\Omega^2 \sqrt{2}}\begin{bsmallmatrix}
+1 & 1 \\ 
+-1 & -1
+\end{bsmallmatrix})\vec{\hat{a}}(\Omega)=-\omega_s\vec{\hat{b}}(\Omega) + \sqrt{2\gamma_a}\vec{\hat{n}}^L_a(\Omega)-i\beta\begin{bsmallmatrix}
+1 & 0 \\ 
+0 & -1
+\end{bsmallmatrix}\vec{\tilde{h}}(\Omega)\\
+(\gamma^b_\mathrm{tot}-i\Omega)\vec{\hat{b}}(\Omega)=\omega_s\vec{\hat{a}}(\Omega) + \chi\begin{bsmallmatrix}
+0 & 1 \\ 
+1 & 0
+\end{bsmallmatrix}\vec{\hat{c}}(\Omega) + \sqrt{2\gamma_R}\vec{\hat{B}}_\mathrm{in}(\Omega) + \sqrt{2\gamma_b}\vec{\hat{n}}^L_b(\Omega)\\
+((\gamma_c-i\Omega)\mathrm{I}-\frac{i\rho_\mathrm{BAE}}{\Omega^2\sqrt{2}}\begin{bsmallmatrix}
+1 & 1 \\ 
+-1 & -1
+\end{bsmallmatrix})\vec{\hat{c}}(\Omega)=\chi\begin{bsmallmatrix}
+0 & 1 \\ 
+1 & 0
+\end{bsmallmatrix}\vec{\hat{b}}(\Omega) + \sqrt{2\gamma_c}\vec{\hat{n}}^L_c(\Omega).
+\end{cases}$$
+
+Where $\mathrm{I}$ is the $2\times2$ identity matrix. Solving for $\vec{\hat{b}}(\Omega)$, these give
+\begin{align}
+\vec{\hat{b}}(\Omega)=\mathrm{M}_b^{-1}( &\omega_s\mathrm{M}_a^{-1}(\sqrt{2\gamma_a}\vec{\hat{n}}^L_a(\Omega)-i\beta\begin{bsmallmatrix}
+1 & 0 \\ 
+0 & -1
+\end{bsmallmatrix}\vec{\tilde{h}}(\Omega)) + \chi\begin{bsmallmatrix}
+0 & 1 \\ 
+1 & 0
+\end{bsmallmatrix}\mathrm{M}_c^{-1}\sqrt{2\gamma_c}\vec{\hat{n}}^L_c(\Omega)\\&+ \sqrt{2\gamma_R}\vec{\hat{B}}_\mathrm{in}(\Omega) + \sqrt{2\gamma_b}\vec{\hat{n}}^L_b(\Omega)).
+\end{align}
+Where the matrices $\mathrm{M}_i,\; i=a,b,c$ are given by:
+\begin{equation}
+\begin{cases}
+\mathrm{M}_a = (\gamma_a-i\Omega)\mathrm{I}+\frac{i\rho_\mathrm{RP}}{\Omega^2 \sqrt{2}}\begin{bsmallmatrix}
+1 & 1 \\ 
+-1 & -1
+\end{bsmallmatrix}\\
+\mathrm{M}_b = (\gamma^b_\mathrm{tot}-i\Omega)\mathrm{I} + \omega_s^2 \mathrm{M}_a^{-1} - \chi^2\begin{bsmallmatrix}
+0 & 1 \\ 
+1 & 0
+\end{bsmallmatrix} \mathrm{M}_c^{-1} \begin{bsmallmatrix}
+0 & 1 \\ 
+1 & 0
+\end{bsmallmatrix}\\
+\mathrm{M}_c = (\gamma_c-i\Omega)\mathrm{I}-\frac{i\rho_\mathrm{BAE}}{\Omega^2\sqrt{2}}\begin{bsmallmatrix}
+1 & 1 \\ 
+-1 & -1
+\end{bsmallmatrix}.
+\end{cases}
+\end{equation}
+
+Having found the light inside the cavities, I want to find the light at the photodetector. The light right outside and travelling away from the signal-recycling mirror is given by the Input/Output (I/O) relation: $\hat{B}_\mathrm{out}=\hat{B}_\mathrm{in}-\sqrt{2\gamma_R}\hat{b}$. Using the beamsplitter model of detection loss at the photodiode, for a beamsplitter of reflectivity $R_\mathrm{PD}$, the quadratures of light at the photodetector are given by: $\vec{\hat{X}}_\mathrm{PD}=\sqrt{R_\mathrm{PD}} \vec{\hat{X}}_\mathrm{PD}^L + \sqrt{1-R_\mathrm{PD}} \vec{\hat{X}}_{B_\mathrm{out}}$. Where $\vec{\hat{X}}_Q=\Gamma \vec{\hat{Q}}=[\hat{X}_{1,Q},\hat{X}_{2,Q}]^T$ for $\hat{X}_{i,Q}$ the ith quadrature of $Q$ and $\Gamma=\frac{1}{\sqrt{2}}\begin{bsmallmatrix}
+1 & 1 \\ 
+-i & i\end{bsmallmatrix}$ the quadrature matrix.
+Putting everything together, I find the quadratures of the light at the photodetector to be given by:
+\begin{align}
+\vec{\hat{X}}_\mathrm{PD}(\Omega)&=
+% \sqrt{R_\mathrm{PD}} \vec{\hat{X}}_\mathrm{PD}^L(\Omega) + \sqrt{1-R_\mathrm{PD}} \Gamma(\hat{B}_\mathrm{in}(\Omega)-\sqrt{2\gamma_R}\hat{b}(\Omega))\\
+% &=  \sqrt{R_\mathrm{PD}} \vec{\hat{X}}_\mathrm{PD}^L(\Omega) + \sqrt{1-R_\mathrm{PD}} \Gamma(\mathrm{I}-2\gamma_R\mathrm{M}_b^{-1})\Gamma^{-1}\vec{\hat{X}}_{B_\mathrm{in}}(\Omega)\\
+% &-\sqrt{1-R_\mathrm{PD}} \Gamma\sqrt{2\gamma_R}\mathrm{M}_b^{-1}
+% (\omega_s\mathrm{M}_a^{-1}\sqrt{2\gamma_a}\vec{\hat{n}}^L_a(\Omega)
+% -\omega_s\mathrm{M}_a^{-1}i\beta\begin{bsmallmatrix}
+% 1 & 0 \\ 
+% 0 & -1
+% \end{bsmallmatrix}\vec{\tilde{h}}(\Omega) \\& \hspace{5cm}+ \chi\begin{bsmallmatrix}
+% 0 & 1 \\ 
+% 1 & 0
+% \end{bsmallmatrix}\mathrm{M}_c^{-1}\sqrt{2\gamma_c}\vec{\hat{n}}^L_c(\Omega) + \sqrt{2\gamma_b}\vec{\hat{n}}^L_b(\Omega))\\&=
+\mathrm{R_{in}}\vec{\hat{X}}_{B_\mathrm{in}}(\Omega)
++ \mathrm{R}^L_a\vec{\hat{X}}^L_a(\Omega)
++ \mathrm{R}^L_b\vec{\hat{X}}^L_b(\Omega)
++ \mathrm{R}^L_c\vec{\hat{X}}^L_c(\Omega)
++ \mathrm{R}^L_\mathrm{PD}\vec{\hat{X}}_\mathrm{PD}^L(\Omega)
++ \mathrm{T}\vec{\tilde{h}}(\Omega).
+\end{align}
+
+Where $\vec{\hat{X}}_{B_\mathrm{in}}(\Omega)$ is the quadrature vector of the vacuum from the main vacuum port behind the signal-recycling mirror, $\vec{\hat{X}}^L_a(\Omega)$ is the vacuum from the $\hat{a}$ intra-cavity loss, etc.. And where the transfer function matrices $\mathrm{R}_i, \mathrm{T}$ for the noises and signal, respectively, are given by the following (where the frequency dependence is inside each $\mathrm{M}_i^{-1}$):
+\begin{equation}
+\begin{cases}
+\mathrm{R_{in}}=\sqrt{1-R_\mathrm{PD}} \Gamma(\mathrm{I}-2\gamma_R\mathrm{M}_b^{-1})\Gamma^{-1}\\
+\mathrm{R}^L_a=-\sqrt{1-R_\mathrm{PD}} 2\sqrt{\gamma_R\gamma_c}\omega_s\Gamma\mathrm{M}_b^{-1}\mathrm{M}_a^{-1}\Gamma^{-1}\\
+\mathrm{R}^L_b=-\sqrt{1-R_\mathrm{PD}} 2\sqrt{\gamma_R\gamma_b}\Gamma\mathrm{M}_b^{-1}\Gamma^{-1}\\
+\mathrm{R}^L_c=-\sqrt{1-R_\mathrm{PD}} 2\sqrt{\gamma_R\gamma_c}\chi\Gamma\mathrm{M}_b^{-1}\begin{bsmallmatrix}
+0 & 1 \\ 
+1 & 0
+\end{bsmallmatrix}\mathrm{M}_c^{-1}\Gamma^{-1}\\
+\mathrm{R}^L_\mathrm{PD}=\sqrt{R_\mathrm{PD}}\\
+\mathrm{T}=\sqrt{1-R_\mathrm{PD}} \sqrt{2\gamma_R}i\omega_s\beta \Gamma\mathrm{M}_b^{-1}\mathrm{M}_a^{-1}\begin{bsmallmatrix}
+1 & 0 \\ 
+0 & -1
+\end{bsmallmatrix}.
+\end{cases}
+\end{equation} 
+
+
+\jam{(set up the combined noise, spectral densities matrix Sx)}
+
+\begin{equation}
+\mathrm{S}_X(\Omega)2\pi\delta(\Omega-\Omega')=\ev{\vec{\hat{X}}_\mathrm{PD}(\Omega)\cdot\vec{\hat{X}}_\mathrm{PD}(\Omega')^\dag}
+\end{equation}
+
+\jam{(explain uncorrelated vacuum assumption -- i and j are not indices of vectors)}
+
+\begin{equation}
+\ev{\vec{\hat{X}}_{(i)}(\Omega)\cdot\vec{\hat{X}}_{(j)}(\Omega')^\dag}=\delta_{i,j}\mathrm{I}\,2\pi\delta(\Omega-\Omega'),\quad \mathrm{S_{vac}}=\mathrm{I}=\begin{bsmallmatrix}
+1 &  &  &  \\ 
+ & 1 &  &  \\
+ &  & 1 &  \\ 
+ &  &  & 1
+\end{bsmallmatrix}
+\end{equation}
+
+\jam{(versus single-sided power spectral density of single function, not a vector: $A\circ B=\frac{1}{2}(A\cdot B+B\cdot A)$, check factors of two again --> single sided, vac=1, quadratures normalised as 1/rt2, quadrature is Hermitian and therefore commutes with its dagger)}
+
+
+\begin{equation}
+\mathcal{S}_X(\Omega)2\pi\delta(\Omega-\Omega')=(\text{S}_X)_{2,2}(\Omega)2\pi\delta(\Omega-\Omega')=\ev{\hat{X}_{\mathrm{PD},2}(\Omega)\circ\hat{X}_{\mathrm{PD},2}(\Omega')^\dag},\quad \mathcal{S}_\mathrm{vac}=1
+\end{equation}
+
+\begin{equation}
+\mathcal{T}(\Omega)=(\mathrm{T}.\begin{bsmallmatrix}
+1\\ 
+1
+\end{bsmallmatrix})_2
+\end{equation}
+
+I define the sensitivity of the detector to be the noise-to-signal ratio, i.e. the ratio of the noise and signal transfer functions (or, the signal-normalised noise).
+Assuming that we measure the second quadrature, e.g. via balanced homodyne readout \jam{(address optimisation of quadrature angle, might not be 2 just because signal is only there. Also, need to describe homodyne readout somewhere)}, this gives:
+$$S_h(\Omega)=\frac{(\mathrm{S}_X(\Omega))_{2,2}}{\abs{\mathcal{T}(\Omega)}^2}.$$
+
+
+
+
+\jam{(continue writing up derivation...)}
+
+\jam{(back up and include pump phase in model to show its non-effect)}
+
+
+
+\section{Appendix B: Nondegenerate internal squeezing, shot noise only}
 
 \jam{(For reference only, delete this from the actual thesis)}
 
