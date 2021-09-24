@@ -107,7 +107,7 @@ The Hamiltonian of this system is $\hat H = \hat H_0 + \hat H_I + \hat H_\gamma 
 \hat H_0 &= \hbar \omega_0 \hat a^\dag \hat a + \hbar \omega_0 \hat b^\dag \hat b + \hbar 2\omega_0 \hat u^\dag \hat u\\
 \hat H_I &= i\hbar\omega_s(\hat a\hat b^\dag-\hat a^\dag\hat b) +\hbar \frac{x}{2} (e^{i\phi} \hat u (\hat b^\dag)^2 + e^{-i\phi} \hat u^\dag \hat b^2)\\
 \hat H_\gamma &= \int \ldots \\
-\hat H_\text{GW} &= -\alpha (\hat{x}-L_\mathrm{arm}h(t))(\frac{\hat{a}+\hat{a}^\dag}{\sqrt{2}})+\frac{1}{2\mu}\hat{p}^2.
+\hat H_\text{GW} &= -\alpha (\hat{x}-L_\mathrm{arm}h(t))\left(\frac{\hat{a}+\hat{a}^\dag}{\sqrt{2}}\right)+\frac{1}{2\mu}\hat{p}^2.
 \end{align}
 % \beta = \frac{\alpha L_\mathrm{arm}}{\sqrt{2}\hbar}, \beta = \sqrt{\frac{2 P_\text{circ} L_\text{arm} \omega_0}{\hbar c}}, \alpha = \sqrt{2} \hbar/L_arm= \sqrt{\frac{4 P_\text{circ} \omega_0 \hbar}{c  L_\text{arm}}}
 % multiple different hamiltonians for RP
@@ -118,7 +118,7 @@ The Heisenberg-Langevin equations-of-motion for $\hat a, \hat b, \hat x$ and $\h
 \dot{\hat a}=-\omega_s \hat b- \gamma_a \hat{a} + \sqrt{2\gamma_a}\hat{n}^L_a+\frac{i \alpha}{\hbar\sqrt2}(\hat{x}-L_\mathrm{arm}h(t)) \\
 \dot{\hat b}=\omega_s \hat a-i\chi e^{i\phi} \hat b^\dag - \gamma^b_\mathrm{tot} \hat{b} + \sqrt{2\gamma^b_R}\hat{B}_\mathrm{in} + \sqrt{2\gamma_b}\hat{n}^L_b\\
 \dot{\hat x}=\frac{1}{\mu}\hat p\\
-\dot{\hat p}=\alpha(\frac{\hat{a}+\hat{a}^\dag}{\sqrt{2}}).
+\dot{\hat p}=\alpha\left(\frac{\hat{a}+\hat{a}^\dag}{\sqrt{2}}\right).
 \end{cases}\end{equation}
 By entering the Fourier domain, I solve these equations for $\vec{\hat b}(\Omega)=[\hat b(\Omega),\hat b^\dag(-\Omega)]^\text{T}$ in terms of similar vectors of the vacuum sources and signal, i.e.\ $\vec h(\Omega)=[\tilde h(\Omega),\tilde h^*(-\Omega)]^\text{T}$, I find that
 \begin{align}
@@ -156,6 +156,7 @@ S_h = \frac{(\text{S}_X)_{2,2}}{\abs{(\text{T}\begin{bsmallmatrix}1 \\1\end{bsma
 \end{equation}
 
 \subsection{Results}
+\label{sec:dIS_results}
 % priorities: radiation pressure, gravitational-wave signal, stability
 % threshold, radiation pressure, and pump phase
 
@@ -217,7 +218,8 @@ Thirdly, although increasing the squeezer parameter continues to squeeze the qua
 	\label{fig:dIS_stability}
 \end{figure}
 
-Fourthly, configurations must be stable to be feasible. I determine the stability of this configuration by studying the poles of the transfer functions. Since the noise and signal transfer functions are rational functions that share a denominator \jam{(cite or see an appendix?)}, I study the zeros of the shared denominator. In the complex $\Omega$ plane, if any of these poles have a positive imaginary part, then the system is unstable~\cite{}~\footnote{This result is often expressed with respect to the Laplace Transform variable $s=i\Omega$, where a positive real part of $s$ indicates instability~\cite{}.}. %This condition is equivalent to others such as \jam{(... the Nyquist criterion?)}.
+Fourthly, configurations must be stable to be feasible. I determine the stability of this configuration by studying the poles of the transfer functions. 
+The noise and signal transfer functions are rational functions with related denominators (comparing their expressions with no non-unity common factor between numerator and denominator). Let the denominator of the signal transfer function be $q(\Omega,\chi)$, a polynomial in $\Omega,\chi$. Then, the denominator of the noise transfer function is $\Omega^4 q(\Omega,\chi) q(\Omega,-\chi)$ \jam{(by calculation, cite?)}. Since $\Omega=0$ is a real singularity of the radiation-pressure noise that does not depend on $\chi$ and comes from the horizontally free-falling mass assumption, the remaining zeros of the signal and noise denominators are the shared zeros of $q(\Omega,\chi)$. In the complex $\Omega$ plane, if any of these poles have a positive imaginary part, then the system is unstable~\cite{}~\footnote{This result is often expressed with respect to the Laplace Transform variable $s=i\Omega$, where a positive real part of $s$ indicates instability~\cite{}.}. %This condition is equivalent to others such as \jam{(... the Nyquist criterion?)}.
 Therefore, degenerate internal squeezing is stable in the lossless case below threshold~\cite{}, as shown in Fig.~\ref{fig:dIS_stability}. In the lossy case, the system is also stable. \jam{(check stability plot, normalise axis to threshold)}.
 
 
@@ -239,13 +241,13 @@ Firstly, detection losses affect the noise similarly to the degenerate OPO, the 
 	\centering
 	% \includegraphics[width=\textwidth]{}
 	\caption{Degenerate internal squeezing shot noise response in the limit of large arm loss compared to the theoretical limiting degenerate OPO with fully reflective input test mass.}
-	\label{fig:}
+	\label{fig:dIS_limit_dOPO}
 \end{figure}
 
 % \subsubsection{Reduction to degenerate OPO}
 % arm cavity loss gives reduction to dOPO
 % The behaviour against different parameters will be similar to that seen for the degenerate OPO in Section~\ref{}.
-This behaviour against arm intra-cavity loss can be understood as the degenerate OPO limit of degenerate internal squeezing, i.e.\ when the arm cavity is removed. Formally taking the limit $\gamma_a\rightarrow\infty$ of the shot noise shows that the system reduces to a degenerate OPO between the signal-recycling mirror and a fully reflective input test mass. \jam{(demonstrate this result or cite it, also, check if equivalent to sending sloshing frequency to zero)} Although one might expect the input test mass to instead become another loss port, this can be explained as the disappearance of the arm cavity mode altogether, vacuum or otherwise \jam{(check this)}. Inspecting Eq.~\ref{eq:dIS_EoM}, when $\gamma_a\rightarrow\infty$ the equation-of-motion for $\hat a$ becomes $\dot{\hat a}\approx -\gamma_a \hat a$ which quickly decays, and therefore any vacuum $\hat n^L_a$ cannot couple through $\hat a$ to $\hat b$ because the intermediate mode has vanished.
+This behaviour against arm intra-cavity loss can be understood as the degenerate OPO limit of degenerate internal squeezing, i.e.\ when the arm cavity is removed. Formally taking the limit $\gamma_a\rightarrow\infty$ of the shot noise shows that the system reduces to a degenerate OPO between the signal-recycling mirror and a fully reflective input test mass, shown in Fig.~\ref{fig:dIS_limit_dOPO}. \jam{(demonstrate this result or cite it, also, check if equivalent to sending sloshing frequency to zero)} Although one might expect the input test mass to instead become another loss port, this can be explained as the disappearance of the arm cavity mode altogether, vacuum or otherwise \jam{(check this)}. Inspecting Eq.~\ref{eq:dIS_EoM}, when $\gamma_a\rightarrow\infty$ the equation-of-motion for $\hat a$ becomes $\dot{\hat a}\approx -\gamma_a \hat a$ which quickly decays, and therefore any vacuum $\hat n^L_a$ cannot couple through $\hat a$ to $\hat b$ because the intermediate mode has vanished.
 \jam{(However, I believe that this is a consequence of the single-mode approximation and that if a transfer matrix approach~\cite{Finesse,} was instead used where the fields are propagated inside the cavities and the cavity modes are not explicit, the limit would be a degenerate OPO with added intra-cavity loss to account for the open input test mass. This should be easy enough to test.)}
 % This is confusing, I expected the initial test mass to become a loss port, but this can be understood as there no longer being an arm cavity mode, vacuum or otherwise, since it can not make a round-trip.
 
@@ -300,13 +302,13 @@ I emphasise three aspects of this configuration in turn: (1) its dependence on t
 \begin{figure}
 	\centering
 	% \includegraphics[width=\textwidth]{}
-	\caption{Stable optomechanical filtering's sensitivity, showing the effect of mechanical loss, the dominant noise source. Optical loss is not included in this model. This figure was taken from Ref.~\cite{} without permission from the authors \jam{(check this)}, the parameters used are \jam{(... fill this in)} and $T_\text{env}=4$~K and $Q_m=8\times10^9$.}
+	\caption{\jam{(Need to show on-threshold behaviour)} Stable optomechanical filtering's sensitivity, showing the effect of mechanical loss, the dominant noise source. Optical loss is not included in this model. This figure was taken from Ref.~\cite{} without permission from the authors \jam{(check this)}, the parameters used are \jam{(... fill this in)} and $T_\text{env}=4$~K and $Q_m=8\times10^9$.}
 	\label{fig:sWLC_sensitivity}
 \end{figure}
 
 % but I need to talk about their results? in particular, the exceptional point of PT-symmetric, stability, and sensitivity at threshold. maybe do show a lossless, shot-noise only model -- better yet, cite the results in their paper and reference the next section for further explanation?
 % exceptional point, stability and PT symmetry
-Firstly, in the lossless case, comparing the coupling rates of the three modes shows that when the two coupling rates are equal, the system is special \jam{(colloquial?)}. Let the interaction Hamiltonian of the system be~\cite{} $$\hat{H}_\text{I}=i\hbar\omega_s(\hat{a}\hat{b}^\dag-\hat{a}^\dag\hat{b})+i\hbar\chi_m(\hat{b}^\dag\hat{c}_m^\dag-\hat{b}\hat{c}_m).$$ Where $\hat a, \hat b, \omega_s$ are as in Section~\ref{sec:dIS_model}, $\hat{c}_m$ annihilates the mechanical mode \jam{(explain phonons?)}, and $\chi_m$ is the optomechanical coupling rate. When $\omega_s=\chi_m$, the interaction Hamiltonian becomes invariant under the transformation $\hat a\mapsto\hat{c}_m^\dag, \hat{c}_m\mapsto\hat a^\dag$ which corresponds to the composition of parity, $\hat a\leftrightarrow \hat{c}_m$, and time, $\hat Q\leftrightarrow \hat Q^\dag$, transformations, and that leaves $\hat b$ invariant. This parity-time (PT) symmetry causes other changes in the system~\footnote{Although, the most notable feature of PT-symmetric systems is that quantum mechanics can \jam{(be reformulated to)} also allow non-Hermitian, PT-symmetric Hamiltonians~\cite{}. And since this system is still Hermitian, the importance of PT-symmetry is lessened. \jam{(What did Carl Bender say?)}}. \jam{(does it?)}
+Firstly, in the lossless case, comparing the coupling rates of the three modes shows that when the two coupling rates are equal, the system is special \jam{(colloquial?)}. Let the interaction Hamiltonian of the system be~\cite{} $$\hat{H}_\text{I}=i\hbar\omega_s(\hat{a}\hat{b}^\dag-\hat{a}^\dag\hat{b})+i\hbar\chi_m(\hat{b}^\dag\hat{c}_m^\dag-\hat{b}\hat{c}_m).$$ Where $\hat a, \hat b, \omega_s$ are as in Section~\ref{sec:dIS_model}, $\hat{c}_m$ annihilates the mechanical mode \jam{(explain phonons?)}, and $\chi_m$ is the optomechanical coupling rate. When $\omega_s=\chi_m$, the interaction Hamiltonian becomes invariant under the transformation $\hat a\mapsto\hat{c}_m^\dag, \hat{c}_m\mapsto\hat a^\dag$ which corresponds to the composition of parity, $\hat a\leftrightarrow \hat{c}_m$, and time, $\hat Q\leftrightarrow \hat Q^\dag$, transformations, and that leaves $\hat b$ invariant. This parity-time (PT) symmetry causes other changes in the system~\footnote{Although, the most notable feature of PT-symmetric systems is that quantum mechanics can \jam{(be reformulated to)} also allow non-Hermitian, PT-symmetric Hamiltonians~\cite{}. And since this system is still Hermitian, the importance of PT-symmetry is lessened. \jam{(What did Carl Bender say? --> Hermitiancy is more complicated and requires further examination, see Section~\ref{sec:future_work}.)}}. \jam{(does it?)}
 The lossless, PT-symmetric system is borderline stable, with one complex $\Omega$ pole on the real axis, and is at an Exceptional Point of its independent eigenmodes~\cite{Li2020} \jam{(do not just quote Li, I need to revise this)}. Moreover, the shot noise--limited, integrated sensitivity becomes unbounded~\cite{}. With radiation pressure~\footnote{There is a complication with radiation pressure coupling the arm cavity mode to the test mass mechanical mode, as for PT-symmetry to be maintained the filter cavity mechanical mode must be then coupled to a back-action evasion (BAE) mode with negative effective mass~\cite{}. Although this is interesting, I will not consider it in this thesis due to time constraints.}, the integrated sensitivity becomes bounded~\cite{} and although the kilohertz sensitivity improves \jam{(check plot)}, the main improvement is from 100-1000~Hz~\cite{}, as shown for the lossless case in Fig.~\ref{fig:sWLC_sensitivity}. This foreshadows an aspect of my work, that I will discuss later, about broadband versus kilohertz sensitivity improvement. 
 
 
