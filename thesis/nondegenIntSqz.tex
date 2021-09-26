@@ -384,38 +384,41 @@ These arguments should apply generally to squeezed cavity systems but I will onl
 
 \subsubsection{Physical meaning of singularity threshold}
 % Preliminary work?
-
-Singularity threshold relies on the appearance of a singularity in the anti-squeezed quadrature to detect when the no-pump-depletion assumption has been broken. The no-pump-depletion approximation is valid well below threshold, when gain $\ll$ loss, and is less and less accurate closer and closer to threshold~\cite{}. At threshold~\footnote{Or, more formally, for squeezer parameter infinitesimally above threshold.}, where gain and loss balance, the squeezed cavity starts lasing, energy is lost from the pump mode \jam{(is energy not lost below threshold?)}, and the assumption breaks. The anti-squeezed quadrature of the output noise is singular at this point because \jam{... (why? this is not clear!)}. It suffices to understand this for the OPOs because the definition is continuous and the singularity is robust to losses \jam{(is this formally true?)}.
-
-\jam{(continue from here...)}
-
-% infinite fluctuations does not mean increase in time average
-
 % noise transfer function is the ratio of the spectrum out to the spectrum in, if the OPO starts lasing then the output has a coherent amplitude but the input is vacuum. FT is steady state
-
 
 % why does lossless threshold for nIS depend on omega_s while for dIS it does not? because idler mode with zero loss behaves badly
 % dIS: what does omega_s^2/\gamma_a represent? the amount of light that returns from the arms?
-An example of why the physical meaning is unclear is the difference between the lossless limits of the internal squeezing degenerate and nondegenerate cases. For degenerate internal squeezing $\chi_\text{thr}=\gamma^b_R$, while for the nondegenerate case $\chi_\text{thr}=\sqrt{\gamma^b_R(\gamma^c_R+\frac{\omega_s^2}{\gamma^b_R+\gamma^c_R})}$. In either case, the arm loss is zero, so there is no gain or loss associated with the arms or, presumably, the sloshing frequency, but the latter case depends on $\omega_s$ \jam{(why?)}.
+\jam{(is this paragraph necessary?)}
+The physical meaning of singularity threshold is unclear, e.g.\ consider the difference between the lossless limits of the internal squeezing degenerate and nondegenerate cases. For degenerate internal squeezing $\chi_\text{thr}=\gamma^b_R$, while for the nondegenerate case $\chi_\text{thr}=\sqrt{\gamma^b_R(\gamma^c_R+\frac{\omega_s^2}{\gamma^b_R+\gamma^c_R})}$. In either case, the arm loss is zero, so there is no gain or loss associated with the arms or, presumably, the sloshing frequency, but the latter case depends on $\omega_s$ \jam{(why?)}. My guess here is that this difference arises because the idler is not coupled directly to the arms \jam{(but this does not explain anything!)}. The gain-loss balance, although simple in the single-mode degenerate OPO, is more complicated to derive with more modes. This motivates the need for methods, like singularity threshold, to find threshold systematically, but these methods must then be physically understood anew \jam{(word choice)}. 
 
+\jam{(This section needs some suggestion of an explanation)}
+
+Singularity threshold relies on the appearance of a singularity in the anti-squeezed quadrature to detect when the no-pump-depletion assumption has been broken. The no-pump-depletion approximation is valid well below threshold, when gain $\ll$ loss, and is less and less accurate closer and closer to threshold~\cite{}. At threshold~\footnote{Or, more formally, for squeezer parameter infinitesimally above threshold.}, where gain and loss balance, the squeezed cavity starts lasing, energy is lost from the pump mode \jam{(laser mumbo-jumbo from Dan: below threshold there is no power depletion)}, and the assumption breaks. The variance of the anti-squeezed quadrature of the output noise is singular at this point because \jam{... (why? this is not clear!)}.
+% infinite fluctuations does not mean increase in time average
+Where the (Fourier domain spectral density) variance of a fluctuating component of a quadrature being singular should not be confused with a change in the time average of that quadrature; the former occurs at singularity threshold and the latter is the change in the coherent amplitude expected to occur at threshold. % an explanation should link these
+It suffices to understand this for the OPOs because the position of the singularity(s) is continuously defined, i.e.\ the singularity is robust to losses \jam{(is this formally true?)}.
+Therefore, singularity threshold can be understood as \jam{... (complete this when I figure it out)}.
 
 % will this all evaporate when pump depletion is added? yes, its likely
 % be critical of approach! instead of finding a work-around for an assumption, should I just remove the no-pump-depletion assumption?
-Singularity threshold is perhaps unsatisfying because it uses the breaking of an unphysical assumption to determine when a physical effect occurs. Instead, the assumption could be dropped and pump depletion included in the model~\cite{,}, from which threshold could be determined by examining when the coherent amplitude of the output field changes~\footnote{The coherent amplitudes were ignored in the above model when fluctuating components $\delta\hat{Q}(t)$ were taken \jam{(elaborate)}.}. My prediction is that this would agree with the singularity threshold \jam{(why?)} but would be more convincing. 
+Singularity threshold is perhaps unsatisfying because it uses the breaking of an unphysical assumption, of no pump depletion, to determine when a physical effect occurs, threshold. Instead, the assumption could be dropped and pump depletion included in the model~\cite{,}, from which threshold could be determined by examining when the coherent amplitude of the output field is non-zero~\footnote{The coherent amplitudes were ignored in the above model when fluctuating components $\delta\hat{Q}(t)$ were taken \jam{(elaborate)}.}. I leave this to future work with my prediction that it would agree with the singularity threshold \jam{(why?)} but would be more convincing. 
 
 
 \subsubsection{Disagreement between squeezed and anti-squeezed quadratures}
 % Degenerate internal squeezing - different notions of threshold
 %shouldn't this be in the dIS sub-chapter? no.
 
-% plot: both quadratures comparison (black-green plot)
-
+% plot: both quadratures comparison (black-green plot -- what is this?)
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{dIS_threshold_quadratures.pdf}
 	\caption{\jam{(Purpose: show problem with singularity threshold)} \jam{(Normalise legend to threshold)} Degenerate internal squeeing showing both quadratures. Showing the difference between singularity threshold (that maximises anti-squeezing peak) and the squeezing parameter that minimises squeezing peak \jam{(explain why the difference)}. This difference is only significant in the high arm loss regime that is unlike future detectors. \jam{(Answer why squeezing is so small -- see Bram's question (it is just down to the parameters chosen which are poorly suited to degenerate internal squeezing))}}
 	\label{fig:dIS_on_threshold}
 \end{figure}
+
+
+\jam{(continue from here...)}
+
 
 % The extrema, of which there are a maximum of two at any point, start at the same points, but have different trajectories, e.g.\ the first point moving initially into the $\Omega>\omega_s$ region instead, and merge at the different point on the y-axis, but converge to the same OPO limit (although the numerical sampling does not show it here). This difference does not violate the Heisenberg Uncertainty Principle \jam{(but why does it occur?)}.
 
