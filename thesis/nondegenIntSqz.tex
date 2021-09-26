@@ -294,6 +294,7 @@ Therefore, the behaviour of nondegenerate internal squeezing, for a given set of
 
 
 \subsection{Stability}
+\label{sec:nIS_stability}
 
 % plot: imaginary part of poles
 \begin{figure}
@@ -320,7 +321,7 @@ Since $q$ only depends on the pump power, readout and loss rates, and sloshing f
 
 % \jam{(Emphasise that this is original work and that it is a clever approach.)}
 As established in Sections~\ref{sec:dOPO_threshold}~\ref{sec:nOPO_results}~\ref{sec:dIS_results}, the threshold of a squeezing system is the boundary where gains balance losses and near which \jam{(phrasing)} the no-pump-depletion assumption breaks. Knowing threshold is therefore required to understand where this model is valid and experimentally how high the pump power can be raised without beginning lasing. Although threshold is well-understood for the OPOs and lossless degenerate internal squeezing, the threshold of lossy degenerate and nondegenerate internal squeezing is not available in the literature \jam{(check this, how to prove this?)}. In this section, I present my method for determining threshold in all of these models, which uses the no-pump-depletion assumption.
-To briefly explain how I devised this method, since lossless degenerate internal squeezing on threshold has a minimum squeezed quadrature of zero, I initially tried to maximise the anti-squeezed quadrature of nondegenerate internal squeezing against $\Omega,\chi$. But performing this numerically kept running into division-by-zero errors which prompted me to examine the transfer functions and find the singularities, i.e.\ the real zeros of $q$, analytically. The key insight was then realising that both the OPOs have singularities at $\Omega=0$ in the anti-squeezed quadrature on threshold.
+To briefly explain how I devised this method, since lossless degenerate internal squeezing on threshold has a minimum squeezed quadrature of zero, I initially tried to maximise the anti-squeezed quadrature of nondegenerate internal squeezing against $\Omega,\chi$. But performing this numerically encountered division-by-zero errors which prompted me to examine the transfer functions and find the singularities, i.e.\ the real zeros of $q$, analytically. The key insight was then realising that both the OPOs have singularities at $\Omega=0$ in the anti-squeezed quadrature on threshold.
 
 \begin{figure}
     \centering
@@ -329,26 +330,28 @@ To briefly explain how I devised this method, since lossless degenerate internal
     \label{fig:nIS_on_threshold}
 \end{figure}
 
-My method to determine threshold is to define the ``singularity threshold'' as the smallest (real) value of the squeezing parameter such that the anti-squeezed quadrature of the quantum noise has a singularity at some (real) frequency. In particular, I look for points where the anti-squeezed quadrature, i.e.\ any of the diagonal terms of $\text{S}_X$, diverges to infinity in $(\Omega,\chi)\subset\mathbb{R}^2$ space~\footnote{To reduce confusion, I do not call these points poles since unlike when considering stability, I am restricting $\Omega,\chi$ to be real.}. Since I include the pump phase freedom in my models, $\chi$ is further restricted to be positive.  \jam{(Check this: looking at the imaginary part of the poles for stability and looking for real poles (i.e. poles on the real axis) for threshold are the same solutions, surely?)}
+My method to determine threshold is to define the ``singularity threshold'' as the smallest (real) value of the squeezing parameter such that the anti-squeezed quadrature of the quantum noise has a singularity at some (real) frequency. In particular, I look for points where the anti-squeezed quadrature, i.e.\ any of the diagonal terms of $\text{S}_X$, diverges to infinity in $(\Omega,\chi)\subset\mathbb{R}^2$ space~\footnote{To reduce confusion, I do not call these points poles since, unlike when considering stability, I am restricting $\Omega,\chi$ to be real and therefore the transfer function is not defined on $\mathbb{C}$.}. Since I include the pump phase freedom in my models, $\chi$ is further restricted to be positive.  \jam{(Check this: looking at the imaginary part of the poles for stability and looking for real poles (i.e. poles on the real axis) for threshold are the same solutions, surely?)}
 Defining threshold with respect to anti-squeezing is better than squeezing because the singularities of the anti-squeezed quadrature are expected to be robust to losses, unlike the zeros of the squeezed quadrature, as shown in Fig.~\ref{fig:dOPO_variances}. 
-I find the (real~\footnote{The reality condition is used to simplify the zeros of $q$, as in the solution for $\chi^2$ there is an imaginary component that, when set to zero to make $\chi$ real, gives the real $\Omega$ solution.}) singularities of the noise transfer function (squared) $S_X$, i.e.\ the zeros of its denominator, for each configuration in this thesis to be at
+I find the (real~\footnote{The reality condition is used to simplify the zeros of $q$, as in the solution for $\chi^2$ there is an imaginary component that, when set to zero, gives the real $\Omega$ solution.}) singularities of the noise transfer function (squared) $S_X$, i.e.\ the zeros of its denominator, for each squeezing configuration in this thesis to be at \jam{(check that $\gamma_c\mapsto\gamma^c_\text{tot}$)}
 \begingroup
 \allowdisplaybreaks
 \begin{align}\label{eq:singularity_threshold}
 \text{degenerate OPO}&: \Omega_\text{thr}=0, \chi_\text{thr}=\gamma^b_\mathrm{tot}\\
-\text{nondegenerate OPO}&: \Omega_\text{thr}=0, \chi_\text{thr}=\sqrt{\gamma^b_\mathrm{tot}\gamma_c}\\
+\text{nondegenerate OPO}&: \Omega_\text{thr}=0, \chi_\text{thr}=\sqrt{\gamma^b_\mathrm{tot}\gamma^c_\text{tot}}\\
 \text{degenerate internal squeezing}&:\begin{cases}
 \Omega_1=0, \chi_1=\gamma^b_\mathrm{tot}+\frac{\omega_s^2}{\gamma_a};&\gamma_a\neq0\\
 \Omega_2=\sqrt{\omega_s^2-\gamma_a^2}, \chi_2=\gamma^b_\mathrm{tot}+\gamma_a;&\omega_s\geq\gamma_a\geq0
 \end{cases}\\
 \text{nondegenerate internal squeezing}&:\\&\hspace{-5cm}\begin{cases}
-\Omega_1=0, \chi_1=\sqrt{\gamma_c(\gamma^b_\mathrm{tot}+\frac{\omega_s^2}{\gamma_a})};&\gamma_c\neq0,\gamma_a\neq0\\
-\Omega_2=\sqrt{\frac{\gamma_c\omega_s^2-\gamma_a(\omega_s^2+\gamma_a(\gamma^b_\mathrm{tot}+\gamma_c))}{\gamma^b_\mathrm{tot}+\gamma_c}}, \chi_2=\sqrt{(\gamma_a+\gamma^b_\mathrm{tot})(\gamma_a+\gamma_c+\frac{\omega_s^2}{\gamma^b_\mathrm{tot}+\gamma_c})};&\gamma_c\neq0,(*)
+\Omega_1=0, \chi_1=\sqrt{\gamma^c_\text{tot}(\gamma^b_\mathrm{tot}+\frac{\omega_s^2}{\gamma_a})};&\gamma^c_\text{tot}\neq0,\gamma_a\neq0\\
+\Omega_2=\sqrt{\frac{\gamma^c_\text{tot}\omega_s^2-\gamma_a(\omega_s^2+\gamma_a(\gamma^b_\mathrm{tot}+\gamma^c_\text{tot}))}{\gamma^b_\mathrm{tot}+\gamma^c_\text{tot}}}, \chi_2=\sqrt{(\gamma_a+\gamma^b_\mathrm{tot})(\gamma_a+\gamma^c_\text{tot}+\frac{\omega_s^2}{\gamma^b_\mathrm{tot}+\gamma^c_\text{tot}})};&\gamma^c_\text{tot}\neq0,(*)
 \end{cases}\\
-(*)&:\gamma_c\omega_s^2\geq\gamma_a\omega_s^2+\gamma_a^2(\gamma^b_\mathrm{tot}+\gamma_c)
+(*)&:\gamma^c_\text{tot}\omega_s^2\geq\gamma_a\left(\omega_s^2+\gamma_a(\gamma^b_\mathrm{tot}+\gamma^c_\text{tot})\right)
 \end{align}
 \endgroup
-Where this result is verified by plotting the results for the given values and observing the singularity, as shown in Fig.~\ref{fig:nIS_on_threshold}. If multiple singularities are listed above, the singularity threshold is determined by the smallest $\chi$ value $$\chi_\text{thr}=\min_{i\in\{1,2\}}(\chi_i),\quad\Omega_\text{thr}=\Omega_{\underset{i\in\{1,2\}}{\text{argmin}}(\chi_i)}.$$ Which singularity has the smallest squeezer parameter changes as the losses change, and, by inspection, where it changes the singularities merge. This definition is used because it reflects the first singularity hit when the pump power is increased from zero.
+% frequency around which shot noise and signal are amplified in fig:nIS_general_sens is determined (but not exactly) the threshold frequency
+% which pole is chosen tells us the closeness to nOPO or lossless sWLC
+Where this result is verified by plotting the results for the given values and observing the singularity, as shown in Fig.~\ref{fig:nIS_on_threshold}. For squeezer parameter just below threshold, e.g.\ $\chi=0.95\chi_\text{thr}$ in Fig.~\ref{fig:nIS_general_sens}, the peak frequency around which the shot noise and signal are amplified is determined by the threshold frequency~\footnote{Consider this peak as a slice with constant $\chi$ of the region around the singularity in (real) $\Omega,\chi$ space.}. If multiple singularities are listed above, the singularity threshold is determined by the smallest $\chi$ value $$\chi_\text{thr}=\min_{i\in\{1,2\}}(\chi_i),\quad\Omega_\text{thr}=\Omega_{\underset{i\in\{1,2\}}{\text{argmin}}(\chi_i)}.$$ Which singularity has the smallest squeezer parameter changes as the losses change, and, by inspection for internal squeezing, where it changes the singularities merge which makes the threshold continuous. This definition is used because it reflects the first singularity hit when the pump power is increased from zero. The merging of the singularities could also be used, informally, as the point where the lossy configuration becomes closer in behaviour to the OPO limit than to the lossless configuration.
 
 \begin{figure}
     \centering
@@ -359,43 +362,47 @@ Where this result is verified by plotting the results for the given values and o
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{nIS_threshold.pdf}
-    \caption{\jam{(Purpose: show evolution and limits of threshold)} \jam{(This is confusing, need to annotate the total path discussed in the text, from lossless sWLC to nOPO. Also, change losses to ppm.)} For nondegenerate internal squeezing, trajectory of singularities of the anti-squeezed quadrature in $(\Omega, \chi)$ space as losses are changed. For the lossless case except $T_{l,b}=0.1$\jam{(explain)}, the singularities are at $(0,\infty)$ and $(0,\omega_s)$, with the latter displaying the threshold value for $\chi$. As the idler loss is increased from zero, the former moves in from infinity along $\Omega=0$ and the latter moves towards $\Omega=\omega_s$. Once the idler loss has reached $T_{l,c}=0.1$ \jam{(check this)} it is fixed and the arm loss is increased from zero to the high arm loss limit. At some point, \jam{given by ...}, the singularities merge at the $\Omega=0$ axis and then the remaining singularity converges to the nondegenerate OPO threshold.}
+    \caption{\jam{(Purpose: show evolution and limits of threshold)} \jam{(This is confusing, need to annotate the total path discussed in the text, from lossless sWLC to nOPO. Also, change losses to ppm. Fix $\sqrt{\gamma_b\gamma_c}$ label to specify values.)} For nondegenerate internal squeezing, trajectory of singularities of the anti-squeezed quadrature in $(\Omega, \chi)$ space as losses are changed. \jam{(add some explanation back in?)}}
     \label{fig:nIS_threshold_traj}
 \end{figure}
 
-Singularity threshold recovers the known threshold values for the OPOs from Sections~\ref{sec:dOPO_threshold}~\ref{sec:nOPO_results}, but its behaviour with loss is more complex for internal squeezing. 
-For degenerate internal squeezing, shown in Fig.~\ref{fig:dIS_threshold_traj}, in the lossless case the singularities $(\Omega,\chi)$ are at $(0,\infty)$ and $(\omega_s,\gamma^b_\text{tot})$ which recovers $(\Omega_\text{thr},\chi_\text{thr})\xrightarrow[\gamma_a\rightarrow0]{}(\omega_s,\gamma^b_\mathrm{tot})$ as in Section~\ref{sec:dIS_results}. As the arm loss $\gamma_a$ is increased from zero, the singularities move and merge at the $\Omega=0$ axis when $\gamma_a=\omega_s$, and then the remaining singularity converges to the degenerate OPO threshold $(\Omega_\text{thr},\chi_\text{thr})\xrightarrow[\gamma_a\rightarrow\infty]{}(0,\gamma^b_\mathrm{tot})$ in the high arm loss limit, as expected.
-For nondegenerate internal squeezing, ...
- 
-\jam{(continue from here!)}
-
-
-For nIS, this definition reduces to nOPO threshold $(\Omega,\chi)\xrightarrow[\gamma_a\rightarrow\infty]{}(0,\sqrt{\gamma^b_\mathrm{tot}\gamma_c})$ and to the lossless threshold in the formal limit $(\Omega,\chi)\xrightarrow[\gamma_a=0,\gamma_c\rightarrow0]{}(0,\omega_s)$. This last limit makes sense from the stability \jam{(make sure stability already studied)} analysis, since the lossless system is marginally stable at threshold and this anti-squeezed singularity definition looks for when the poles are on the real axis.
+Singularity threshold recovers the known threshold values for the OPOs from Sections~\ref{sec:dOPO_threshold}~\ref{sec:nOPO_results} by inspection, degenerate internal squeezing from Section~\ref{sec:dIS_results}, and the optomechanical analogue from Section~\ref{sec:sWLC}. %, but its behaviour with loss is more complex for internal squeezing. 
+For degenerate internal squeezing, shown in Fig.~\ref{fig:dIS_threshold_traj}, in the lossless case the singularities $(\Omega,\chi)$ are at $(0,\infty)$ and $(\omega_s,\gamma^b_\text{tot})$ which recovers $(\Omega_\text{thr},\chi_\text{thr})\xrightarrow[\gamma_a\rightarrow0]{}(\omega_s,\gamma^b_\mathrm{tot})$ from Section~\ref{sec:dIS_results}. As the arm loss $\gamma_a$ is increased from zero, the singularities move and merge at the $\Omega=0$ axis when $\gamma_a=\omega_s$, and then the remaining singularity converges to the degenerate OPO threshold $(\Omega_\text{thr},\chi_\text{thr})\xrightarrow[\gamma_a\rightarrow\infty]{}(0,\gamma^b_\mathrm{tot})$ in the high arm loss limit, as expected.
+% this resolves the mystery of idler loss --> means that lossless nIS is necessarily above threshold and therefore not allowed in this model except in formal limits, pump depletion would need to be added in to properly compare to sWLC?
+For nondegenerate internal squeezing, shown in Fig.~\ref{fig:nIS_threshold_traj} for fixed signal loss $T_{l,b}=0.1$ \jam{(explain)} and no idler readout rate $\gamma^c_R=0$ to compare to the optomechanical analogue, in the lossless limit $\gamma_a=0,\gamma_c\rightarrow0$ the singularities approach $(0,\infty)$ and $(0,\omega_s)$ which recovers the $\chi_\text{thr}=\omega_s$ analogue to the exceptional value $\chi_m=\omega_s$ from Section~\ref{sec:sWLC}. Although this value is not called threshold \jam{(is it not?)} for the optomechanical analogue, the same principle of gains and losses applies to the signal and mechanical idler modes \jam{(justify that these are the same point)}. Moreover, the marginal stability of that system at $\chi_m=\omega_s$ means that a pole in the complex $\Omega$ plane has moved on to the real axis and therefore is a (real) singularity \jam{(clarify that $\chi$ remains real in stability analysis)}. As the idler loss $\gamma_c$ is increased from zero with arm loss $\gamma_a=0$, one singularity remains at $(0,\infty)$ and the other converges to $(\omega_s,\sqrt{\gamma^b_\text{tot}\gamma_c})$ when $\gamma_c\rightarrow\infty$. Fixing the idler loss at $T_{l,c}=0.1$ and now changing the arm loss $\gamma_a$~\footnote{Threshold remains poorly defined when the idler loss is zero \jam{(where is this in the derivation?)} like the nondegenerate OPO in Section~\ref{sec:nOPO_results}. The lossless limit requires $\gamma^c_\text{tot}\rightarrow0$ to be taken formally.}, the singularities merge \jam{(check this)} at the $\Omega=0$ axis when $\gamma^c_\text{tot}\omega_s^2=\gamma_a\omega_s^2+\mathcal{O}(\gamma_a^2)$ which, assuming that $\gamma_a$ is small compared to $\omega_s$~\footnote{Which is reasonable for a gravitational-wave interferometer with $T_{l,a}=100\text{ppm}$ where $\gamma_a/(2\pi)<1$~Hz but $\omega_s/(2\pi)=5$~kHz.}, is approximately when $\gamma_c\approx\gamma_a$. In the high arm loss limit $\gamma_a\gg\gamma_c$, the remaining singularity converges to the nondegenerate OPO threshold $(\Omega,\chi)\xrightarrow[\gamma_a\rightarrow\infty]{}(0,\sqrt{\gamma^b_\mathrm{tot}\gamma_c})$, as expected.
 
 % $\Omega^4$ factor in RP denominator is the resonance, but is unrelated to the squeezer
-Radiation pressure and back-action evasion do not change threshold because the quantum noise transfer function denominator has the same positive zeros as the shot noise transfer function without radiation pressure (and BAE).
 % pump phase does not change threshold either
-
-% this resolves the mystery of idler loss --> means that lossless nIS is necessarily above threshold and therefore not allowed in this model except in formal limits, pump depletion would need to be added in to properly compare to sWLC
-
-% frequency around which shot noise and signal are amplified in fig:nIS_general_sens is determined (but not exactly) the threshold frequency
-
-
-
-
-
-
-
-
+Singularity threshold is not affected by radiation pressure or pump phase since, like for the stability analysis, they do not affect the zeros of the denominator of the noise transfer function. As explained in Section~\ref{sec:nIS_stability}, although the radiation pressure does introduce (1) a zero at $\Omega=0$ and (2) a factor $q(\Omega,-\chi)$, these can be ignored because, respectively, (1) comes from the free-falling mass assumption which is only valid at frequencies above the actual test mass resonance and therefore the physical behaviour will not have this singularity and (2) only increases the multiplicity of the zeros because the result is independent of pump phase and therefore of the sign of $\chi$. The pump phase is irrelevant because the singularity threshold looks at the anti-squeezed quadrature, which always exists by the Heisenberg Uncertainty Principle, but does not depend on where in the quadrature basis it lies.
 
 
 \subsection{Problems with definition}
 
-% why does lossless threshold for nIS depend on omega_s while for dIS it does not?
+Although singularity threshold achieves all the known limits for the configurations considered and is simple to determine once the noise transfer function is known, it has two main problems to address: (1) how it is related to gain-loss balancing and (2) how maximising the anti-squeezed quadrature relates to minimising the squeezed quadrature. 
+% what about other configurations
+These arguments should apply generally to squeezed cavity systems but I will only consider the aforementioned configurations and leave a general treatment of singularity threshold to future work.
 
-% make clear that knowing threshold just gives the physical bounds of the parameter space, it doesn't correspond to the optimal squeezing (see results section) for sensitivity improvement -- just as minimising N does not necessarily maximise SNR if signal is not considered. 
+\subsubsection{Physical meaning of singularity threshold}
+% Preliminary work?
 
-% be critical of approach! instead of finding a work-around for an assumption, should I just remove the no-pump-depletion assumption
+Singularity threshold relies on the appearance of a singularity in the anti-squeezed quadrature to detect when the no-pump-depletion assumption has been broken. The no-pump-depletion approximation is valid well below threshold, when gain $\ll$ loss, and is less and less accurate closer and closer to threshold~\cite{}. At threshold~\footnote{Or, more formally, for squeezer parameter infinitesimally above threshold.}, where gain and loss balance, the squeezed cavity starts lasing, energy is lost from the pump mode \jam{(is energy not lost below threshold?)}, and the assumption breaks. The anti-squeezed quadrature of the output noise is singular at this point because \jam{... (why? this is not clear!)}. It suffices to understand this for the OPOs because the definition is continuous and the singularity is robust to losses \jam{(is this formally true?)}.
+
+\jam{(continue from here...)}
+
+% infinite fluctuations does not mean increase in time average
+
+% noise transfer function is the ratio of the spectrum out to the spectrum in, if the OPO starts lasing then the output has a coherent amplitude but the input is vacuum. FT is steady state
+
+
+% why does lossless threshold for nIS depend on omega_s while for dIS it does not? because idler mode with zero loss behaves badly
+% dIS: what does omega_s^2/\gamma_a represent? the amount of light that returns from the arms?
+An example of why the physical meaning is unclear is the difference between the lossless limits of the internal squeezing degenerate and nondegenerate cases. For degenerate internal squeezing $\chi_\text{thr}=\gamma^b_R$, while for the nondegenerate case $\chi_\text{thr}=\sqrt{\gamma^b_R(\gamma^c_R+\frac{\omega_s^2}{\gamma^b_R+\gamma^c_R})}$. In either case, the arm loss is zero, so there is no gain or loss associated with the arms or, presumably, the sloshing frequency, but the latter case depends on $\omega_s$ \jam{(why?)}.
+
+
+% will this all evaporate when pump depletion is added? yes, its likely
+% be critical of approach! instead of finding a work-around for an assumption, should I just remove the no-pump-depletion assumption?
+Singularity threshold is perhaps unsatisfying because it uses the breaking of an unphysical assumption to determine when a physical effect occurs. Instead, the assumption could be dropped and pump depletion included in the model~\cite{,}, from which threshold could be determined by examining when the coherent amplitude of the output field changes~\footnote{The coherent amplitudes were ignored in the above model when fluctuating components $\delta\hat{Q}(t)$ were taken \jam{(elaborate)}.}. My prediction is that this would agree with the singularity threshold \jam{(why?)} but would be more convincing. 
+
 
 \subsubsection{Disagreement between squeezed and anti-squeezed quadratures}
 % Degenerate internal squeezing - different notions of threshold
@@ -412,20 +419,12 @@ Radiation pressure and back-action evasion do not change threshold because the q
 
 % The extrema, of which there are a maximum of two at any point, start at the same points, but have different trajectories, e.g.\ the first point moving initially into the $\Omega>\omega_s$ region instead, and merge at the different point on the y-axis, but converge to the same OPO limit (although the numerical sampling does not show it here). This difference does not violate the Heisenberg Uncertainty Principle \jam{(but why does it occur?)}.
 
+% make clear that knowing threshold just gives the physical bounds of the parameter space, it doesn't correspond to the optimal squeezing (see results section) for sensitivity improvement -- just as minimising N does not necessarily maximise SNR if signal is not considered. 
 
 \jam{(One explanation for the difference between position of the singularity of the anti-squeezed quadrature and the minimum of the squeezed quadrature is that the expression for the sloshing frequency in Korobko et al, 2019 is not valid at large arm losses. If this is so, then what does this fixed--sloshing frequency Hamiltonian correspond to? And for that system, why does the supposedly Gaussian squeezing not maximise antisqz at the frequency that it minimises squeezing? --> Look at pump phase and/or covariance matrix)}
 
 
-
-% \subsection{PT-symmetry}
-% % mention removing back-action evasion
-
-\subsection{Physical meaning of singularity threshold}
-% Preliminary work? should be subsubsection?
-
-% will this all evaporate when pump depletion is added? yes, its likely
-
-% which pole is chosen tells us the closeness to nOPO or lossless sWLC
+Despite these unresolved problems with singularity threshold, I will continue to use it because it is the only notion of threshold for lossy nondegenerate internal squeezing that I have~\cite{} \jam{(could be more positive here)}. I leave resolving these remaining problems to future work. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

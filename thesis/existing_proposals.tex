@@ -219,7 +219,7 @@ Thirdly, although increasing the squeezer parameter continues to squeeze the qua
 \end{figure}
 
 Fourthly, configurations must be stable to be feasible. I determine the stability of this configuration by studying the poles of the transfer functions. 
-The noise and signal transfer functions are rational functions with related denominators (comparing their expressions with no non-unity common factor between numerator and denominator). Let the denominator of the signal transfer function be $q(\Omega,\chi)$, a polynomial in $\Omega,\chi$. Then, the denominator of the noise transfer function is $\Omega^4 q(\Omega,\chi) q(\Omega,-\chi)$ \jam{(by calculation, cite?)}. Since $\Omega=0$ is a real singularity of the radiation-pressure noise that does not depend on $\chi$ and comes from the horizontally free-falling mass assumption, the remaining zeros of the signal and noise denominators are the shared zeros of $q(\Omega,\chi)$. In the complex $\Omega$ plane, if any of these poles have a positive imaginary part, then the system is unstable~\cite{}~\footnote{This result is often expressed with respect to the Laplace Transform variable $s=i\Omega$, where a positive real part of $s$ indicates instability~\cite{}.}. %This condition is equivalent to others such as \jam{(... the Nyquist criterion?)}.
+The noise and signal transfer functions are rational functions with related denominators (comparing their expressions with no non-unity common factor between numerator and denominator). Let the denominator of the signal transfer function be $q(\Omega,\chi)$, a polynomial in $\Omega,\chi$. Then, the denominator of the noise transfer function is $\Omega^4 q(\Omega,\chi) q(\Omega,-\chi)$ \jam{(by calculation, cite?)}. Since $\Omega=0$ is a real singularity of the radiation-pressure noise that does not depend on $\chi$ and comes from the horizontally free-falling mass assumption, the remaining zeros of the signal and noise denominators are the shared zeros of $q(\Omega,\chi)$. In the complex $\Omega$ plane, if any of these poles have a positive imaginary part, then the system is unstable \jam{(check this, IFT suggests other sign?)}~\cite{}~\footnote{This result is often expressed with respect to the Laplace Transform variable $s=i\Omega$, where a positive real part of $s$ indicates instability~\cite{}.}. %This condition is equivalent to others such as \jam{(... the Nyquist criterion?)}.
 Therefore, degenerate internal squeezing is stable in the lossless case below threshold~\cite{}, as shown in Fig.~\ref{fig:dIS_stability}. In the lossy case, the system is also stable. \jam{(check stability plot, normalise axis to threshold)}.
 
 
@@ -273,6 +273,7 @@ Although degenerate internal squeezing improves the sensitivity, its low \jam{(l
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Existing proposal 2: stable optomechanical filtering}
+\label{sec:sWLC}
 % the point of this section is to explain the existing design, what is wrong with it, and how it connects to nIS
 
 \begin{figure}
