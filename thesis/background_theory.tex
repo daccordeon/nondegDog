@@ -339,7 +339,7 @@ I follow the same Hamiltonian method as Section~\ref{sec:dOPO_model} to derive t
 % Where $\phi$ is $\pi/2$ ahead of the phase in the previous section 
 \jam{(explain why $\phi$ is $\pi/2$ ahead of the phase in the previous section ?)} 
 Where $\gamma^c_\text{tot}=\gamma^c_R+\gamma_c$ are the idler's coupling rates through the different ports, determined by the transmittivities $T_{R,c}, T_{l,c}$ for the readout and loss port, respectively. Although $\Delta$ is assumed small compared to $\omega_0$, dichroic optics can have different transmittivities for the signal and idler modes~\cite{}, but I will default to assuming symmetric loss between the modes. The Heisenberg-Langevin equations-of-motion for $\hat b, \hat c$ can then be found as before, where I again: (1) assume the semi-classical and no pump depletion approximations to the pump mode $\hat u\mapsto u=2\chi/x$, (2) enter the Interaction Picture to ignore the effect of $\hat H_0$, and (3) take fluctuating components but leave the $\delta \hat Q(t)$ implicit in the notation,
-\begin{equation}\begin{cases}
+\begin{equation}\begin{cases}\label{eq:nOPO_EoM}
 \dot{\hat{b}}=-i\chi e^{i\phi}\hat{c}^\dagger - \gamma^b_\mathrm{tot} \hat{b} + \sqrt{2\gamma^b_R}\hat{B}_\mathrm{in} + \sqrt{2\gamma_b}\hat{n}^L_b\\
 \dot{\hat{c}}=-i\chi e^{i\phi}\hat{b}^\dagger - \gamma^c_\mathrm{tot} \hat{c} + \sqrt{2\gamma^c_R}\hat{C}_\mathrm{in} + \sqrt{2\gamma_c}\hat{n}^L_c.
 \end{cases}\end{equation}
