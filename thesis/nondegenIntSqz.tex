@@ -219,6 +219,7 @@ S_h = \frac{(\text{S}_X)_{2,2}}{\abs{\left(\text{T}\begin{bsmallmatrix}1 \\1\\0\
 I will now examine some of the immediate results of the model: (1) the general features of the signal and noise responses and sensitivity, (2) the reduction to known models in certain loss limits, and (3) the stability of the system.
 
 \subsection{General behaviour}
+\label{sec:nIS_general_behaviour}
 % should this be down in results section? --> this is a results chapter, maybe include a short section discussing the general performance (separate from the science case analysis in chapter 5?)
 
 % plot: classic N, S, NSR; also noise budget plot
@@ -268,6 +269,7 @@ The effect of each configuration parameter is similar to the effect on the inter
 To partially verify the model, I show that it reduces to the expected limits when (1) the losses are removed and (2) the arm loss is taken to infinity. I predict the behaviour by taking the limits of the equations-of-motion in Eq.~\ref{eq:nIS_EoM} and verify it by examining the plots of the noise and signal responses.
 
 \subsubsection{Lossless limit}
+\label{sec:nIS_lossless_limit}
 
 \begin{figure}
 	\centering
@@ -447,81 +449,154 @@ The results presented in this chapter apply generally to cavity-based metrology 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Gravitational-wave detection science case for nondegenerate internal squeezing}
 \label{chp:science_case}
-% comparison to existing proposals
+\jam{(Is this a proper science case?)}
 
 % be clear about the scope of this project, I am not wanting to recommend the design of the next detector to be built, this is exploratory work into a configuration that has never been modelled this thoroughly before -- more would need to be done (e.g. add in external squeezing and thermal noise etc.) to make a proper judgement which is not my aim.
+% comparison to existing proposals
+% conclusions from this chapter: nIS is feasible as an alternative to sWLC and to improve the sensitivity from 100-1000 Hz, but improving 1-4 kHz sensitivity appears less likely without changing the sloshing frequency and arm bandwidth
 
-\section{Experimental constraints} %on parameter space
+In this chapter, I consider using nondegenerate internal squeezing in a future gravitational-wave detector. This is only exploratory work and I will not give a recommendation for the optimal configuration and parameters for the next detector which would require a far more detailed model. Instead, I will focus on the general feasibility of nondegenerate internal squeezing and whether it warrants further investigation.
+Firstly, I will examine the tolerance of nondegenerate internal squeezing to the realistic optical losses in a detector like LIGO~Voyager as described in Chapter~\ref{chp:proposals}. I will also discuss the optimal squeezing value for the sensitivity. Secondly, I will compare the sensitivity of nondegenerate internal squeezing to the optomechanical analogue and argue that the low optical loss required for the all-optical configuration is as least as realistic as the low mechanical loss required for the optomechanical configuration. Therefore, I will conclude that nondegenerate internal squeezing is a viable alternative to stable optomechanical filtering. I will also compare the tolerance to loss to degenerate internal squeezing. Finally, I will compare the sensitivity to the target for kilohertz gravitational-wave detection from Section~\ref{sec:GW_kilohertz_target}. I will find that the kilohertz improvement is promising enough to warrant further investigation. Although this work was motivated by improving kilohertz sensitivity, I will also discuss whether the configuration is better suited to a broadband detector, which will be further explored in the next chapter.
 
-% will need to decide on a parameter set to make the rest of the plots: use LIGO Voyager at different readout rates? use the Li data set which is this already?
 
-% IFO parameter space -- Pcirc is fixed
-
-% what are realistic losses, what are ideal losses?
+\section{Tolerance to optical loss}
+\label{sec:nIS_tolerance_to_losses}
 
 % table: parameter sets to compare
-\begin{table}
-	\caption{Table of interferometer parameter sets, showing configuration and derived parameters. The parameter set from Ref.~\cite{} is based on LIGO~Voyager but directly sets the readout rate $\gamma_R$ and sloshing frequency $\omega_s$ and back-forms the corresponding physical lengths and reflectivities. \jam{(Freedoms in this process)}}
-	\label{tab:}
+\begin{table} %https://www.tablesgenerator.com/
+\centering
+\begin{tabular}{lllllll}
+parameter & Advanced LIGO & LIGO Voyager & NEMO & Li2020 & Korobko2019 & Miao2018 \\
+carrier wavelength &  &  &  &  &  &  \\
+arm cavity length &  &  &  &  &  &  \\
+signal-recycling cavity length &  &  &  &  &  &  \\
+circulating arm power &  &  &  &  &  &  \\
+input test mass transmissivity &  &  &  &  &  &  \\
+signal-recycling mirror transmissitivty &  &  &  &  &  &  \\
+test mass mass &  &  &  &  &  &  \\
+sloshing frequency &  &  &  &  &  &  \\
+signal readout rate &  &  &  &  &  &  \\
+optical losses &  &  &  &  &  & 
+\end{tabular}
+    \caption{\jam{(Fill in table, what detectors/parameters should be shown?)} Table of interferometer parameter sets, showing configuration and derived parameters. The parameter set from Ref.~\cite{} is based on LIGO~Voyager but directly sets the readout rate $\gamma_R$ and sloshing frequency $\omega_s$ and back-forms the corresponding physical lengths and reflectivities. \jam{(Freedoms in this process)}}
+    \label{tab:parameter_sets}
 \end{table}
 
-\section{Results}
-
-
-\subsection{Tolerance to optical loss}
 % plot: tolerance to each of the four sources, matrix plot each against readout rate
 % some way to mega matrix all of these, or just show sensitivity and not N and S separetely?
 \begin{figure}
-	\centering
-	\includegraphics[width=\textwidth]{nIS_sigRO_tolerance_Rpd.pdf}
-	\caption{\jam{(Purpose: show the different tolerance to different losses 1/4)} \jam{(Explain Li parameter set and how readout rate is changed (how Lsrc is not set)? Explain the effect of readout rate on bandwidth somewhere? Is there a way to compress these plots or is it necessary to show the response to each loss?)} Nondegenerate internal squeezing tolerance to loss (1/4): detection loss. Squeezer parameter is normalised for each curve to its threshold determined by its losses, which will be done henceforth unless otherwise stated. The squeezed system appears as resilient as the non-squeezed system, which is due to the use of anti-squeezing instead of squeezing and is an advantage over, e.g., degenerate internal squeezing, see Section~\ref{sec:dIS_optical_loss}. The tolerance is independent of the readout rate/bandwidth.}
-	\label{fig:nIS_sigRO_tolerance_Rpd}
+    \centering
+    \includegraphics[width=\textwidth]{nIS_sigRO_tolerance_Rpd.pdf}
+    \caption{\jam{(Purpose: show the different tolerance to different losses 1/4)} \jam{(Explain Li parameter set and how readout rate is changed (how Lsrc is not set)? Explain the effect of readout rate on bandwidth somewhere? Is there a way to compress these plots or is it necessary to show the response to each loss? Detection loss is high here, use the realistic 0.1 instead. Why does squeezer-off RP worsen with readout rate, is it because of more main vacuum?)} Nondegenerate internal squeezing tolerance to loss (1/4): detection loss. Squeezer parameter is normalised for each curve to the singularity threshold, henceforth. The squeezed system appears as resilient as the non-squeezed system and more resilient around the peak, which is due to the use of anti-squeezing instead of squeezing and is an advantage over degenerate internal squeezing, see Section~\ref{sec:dIS_optical_loss}. The tolerance is independent of the readout rate.}
+    \label{fig:nIS_sigRO_tolerance_Rpd}
 \end{figure}
 \begin{figure}
-	\centering
-	\includegraphics[width=\textwidth]{nIS_sigRO_tolerance_Tlb.pdf}
-	\caption{\jam{(Purpose: show the different tolerance to different losses 2/4)} \jam{(Show effect of loss on squeezer-off system, likewise for following plots.)} Nondegenerate internal squeezing tolerance to loss (2/4): signal mode, intra-cavity signal-recycling cavity loss. The system appears highly resilient to signal intra-cavity loss, with $10\%$ loss only causing a factor of two degradation in the peak sensitivity at low readout rate/short bandwidth. At increased readout rate/bandwidth, the resilience worsens but remains high compared to other losses \jam{(quantify this)}.}
-	\label{fig:nIS_sigRO_tolerance_Tlb}
+    \centering
+    \includegraphics[width=\textwidth]{nIS_sigRO_tolerance_Tlb.pdf}
+    \caption{\jam{(Purpose: show the different tolerance to different losses 2/4)} \jam{(Show effect of loss on squeezer-off system, likewise for following plots. Show idler readout rate. Check how I am changing the readout rate, is Lsrc changing or Tsrm, because only one affects the intra-cavity loss. )} Nondegenerate internal squeezing tolerance to loss (2/4): signal mode, intra-cavity signal-recycling cavity loss. The system appears highly resilient to signal intra-cavity loss, with $10\%$ loss only causing a factor of two degradation in the peak sensitivity at low readout rate/short bandwidth. At increased readout rate/bandwidth, the resilience worsens but remains high compared to other losses \jam{(quantify this)}.}
+    \label{fig:nIS_sigRO_tolerance_Tlb}
 \end{figure}
 \begin{figure}
-	\centering
-	\includegraphics[width=\textwidth]{nIS_signalRO_tolerance_Tlc.pdf}
-	\caption{\jam{(Purpose: show the different tolerance to different losses 3/4)} Nondegenerate internal squeezing tolerance to loss (3/4): idler mode, intra-cavity signal-recycling cavity loss. The system appears more vulnerable to idler loss than the other losses, when the readout port is closed to the idler. At increased signal readout rate, the resilience worsens \jam{(quantify this)}. The peak frequency of the shot noise and signal changes because the threshold frequency changes.}
-	\label{fig:nIS_sigRO_tolerance_Tlc}
+    \centering
+    \includegraphics[width=\textwidth]{nIS_signalRO_tolerance_Tlc.pdf}
+    \caption{\jam{(Purpose: show the different tolerance to different losses 3/4)} Nondegenerate internal squeezing tolerance to loss (3/4): idler mode, intra-cavity signal-recycling cavity loss. The system appears more vulnerable to idler loss than the other losses, when the readout port is closed to the idler. At increased signal readout rate, the resilience worsens \jam{(quantify this)}. The peak frequency of the shot noise and signal changes because the threshold frequency changes.}
+    \label{fig:nIS_sigRO_tolerance_Tlc}
 \end{figure}
 \begin{figure}
-	\centering
-	\includegraphics[width=\textwidth]{nIS_sigRO_tolerance_Tla.pdf}
-	\caption{\jam{(Purpose: show the different tolerance to different losses 4/4)} Nondegenerate internal squeezing tolerance to loss (4/4): intra-cavity arm cavity loss. At large signal readout rates, the arm intra-cavity loss appears to have little effect on the signal or noise \jam{(quantify this)}, while at $\gamma^b_R=2\pi 500$~Hz there is a sharp change in behaviour when $T_{l,a}>T_{l,c}$ \jam{(check this)}. This is because the singularities of the transfer functions have merged and the configuration is closer to the OPO limit than to the lossless PT-symmetric analogue, but in regular operation, such as in a gravitational-wave interferometer, $T_{l,a}<T_{l,c}$ is expected \jam{(justify this)}.}
-	\label{fig:nIS_sigRO_tolerance_Tla}
+    \centering
+    \includegraphics[width=\textwidth]{nIS_sigRO_tolerance_Tla.pdf}
+    \caption{\jam{(Purpose: show the different tolerance to different losses 4/4)} Nondegenerate internal squeezing tolerance to loss (4/4): intra-cavity arm cavity loss. At large signal readout rates, the arm intra-cavity loss appears to have little effect on the signal or noise \jam{(quantify this)}, while at $\gamma^b_R=2\pi 500$~Hz there is a sharp change in behaviour when $T_{l,a}>T_{l,c}$ \jam{(check this)}. This is because the singularities of the transfer functions have merged and the configuration is closer to the OPO limit than to the lossless PT-symmetric analogue, but in regular operation, such as in a gravitational-wave interferometer, $T_{l,a}<T_{l,c}$ is expected \jam{(justify this)}.}
+    \label{fig:nIS_sigRO_tolerance_Tla}
 \end{figure}
+
+\jam{(update figure captions)}
+
+% summarise the constraints from Chapter 3, give the table of parameters
+I will compare how the sensitivity of nondegenerate internal squeezing degrades in response to each of the optical losses in the model. I will use the parameter set in Section~\ref{sec:literature_review}, which is from Ref.~\cite{Li2020} and based on LIGO~Voyager, and the realistic losses from Section~\ref{sec:dIS_optical_loss}. I will vary the signal readout rate of the detector, i.e.\ the signal-recycling mirror transmissivity and the length of the signal-recycling cavity~\footnote{Since I fix the sloshing frequency $\omega_s$ and change the signal readout rate $\gamma^b_\text{tot}$, if the signal-recycling cavity length changes then so must the input test mass transmissivity.}, as this changes the tolerance to the different losses and represents the range of future detectors considered in the literature. As shown in Table~\ref{tab:parameter_sets} \jam{(is the table necessary?)}, the sloshing frequencies of the references that I base my work on lie within 2--6~kHz but the signal readout rates vary much more, from 0.5--90~kHz. As discussed in Section~\ref{sec:literature_review}, I have to make compromises as to which parameters are fixed (e.g.\ circulating power, sloshing frequency) and which can change when studying this configuration because I cannot examine the entire parameter space, which is why I do not claim that these parameters are optimal. For this parameter set, I consider the tolerance to the four losses, detection, signal, idler, and arm, in turn. \jam{(is there a better order to list these?)}
 
 % resistant to detection losses, which is a big deal, although Caves's amplifier could alleviate this more generally
+Firstly, detection loss, shown in Fig.~\ref{fig:nIS_sigRO_tolerance_Rpd}, affects nondegenerate internal squeezing similarly to when the squeezer is off except around the anti-squeezed peak, and the tolerance does not depend on the readout rate. Detection loss uniformly scales down the signal response and pulls the noise response towards the vacuum value. At the peak and when radiation pressure noise dominates, the quantum noise is far enough above the vacuum level that the reduction in noise and signal are roughly the same and the sensitivity does not worsen. This is the same principle as the Caves's amplifier in Section~\ref{sec:cavess_amp}. Away from the peak, the improved tolerance diminishes as the anti-squeezing decreases but is never worse than when the squeezer is off~\footnote{Where I am comparing the change in sensitivity due to detection loss when the squeezer is on and off, and am not comparing the sensitivity directly since this was already done in Section~\ref{sec:nIS_general_behaviour}.}. This is unlike degenerate internal squeezing for the same losses in Section~\ref{sec:dIS_optical_loss} where the reliance on squeezing instead of anti-squeezing makes that system more vulnerable to detection loss.
+
 % resistant to signal loss, sensitive to arm loss, very sensitive to idler loss (SRM must be closed to idler through e.g. dichroic)
+Secondly, signal mode intra-cavity loss, shown in Fig.~\ref{fig:nIS_sigRO_tolerance_Tlb}, at the realistic level has a negligible \jam{(quantify)} effect on nondegenerate internal squeezing. This is because the signal mode is dominated by loss through the readout port at $T_\text{SRM}=0.046=46000$ \jam{(check this)} compared to $T_{l,b}=1000~\text{ppm}$, where to change the readout rate I fix the transmissivity of the signal-recycling mirror and change the cavity length. \jam{(check this, update opening paragraph)} However, in the high signal mode loss limit, e.g.\ $T_{l,b}=0.1$, the peak frequency changes because the singularity threshold frequency is affected and the tolerance worsens with readout rate. \jam{(why? because the bandwidth of the peak increases or the shorter cavity length at high readout rates also increases the intra-cavity loss rate?)} \jam{(criticise approach: why don't I just change Tsrm to separate these effects? do this to compare. this might be an issue with the idler readout plots as well)} But this is not of concern to future detectors which are in the low signal loss regime.
 
+% changing the readout rate changes the cavity length and therefore increases the idler loss
+Thirdly, idler intra-cavity loss, shown in Fig.~\ref{fig:nIS_sigRO_tolerance_Tlc} with zero idler readout rate, at the realistic level degrades the sensitivity and opening the idler readout port significantly degrades \jam{(quantify)} the sensitivity because it is equivalent to the idler intra-cavity loss port for signal readout~\footnote{A readout port symmetric between signal and idler has equivalent idler intra-cavity loss on the order of $0.01$ in Fig.~\ref{fig:nIS_sigRO_tolerance_Tlc}.}. Therefore, the idler readout port should be closed for signal readout. Increasing the idler loss changes the peak frequency because of the singularity threshold frequency, like signal loss, but unlike signal loss it also decreases the radiation-pressure noise \jam{(why?)}. With zero idler readout rate, the decrease in sensitivity from 100-1000~Hz by increasing $T_{l,c}$ from 100 to 1000~ppm is similar to a detection loss of 0.5 \jam{(check this, does this idler loss dominate 0.1 detection loss?)}, where the idler loss is not compared to its value at zero to avoid needing to take a formal limit for the singularity threshold. This effect is increased at higher signal readout rates because as the length of the cavity shortens all of the intra-cavity (round-trip) loss rates increase \jam{(fix this? just change Tsrm for signal and leave Lsrc alone?)}. 
+% idler loss modal equivalence to mechanical loss dominating sWLC?
+That idler loss is the dominant optical loss with these realistic losses \jam{(check this)}~\footnote{Meaning dominant when measured in sensitivity change due to loss, not transmissivity. The vacuum from the signal readout port is still the main vacuum source.} agrees with the optomechanical analogue being dominated by mechanical loss in the mechanical idler mode in Section~\ref{sec:sWLC_loss}.
 
-% modal equivalence to mechanical loss dominating sWLC?
+Finally, arm intra-cavity loss, shown in Fig.~\ref{fig:nIS_sigRO_tolerance_Tla}, at the realistic level below 100~ppm has a negligible \jam{(quantify)} effect on the sensitivity. Although in the high arm loss limit in Section~\ref{sec:nOPO_reduction}, the system becomes closer to a nondegenerate OPO than the lossless system, this regime is not realistic for future detectors where the arm loss is small. Namely, future detectors lie in the regime explained in Section~\ref{sec:singularity_threshold} where the singularities have not merged, given by $$\gamma^c_\text{tot}\omega_s^2\geq\gamma_a\left(\omega_s^2+\gamma_a(\gamma^b_\mathrm{tot}+\gamma^c_\text{tot})\right).$$ This also explains the change in behaviour for $T_{l,a}=0.01$ in Fig.~\ref{fig:nIS_sigRO_tolerance_Tla} when the signal readout rate is large \jam{(elaborate and check this)}.
 
+% summarise tolerances, noise budget in Fig.~\ref{fig:nIS_sigRO_noise_budget}
+Therefore, for realistic losses, nondegenerate internal squeezing is dominated by idler loss, with and without the idler readout port open, the detection loss has a smaller effect \jam{(quantify)}, and signal and arm intra-cavity losses have negligible effects. This result agrees with the cursory analysis of Fig.~\ref{fig:nIS_sigRO_noise_budget} from Section~\ref{sec:nIS_general_behaviour} \jam{(therefore can this section be shortened?)} and the optomechanical analogue in Section~\ref{sec:sWLC_loss}.
 
 
 \subsection{Optimal squeezing}
 \label{sec:nIS_optimal_squeezing}
 
+% plot optimal squeezing curve (blue-green swoosh)
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{nIS_optimum_squeezing.pdf}
-	\caption{\jam{(Purpose: show that optimising depends on your goal, foreshadow kilohertz vs broadband)} \jam{(Normalise squeezer parameter to threshold instead of sloshing frequency, flip x-axis since -ve sign is confusing.)} Nondegenerate internal squeezing optimal squeezing curve for sensitivity at probe frequency, i.e.\ plotting sensitivity, signal, and noise measured at a particular probe frequency $2.5$~kHz for varying squeezing parameters and different detection losses. Without detection loss, the optimal squeezing parameter for sensitivity is below threshold because the probe frequency is higher than the on-threshold peak frequency and with increased squeezer parameter the peak moves to lower frequencies. After the peak passes the probe frequency \jam{(show this?)} the signal and the noise start decreasing \jam{(check this)}. Increasing detection loss $R_\text{PD}$ decreases the signal $\mathcal{T}$ as $\sqrt{1-R_\text{PD}}\mathcal{T}$.}
-	\label{fig:}
+	\caption{\jam{(Purpose: show that optimising depends on your goal, foreshadow kilohertz vs broadband)} \jam{(Normalise squeezer parameter to threshold instead of sloshing frequency, flip x-axis since -ve sign is confusing, label optimum value on both plots)} Nondegenerate internal squeezing optimal squeezing curve for sensitivity at probe frequency, i.e.\ plotting sensitivity, signal, and noise measured at a particular probe frequency $2.5$~kHz for varying squeezing parameters and different detection losses. The idler loss is non-zero and fixed at $T_{l,c}=0.1$ \jam{(which is too high, fix this!)}.}
+	\label{fig:nIS_optimum_squeezing}
 \end{figure}
 
-% plot optimal squeezing curve (blue-green swoosh)
-% mention that this can be done for probe frequency, peak frequency, integral etc.
+\jam{(is this subsection necessary?)}
 
 % emphasise that threshold is not optimal squeezing for sensitivity
+% Without detection loss, the optimal squeezing parameter for sensitivity is below threshold because the probe frequency is higher than the on-threshold peak frequency and with increased squeezer parameter the peak moves to lower frequencies. After the peak passes the probe frequency \jam{(show this?)} the signal and the noise start decreasing \jam{(check this)}. Increasing detection loss $R_\text{PD}$ decreases the signal $T$ as $\sqrt{1-R_\text{PD}}T$.
+The optimal amount of squeezing for the maximum sensitivity is not necessarily on threshold. As shown in Fig.~\ref{fig:nIS_optimum_squeezing}, the sensitivity at a probe frequency, here 2.5~kHz, peaks at a point before threshold beyond which the amount that the signal is amplified more than the noise decreases. Unlike degenerate internal squeezing in Fig.~\ref{fig:dIS_optimal_squeezing}, this is true when there is no detection loss because there is idler loss \jam{(check this plot for the lossless case)}. This is because the peak frequency of the nondegenerate case changes with the squeezer parameter but in the degenerate case it remains at the sloshing frequency for low arm loss \jam{(check this}). In particular, the nondegenerate threshold peak frequency is lower than the probe frequency and increasing the squeezer parameter moves the peak off the probe frequency such that the optimal squeezing is below threshold to align the peak and the probe frequencies \jam{(wordiness)}. 
+% mention that this can be done for probe frequency, peak frequency, integral etc.
+Conversely, this demonstrates that using the sensitivity at a particular probe frequency cannot reliably find threshold and instead some other metric, e.g.\ the peak or integrated sensitivity, should be used. Choosing the metric to judge a configuration by is a difficult task because of the innate trade-off of peak sensitivity and bandwidth. I will return to this problem later when I compare the kilohertz and broadband performances of nondegenerate internal squeezing.
+
+
+\section{Comparison to existing proposals}
+
+% The problem with making a judgement, emphasise that this result is not a clean decision, the best I can say is that they are comparable, nIS is feasible as an alternative to sWLC 
+I will now compare the sensitivity of nondegenerate internal squeezing to the two existing proposals in the previous chapter to answer whether it is a viable, all-optical alternative to the optomechanical analogue and whether it is more resistant to optical loss than degenerate internal squeezing. Neither of these comparisons will provide a definitive judgement on the best configuration for future detectors, but I will demonstrate that, at the very least, nondegenerate internal squeezing warrants equal consideration.
+
+\subsection{All-optical versus optomechanical analogue}
+% ultimately: is the all-optical approach a viable alternative? yes! but sWLC is not ruled out
+
+% plot: with data from Fig. 5 in Li --> extract the plot and don't mess with the .nb further!
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{nIS_compared_to_singleCav.pdf}
+	\caption{\jam{(Purpose: show that it is comparable to optomechanical configuration)} \jam{(Add in curves from Li et al, 2020 Fig.~5 notebook)} Nondegenerate internal squeezing compared to stable optomechanical filtering. The all-optical analogue is a feasible alternative to the optomechanical system \jam{(justify this, is it true just in the ideal condition shown or also otherwise?)}. Errant \jam{(word choice)} factors of two in the sensitivity (perhaps from the scalar versus vector convention of the signal transfer function) and in the test mass mass (perhaps from different conventions of the reduced mass) are required to match the conventional detector models but this does not affect the result or the conclusions \jam{(why? and why are there mistakes?)}. Uses data from Ref.~\cite{} with direct permission from the authors.}
+	\label{fig:nIS_vs_sWLC}
+\end{figure}
+
+As discussed in Section~\ref{sec:modal_equivalence}, the only difference in the models of nondegenerate internal squeezing and stable optomechanical filtering is that the idler mode is optical and mechanical, respectively. This means that the idler loss is modelled by the same Langevin terms in the Hamiltonian but with different realistic loss rates because of different technological progress between optical and mechanical loss. Therefore, to determine whether nondegenerate internal squeezing is a viable, all-optical alternative to the optomechanical system, I find the optical loss required to achieve the same sensitivity as the stringent mechanical loss in Fig.~\ref{fig:sWLC_sensitivity} and determine whether this optical loss is realistic. 
+% The key result is that I've found losses for nIS that replicate the results for sWLC: arm loss 75 ppm, idler loss 100 ppm. 
+    %  Are these loss values more realistic than the thermal and mechanical constraints of sWLC? I think so, but I need back-up on this, forecasting future technological progress is hard to do rigourously or scientifically.
+This is shown in Fig.~\ref{fig:nIS_vs_sWLC} where I compare the sensitivity to Fig.~5 of Ref.~\cite{Li2020}. To validate the comparison of the lossy configurations, I check that the single-cavity and lossless, as in Section~\ref{sec:nIS_lossless_limit}, results agree with that reference \jam{(currently this requires two factors of two explained in, fix this.)}. I use the same ratio to singularity threshold as the lossless case and show that reducing it by $3\%$ decreases the peak but increases the bandwidth. In Fig.~\ref{fig:nIS_vs_sWLC}, I show the sensitivity for the realistic losses from Section~\ref{sec:dIS_optical_loss} and for the lower losses of 75~ppm arm loss and 100~ppm idler loss (with no idler readout rate). For these ``ideal'' losses, the peak sensitivity and bandwidth are better than the optomechanical configuration with low mechanical loss determined by $T_\text{env}=4$~K and $Q_m=8\times10^9$, but for the ``realistic'' losses they are worse \jam{(check this)}. Although predicting future technological progress is not rigorous, these ideal losses might be technologically possible~\cite{Zhang2020,,} and are at least as realistic \jam{(who's to say?)} as the mechanical loss required for the optomechanical analogue~\cite{,}. And because of the equivalence in Section~\ref{sec:modal_equivalence}, I predict that the tolerance to other factors, e.g.\ pump power, would be the same between the two configurations for equivalent losses. Therefore, nondegenerate internal squeezing is a viable, all-optical alternative to stable optomechanical filtering.
+
+
+\subsection{Degenerate versus nondegenerate internal squeezing}
+% do I need to include this? it would be nice --> above comparison is the focus though,  keep this brief, might not be a subsection worth to say
+% how to quantify difference in tolerance? is nIS more resistant than dIS?
+
+As discussed in Section~\ref{sec:nIS_tolerance_to_losses}, the tolerance to optical loss is different between nondegenerate and degenerate internal squeezing. Comparing the two configurations for the same interferometer parameters and realistic losses shown in Figs.~\ref{fig:dIS_realistic_loss}~\ref{fig:nIS_general_sens} \jam{(check that these figs compare, maybe use a different fig for nIS, and show lossless case in each)} shows that the nondegenerate case is more resilient to loss \jam{(quantify this, give total change in integrated sensitivity?)}. 
+This is because of the difference between squeezing and anti-squeezing the signal and noise, discussed for detection loss in Section~\ref{sec:cavess_amp}, where loss always reduces the signal but can increase or decrease the noise depending on whether it is below or above the vacuum value, respectively. And although degenerate internal squeezing can also perform internal anti-squeezing, it is only optimal to do so when the losses are beyond the regime of future detectors, as discussed in Section~\ref{sec:dIS_results}. 
+Therefore, as predicted in Section~\ref{sec:dIS_optical_loss}, nondegenerate internal squeezing is more resilient to optical loss than degenerate internal squeezing. However, the sensitivity curves are not directly comparable and therefore for different parameter sets and metrics the degenerate case might be better \jam{(show for Korobko2019 parameters?)}. %And Other considerations, such as the different tolerances to pump power, are necessary to decide between the two. 
+
+
+Compared to the two configurations from the previous chapter, nondegenerate internal squeezing is neither definitively better or worse, meaning that it warrants equal consideration as them \jam{(is this a cop-out? what else can I say?)}, particularly when the optical loss is high but the mechanical loss higher.
+
 
 \section{Feasibility for gravitational-wave detection}
 
+% Until now, I have only compared the sensitivity of nondegenerate internal squeezing to other configurations, but 
+I now return to the motivating problem of improving kilohertz gravitational-wave detection to progress the understanding of a variety of astrophysical sources. I will explore the feasibility of nondegenerate internal squeezing for both kilohertz (e.g. 1--4~kHz) and broadband (e.g. 100--1000~Hz) detection. From comparing it to the existing proposals, I already know that nondegenerate internal squeezing warrants further investigation which I will re-enforce by showing that its sensitivity is promising even without external squeezing or increased circulating power.
+% But since my model is limited, I will only determine whether it 
+
+\jam{(continue from here...)}
+
+
 % stress that the goal of this thesis is not to provide a recommendation to the designers of future gravitational wave detectors of what parameters to use, that task is much harder and would require the modelling of many other effects. This section (and thesis) is only exploratory in nature, and my conclusion is that nIS warrants more study because it appears to be able to get close enough to the targets (without increasing power) and is comparable to optomechanical alternative, and more resistant to detection losses than degenerate internal squeezing (operated in the squeezing not anti-squeezing pump phase).
+
+% without increasing circulating power and without external squeezing
 
 % miao et al, 2018 astro target and mutrics
 
@@ -531,23 +606,22 @@ The results presented in this chapter apply generally to cavity-based metrology 
 % cover two detector designs
 
     % Sensitivity target of 5e-25 from 1--4 kHz.
-    % 	With high squeezer ratio, i.e. 95\%, and ideal losses, then target can be hit for less than 1kHz of the band. With even higher squeezer ratio, i.e 99\%, and increased omegaS to move the peak into kHz (and corresponding increased gammaR), then the target can be hit for 1--3kHz.
-    % 		Bottom line: nIS can achieve the sensitivity target partially across the band, with more and more ideal conditions/optimisation of omegaS and gammaR necessary to widen the range that it achieves it at.
-    % 		Recommending a detector design isn't the goal of my project, but I do want to say something re: the sensitivity target. Right now, it sounds like nIS can achieve it at some peak frequency (under ideal conditions) but not from 1--4kHz for a Voyager-like detector.
+    %   With high squeezer ratio, i.e. 95\%, and ideal losses, then target can be hit for less than 1kHz of the band. With even higher squeezer ratio, i.e 99\%, and increased omegaS to move the peak into kHz (and corresponding increased gammaR), then the target can be hit for 1--3kHz.
+    %       Bottom line: nIS can achieve the sensitivity target partially across the band, with more and more ideal conditions/optimisation of omegaS and gammaR necessary to widen the range that it achieves it at.
+    %       Recommending a detector design isn't the goal of my project, but I do want to say something re: the sensitivity target. Right now, it sounds like nIS can achieve it at some peak frequency (under ideal conditions) but not from 1--4kHz for a Voyager-like detector.
 
 
 \subsection{Application to kilohertz detection}
 
+% plot: curve optimised for kilohertz
 \begin{figure}
-	\centering
-	\includegraphics[width=\textwidth]{nIS_ideal_losses.pdf}
-	\caption{\jam{(Purpose: talk about the sensitivity target and GW-detection feasibility)} \jam{(Add in curve with more realistic losses. Remove sensitivity target from all other plots that are not relevant.)} Nondegenerate internal squeezing sensitivity under ideal conditions (high squeezer parameter at $95\%$ threshold, low losses with arm and idler losses at or below 100~ppm, readout rate at or below 5~kHz) and more realistic conditions \jam{(justify that are realistic)}. The sensitivity target of $5\times10^{-25}\text{Hz}^{-1/2}$~\cite{Miao2018} can be achieved under ideal conditions for some but not all of the 1--4~kHz band. And that the integrated sensitivity from 100--4000~kHz improves as well if not more (such as at 5~kHz readout rate) \jam{(want to motivate investigation of a broadband detector)}. Among the readout rate, losses, and squeezer parameter, the changes in readout rate appear to have the greatest effect \jam{(but these changes are much large on orders etc.)}. Squeezer parameter appears to impact the low readout rate cases more. These results have not been optimised, e.g.\ the sloshing frequency has not been changed. These results are for 3~MW circulating power in the arm cavity and without external squeezing (injected or Caves's amplification).}
-	\label{fig:nIS_sens_target}
+    \centering
+    \includegraphics[width=\textwidth]{nIS_ideal_losses.pdf}
+    \caption{\jam{(Purpose: talk about the sensitivity target and GW-detection feasibility)} \jam{(Add in curve with more realistic losses. Remove sensitivity target from all other plots that are not relevant.)} Nondegenerate internal squeezing sensitivity under ideal conditions (high squeezer parameter at $95\%$ threshold, low losses with arm and idler losses at or below 100~ppm, readout rate at or below 5~kHz) and more realistic conditions \jam{(justify that are realistic)}. The sensitivity target of $5\times10^{-25}\text{Hz}^{-1/2}$~\cite{Miao2018} can be achieved under ideal conditions for some but not all of the 1--4~kHz band. And that the integrated sensitivity from 100--4000~kHz improves as well if not more (such as at 5~kHz readout rate) \jam{(want to motivate investigation of a broadband detector)}. Among the readout rate, losses, and squeezer parameter, the changes in readout rate appear to have the greatest effect \jam{(but these changes are much large on orders etc.)}. Squeezer parameter appears to impact the low readout rate cases more. These results have not been optimised, e.g.\ the sloshing frequency has not been changed. These results are for 3~MW circulating power in the arm cavity and without external squeezing (injected or Caves's amplification).}
+    \label{fig:nIS_sens_target}
 \end{figure}
 
-% plot: curve optimised for kilohertz
-
-% need to show curve
+% Section~\ref{sec:GW_kilohertz_target}
 
 % achieving target across the band looks very unlikely, but target might be achievable at a particular kilohertz frequency
 % note the limitations with the target (conditions on a particular EoS of the neutron star etc.)
@@ -563,10 +637,10 @@ The results presented in this chapter apply generally to cavity-based metrology 
 
 % plot: curve optimised for broadband --> not necessary? just point to Fig.~\ref{fig:nIS_sens_target} and mention optimisation as future work (and that preliminary results show ..., if that)
 % \begin{figure}
-% 	\centering
-% 	% \includegraphics[width=\textwidth]{}
-% 	\caption{Nondegenerate internal squeezing sensitivity optimised for broadband detection (i.e.\ with integrated sensitivity from 0 to $\infty$ optimised).}
-% 	\label{fig:}
+%   \centering
+%   % \includegraphics[width=\textwidth]{}
+%   \caption{Nondegenerate internal squeezing sensitivity optimised for broadband detection (i.e.\ with integrated sensitivity from 0 to $\infty$ optimised).}
+%   \label{fig:}
 % \end{figure}
 
 % kilohertz detection was the aim of the thesis but it looks like nIS might be more useful for a different purpose, set up idler readout chapter
@@ -578,35 +652,6 @@ The results presented in this chapter apply generally to cavity-based metrology 
 
 
 
-\section{Comparison to existing proposals}
-
-\subsection{All-optical versus optomechanical configuration}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=\textwidth]{nIS_compared_to_singleCav.pdf}
-	\caption{\jam{(Purpose: show that it is comparable to optomechanical configuration)} \jam{(Add in curves from Li et al, 2020 Fig.~5 notebook)} Nondegenerate internal squeezing compared to stable optomechanical filtering. The all-optical analogue is a feasible alternative to the optomechanical system \jam{(justify this, is it true just in the ideal condition shown or also otherwise?)}. Errant \jam{(word choice)} factors of two in the sensitivity (perhaps from the scalar versus vector convention of the signal transfer function) and in the test mass mass (perhaps from different conventions of the reduced mass) are required to match the conventional detector models but this does not affect the result or the conclusions \jam{(explain why and why mistakes)}. Uses data from Ref.~\cite{} with direct permission from the authors.}
-	\label{fig:}
-\end{figure}
-
-% don't overlay Fig. 5 from Li et al, 2020
-% plot: with data from Fig. 5 in Li --> extract the plot and don't mess with the .nb further!
-    % The key result is that I've found losses for nIS that replicate the results for sWLC: arm loss 75 ppm, idler loss 100 ppm. For these ideal losses, the peak sensitivity and bandwidth are better than sWLC.
-	   %  Are these loss values more realistic than the thermal and mechanical constraints of sWLC? I think so, but I need back-up on this.
-% all-optical approach is at least comparable to optomechanical approach
-
-% \subsubsection{}
-% The problem with making a judgement
-% emphasise that this result is not a clean decision, the best I can say is that they are comparable
-% forcasting future technological progress is hard to do rigourously or scientifically
-
-% ultimately: is the all-optical approach viable? yes!
-
-
-% do I need to include this? it would be nice --> above comparison is the focus though
-\subsection{Degenerate versus nondegenerate internal squeezing}
-% degenerate internal squeezing can be run in amplification regime if losses are high
-% nondegenerate is less sensitive to losses and could potentially use idler/combined readout to get ahead --> next chapter
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
