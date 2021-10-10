@@ -1,4 +1,52 @@
-\section{Appendix A: Nondegenerate internal squeezing, 2x2 matrix model}
+% appendices are not necessary and should aid understanding, not reproduce results from elsewhere
+
+\section{Appendix A.1: Singularity threshold for degenerate internal squeezing}
+% \addcontentsline{toc}{section}{Appendix A.1: Singularity threshold for degenerate internal squeezing} 
+\label{app:dIS_singularity_thr}
+\jam{(Fix title)} %\appendix?
+
+\renewcommand{\thefigure}{A\arabic{figure}}
+\setcounter{figure}{0}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{dIS_threshold.pdf}
+    \caption{\jam{(Purpose: show a complication with singularity threshold. Quantify what arm loss is required for a significant difference between singularity and extremum. Fix figure numbering)} \jam{(Simplify and annotate like nIS plot. Explain the number of extrema. Fix caption.)} Degenerate internal squeezing trajectory of singularities of the anti-squeezed quadrature of the noise, as well as of the extrema of the squeezed quadrature, in $(\Omega, \chi)$ space as the arm loss is changed and the signal loss is zero. I assume that the extrema are minima because of the shape of the squeezed curves in Figs.~\ref{fig:dOPO_variances}~\ref{fig:dIS_noise_budget}. \jam{(could just check this, future work?)} The singularities and extrema both achieve the same limits but diverge at high arm losses \jam{(looks like they diverge immediately, explain that effect is small on the logarithmic frequency scale, maybe plot it?)}. \jam{(rest of explanation moved into text, does it still make sense?)}}
+    \label{fig:dIS_threshold_traj} % frequency scale is not logarithmic
+\end{figure}
+
+The singularity threshold, see Section~\ref{sec:singularity_threshold}, for degenerate internal squeezing shows that maximising the anti-squeezed quadrature is not the same as minimising the squeezed quadrature.
+For degenerate internal squeezing, shown in Fig.~\ref{fig:dIS_threshold_traj}, in the lossless case, the singularities $(\Omega,\chi)$ are at $(0,\infty)$ and $(\omega_s,\gamma^b_\text{tot})$ which recovers $(\Omega_\text{thr},\chi_\text{thr})\xrightarrow[\gamma_a\rightarrow0]{}(\omega_s,\gamma^b_\mathrm{tot})$ from Section~\ref{sec:dIS_results}. As the arm loss $\gamma_a$ is increased from zero, the singularities move and merge at the $\Omega=0$ axis when $\gamma_a=\omega_s$, and then the remaining singularity converges to the degenerate OPO threshold $(\Omega_\text{thr},\chi_\text{thr})\xrightarrow[\gamma_a\rightarrow\infty]{}(0,\gamma^b_\mathrm{tot})$ in the high arm loss limit as expected.
+% \subsubsection{Disagreement between squeezed and anti-squeezed quadratures}
+% Degenerate internal squeezing - different notions of threshold
+%shouldn't this be in the dIS sub-chapter? no.
+% make clear that knowing threshold just gives the physical bounds of the parameter space, it doesn't correspond to the optimal squeezing (see results section) for sensitivity improvement -- just as minimising N does not necessarily maximise SNR if signal is not considered. 
+% \jam{(One explanation for the difference between position of the singularity of the anti-squeezed quadrature and the minimum of the squeezed quadrature is that the expression for the sloshing frequency in Korobko et al, 2019 is not valid at large arm losses. If this is so, then what does this fixed--sloshing frequency Hamiltonian correspond to? And for that system, why does the supposedly Gaussian squeezing not maximise antisqz at the frequency that it minimises squeezing? --> Look at pump phase and/or covariance matrix)}
+% plot: both quadratures comparison (black-green plot -- what is this?)
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=\textwidth]{dIS_threshold_quadratures.pdf}
+%   \caption{\jam{(Purpose: show problem with singularity threshold. Check if this section is staying in before fixing plot. Cut this plot even if moving to an appendix since the trajectories show this already.)} \jam{(Normalise legend to threshold)} Degenerate internal squeeing noise quadratures (anti-squeezed in the top panel and squeezed in the bottom panel) and the difference between singularity threshold (that maximises the anti-squeezing peak) and the squeezing parameter that minimises the squeezing peak. This difference is only significant in the high arm loss regime that is unlike \jam{(word choice?)} future detectors. \jam{(Answer why squeezing is so small -- see Bram's question (it is just down to the parameters chosen, sloshing frequency and bandwidth, being poorly suited to dIS))}}
+%   \label{fig:dIS_on_threshold}
+% \end{figure}
+However, these values of $(\Omega_\text{thr},\chi_\text{thr})$, which are where the anti-squeezed quadrature is divergent, do not necessarily correspond to where the squeezed quadrature has the minimum value, i.e.\ where the peak is the most squeezed towards zero. This is unlike the degenerate OPO for which a simple calculation shows that the squeezed quadrature is minimised on threshold \jam{(show proof?)}.
+If the minima~\footnote{Since the zeros of the squeezed quadrature are not robust to losses, as shown for the OPO in Fig.~\ref{fig:dOPO_variances}, I consider the minima instead.} of the squeezed quadrature were used to define threshold, then their trajectories in (real) $(\Omega,\chi)$ space would be as shown in Fig.~\ref{fig:dIS_threshold_traj}. Although they achieve the same limits, these trajectories are not the same as the singularity trajectories, e.g.\ they merge at a different $\chi$ value.
+This does not violate the Heisenberg Uncertainty Principle because the losses increase the uncertainty product~\cite{}, i.e.\ the anti-squeezed variance is increased more than the squeezed variance is decreased. %~\footnote{The squeezing remains Gaussian~\cite{}, i.e.\ the squeezed noise ellipse's area is increased but remains an ellipse with semi-axes that represent the standard deviations of the Gaussian noise in each quadrature. \jam{(check this)}}.  
+Moreover, the difference between the minima and singularities is only significant \jam{(quantify)} with high arm losses that are far above the realistic loss $100~\text{ppm}$ expected for future gravitational-wave detectors \jam{(quantify)}.
+% e.g.\ \jam{in Fig.~\ref{fig:dIS_on_threshold} (quantify without plot)} uses $T_{l,a}=800000~\text{ppm}$ compared to $100~\text{ppm}$ predicted for future gravitational-wave detectors.
+Therefore, this difference is not of concern for future work involving singularity threshold.
+% because of this and that I am studying nondegenerate squeezing, this problem is not of concern for using singularity threshold in nondegenerate internal squeezing \jam{(what about combined readout?)}.
+Although I do not understand why this difference occurs \jam{(check this)}, two possible explanations are that it comes from the different DC behaviour of the different quadratures of the limiting lossy degenerate OPO in Fig.~\ref{fig:dOPO_variances} or that the approximation to the sloshing frequency in Section~\ref{sec:dIS_model} breaks down in the high arm loss limit~\footnote{In which case, this model would not represent the physical system in that limit.}~\cite{}. This might be understood better once singularity threshold is verified against a pump-depletion model in future work.
+
+% This is shown \jam{in Fig.~\ref{fig:dIS_on_threshold} (explain without plot)} where the minimum squeezing occurs at $76\%$ \jam{(check this)} singularity threshold and the relative difference is only large (above a percent threshold) in the high arm loss limit \jam{(quantify this)}.
+% The extrema, of which there are a maximum of two at any point, start at the same points, but have different trajectories, e.g.\ the first point moving initially into the $\Omega>\omega_s$ region instead, and merge at the different point on the y-axis, but converge to the same OPO limit (although the numerical sampling does not show it here). This difference does not violate the Heisenberg Uncertainty Principle \jam{(but why does it occur?)}.
+% Singularity threshold uses singularities of the anti-squeezed quadrature rather than zeroes of the squeezed quadrature because the former are robust to losses, as shown for the OPO in Fig.~\ref{fig:dOPO_variances}. 
+% Since this problem \jam{(is it even a problem?)} is not relevant to nondegenerate internal squeezing, ...
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Appendix: Nondegenerate internal squeezing, 2x2 matrix model}
 
 \jam{(For reference only, delete this from the thesis after checking that all information is in the nIS model given)}
 
@@ -171,174 +219,5 @@ Where $\vec{\hat{X}}_{B_\mathrm{in}}(\Omega)$ is the quadrature vector of the va
 I define the sensitivity of the detector to be the noise-to-signal ratio, i.e. the ratio of the noise and signal transfer functions (or, the signal-normalised noise).
 Assuming that we measure the second quadrature, e.g. via balanced homodyne readout \jam{(address optimisation of quadrature angle, might not be 2 just because signal is only there. Also, need to describe homodyne readout somewhere)}, this gives:
 $$S_h(\Omega)=\frac{(\mathrm{S}_X(\Omega))_{2,2}}{\abs{\mathcal{T}(\Omega)}^2}.$$
-
-
-
-
-\jam{(continue writing up derivation...)}
-
-\jam{(back up and include pump phase in model to show its non-effect)}
-
-
-
-\section{Appendix B: Nondegenerate internal squeezing, shot noise only}
-
-\jam{(For reference only, delete this from the actual thesis)}
-
-
-The full Hamiltonian of the system is given by: $$\hat{H}=\hat{H}_0+\hat{H}_\mathrm{I}+\hat{H}_{\text{GW}}|_{\text{RP}=0}+\hat{H}_{\gamma_R}+\hat{H}_{\gamma_a}+\hat{H}_{\gamma_b}+\hat{H}_{\gamma_c}.$$ Where each term describes:
-\begin{itemize}
-\item $\hat{H}_0=\hbar\omega_0(\hat{a}^\dagger\hat{a}+\frac{1}{2})+\hbar\omega_0(\hat{b}^\dagger\hat{b}+\frac{1}{2})+\hbar\omega_\mathrm{idler}(\hat{c}^\dagger\hat{c}+\frac{1}{2})$, the uncoupled behaviour of the optical modes, in the Interaction Picture, the model can ignore this behaviour (moving it from the operators onto the states) \jam{(is RWA also used?)}. $\phi$ is the pump phase. % and uses a rotating frame at the carrier frequency in order to ignore the evolution of the optical modes from $\hat{H}_0$ \jam{(be careful, are we? -- also, is RWA used?)}
-\item $\hat{H}_\mathrm{I}=i\hbar\omega_s(\hat{a}\hat{b}^\dag-\hat{a}^\dag\hat{b})+\hbar\chi(e^{i\phi}\hat{b}^\dag\hat{c}^\dag+e^{-i\phi}\hat{b}\hat{c})$, the interaction of the three optical modes $\hat{a}, \hat{b}, \hat{c}$, where a semi-classical approximation has been taken to the pump field \jam{(spell out what this means for $\chi$)} and a single-mode approximation to each of the cavity modes which are assumed to be on resonance \jam{(this needs more discussion, do more in deg. int. sqz. section)}
-\item $\hat{H}_\mathrm{GW}|_{\text{RP}=0}=\alpha L_\mathrm{arm}h (\frac{\hat{a}+\hat{a}^\dag}{\sqrt{2}})$, \jam{($\alpha$ is $\alpha_\mathrm{GW}$, not the alpha in Li)} the coupling to the gravitational-wave signal $h(t)$
-\item $\hat{H}_{\gamma_R}$ \jam{(formula, state but just use Langevin terms)}, the readout of the $\hat{b}$ mode
-\item $\hat{H}_{\gamma_i}$ for $i=a,b,c$, the intra-cavity loss ports, these and $\hat{H}_{\gamma_R}$ give the standard \jam{(word choice)} Langevin terms in the Heisenberg-Langevin equations of motion \jam{(cite Gardiner and Collete?)}.
-\end{itemize}
-
-From this Hamiltonian $\hat{H}$, I find the Heisenberg-Langevin equations of motion in the Interaction Picture (separating away the evolution with respect to $\hat{H}_0$):
-$$\begin{cases}
-\dot{\hat{a}}=-\omega_s\hat{b} - \gamma_a \hat{a} + \sqrt{2\gamma_a}\hat{n}^L_a-\frac{i}{\hbar}\alpha L_\mathrm{arm}h\frac{1}{\sqrt{2}}\\
-\dot{\hat{b}}=\omega_s\hat{a} -ie^{i\phi} \chi\hat{c}^\dagger - \gamma^b_\mathrm{tot} \hat{b} + \sqrt{2\gamma_R}\hat{B}_\mathrm{in} + \sqrt{2\gamma_b}\hat{n}^L_b\\
-\dot{\hat{c}}=-ie^{i\phi}\chi\hat{b}^\dagger - \gamma_c \hat{c} + \sqrt{2\gamma_c}\hat{n}^L_c
-\end{cases}$$
-I separate out the fluctuating part of each mode $\hat{a}(t)=\langle\hat{a}\rangle+\delta\hat{a}(t)$ from its time average (or large classical motion) $\langle\hat{a}\rangle$. This does not change the form of the equations. \jam{(Why? This is not clear, the LHS does not change but the time-averages remain)} 
-% solving the equations
-In Fourier space, these equations become (with the simplified notation $\tilde{\delta\hat{Q}}(\Omega)\mapsto\hat{Q}(\Omega)$ and sign convention $\partial_t\mapsto-i\Omega$):
-\begin{equation}
-\begin{cases}
--i\Omega\hat{a}(\Omega)=-\omega_s\hat{b}(\Omega) - \gamma_a \hat{a}(\Omega) + \sqrt{2\gamma_a}\hat{n}^L_a(\Omega)-i\beta\tilde{h}(\Omega)\\
--i\Omega\hat{b}(\Omega)=\omega_s\hat{a}(\Omega) -ie^{i\phi} \chi\hat{c}^\dagger(-\Omega) - \gamma^b_\mathrm{tot} \hat{b}(\Omega) + \sqrt{2\gamma_R}\hat{B}_\mathrm{in}(\Omega) + \sqrt{2\gamma_b}\hat{n}^L_b(\Omega)\\
--i\Omega\hat{c}(\Omega)=-ie^{i\phi}\chi\hat{b}^\dagger(-\Omega) - \gamma_c \hat{c}(\Omega) + \sqrt{2\gamma_c}\hat{n}^L_c(\Omega).
-\end{cases}
-\end{equation}
-
-Where $\beta=\frac{\alpha L_\mathrm{arm}}{\sqrt{2}\hbar}$.
-
-Solving these Equations for simultaneous solutions of the $\hat{Q}(\Omega)$ and $\hat{Q}^\dag(-\Omega)$ fields is easier when expressed in matrix form. Let $\vec{\hat{Q}}(\Omega)=[\hat{Q}(\Omega),\hat{Q}^\dag(-\Omega)]^T$, then the above equations can be re-written as:
-$$\begin{cases}
-(\gamma_a-i\Omega)\vec{\hat{a}}(\Omega)=-\omega_s\vec{\hat{b}}(\Omega) + \sqrt{2\gamma_a}\vec{\hat{n}}^L_a(\Omega)-i\beta\begin{bsmallmatrix}
-1 & 0 \\ 
-0 & -1
-\end{bsmallmatrix}\vec{\tilde{h}}(\Omega)\\
-(\gamma^b_\mathrm{tot}-i\Omega)\vec{\hat{b}}(\Omega)=\omega_s\vec{\hat{a}}(\Omega) - \chi\begin{bsmallmatrix}
-0 & ie^{i\phi} \\ 
--ie^{-i\phi} & 0
-\end{bsmallmatrix}\vec{\hat{c}}(\Omega) + \sqrt{2\gamma_R}\vec{\hat{B}}_\mathrm{in}(\Omega) + \sqrt{2\gamma_b}\vec{\hat{n}}^L_b(\Omega)\\
-(\gamma_c-i\Omega)\vec{\hat{c}}(\Omega)=- \chi\begin{bsmallmatrix}
-0 & ie^{i\phi} \\ 
--ie^{-i\phi} & 0
-\end{bsmallmatrix}\vec{\hat{b}}(\Omega) + \sqrt{2\gamma_c}\vec{\hat{n}}^L_c(\Omega).
-\end{cases}$$
-
-Where $\mathrm{I}$ is the $2\times2$ identity matrix. Solving for $\vec{\hat{b}}(\Omega)$, these give
-\begin{align}
-\vec{\hat{b}}(\Omega)=\mathrm{M}_b^{-1}( &\omega_s\mathrm{M}_a^{-1}(\sqrt{2\gamma_a}\vec{\hat{n}}^L_a(\Omega)-i\beta\begin{bsmallmatrix}
-1 & 0 \\ 
-0 & -1
-\end{bsmallmatrix}\vec{\tilde{h}}(\Omega)) - \chi\begin{bsmallmatrix}
-0 & ie^{i\phi} \\ 
--ie^{-i\phi} & 0
-\end{bsmallmatrix}\mathrm{M}_c^{-1}\sqrt{2\gamma_c}\vec{\hat{n}}^L_c(\Omega)\\&+ \sqrt{2\gamma_R}\vec{\hat{B}}_\mathrm{in}(\Omega) + \sqrt{2\gamma_b}\vec{\hat{n}}^L_b(\Omega)).
-\end{align}
-Where the matrices $\mathrm{M}_i,\; i=a,b,c$ are given by:
-\begin{equation}
-\begin{cases}
-\mathrm{M}_a = (\gamma_a-i\Omega)\mathrm{I}\\
-\mathrm{M}_b = (\gamma^b_\mathrm{tot}-i\Omega)\mathrm{I} + \omega_s^2 \mathrm{M}_a^{-1} - \chi^2 \begin{bsmallmatrix}
-0 & ie^{i\phi} \\ 
--ie^{-i\phi} & 0
-\end{bsmallmatrix} \mathrm{M}_c^{-1} \begin{bsmallmatrix}
-0 & ie^{i\phi} \\ 
--ie^{-i\phi} & 0
-\end{bsmallmatrix}\\
-\mathrm{M}_c = (\gamma_c-i\Omega)\mathrm{I}.
-\end{cases}
-\end{equation}
-
-Having found the light inside the cavities, I want to find the light at the photodetector. The light right outside and travelling away from the signal-recycling mirror is given by the Input/Output (I/O) relation: $\hat{B}_\mathrm{out}=\hat{B}_\mathrm{in}-\sqrt{2\gamma_R}\hat{b}$. Using the beamsplitter model of detection loss at the photodiode, for a beamsplitter of reflectivity $R_\mathrm{PD}$, the quadratures of light at the photodetector are given by: $\vec{\hat{X}}_\mathrm{PD}=\sqrt{R_\mathrm{PD}} \vec{\hat{X}}_\mathrm{PD}^L + \sqrt{1-R_\mathrm{PD}} \vec{\hat{X}}_{B_\mathrm{out}}$. Where $\vec{\hat{X}}_Q=\Gamma \vec{\hat{Q}}=[\hat{X}_{1,Q},\hat{X}_{2,Q}]^T$ for $\hat{X}_{i,Q}$ the ith quadrature of $Q$ and $\Gamma=\frac{1}{\sqrt{2}}\begin{bsmallmatrix}
-1 & 1 \\ 
--i & i\end{bsmallmatrix}$ the quadrature matrix.
-Putting everything together, I find the quadratures of the light at the photodetector to be given by:
-\begin{align}
-\vec{\hat{X}}_\mathrm{PD}(\Omega)&=
-% \sqrt{R_\mathrm{PD}} \vec{\hat{X}}_\mathrm{PD}^L(\Omega) + \sqrt{1-R_\mathrm{PD}} \Gamma(\hat{B}_\mathrm{in}(\Omega)-\sqrt{2\gamma_R}\hat{b}(\Omega))\\
-% &=  \sqrt{R_\mathrm{PD}} \vec{\hat{X}}_\mathrm{PD}^L(\Omega) + \sqrt{1-R_\mathrm{PD}} \Gamma(\mathrm{I}-2\gamma_R\mathrm{M}_b^{-1})\Gamma^{-1}\vec{\hat{X}}_{B_\mathrm{in}}(\Omega)\\
-% &-\sqrt{1-R_\mathrm{PD}} \Gamma\sqrt{2\gamma_R}\mathrm{M}_b^{-1}
-% (\omega_s\mathrm{M}_a^{-1}\sqrt{2\gamma_a}\vec{\hat{n}}^L_a(\Omega)
-% -\omega_s\mathrm{M}_a^{-1}i\beta\begin{bsmallmatrix}
-% 1 & 0 \\ 
-% 0 & -1
-% \end{bsmallmatrix}\vec{\tilde{h}}(\Omega) \\& \hspace{5cm}+ \chi\begin{bsmallmatrix}
-% 0 & 1 \\ 
-% 1 & 0
-% \end{bsmallmatrix}\mathrm{M}_c^{-1}\sqrt{2\gamma_c}\vec{\hat{n}}^L_c(\Omega) + \sqrt{2\gamma_b}\vec{\hat{n}}^L_b(\Omega))\\&=
-\mathrm{R_{in}}\vec{\hat{X}}_{B_\mathrm{in}}(\Omega)
-+ \mathrm{R}^L_a\vec{\hat{X}}^L_a(\Omega)
-+ \mathrm{R}^L_b\vec{\hat{X}}^L_b(\Omega)
-+ \mathrm{R}^L_c\vec{\hat{X}}^L_c(\Omega)
-+ \mathrm{R}^L_\mathrm{PD}\vec{\hat{X}}_\mathrm{PD}^L(\Omega)
-+ \mathrm{T}\vec{\tilde{h}}(\Omega).
-\end{align}
-
-Where $\vec{\hat{X}}_{B_\mathrm{in}}(\Omega)$ is the quadrature vector of the vacuum from the main vacuum port behind the signal-recycling mirror, $\vec{\hat{X}}^L_a(\Omega)$ is the vacuum from the $\hat{a}$ intra-cavity loss, etc.. And where the transfer function matrices $\mathrm{R}_i, \mathrm{T}$ for the noises and signal, respectively, are given by the following (where the frequency dependence is inside each $\mathrm{M}_i^{-1}$):
-\begin{equation}
-\begin{cases}
-\mathrm{R_{in}}=\sqrt{1-R_\mathrm{PD}} \Gamma(\mathrm{I}-2\gamma_R\mathrm{M}_b^{-1})\Gamma^{-1}\\
-\mathrm{R}^L_a=-\sqrt{1-R_\mathrm{PD}} 2\sqrt{\gamma_R\gamma_c}\omega_s\Gamma\mathrm{M}_b^{-1}\mathrm{M}_a^{-1}\Gamma^{-1}\\
-\mathrm{R}^L_b=-\sqrt{1-R_\mathrm{PD}} 2\sqrt{\gamma_R\gamma_b}\Gamma\mathrm{M}_b^{-1}\Gamma^{-1}\\
-\mathrm{R}^L_c=-\sqrt{1-R_\mathrm{PD}} 2\sqrt{\gamma_R\gamma_c}(-\chi)\Gamma\mathrm{M}_b^{-1}\begin{bsmallmatrix}
-0 & ie^{i\phi} \\ 
--ie^{-i\phi} & 0
-\end{bsmallmatrix}\mathrm{M}_c^{-1}\Gamma^{-1}\\
-\mathrm{R}^L_\mathrm{PD}=\sqrt{R_\mathrm{PD}}\\
-\mathrm{T}=\sqrt{1-R_\mathrm{PD}} \sqrt{2\gamma_R}i\omega_s\beta \Gamma\mathrm{M}_b^{-1}\mathrm{M}_a^{-1}\begin{bsmallmatrix}
-1 & 0 \\ 
-0 & -1
-\end{bsmallmatrix}.
-\end{cases}
-\end{equation} 
-
-
-\jam{(set up the combined noise, spectral densities matrix Sx)}
-
-\begin{equation}
-\mathrm{S}_X(\Omega)2\pi\delta(\Omega-\Omega')=\ev{\vec{\hat{X}}_\mathrm{PD}(\Omega)\cdot\vec{\hat{X}}_\mathrm{PD}(\Omega')^\dag}
-\end{equation}
-
-\jam{(explain uncorrelated vacuum assumption -- i and j are not indices of vectors)}
-
-\begin{equation}
-\ev{\vec{\hat{X}}_{(i)}(\Omega)\cdot\vec{\hat{X}}_{(j)}(\Omega')^\dag}=\delta_{i,j}\mathrm{I}\,2\pi\delta(\Omega-\Omega'),\quad \mathrm{S_{vac}}=\mathrm{I}=\begin{bsmallmatrix}
-1 & 0 \\ 
-0 & 1
-\end{bsmallmatrix}
-\end{equation}
-
-\jam{(versus single-sided power spectral density of single function, not a vector: $A\circ B=\dfrac{1}{2}(A\cdot B+B\cdot A)$, check factors of two again --> single sided, vac=1, quadratures normalised as 1/rt2, quadrature is Hermitian and therefore commutes with its dagger)}
-
-
-\begin{align}
-\mathcal{S}_X(\Omega)2\pi\delta(\Omega-\Omega')&=\ev{\vec{\hat{X}}_{\mathrm{PD},2}(\Omega)\circ\vec{\hat{X}}_{\mathrm{PD},2}(\Omega')^\dag},\quad \mathcal{S}_\mathrm{vac}=1\\
-\mathcal{S}_X(\Omega)&=1 +8 (1-R_\text{PD}) \gamma_c \gamma_R \chi ^2 \Omega ^4 \left(\gamma_a^2+\Omega ^2\right)\\
-&/(\Omega ^4 (\left(\gamma_c^2+\Omega ^2\right) \omega_s^4-2 \left(\gamma_a \gamma_c \chi ^2-\gamma_a \gamma^b_\text{tot} \left(\gamma_c^2+\Omega ^2\right)+\Omega ^2 \left(\gamma_c^2+\chi ^2+\Omega ^2\right)\right) \omega_s^2\\
-&+\left(\gamma_a^2+\Omega ^2\right) \left(\Omega ^4+\left({\gamma^b_\text{tot}}^2+\gamma_c^2+2 \chi ^2\right) \Omega ^2+\left(\chi ^2-\gamma^b_\text{tot} \gamma_c\right)^2\right)))
-\end{align}
-
-\begin{align}
-\abs{\mathcal{T}(\Omega)}^2&=\abs{(\mathrm{T}.\begin{bsmallmatrix}
-1\\ 
-1
-\end{bsmallmatrix})_2}^2\\
-&=4 (1-R_\text{PD})\beta^2 \gamma_R \omega_s^2\left(\gamma_c^2+\Omega ^2\right)\\
-&/(\Omega ^4 (\left(\gamma_c^2+\Omega ^2\right) \omega_s^4-2 \left(\gamma_a \gamma_c \chi ^2-\gamma_a \gamma^b_\text{tot} \left(\gamma_c^2+\Omega ^2\right)+\Omega ^2 \left(\gamma_c^2+\chi ^2+\Omega ^2\right)\right) \omega_s^2\\
-&+\left(\gamma_a^2+\Omega ^2\right) \left(\Omega ^4+\left({\gamma^b_\text{tot}}^2+\gamma_c^2+2 \chi ^2\right) \Omega ^2+\left(\chi ^2-\gamma^b_\text{tot} \gamma_c\right)^2\right)))
-\end{align}
-
-I define the sensitivity of the detector to be the noise-to-signal ratio, i.e. the ratio of the noise and signal transfer functions (or, the signal-normalised noise).
-Assuming that we measure the second quadrature, e.g. via balanced homodyne readout \jam{(address optimisation of quadrature angle, might not be 2 just because signal is only there. Also, need to describe homodyne readout somewhere)}, this gives:
-$$S_h(\Omega)=\frac{(\mathrm{S}_X(\Omega))_{2,2}}{\abs{\mathcal{T}(\Omega)}^2}.$$
-
-
-
 
 
