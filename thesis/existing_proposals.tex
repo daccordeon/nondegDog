@@ -66,7 +66,7 @@ Therefore, I consider only them as a result of finite time and relevance.
 	\centering
 	% \includegraphics[width=\textwidth]{}
 % squeezing ellipse and signal arrow plot (+ show the effect of optical loss: detection and intracavity)
-	\caption{Degenerate internal squeezing configuration, all modes are labelled (the signal-recycling cavity resembles a degenerate OPO and uses the same notation as Fig.~\ref{fig:dOPO_config}). Showing the origin of the signal and noise and the squeezer's effect on them using the noise ellipse and signal arrow representation, as in Fig.~\ref{fig:extSqz_config}.}
+	\caption{Degenerate internal squeezing configuration, all modes are labelled (the signal-recycling cavity resembles a degenerate OPO and uses the same notation as Fig.~\ref{fig:dOPO_config}). Showing the origin of the signal and noise and the squeezer's effect on them using the noise ellipse and signal arrow representation, as in Fig.~\ref{fig:extSqz_config} \jam{(Like 4.1(b))}.}
 	\label{fig:dIS_config}
 \end{figure}
 
@@ -112,7 +112,7 @@ The Hamiltonian of this system is $\hat H = \hat H_0 + \hat H_I + \hat H_\gamma 
 % \beta = \frac{\alpha L_\mathrm{arm}}{\sqrt{2}\hbar}, \beta = \sqrt{\frac{2 P_\text{circ} L_\text{arm} \omega_0}{\hbar c}}, \alpha = \sqrt{2} \hbar/L_arm= \sqrt{\frac{4 P_\text{circ} \omega_0 \hbar}{c  L_\text{arm}}}
 % multiple different hamiltonians for RP
 % problem with omega_s formula, only valid below one FSR of the arms
-Where $\alpha=\sqrt{\frac{4 P_\text{circ} \omega_0 \hbar}{c  L_\text{arm}}}$ \jam{(check this, why a factor of rt2 more than Li?)} is the coupling strength to the gravitational-wave signal~\cite{}, $\mu=M/4$ is the reduced mass \jam{(Explain reduced mass.)} of the test mass with mass $M$~\cite{}, and $\omega_s\approx c\sqrt{\frac{T_\text{ITM}}{4 L_\text{arm} L_\text{SRM}}}$ is an approximation to the sloshing frequency between the coupled cavities (also known as the coupled cavity pole) which holds when it is below one FSR of the arm cavities \jam{(check this)}~\cite{}. I use $\hat H_\text{GW}$ from Ref.~\cite{Li2020,original source?} which couples the mirror position and gravitational wave length displacement $L_\text{arm} h(t)$ to the amplitude quadrature of the cavity mode~\footnote{Although, perhaps, a more natural formulation would couple the gravitational-wave strain to the mirror position and the mirror position to the cavity mode, this is equivalent~\cite{}.}. 
+Where $\alpha=\sqrt{\frac{2 P_\text{circ} \omega_0 \hbar}{c  L_\text{arm}}}$ \jam{(clarify that this is the Li formula which Korobko disagrees with by a factor of rt2 for reasons unknown. Why do they disagree? I use the Li value for comparison to sWLC but this affects the feasibility of nIS! Ask the supervisors.)} is the coupling strength to the gravitational-wave signal~\cite{}, $\mu=M/4$ is the reduced mass \jam{(Explain reduced mass.)} of the test mass with mass $M$~\cite{}, and $\omega_s\approx c\sqrt{\frac{T_\text{ITM}}{4 L_\text{arm} L_\text{SRM}}}$ is an approximation to the sloshing frequency between the coupled cavities (also known as the coupled cavity pole) which holds when it is below one FSR of the arm cavities \jam{(check this)}~\cite{}. I use $\hat H_\text{GW}$ from Ref.~\cite{Li2020,original source?} which couples the mirror position and gravitational wave length displacement $L_\text{arm} h(t)$ to the amplitude quadrature of the cavity mode~\footnote{Although, perhaps, a more natural formulation would couple the gravitational-wave strain to the mirror position and the mirror position to the cavity mode, this is equivalent~\cite{}.}. 
 The Heisenberg-Langevin equations-of-motion for $\hat a, \hat b, \hat x$ and $\hat p$ can be found using the bosonic commutation relations, the canonical commutation relation $[\hat x,\hat p]=i\hbar$~\cite{}, and with all other commutators zero. As in Section~\ref{sec:dOPO_model}, I make semi-classical and no-pump-depletion approximations to the pump mode, enter the Interaction Picture, and take fluctuating components of the operators. The resulting equations are
 \begin{equation}\label{eq:dIS_EoM}\begin{cases}
 \dot{\hat a}=-\omega_s \hat b- \gamma_a \hat{a} + \sqrt{2\gamma_a}\hat{n}^L_a+\frac{i \alpha}{\hbar\sqrt2}(\hat{x}-L_\mathrm{arm}h(t)) \\
@@ -129,8 +129,9 @@ By entering the Fourier domain, I solve these equations for $\vec{\hat b}(\Omega
 \end{align}
 Where the re-scaled coupling constants for the gravitational-wave signal and the radiation pressure, respectively~\footnote{Where $\mu=M/4\rightarrow\infty$ turns off the radiation-pressure noise, $\rho=0$, as expected.}, are
 \begin{equation}\label{eq:beta_and_rho}
-\beta = \frac{\alpha L_\mathrm{arm}}{\sqrt{2}\hbar},\quad \rho = \frac{\alpha^2}{\sqrt{2}\hbar\mu}.
+\beta = \frac{\alpha L_\mathrm{arm}}{\sqrt{2}\hbar}=\sqrt{\frac{ P_\text{circ}L_\text{arm} \omega_0 }{c  \hbar}},\quad \rho = \frac{\alpha^2}{\sqrt{2}\hbar\mu}.
 \end{equation}
+\jam{(this disagrees with Korobko since I use the alpha from Li, note this somewhere)}
 Using the same input/output relations as Section~\ref{sec:dOPO_model} and $\Gamma=\frac{1}{\sqrt2}\begin{bsmallmatrix}1 & 1 \\-i & i\end{bsmallmatrix}$, I find the quadratures at the photodetector to be
 \begin{align}
 \vec{\hat X}_\mathrm{PD}(\Omega)&=\text{T}\vec h(\Omega)+\text{R}_\text{in}\vec{\hat X}_\mathrm{in}(\Omega)+\text{R}^L_a\vec{\hat X}^L_a(\Omega)+\text{R}^L_b\vec{\hat X}^L_b(\Omega)+\text{R}^L_\text{PD}\vec{\hat X}^L_\text{PD}(\Omega)\\

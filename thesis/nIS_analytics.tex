@@ -42,7 +42,7 @@ Not only are the quantum noise and signal responses of the lossy system not know
 
 \begin{figure}
     \centering
-    \includegraphics[angle=-90,width=0.8\textwidth]{nIS_mode_diagram.pdf}
+    \includegraphics[angle=-90,width=0.7\textwidth]{nIS_mode_diagram.pdf}
     % squeezing ellipse and signal arrow plot
     \caption{\jam{(Purpose: explain configuration)} \jam{(Move to start of chapter? Clarify in text that gravitational wave is coupled to $\hat a$ in the Hamiltonian.)} Nondegenerate internal squeezing's mode diagram (top panel) and simplified effect on the signal and noise (bottom panel). The core system consists of three coupled, optical modes $\hat a,\hat b,\hat c$. The gravitational-wave signal couples through them and is measured in the signal and/or idler mode at the photodetector. Optical losses and the pump mode are omitted from the mode diagram. Compare the mode diagram to degenerate internal squeezing and stable optomechanical filtering in Fig.~\ref{fig:mode_diagram}. The system's simplified response is shown using the signal arrow and noise ellipse representation from Fig.~\ref{fig:extSqz_config}. The noise is anti-squeezed but the gravitational-wave signal is amplified more such that the sensitivity improves. A full understanding of the sensitivity will be presented later.}
     \label{fig:nIS_mode_diagram}
@@ -277,14 +277,15 @@ To partially verify the model, I show that it reduces to the expected limits whe
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{nIS_lossless.pdf}
-	\caption{\jam{(Purpose: show limits 1/2)} Nondegenerate internal squeezing sensitivity in the lossless limit compared to the lossless optomechanical analogue from Fig.~\ref{fig:sWLC_sensitivity}. Shown for no idler readout rate \jam{(check)}. \jam{(Find the factors of two to resolve the disagreement! Check $\alpha$! Then say ``The sensitivity converges as shown, as do the signal and noise responses.'' etc.)} Compare to the lossy sensitivity in Fig.~\ref{fig:nIS_general_sens}.}
+	\caption{\jam{(Purpose: show limits 1/2)} Nondegenerate internal squeezing sensitivity in the lossless limit, with and without radiation pressure noise, compared to the lossless optomechanical analogue from Fig.~\ref{fig:sWLC_sensitivity}. This is shown for 500~Hz signal readout rate and no idler readout rate \jam{(check)}. The sensitivity converges as shown, as do the signal and noise responses. Compared to the lossy sensitivity without radiation-pressure noise in Fig.~\ref{fig:nIS_general_sens}, the signal DC response is improved which means that the losses determine the bandwidth of the squeezer's signal amplification \jam{(check)}.}
 	\label{fig:nIS_lossless}
 \end{figure}
 
-In the lossless limit, $\gamma_a=\gamma_b=\gamma_c=R_\text{PD}=0$, with the idler readout rate turned off, $\gamma^c_R=0$, the equations-of-motion of nondegenerate internal squeezing reduce to those of the lossless optomechanical analogue in Ref.~\cite{Li2020}. Comparing the resulting sensitivity, shown in Fig.~\ref{fig:nIS_lossless}, \jam{the signal transfer function and the radiation-pressure noise do not agree with the predicted limit. The signal transfer function in Eq.~\ref{eq:nIS_sigRO_signal_response} requires a factor $\sqrt2$ and the test mass requires a factor $2$. (why? check quadrature and strain normalisation? does my method of finding the signal transfer function agree with Korobko?)}
-I will compare the lossy all-optical and optomechanical analogues in the next chapter. 
+In the lossless limit, $\gamma_a=\gamma_b=\gamma_c=R_\text{PD}=0$, with the idler readout rate turned off, $\gamma^c_R=0$, the equations-of-motion of nondegenerate internal squeezing in Eq.~\ref{eq:nIS_EoM} reduce to those of the lossless optomechanical analogue in Ref.~\cite{Li2020}. The resulting sensitivity also reduces to the same limit, as shown in Fig.~\ref{fig:nIS_lossless}. This behaviour is expected from the comparison of the mode structure of the two lossless systems, see Section~\ref{sec:modal_equivalence}.
+% this is because of the use of alpha from Li and not Korobko
+I will compare the two lossy systems in the next chapter. 
 % no losses means no antisqueezing of shot noise but yes RPN, why? threshold=0 problem?
-Without losses, the shot noise is not anti-squeezed and the signal amplification persists down to DC. Since the idler readout rate is zero and there is no loss, the threshold is poorly defined because there is no mechanism for light to leave the idler mode, which will be discussed later. However, taking the limit of smaller and smaller losses shows that the shot noise peak decreases for fixed pump power below threshold \jam{(check this, why?)}. The DC signal amplification is lost when losses are added \jam{(why? compare lossless and lossy plots directly)}.
+Without losses, the shot noise is not anti-squeezed and the signal amplification persists down to DC. Since the idler readout rate is zero and there is no loss, the threshold is poorly defined because there is no mechanism for light to leave the idler mode, which will be discussed later. However, taking the limit of smaller and smaller losses shows that the shot noise peak decreases for fixed pump power below threshold \jam{(check this, why?)}. The bandwidth of the signal amplification is determined by the losses present and therefore the DC improvement is lost when losses are added and the bandwidth no longer extends to DC \jam{(check. why? compare lossless and lossy plots directly)}.
 
 
 \subsubsection{High arm loss limit}
