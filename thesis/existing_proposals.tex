@@ -168,15 +168,9 @@ S_h = \frac{(\text{S}_X)_{2,2}}{\abs{(\text{T}\begin{bsmallmatrix}1 \\1\end{bsma
 
 \begin{figure}
 	\centering
-	% \includegraphics[width=\textwidth]{}
-	\caption{\jam{(Explain the noise and signal response here, then just use sensitivity later. Say which regime this is for.)} Degenerate internal squeezing's quantum noise (top panel) and gravitational-wave signal (middle panel) responses and sensitivity (bottom panel). Showing the sloshing frequency $\omega_s$, threshold, and the effect of the pump phase \jam{(Split into multiple plots?)}. \jam{(Which parameter set to use? Could show for Korobko and Li, matrix?)}}
+	\includegraphics[width=\textwidth]{dIS_lossless_N_S_NSR.pdf}
+	\caption{\jam{(Explain parameter set. Explain the noise and signal response here, then just use sensitivity later. Say which regime this is for. Explain rho, readout rate is 5kHz which is the upper end of kilohertz regime (smaller readout rate means a sharper peak))} Degenerate internal squeezing's quantum noise (top panel) and gravitational-wave signal (middle panel) responses and sensitivity (bottom panel) without optical losses. Showing that the peak is centred on the sloshing frequency $\omega_s$.}
 	\label{fig:dIS_sensitivity}
-\end{figure}
-\begin{figure}
-	\centering
-	% \includegraphics[width=\textwidth]{}
-	\caption{\jam{(Use realistic losses)} Degenerate internal squeezing breakdown of noise sources, showing the quantum noise response for each vacuum input, i.e. $\sqrt{(\text{R}_\text{in}\text{R}_\text{in})_{2,2}}$. The radiation-pressure noise, i.e.\ the $f^{-2}$ slope below $100$~Hz, and the squeezing around $\omega_s$ appear in all of the interferometer noise sources and not in the detection loss.}
-	\label{fig:dIS_noise_budget}
 \end{figure}
 
 \jam{(''Focus on the science, not the equations'' - VA. Consider what order these results should come in.)}
@@ -188,7 +182,7 @@ To better discuss the behaviour of degenerate internal squeezing, particularly i
 The model of degenerate internal squeezing in Ref.~\cite{Korobko2019} takes the degenerate OPO from Section~\ref{sec:dOPO_model} and adds the arm cavity mode $\hat a$ at carrier frequency $\omega_0$ (which is resonant in the single-mode approximation) coupled to the signal-recycling mode $\hat b$ with coupling rate (called the ``sloshing'' frequency~\cite{}) $\omega_s$ and with an intra-cavity loss port with transmissivity $T_{l,a}$ into vacuum $\hat n^L_a$.
 The results are shown in Fig.~\ref{fig:dIS_sensitivity} \jam{(for what parameters?)}.
 With the internal squeezer turned off, $\chi=0$, the configuration becomes the interferometer in Section~\ref{sec:coupled_cavity_approximation} and the noise, signal, and sensitivity reduce to Fig.~\ref{fig:simplified_sensitivity}, where the signal transfer function peaks at $\omega_s$ with bandwidth $\gamma^b_R$~\cite{} \jam{(clarify two kinds of bandwidth)}. Turning the squeezer on (1) squeezes the shot noise and de-amplifies the signal around the sloshing frequency $\omega_s$, (2) does not affect the radiation-pressure noise below 100~Hz, and (3) improves the sensitivity around the sloshing frequency and not affect it at lower frequencies. % does not affect RP, do not make this mistake!
-Increasing the squeezer parameter $\chi$ further increases the squeezing of the noise and signal but whether this continues to improve the sensitivity will be covered shortly. Compared to external squeezing, the internal squeezer squeezes each of the intra-cavity losses as well as the readout port vacuum, as shown in Fig.~\ref{fig:dIS_noise_budget}. 
+Increasing the squeezer parameter $\chi$ further increases the squeezing of the noise and signal but whether this continues to improve the sensitivity will be covered shortly. Compared to external squeezing, the internal squeezer squeezes each of the intra-cavity losses as well as the readout port vacuum, as shown in Fig.~\ref{fig:dIS_noise_budget} \jam{(move noise budget to when discussing optical loss)}. 
 Degenerate internal squeezing can be operated in two regimes depending on the choice of $\omega_s$ and $\gamma^b_R$ which determine the frequency range of the sensitivity improvement: (1) broadband sensitivity~\cite{Korobko2019} when $\gamma^b_R$ is large (e.g.\ $L_\text{SRC}$ is short) and the sensitivity is shallowly improved, for example, from around 100 to 10000~Hz \jam{(quantify)} or (2) kilohertz sensitivity~\cite{Adya2020} when $\gamma^b_R$ is small (e.g.\ $L_\text{SRC}$ is long) and the sensitivity is narrowly, but strongly, improved \jam{(quantify)} around $\omega_s$, e.g.\ 2~kHz.
 % why improvement only around sloshing frequency
 The squeezing of the shot noise and signal is localised to the sloshing frequency because of the resonance structure of the coupled cavity system which changes where the signal-recycling cavity is resonant. At the sloshing frequency, energy is strongly coupled from the arm cavity into the signal-recycling cavity and the signal-recycling cavity mode is resonant~\footnote{The phase acquired upon reflecting off the input test mass depends on whether the arm cavity is resonant and means that the signal-recycling cavity is resonant at frequencies where the arm cavity is not resonant. At the sloshing frequency, the arm cavity is not resonant, as seen in the falling signal response in Fig.~\ref{fig:dIS_sensitivity}.}~\cite{KorobkoThesis}. As the squeezer is only effective when the cavity is resonant~\cite{}, as in Fig.~\ref{sec:dOPO_variances} where the cavity is resonant at DC, the signal and noise are only squeezed around the sloshing frequency~\cite{}. \jam{(I do not understand this)} Away from the sloshing frequency, the cavity is not resonant and degenerate internal squeezing does not affect the sensitivity below kilohertz~\footnote{These results assume that the arm cavity loss is realistically small, e.g.\ $T_{l,a}=100\text{ppm}$, as discussed below.}.
@@ -201,7 +195,7 @@ Firstly, to find threshold, in the lossless case, $\gamma_a=\gamma_b=R_\text{PD}
 % \label{eq:dIS_lossless}
 % (\text{S}_X)_{2,2}=1-\frac{4 \gamma^b_R \chi \Omega ^2}{\Omega ^2 (\gamma^b_R+\chi )^2+(\Omega ^2-\omega_s^2)^2}.
 % \end{equation}
-The squeezed noise goes to zero at $\chi_\text{thr}=\gamma^b_R$ and $\Omega=\omega_s$, which defines threshold~\cite{}. In the anti-squeezed quadrature, found by varying the pump phase $\phi\mapsto\phi+\pi/2$ \jam{(check)}, the noise instead diverges at $\Omega=\omega_s$ at threshold. This behaviour is similar to the lossless degenerate OPO in Fig.~\ref{fig:dOPO_variances}, except that the improvement occurs at the sloshing frequency instead of at DC. From the perspective of gains and losses inside the signal-recycling cavity, any light lost to the arms through $\omega_s$ must return since $\gamma_a=0$ and so the loss from the cavity mode remains as $\gamma^b_R$. In the lossy case, the situation is more complicated and the threshold is not quoted in the literature~\cite{}. To address this, I will define a unified notion of threshold in my work in Section~\ref{sec:singularity_threshold}. 
+The squeezed noise goes to zero at $\chi_\text{thr}=\gamma^b_R$ and $\Omega=\omega_s$, which defines threshold~\cite{}. In the anti-squeezed quadrature, found by changing the pump phase $\phi\mapsto\phi+\pi/2$ \jam{(check)}, the noise instead diverges at $\Omega=\omega_s$ at threshold. This behaviour is similar to the lossless degenerate OPO in Fig.~\ref{fig:dOPO_variances}, except that the improvement occurs at the sloshing frequency instead of at DC. From the perspective of gains and losses inside the signal-recycling cavity, any light lost to the arms through $\omega_s$ must return since $\gamma_a=0$ and so the loss from the cavity mode remains as $\gamma^b_R$. In the lossy case, the situation is more complicated and the threshold is not quoted in the literature~\cite{}. To address this, I will define a unified notion of threshold in my work in Section~\ref{sec:singularity_threshold}. 
 
 % \begin{figure}
 % 	\centering
@@ -223,8 +217,8 @@ Secondly, although increasing the squeezer parameter continues to squeeze the qu
 
 \begin{figure}
 	\centering
-	% \includegraphics[width=\textwidth]{}
-	\caption{Degenerate internal squeezing is stable below threshold. Showing imaginary part of the poles of the transfer functions against squeezer parameter, for the lossless and lossy cases, where a positive imaginary part indicates instability.}
+	\includegraphics[width=0.8\textwidth]{dIS_stability.pdf}
+	\caption{\jam{(Is this necessary? Explain singularity threshold.)} Degenerate internal squeezing is stable below threshold. Showing imaginary part of the poles of the transfer functions against squeezer parameter, for the lossless and lossy cases, where a positive imaginary part indicates instability.}
 	\label{fig:dIS_stability}
 \end{figure}
 
@@ -241,12 +235,18 @@ Therefore, degenerate internal squeezing is stable in the lossless case below th
 
 \begin{figure}
 	\centering
-	% \includegraphics[width=\textwidth]{}
-	\caption{\jam{(Just show sensitivity but explain using signal and noise. Use realistic losses)} Degenerate internal squeezing sensitivity, showing the effect of the different losses. \jam{(Don't need the depth of the results chapters. Combined with: )} Degenerate internal squeezing sensitivity for realistic losses, using the same parameters as Fig.~\ref{fig:dIS_sensitivity} and a squeezer parameter close to threshold. \jam{(Show that detection loss dominates.)}}
+	\includegraphics[width=0.8\textwidth]{dIS_loss_tolerance.pdf}
+	\caption{\jam{(Explain parameter set. Inspection shows that 10 times signal loss makes peak improvement negligible compared to no squeezer with same loss. Just show sensitivity but explain using signal and noise. Use realistic losses)} Degenerate internal squeezing sensitivity, showing the effect of the different losses. \jam{(Don't need the depth of the results chapters. Combined with: )} Degenerate internal squeezing sensitivity for realistic losses, using the same parameters as Fig.~\ref{fig:dIS_sensitivity} and a squeezer parameter close to threshold. \jam{(Show that detection loss dominates.)}}
 	\label{fig:dIS_loss_tolerance}
 \end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{dIS_noise_budget.pdf}
+	\caption{\jam{(Parameter set. Why aren't the intra-cavity noises squeezed? This does not account for signal response.)} Degenerate internal squeezing breakdown of noise sources, showing the quantum noise response for each vacuum input, i.e. $\sqrt{(\text{R}_\text{in}\text{R}_\text{in})_{2,2}}$. The radiation-pressure noise, i.e.\ the $f^{-2}$ slope below $10$~Hz, and the squeezing around $\omega_s$ appear in all of the interferometer noise sources and not in the detection loss.}
+	\label{fig:dIS_noise_budget}
+\end{figure}
 
-\jam{(``Focus on the science not the equations. Once you explain the behavior, explain the effect of losses on this system.'' -- VA. The tolerance to losses is similar for the two regimes of broadband and kilohertz improvement.)}
+\jam{(``Focus on the science not the equations. Once you explain the behaviour, explain the effect of losses on this system.'' -- VA. The tolerance to losses is similar for the two regimes of broadband and kilohertz improvement.)}
 
 % intracavity loss behaves differently to dOPO 
 Finally, degenerate internal squeezing has different tolerances to the different sources of optical loss, as shown in Fig.~\ref{fig:dIS_loss_tolerance}, but the tolerance is similar for the two regimes of broadband and kilohertz improvement. %, where now the signal's tolerance must be considered.
@@ -299,7 +299,7 @@ Although degenerate internal squeezing improves the sensitivity, its low \jam{(q
 	\label{fig:sWLC_config}
 \end{figure}
 
-\jam{(``No need to go into details about White light cavities – introduce it, mention the challenges for it, cite references.'' -- VA)}
+\jam{(``No need to go into details about White light cavities - introduce it, mention the challenges for it, cite references.'' -- VA)}
 
 \jam{(Read Li2021 to check if this is still current. Also refer to research journals. Where is blue-detuned pump laser?)}
 
