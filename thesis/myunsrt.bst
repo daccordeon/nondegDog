@@ -188,7 +188,7 @@ FUNCTION {format.names}
   s num.names$ 'numnames :=
   numnames 'namesleft :=
     { namesleft #0 > }
-    { s nameptr "{ff~}{vv~}{ll}{, jj}" format.name$ 't :=
+    { s nameptr "{f.~}{vv~}{ll}{, jj}" format.name$ 't :=
       nameptr #1 >
     { nameptr #3 #1 + =
       numnames 
@@ -271,20 +271,7 @@ FUNCTION {n.dashify}
 }
 
 FUNCTION {format.date}
-{ year empty$
-    { month empty$
-        { "" }
-        { "there's a month but no year in " cite$ * warning$
-          month
-        }
-      if$
-    }
-    { month empty$
-        'year
-        { month " " * year * }
-      if$
-    }
-  if$
+{ year
 }
 
 FUNCTION {format.btitle}
@@ -546,12 +533,13 @@ FUNCTION {article}
 { output.bibitem
   format.authors "author" output.check
   new.block
+  format.date "year" output.check
+  new.block
   format.title "title" output.check
   new.block
   crossref missing$
     { journal emphasize "journal" output.check
       format.vol.num.pages output
-      format.date "year" output.check
     }
     { format.article.crossref output.nonnull
       format.pages output
