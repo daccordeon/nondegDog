@@ -192,7 +192,7 @@ FUNCTION {format.names}
       nameptr #1 >
     { nameptr #3 #1 + =
       numnames 
-      #5 > and
+      #3 > and
       { "others" 't :=
         #1 
         'namesleft := }
@@ -241,7 +241,7 @@ FUNCTION {format.editors}
 FUNCTION {format.title}
 { title empty$
     { "" }
-    { title "t" change.case$ }
+    { "" }
   if$
 }
 
@@ -758,8 +758,6 @@ FUNCTION {misc}
 FUNCTION {phdthesis}
 { output.bibitem
   format.authors "author" output.check
-  new.block
-  format.btitle "title" output.check
   new.block
   "PhD thesis" format.thesis.type output.nonnull
   school "school" output.check
