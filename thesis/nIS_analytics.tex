@@ -285,7 +285,7 @@ Throughout the rest of this thesis, I will use the LIGO~Voyager parameter set fr
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{nIS_lossless.pdf}
-    \caption{\jam{(Purpose: show limits 1/2)} Nondegenerate internal squeezing in the lossless limit, showing the quantum noise response (top panel), signal response (middle panel), and sensitivity (bottom panel). I show the results with and without radiation pressure noise and compare them to the lossless optomechanical analogue from Section~\ref{sec:sWLC}. These results are for 500~Hz signal readout rate and no idler readout rate \jam{(check)}. The noise and signal responses and sensitivity converge to the expected lossless limit. A high ratio to threshold is used to compare to Ref.~\cite{liBroadbandSensitivityImprovement2020}.}
+    \caption{\jam{(Shorten axes labels throughout.)} Nondegenerate internal squeezing in the lossless limit, showing the quantum noise response (top panel), signal response (middle panel), and sensitivity (bottom panel). I show the results with and without radiation pressure noise and compare them to the lossless optomechanical analogue from Section~\ref{sec:sWLC}. These results are for 500~Hz signal readout rate and no idler readout rate \jam{(check)}. The noise and signal responses and sensitivity converge to the expected lossless limit. A high ratio to threshold is used to compare to Ref.~\cite{liBroadbandSensitivityImprovement2020}.}
     \label{fig:nIS_lossless}
 \end{figure}
 
@@ -313,7 +313,7 @@ The changes are not localised to the sloshing frequency, e.g.\ the radiation-pre
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{nIS_N_S_NSR.pdf}
-	\caption{\jam{(Purpose: Plain plot to discuss the general features of nIS)} \jam{(Examine lossless plot first instead?)} Nondegenerate internal squeezing signal readout with all losses included, showing the quantum noise response (top panel), signal response (middle panel), and sensitivity (bottom panel). The effect of the squeezer and the radiation pressure noise (turned off by setting $\rho=0$) on the sensitivity is understood by examining the signal and noise separately. The slope of the radiation pressure noise with the squeezer on changes around 10~Hz which is an effect of losses, and the same effect causes the signal to not be amplified down to DC compared to the lossless case in Fig.~\ref{fig:nIS_lossless}. The squeezer parameter is normalised to threshold which will be found later.}
+	\caption{\jam{(Shorten axes labels throughout)} \jam{(Examine lossless plot first instead?)} Nondegenerate internal squeezing signal readout with all losses included, showing the quantum noise response (top panel), signal response (middle panel), and sensitivity (bottom panel). The effect of the squeezer and the radiation pressure noise (turned off by setting $\rho=0$) on the sensitivity is understood by examining the signal and noise separately. The slope of the radiation pressure noise with the squeezer on changes around 10~Hz which is an effect of losses, and the same effect causes the signal to not be amplified down to DC compared to the lossless case in Fig.~\ref{fig:nIS_lossless}. The squeezer parameter is normalised to threshold which will be found later.}
 	\label{fig:nIS_general_sens}
 \end{figure}
 
@@ -367,6 +367,7 @@ Therefore, for a given set of losses, the behaviour of nondegenerate internal sq
 
 
 \section{Stability and threshold}
+\label{sec:stability_and_threshold}
 
 I will now consider the stability and threshold of nondegenerate internal squeezing to determine for what parameters it is stable and below threshold, which is required for experiments. I will use the no-pump-depletion assumption to link when the system is marginally stable and when it is at threshold.
 
@@ -377,7 +378,7 @@ I will now consider the stability and threshold of nondegenerate internal squeez
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{nIS_stability.pdf}
-    \caption{\jam{(Purpose: show stability)} \jam{(Supervisors once requested Nyquist plots, is this sufficient?)} Stability of nondegenerate internal squeezing, for lossless (top panel) and lossy (bottom panel) cases. Showing the imaginary part of the poles of the transfer functions; where the imaginary part becomes positive the system becomes unstable~\cite{}. The different colours indicate different numerical solutions for the zeroes of the common denominator. The denominator does not depend on detection loss $R_\text{PD}$, as shown in Eq.~\ref{eq:nIS_sigRO_signal_response}. Singularity threshold will be defined such that the system is stable below threshold, and therefore the value of $\chi_\text{thr}$ is different between the two panels.}
+    \caption{\jam{(Shorten axes labels throughout)} \jam{(Supervisors once requested Nyquist plots, is this sufficient?)} Stability of nondegenerate internal squeezing, for lossless (top panel) and lossy (bottom panel) cases. Showing the imaginary part of the poles of the transfer functions; where the imaginary part becomes positive the system becomes unstable~\cite{}. The different colours indicate different numerical solutions for the zeroes of the common denominator. The denominator does not depend on detection loss $R_\text{PD}$, as shown in Eq.~\ref{eq:nIS_sigRO_signal_response}. Singularity threshold will be defined such that the system is stable below threshold, and therefore the value of $\chi_\text{thr}$ is different between the two panels.}
     \label{fig:nIS_stability}
 \end{figure}
 
@@ -402,7 +403,7 @@ Since Eq.~\ref{eq:nIS_denom} only depends on the pump power, readout and loss ra
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{nIS_on_threshold.pdf}
-    \caption{\jam{(Purpose: show that singularity threshold actually gives singularities. Is this necessary? Could just cut this plot and claim that I can observe the singularity when plotting in the text?)} Nondegenerate internal squeezing noise, signal, and sensitivity when approaching and at threshold. At threshold, the no-pump-depletion assumption breaks and the transfer functions are singular. The peaks in the noise and signal responses are finite and a false peak in the sensitivity appears at the threshold frequency because of numerical error and limited sampling \jam{(check this, clarify what should be there instead, study limiting behaviour where singularities cancel. Could just cut the plot to not deal with this.)}. For the threshold behaviour of the other configurations in this thesis see Figs.~\ref{fig:dOPO_variances}~\ref{fig:nOPO_variances}~\ref{fig:dIS_sensitivity}.}
+    \caption{\jam{(Purpose: show that singularity threshold actually gives singularities. Is this necessary? Could just cut this plot and claim that I can observe the singularity when plotting in the text? Shorten axes labels throughout)} Nondegenerate internal squeezing noise, signal, and sensitivity when approaching and at threshold. At threshold, the no-pump-depletion assumption breaks and the transfer functions are singular. The peaks in the noise and signal responses are finite and a false peak in the sensitivity appears at the threshold frequency because of numerical error and limited sampling \jam{(check this, clarify what should be there instead, study limiting behaviour where singularities cancel. Could just cut the plot to not deal with this.)}. For the threshold behaviour of the other configurations in this thesis see Figs.~\ref{fig:dOPO_variances}~\ref{fig:nOPO_variances}~\ref{fig:dIS_sensitivity}.}
     \label{fig:nIS_on_threshold}
 \end{figure}
 

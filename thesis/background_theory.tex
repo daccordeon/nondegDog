@@ -69,13 +69,13 @@ This inequality is achieved as an equality by the uncorrelated vacuum state $\lv
 \begin{figure}
 	\centering
 	\includegraphics[angle=-90,width=0.9\textwidth]{ball_and_stick.pdf}
-	\caption{``Ball-and-stick''~\cite{} illustration of squeezing. The red ellipse represents the quantum noise around the coherent amplitude represented by the end of the purple stick; the amplitude is zero for the vacuum state. The lengths of the ellipse's semi-axes represent the variance $S_{X_i}$ in each quadrature $\hat X_i(\Omega)$. Squeezing the noise changes these lengths such that their product is preserved, or increased if optical losses are present, to obey the Heisenberg Uncertainty Principle.}
+	\caption{\jam{(Label ball and stick.)} ``Ball-and-stick''~\cite{} illustration of squeezing. The red ellipse represents the quantum noise around the coherent amplitude represented by the end of the purple stick; the amplitude is zero for the vacuum state. The lengths of the ellipse's semi-axes represent the variance $S_{X_i}$ in each quadrature $\hat X_i(\Omega)$. Squeezing the noise changes these lengths such that their product is preserved, or increased if optical losses are present, to obey the Heisenberg Uncertainty Principle.}
 	\label{fig:ballandstick_simple}
 \end{figure}
 \begin{figure}
 	\centering
 	\includegraphics[angle=-90,width=0.7\textwidth]{PDC.pdf}
-	\caption{Parametric down-conversion, showing the degenerate (left panel) and nondegenerate (right panel) processes. In either case, the process conserves energy $\hbar\omega$ and the created photons are squeezed and entangled.}
+	\caption{\jam{(Tick marks on yaxis.)} Parametric down-conversion, showing the degenerate (left panel) and nondegenerate (right panel) processes. In either case, the process conserves energy $\hbar\omega$ and the created photons are squeezed and entangled.}
 	\label{fig:PDC_deg_and_nondeg}
 \end{figure}
 
@@ -185,7 +185,7 @@ I ignore the dynamics of the pump mode $\hat u$ by making a semi-classical appro
 \label{eq:dOPO_pre_FT}
 \dot{\hat{b}}= \chi e^{i\phi}\hat b^\dag - \gamma^b_\mathrm{tot} \hat{b} + \sqrt{2\gamma^b_R}\hat{B}_\mathrm{in} + \sqrt{2\gamma_b}\hat{n}^L_b.
 \end{equation} \jam{(check that rotating-wave approximation is not required?)}
-Where $\chi = x u$ is the ``squeezer parameter''~\cite{}. 
+Where $\chi = x u$ is the ``squeezer parameter''~\cite{}~\footnote{Not to be confused with the polarisability $\chi^{(2)}$.}. 
 Since I am interested in the quantum noise, I take the fluctuating components of each of these operators implicitly, i.e.\ $\delta \hat b\mapsto\hat b$ where $\delta \hat b(t)=\hat b(t)-\ev{\hat b}_t$, to ignore the classical dynamics described by the time-average $\ev{\hat b}_t$ \jam{(check)}.
 But each of the input modes $\hat{B}_\mathrm{in}, \hat{n}^L_b$ are vacuum and therefore the equation is the same for the fluctuating components. \jam{(That the classical amplitude for $\hat b$ remains zero is not obvious, i.e.\ time-average is still zero, and the squeezer starts lasing at threshold so I need to clarify.)}
 
@@ -200,7 +200,7 @@ Eq.~\ref{eq:dOPO_pre_FT} can be solved algebraically via Fourier transform~\cite
 \end{equation}
 Where $\Omega$ is the angular frequency offset from $\omega_0$ due to the Interaction Picture, % Algebraically, there are a few ways to arrive at the result, but I will demonstrate the linear algebra solution. % since it will be a useful method in the nondegenerate case where there are twice as many operators. 
 $\vec{\hat{Q}}(\Omega)=[\hat{Q}(\Omega),\hat{Q}^\dag(-\Omega)]^\text{T}$ for each pair of annihilation/creation operators $(\hat Q, \hat Q^\dag)$, and $\text{I}$ \jam{(formatting unclear)} is the 2 by 2 identity matrix.
-Using the input/output relation at the readout port~\cite{} and the beamsplitter model of detection loss with reflectivity $R_\text{PD}\in(0,1)$ as in Fig.~\ref{fig:beamsplitter_loss}, the light at the photodetector is
+Using the input/output relation at the readout port~\cite{} and the beamsplitter model of detection loss with reflectivity $R_\text{PD}\in(0,1)$ as in Fig.~\ref{fig:beamsplitter_loss}, the light at the photodetector is \jam{(why is there not a reflection/transmission term for the readout port for the in field?)}
 % \begin{equation}
 % \label{eq:dOPO_IO_readout}\vec{\hat{B}}_\mathrm{out}(\Omega)=\vec{\hat{B}}_\mathrm{in}(\Omega)-\sqrt{2\gamma^b_R}\vec{\hat b}(\Omega).
 % \end{equation} 
@@ -506,7 +506,8 @@ To explain why nondegenerate squeezing is not seen in the nondegenerate case, I 
 \begin{equation}\label{eq:Xcom_three_angles}
 \hat X_\text{com}(\Omega)=\begin{bsmallmatrix}\cos(\psi_2)\cos(\psi_0) & \cos(\psi_2)\sin(\psi_0) & \sin(\psi_2)\cos(\psi_1) & \sin(\psi_2)\sin(\psi_1)\end{bsmallmatrix}\cdot\vec{\hat X}_\text{PD}(\Omega).
 \end{equation} 
-Then the combined variance is, e.g.\ for $\psi_2=\pi/4,\psi_1=\psi_0=0$,
+Where the combination angles $\psi_0,\psi_1,\psi_2\in[0,2\pi)$ can be chosen by the phase of the local oscillator in a homodyne readout scheme for example~\cite{}.
+Then the combined variance is, e.g.\ given $\psi_2=\pi/4,\psi_1=\psi_0=0$,
 \begin{equation}\label{eq:Scom_nOPO_eg}
 S_\text{com}=\frac{1}{2}(\text{S}_X)_{1,1}+\frac{1}{2}(\text{S}_X)_{3,3}+\text{Re}[(\text{S}_X)_{3,1}].
 \end{equation} 
@@ -530,7 +531,7 @@ I have now explained the general features of degenerate and nondegenerate squeez
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{QN_SQL_ext_sqz.pdf}
-	\caption{\jam{(Unify 10 dB definition with Chapter 5. Add frequency-dependent noise ellipses to external squeezing? Look up QRPN formula.)} Quantum noise response of the detector shown in Fig.~\ref{fig:DRFPMI} to quantum radiation-pressure noise, shot noise, and total quantum noise.	I use the parameters of LIGO~Voyager~\cite{} from Section~\ref{sec:dIS_results}. At kilohertz, shot noise is the dominant source of quantum noise. The point where the two sources of quantum noise balance is shown and is related to the Standard Quantum Limit~\cite{} which I will not discuss it here because it is weaker than the Mizuno limit and can also be beaten by squeezing~\cite{}.
+	\caption{\jam{(10 dB squeezing is injected not measured, make sure it is here. Add frequency-dependent noise ellipses to external squeezing? Look up QRPN formula.)} Quantum noise response of the detector shown in Fig.~\ref{fig:DRFPMI} to quantum radiation-pressure noise, shot noise, and total quantum noise. I use the parameters of LIGO~Voyager~\cite{} from Section~\ref{sec:dIS_results}. At kilohertz, shot noise is the dominant source of quantum noise. The point where the two sources of quantum noise balance is shown and is related to the Standard Quantum Limit~\cite{} which I will not discuss it here because it is weaker than the Mizuno limit and can also be beaten by squeezing~\cite{}.
 	The total noise with 10~dB frequency-dependent external squeezing is also shown. Since the signal response does not change with external squeezing, this uniformly improves the quantum noise--limited sensitivity.	
 	%\jam{(update this appropriately)} %\jam{(Combine with Fig.~\ref{fig:simplifed_QN_response_conventional})} Sensitivity \jam{(change to QN?)} curve showing the effect of injected, frequency-dependent external squeezing on an interferometric detector. %The sensitivity is uniformly improved at all frequencies because the noise is squeezed and the signal response is not affected. The frequency-dependent noise ellipses are shown.
 	} % in the signal-normalised curve \jam{(does this need to be a three-panel N, S, NSR plot?)}.} 
@@ -540,7 +541,7 @@ I have now explained the general features of degenerate and nondegenerate squeez
 \jam{(Check this section against other theses.)}
 % To explain how squeezing is currently used to improve the quantum noise--limited sensitivity of gravitational-wave detectors, I will first discuss the quantum noise in such detectors.
 The quantum noise in measuring the gravitational-wave signal with a detector like that shown in Fig.~\ref{fig:DRFPMI} comes from two sources: (1) shot noise and (2) quantum radiation-pressure noise.
-Firstly, the uncertainty in counting the number of photons incident on the photodetector is called ``shot noise''~\cite{}. \jam{(explain why the number of photons matters? how does it affect a quadrature measurement?)} Shot noise comes from the optical mode itself, specifically, from the fundamental uncertainty in the quadratures as described by the Heisenberg Uncertainty Principle in Eq.~\ref{eq:HUP_time_domain} \jam{(use frequency-domain)}. In the Hamiltonian modelling, it comes from the vacuum entering the readout and loss ports. Absent from any squeezing, the shot noise is just the vacuum value of $S_{X_i}=1$, flat across all frequencies and quadratures~\cite{}. \jam{(I am now confused why shot noise is associated with the phase quadrature? why is it conjugate to QRPN, explain this?)}
+Firstly, the uncertainty in counting the number of photons incident on the photodetector is called ``shot noise''~\cite{}. \jam{(explain why the number of photons matters? how does it affect a quadrature measurement?)} Shot noise comes from the optical mode itself, specifically, from the fundamental uncertainty in the quadratures as described by the Heisenberg Uncertainty Principle in Eq.~\ref{eq:HUP_time_domain} \jam{(use frequency-domain)}. In the Hamiltonian modelling, it comes from the vacuum entering the readout and loss ports. Absent from any squeezing, the shot noise is just the vacuum value of $S_{X_i}=1$~\footnote{Regardless of the losses, since if two vacuum sources mix the result is still vacuum.}, flat across all frequencies and quadratures~\cite{}. \jam{(I am now confused why shot noise is associated with the phase quadrature? why is it conjugate to QRPN, explain this?)}
 % Physically, this quantum noise manifests as so-called ``shot noise'' at the photodetector -- uncertainty in counting the number of photons incident on the photodetector~\cite{}. While quantum radiation pressure noise appears (with the gravitational-wave signal) in the amplitude quadrature in the arms, shot noise appears in all quadratures as it is associated with the vacuum \jam{(I am now confused why shot noise is associated with the phase quadrature? why is it conjugate to QRPN?)}. The shot noise response of an interferometric detector is given by $S_X(\Omega) = 1$ \jam{(should show calculation? from dIS model with $\chi=0$)}, flat with frequency, which will be shown later.
 % mention back-action as QPRN, mention free-falling mass in horizontal direction approximation
 Secondly, the optomechanical interaction with the test mass mechanical modes contributes quantum radiation-pressure noise~\cite{}. Since the position $\hat x$ and momentum $\hat p$ of one of the test masses are described by their own Heisenberg Uncertainty Principle~\cite{}, making a precise measurement of the position $\hat x$, e.g.\ to measure the gravitational-wave strain~\footnote{Technically, the detector only measures the differential position of the test masses but the same principle applies~\cite{}.}, causes back-action noise in $\hat p$ which optomechanically couples to noise in the arm cavity optical mode~\cite{}. The radiation-pressure noise depends on the mechanical resonance but can be approximated as though the test masses are free-falling horizontally~\cite{}, i.e.\ resonant at DC, when studying the behaviour at kilohertz because the frequencies are well above the resonant frequencies of the test masses~\cite{}. Under this common approximation, the quantum radiation-pressure noise of an interferometric detector is given by \jam{... (look up radiation pressure formula)}~\cite{}, i.e.\ decreasing as $f^{-2}$ with increasing frequency $f$ and singular at DC. \jam{(Why $1/f^2$ if there are multiple stages of suspension? Why not $1/f^8$?)}
