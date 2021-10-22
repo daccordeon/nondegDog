@@ -23,14 +23,14 @@ Finally, I will consider the feasibility of using incoherently combined signal a
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{idler_RO_config.pdf}
+    \includegraphics[width=0.7\textwidth]{idler_RO_config.pdf}
     \caption{Nondegenerate internal squeezing alternative readout configurations represented by the photodetector in Fig.~\ref{fig:nIS_config}. The light at can either be (i) split at a dichroic optic~\cite{} to measure the signal and idler separately or (ii) coherently combined at the same photodetector, where the ellipses represent where either readout scheme joins the main configuration. When measuring the modes separately, the quadratures of the mode can be still be coherently combined, e.g.\ the idler quadratures can be combined at angle $\psi_1$.}
     \label{fig:idler_RO_config}
 \end{figure}
 
 The idler mode can be used for measurement because the internal squeezer couples the gravitational-wave signal from the signal mode into the idler mode. Therefore, unlike signal readout, the idler readout's performance cannot be compared to when the squeezer is off because then there is no signal response. This change in mode structure also means that idler readout is not PT-symmetric in the lossless limit \jam{(check)} and, therefore, I expect different behaviour than the signal readout. The idler readout rate, previously a source of loss for the signal readout, can be used to measure the idler mode separately or coherently combined with the signal mode as shown in Fig.~\ref{fig:idler_RO_config}. That measuring the idler mode simply requires detecting the light leaking out through the signal-recycling mirror is an advantage of this all-optical alternative to measuring the mechanical idler mode of stable optomechanical filtering as proposed in Ref.~\cite{liEnhancingInterferometerSensitivity2021}.
 
-Idler and coherently combined readout, shown in Fig.~\ref{fig:idler_RO_config}, use the same model as signal readout from Section~\ref{sec:nIS_model} and just combine the quadratures at the photodetector as described for the nondegenerate OPO in Section~\ref{sec:nOPO_combined_readout}. Specifically, let the quadratures of $\vec{\hat X}_\text{PD}(\Omega)$ from Eq.~\ref{eq:nIS_Xpd} be coherently combined to measure~\footnote{Here the combination angles $\psi_0,\psi_1,\psi_2\in[0,2\pi)$ can be chosen by the phase of the local oscillator in a homodyne readout scheme for example~\cite{}.}
+Idler and coherently combined readout, shown in Fig.~\ref{fig:idler_RO_config}, use the same model as signal readout from Section~\ref{sec:nIS_model} and just combine the quadratures at the photodetector as described for the nondegenerate OPO in Section~\ref{sec:nOPO_combined_readout}. Specifically, let the quadratures of $\vec{\hat X}_\text{PD}(\Omega)$ from Eq.~\ref{eq:nIS_Xpd} be coherently combined to measure~\footnote{Here, the combination angles $\psi_0,\psi_1,\psi_2\in[0,2\pi)$ can be chosen by the phase of the local oscillator in a homodyne readout scheme for example~\cite{}.}
 \begin{equation}\label{eq:Xcom_three_angles}
 \hat X_\text{com}(\Omega)=\begin{bsmallmatrix}\cos(\psi_2)\cos(\psi_0) & \cos(\psi_2)\sin(\psi_0) & \sin(\psi_2)\cos(\psi_1) & \sin(\psi_2)\sin(\psi_1)\end{bsmallmatrix}\cdot\vec{\hat X}_\text{PD}(\Omega).
 \end{equation}
@@ -88,22 +88,29 @@ Then, I would find a Weiner filter for the sensitivity, i.e.\ the readout angles
 
 \begin{table}[]
 \centering
-\begin{tabular}{@{}ll|ll@{}}
+% \begin{tabular}{@{}ll|ll@{}}
+% \toprule
+% carrier wavelength, $\lambda_0$ & 2 $\mu\text{m}$ & \cellcolor[HTML]{EFEFEF}signal mode transmissivity, $T_{\text{SRM},b}$ & \cellcolor[HTML]{EFEFEF} 0 \\
+% arm cavity length, $L_\text{arm}$ & 4 km & \cellcolor[HTML]{EFEFEF}signal readout rate, $\gamma^b_R$ & \cellcolor[HTML]{EFEFEF} 0 \\
+% signal-recycling cavity length, $L_\text{SRC}$ & 1.124 km & \cellcolor[HTML]{EFEFEF}idler mode transmissivity, $T_{\text{SRM},c}$ & \cellcolor[HTML]{EFEFEF} 0.046 \\
+% circulating arm power, $P_c$ & 3 MW & \cellcolor[HTML]{EFEFEF}idler readout rate, $\gamma^c_R$ & \cellcolor[HTML]{EFEFEF} 500 Hz \\
+% test mass mass, $M$ & 200 kg & arm intra-cavity loss, $T_{l,a}$ & 100 ppm \\
+% radiation pressure, $\rho$ & $\neq0$ & signal mode intra-cavity loss, $T_{l,b}$ & 1000 ppm \\
+% input test mass transmissivity, $T_\text{ITM}$ & 0.197 & idler mode intra-cavity loss, $T_{l,c}$ & 1000 ppm \\
+% sloshing frequency, $\omega_s$ & 5 kHz & detection loss, $R_\text{PD}$ & $10\%$ \\ \bottomrule
+% \end{tabular}
+\begin{tabular}{@{}ll@{}}
 \toprule
-carrier wavelength, $\lambda_0$ & 2 $\mu\text{m}$ & \cellcolor[HTML]{EFEFEF}signal mode transmissivity, $T_{\text{SRM},b}$ & \cellcolor[HTML]{EFEFEF} 0 \\
-arm cavity length, $L_\text{arm}$ & 4 km & \cellcolor[HTML]{EFEFEF}signal readout rate, $\gamma^b_R$ & \cellcolor[HTML]{EFEFEF} 0 \\
-signal-recycling cavity length, $L_\text{SRC}$ & 1.124 km & \cellcolor[HTML]{EFEFEF}idler mode transmissivity, $T_{\text{SRM},c}$ & \cellcolor[HTML]{EFEFEF} 0.046 \\
-circulating arm power, $P_c$ & 3 MW & \cellcolor[HTML]{EFEFEF}idler readout rate, $\gamma^c_R$ & \cellcolor[HTML]{EFEFEF} 500 Hz \\
-test mass mass, $M$ & 200 kg & arm intra-cavity loss, $T_{l,a}$ & 100 ppm \\
-radiation pressure, $\rho$ & $\neq0$ & signal mode intra-cavity loss, $T_{l,b}$ & 1000 ppm \\
-input test mass transmissivity, $T_\text{ITM}$ & 0.197 & idler mode intra-cavity loss, $T_{l,c}$ & 1000 ppm \\
-sloshing frequency, $\omega_s$ & 5 kHz & detection loss, $R_\text{PD}$ & $10\%$ \\ \bottomrule
+signal mode transmissivity, $T_{\text{SRM},b}$ & 0 \\ 
+signal readout rate, $\gamma^b_R$ & 0 \\
+idler mode transmissivity, $T_{\text{SRM},c}$ & 0.046 \\
+idler readout rate, $\gamma^c_R$ & 500 Hz \\ \bottomrule
 \end{tabular}
-\caption{\jam{(Can this be shortened by reference to the other table?)} Idler readout parameter set, which is the same as Tab.~\ref{tab:signal_RO_parameters} for the signal readout but with different readout rates as shown highlighted with a grey background. The idler readout results shown use these parameters unless stated otherwise.}
+\caption{Idler readout parameter set is the same as Tab.~\ref{tab:signal_RO_parameters} for the signal readout except with the signal and idler readout rates exchanged as shown. The idler readout results use these parameters unless stated otherwise.}
 \label{tab:idler_RO_parameters}
 \end{table}
 
-Some of the behaviour is different to signal readout, as shown in Fig.~\ref{fig:nIS_signal_vs_idler_ROs} where I compare the general behaviour of idler readout to signal readout using a modified version of the parameter set in Tab.~\ref{tab:idler_RO_parameters}~\footnote{Here I change the readout rates by fixing the signal transmissivity and changing the signal-recycling cavity length and idler transmissivity.}. The noise response of the idler has a peak at the same frequency but with slightly less anti-squeezing \jam{(check, why?)} than the signal readout. The peak frequency is the same for both readouts because it is determined by the common singularity threshold frequency. The idler has worse radiation-pressure noise than the signal \jam{(quantify)} \jam{(why?)}. The signal response of the idler compared to the signal readout decreases the response at and above the peak but improves it below the peak down to DC. If the idler readout rate is increased, then the DC signal response improvement diminishes at the same rate that the radiation-pressure noise increases such that the ``low'' frequency sensitivity remains the same \jam{(why?)}. 
+Some of the behaviour is different to signal readout, as shown in Fig.~\ref{fig:nIS_signal_vs_idler_ROs} where I compare the general behaviour of idler readout to signal readout using a modified version of the parameter set in Tab.~\ref{tab:idler_RO_parameters}~\footnote{Here, I change the readout rates by fixing the signal transmissivity and changing the signal-recycling cavity length and idler transmissivity.}. The noise response of the idler has a peak at the same frequency but with slightly less anti-squeezing \jam{(check, why?)} than the signal readout. The peak frequency is the same for both readouts because it is determined by the common singularity threshold frequency. The idler has worse radiation-pressure noise than the signal \jam{(quantify)} \jam{(why?)}. The signal response of the idler compared to the signal readout decreases the response at and above the peak but improves it below the peak down to DC. If the idler readout rate is increased, then the DC signal response improvement diminishes at the same rate that the radiation-pressure noise increases such that the ``low'' frequency sensitivity remains the same \jam{(why?)}. 
 % The result is that the signal transfer function improvement with idler readout persists at low frequencies but radiation pressure means that there's no sensitivity improvement. 
 The resulting sensitivity of the idler compared to the signal readout is the same below 30~Hz, improves from $\sim$30--500~Hz, and worsens above 500~Hz as shown in Fig.~\ref{fig:nIS_signal_vs_idler_ROs}. For different readout rates the crossing frequencies change but the general behaviour remains the same: idler readout is better at ``low--middle'' frequencies and worse at ``high'' frequencies than signal readout. The squeezer parameter must be non-zero for idler readout, and increasing the squeezer parameter improves the idler sensitivity from around 50~Hz up to the peak frequency but increases the radiation-pressure noise. The idler readout is most useful when the readout rates are comparable or the idler is smaller than the signal readout rate, e.g.\ as shown in Fig.~\ref{fig:nIS_signal_vs_idler_ROs}. \jam{(why? quantify by change in integrated sensitivity?)}
 % section 3-B in Li 2021 has noticed this already! ``During this work, I became aware \jam{(do I need to couch this? can I just say that this agress with an existing result)} of a related result in Ref.~\cite{liEnhancingInterferometerSensitivity2021} for the optomechanical analogue of this configuration.''
@@ -137,20 +144,20 @@ That the idler readout improves the sensitivity around 100~Hz agrees with Ref.~\
 % idler readout tolerance to losses
 \begin{figure}
     \centering
-    \includegraphics[width=0.85\textwidth]{nIS_idlerRO_tolerance_Rpd.pdf} 
-    \caption{Nondegenerate internal squeezing idler readout tolerance to detection loss. Idler readout's tolerance to detection loss is similar to signal readout's, shown in Fig.~\ref{fig:nIS_sigRO_tolerance_Rpd}, with uniform loss of sensitivity except around the peak frequency and where the radiation-pressure noise dominates because there the loss in signal and noise are roughly equal. I do not compare idler readout to the performance without squeezing because no gravitational-wave signal reaches the idler mode with the squeezer off. I use the parameter set in Tab.~\ref{tab:idler_RO_parameters}.}
+    \includegraphics[width=0.7\textwidth]{nIS_idlerRO_tolerance_Rpd.pdf} 
+    \caption{\jam{(Cut threshold from legend.)} Nondegenerate internal squeezing idler readout tolerance to detection loss. Idler readout's tolerance to detection loss is similar to signal readout's, shown in Fig.~\ref{fig:nIS_sigRO_tolerance_Rpd}, with uniform loss of sensitivity except around the peak frequency and where the radiation-pressure noise dominates because there the loss in signal and noise are roughly equal. I do not compare idler readout to the performance without squeezing because no gravitational-wave signal reaches the idler mode with the squeezer off. I use the parameter set in Tab.~\ref{tab:idler_RO_parameters} and $95\%$ threshold.}
     \label{fig:nIS_idlerRO_tolerance_Rpd}
 \end{figure}
 \begin{figure}
 	\centering
-	\includegraphics[width=0.9\textwidth]{nIS_idlerRO_tolerance_Tlb.pdf}
-	\caption{Nondegenerate internal squeezing idler readout tolerance to signal mode intra-cavity loss. Signal loss decreases the peak frequency of idler readout but strongly broadens the sensitivity improvement independently of the idler readout rate \jam{(quantify by integrated sensitivity)}. Opening the signal readout port would introduce signal loss on the order of 10000~ppm as in Fig.~\ref{fig:nIS_signal_vs_idler_ROs}. I use the parameter set in Tab.~\ref{tab:idler_RO_parameters}.}
+	\includegraphics[width=0.75\textwidth]{nIS_idlerRO_tolerance_Tlb.pdf}
+	\caption{Nondegenerate internal squeezing idler readout tolerance to signal mode intra-cavity loss. Signal loss decreases the peak frequency of idler readout but strongly broadens the sensitivity improvement independently of the idler readout rate \jam{(quantify by integrated sensitivity)}. Opening the signal readout port would introduce signal loss on the order of 10000~ppm as in Fig.~\ref{fig:nIS_signal_vs_idler_ROs}. I use the parameter set in Tab.~\ref{tab:idler_RO_parameters} and $95\%$ threshold.}
 	\label{fig:nIS_idlerRO_tolerance_Tlb}
 \end{figure}
 \begin{figure}
 	\centering
-	\includegraphics[width=0.9\textwidth]{nIS_idlerRO_tolerance_Tlc.pdf}
-	\caption{\jam{(Explain RPN change in left column.)} Nondegenerate internal squeezing idler readout tolerance to idler intra-cavity loss. Idler readout is tolerant to idler loss but less resistant than signal readout is to signal loss, shown in Fig.~\ref{fig:nIS_sigRO_tolerance_Tlb}. In either case, the readout rate dominates the realistic intra-cavity loss rate. The idler readout is least tolerant at 10--1000~Hz, but increasing the idler loss ten-fold from the realistic level decreases the sensitivity by less than a factor of two. Although they initially look similar, this tolerance is different to detection loss in Fig.~\ref{fig:nIS_idlerRO_tolerance_Rpd} as idler loss decreases the radiation-pressure noise and does not affect the sensitivity above the peak. I use the parameter set in Tab.~\ref{tab:idler_RO_parameters}.}
+	\includegraphics[width=0.75\textwidth]{nIS_idlerRO_tolerance_Tlc.pdf}
+	\caption{\jam{(Explain RPN change in left column.)} Nondegenerate internal squeezing idler readout tolerance to idler intra-cavity loss. Idler readout is tolerant to idler loss but less resistant than signal readout is to signal loss, shown in Fig.~\ref{fig:nIS_sigRO_tolerance_Tlb}. In either case, the readout rate dominates the realistic intra-cavity loss rate. The idler readout is least tolerant at 10--1000~Hz, but increasing the idler loss ten-fold from the realistic level decreases the sensitivity by less than a factor of two. Although they initially look similar, this tolerance is different to detection loss in Fig.~\ref{fig:nIS_idlerRO_tolerance_Rpd} as idler loss decreases the radiation-pressure noise and does not affect the sensitivity above the peak. I use the parameter set in Tab.~\ref{tab:idler_RO_parameters} and $95\%$ threshold.}
 	\label{fig:nIS_idlerRO_tolerance_Tlc}
 \end{figure}
 % \begin{figure}

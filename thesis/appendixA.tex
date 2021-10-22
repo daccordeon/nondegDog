@@ -1,5 +1,24 @@
 % appendices are not necessary and should aid understanding, not reproduce results from elsewhere
 
+\chapter{Stability of degenerate internal squeezing}
+\label{app:dIS_stability}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.95\textwidth]{dIS_stability.pdf}
+    \caption{\jam{(Make horizontal. Is this plot necessary? Unify captions with nIS stability plot.)} Degenerate internal squeezing's stability for lossless (left panel) and realistic loss (right panel) cases. The different colours indicate different poles found numerically.
+    % The squeezer parameter is normalised to the appropriate threshold in each case.
+    A positive imaginary part of the pole indicates instability.
+    This shows that both cases are stable below threshold. I use the parameters in Tab.~\ref{tab:dIS_parameters}.}
+    \label{fig:dIS_stability}
+\end{figure}
+
+\jam{(Make this fit on one page.)}
+I determine the stability of degenerate internal squeezing via the poles of its noise and signal responses. These responses are related rational functions (fractions of polynomials). Let the denominator of the signal transfer function squared be $q(\Omega,\chi)$, a polynomial in $\Omega,\chi$, then the denominator of the noise transfer function squared is $\Omega^4 q(\Omega,\chi) q(\Omega,-\chi)$~\cite{korobkoQuantumExpanderGravitationalwave2019}. Since the zero $\Omega=0$ comes from the horizontally free-falling mass assumption, the remaining zeros of the signal and noise denominators are the shared zeros of $q(\Omega,\chi)$ \jam{(what about $q(\Omega,-\chi)$?)}. In the complex $\Omega$ plane, if any of these poles~\footnote{I check that the numerator is not also zero at that point.} have a positive imaginary part, then the system is unstable \jam{(check this, IFT suggests other sign?)}~\cite{}. %~\footnote{This result is often expressed instead with respect to the Laplace Transform variable $s=i\Omega$, where a positive real part of $s$ indicates instability~\cite{}.}. %This condition is equivalent to others such as \jam{(... the Nyquist criterion?)}.
+As shown in Fig.~\ref{fig:dIS_stability}, therefore, degenerate internal squeezing is stable in the lossless case below threshold~\cite{} and in the lossy case below the singularity threshold determined in Section~\ref{sec:singularity_threshold}.
+
+
+
 \chapter{Singularity threshold for degenerate internal squeezing}
 \label{app:dIS_singularity_thr}
 
