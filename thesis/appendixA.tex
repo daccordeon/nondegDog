@@ -6,15 +6,16 @@
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.95\textwidth]{dIS_stability.pdf}
-    \caption{\jam{(Make horizontal. Is this plot necessary? Unify captions with nIS stability plot.)} Degenerate internal squeezing's stability for lossless (left panel) and realistic loss (right panel) cases. The different colours indicate different poles found numerically.
+    \caption{Degenerate internal squeezing's stability for lossless (left panel) and realistic loss (right panel) cases. The different colours indicate different poles found numerically.
     % The squeezer parameter is normalised to the appropriate threshold in each case.
     A positive imaginary part of the pole indicates instability.
-    This shows that both cases are stable below threshold. I use the parameters in Tab.~\ref{tab:dIS_parameters}.}
+    Both cases are stable below singularity threshold. I use the parameters in Tab.~\ref{tab:dIS_parameters}.}
     \label{fig:dIS_stability}
 \end{figure}
 
-\jam{(Make this fit on one page.)}
-I determine the stability of degenerate internal squeezing via the poles of its noise and signal responses. These responses are related rational functions (fractions of polynomials). Let the denominator of the signal response squared be $q(\Omega,\chi)$, a polynomial in $\Omega,\chi$, then the denominator of the noise response squared is $\Omega^4 q(\Omega,\chi) q(\Omega,-\chi)$~\cite{korobkoQuantumExpanderGravitationalwave2019}. Since the zero $\Omega=0$ comes from the horizontally free-falling mass assumption, the remaining zeros of the signal and noise denominators are the shared zeros of $q(\Omega,\chi)$\jam{(what about $q(\Omega,-\chi)$?)}. In the complex $\Omega$ plane, if any of these poles~\footnote{I check that the numerator is not also zero at that point.} have a positive imaginary part, then the system is unstable\jam{(check this, IFT suggests other sign?)}~\cite{}. %~\footnote{This result is often expressed instead with respect to the Laplace Transform variable $s=i\Omega$, where a positive real part of $s$ indicates instability~\cite{}.}. %This condition is equivalent to others such as\jam{(... the Nyquist criterion?)}.
+I determine the stability of degenerate internal squeezing via the poles of its noise and signal responses. These responses are related fractions of polynomials.
+The denominator of the noise response squared is $\Omega^4 q(\Omega,\chi)$ where $q$ is a polynomial in $\Omega,\chi$~\cite{korobkoQuantumExpanderGravitationalwave2019}.
+Since the zero $\Omega=0$ comes from the horizontally free-falling mass assumption, the remaining zeros of the noise denominator are the zeros of $q(\Omega,\chi)$ (which are shared with the signal response~\cite{korobkoQuantumExpanderGravitationalwave2019}). In the complex $\Omega$ plane, if any of these poles~\footnote{I check that the numerator is not also zero at that point.} have a positive imaginary part, then the system is unstable\jam{(check this, IFT suggests other sign?)}~\cite{}. %~\footnote{This result is often expressed instead with respect to the Laplace Transform variable $s=i\Omega$, where a positive real part of $s$ indicates instability~\cite{}.}. %This condition is equivalent to others such as\jam{(... the Nyquist criterion?)}.
 As shown in Fig.~\ref{fig:dIS_stability}, therefore, \emph{degenerate internal squeezing is stable in the lossless case below threshold}~\cite{} and the lossy case below the singularity threshold determined in Section~\ref{sec:singularity_threshold}.
 
 
@@ -28,7 +29,7 @@ As shown in Fig.~\ref{fig:dIS_stability}, therefore, \emph{degenerate internal s
     \centering
     \includegraphics[width=0.8\textwidth]{dIS_threshold_traj_compressed.pdf}
     \caption{Degenerate internal squeezing trajectories of the singularities of the anti-squeezed quadrature of the noise and the extrema of the squeezed quadrature in $(\Omega, \chi)$ space as the arm loss is changed from $T_{l,a}\in(0,1)$ and the signal loss is zero. I assume that the extrema are minima because of the shape of the noise response in Fig.~\ref{fig:dIS_sensitivity}.
-    The singularities and extrema both achieve the same (a) lossless and (d) high arm loss limits, where neither reaches (d) because of limited numerical sampling. However, the singularities and extrema diverge at high arm losses\jam{(looks like they diverge immediately, quantify what arm loss is required for a significant difference)} and merge with their counterparts moving in from infinity at different squeezer parameters shown at (b) and (c), respectively. I use the parameters in Tab.~\ref{tab:signal_RO_parameters}\jam{(check)}. %\jam{(rest of explanation moved into text, does it still make sense?)}
+    The singularities and extrema both achieve the same (a) lossless and (d) high arm loss limits, where neither reaches (d) because of limited numerical sampling. However, the singularities and extrema diverge at high arm losses (e.g.\ $T_{l,a}>0.1$) and merge with their counterparts moving in from infinity at different squeezer parameters shown at (b) and (c), respectively. I use the parameters in Tab.~\ref{tab:signal_RO_parameters}\jam{(check)}. %\jam{(rest of explanation moved into text, does it still make sense?)}
     }
     \label{fig:dIS_threshold_traj} % frequency scale is not logarithmic
 \end{figure}
@@ -52,7 +53,7 @@ As the arm loss $\gamma_a$ is increased from zero, the singularities move and me
 However, where the anti-squeezed quadrature is divergent does not necessarily correspond to where the squeezed quadrature has the minimum value. This is unlike the degenerate OPO in Eq.~\ref{eq:dOPO_fixed_phase} where the squeezed quadrature is minimised on threshold.
 If the minima~\footnote{Since the zeros of the squeezed quadrature are not robust to losses, as shown for the OPO in Fig.~\ref{fig:dOPO_variances}, I consider the minima instead.} of the squeezed quadrature were used to define threshold, then their trajectories in (real) $(\Omega,\chi)$ space would be as shown in Fig.~\ref{fig:dIS_threshold_traj}. Although they achieve the same limits, these trajectories are not the same as the singularity trajectories.
 This does not violate the Heisenberg Uncertainty Principle because the losses increase the uncertainty product~\cite{}. %, i.e.\ the anti-squeezed variance is increased more than the squeezed variance is decreased. %~\footnote{The squeezing remains Gaussian~\cite{}, i.e.\ the squeezed noise ellipse's area is increased but remains an ellipse with semi-axes that represent the standard deviations of the Gaussian noise in each quadrature.\jam{(check this)}}.  
-Moreover, the difference between the minima and singularities is only significant\jam{(quantify)} with high arm losses that are far above the realistic loss $100~\text{ppm}$ expected for future gravitational-wave detectors\jam{(quantify)}.
+Moreover, the difference between the minima and singularities is only significant with high arm losses that are far above the realistic loss $100~\text{ppm}$ expected for future gravitational-wave detectors (e.g.\ the squeezing curves only diverge by more than 0.1~dB around $T_{l,a}=0.1$).
 % e.g.\\jam{in Fig.~\ref{fig:dIS_on_threshold} (quantify without plot)} uses $T_{l,a}=800000~\text{ppm}$ compared to $100~\text{ppm}$ predicted for future gravitational-wave detectors.
 Therefore, this difference is not of concern for future work involving singularity threshold.
 % because of this and that I am studying nondegenerate squeezing, this problem is not of concern for using singularity threshold in nondegenerate internal squeezing\jam{(what about combined readout?)}.

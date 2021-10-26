@@ -29,15 +29,15 @@
 
 % Bibliography
 \usepackage[numbers]{natbib} %Offers more sophisticated bibliographic options
-% \bibliographystyle{unsrtnat} % bibliography in order of appearance
+% \bibliographystyle{unsrtnat} % bibliography in order of appearance, comment out to use own style (.bst) file
 
 % Markup
 %\usepackage{showkeys} %Turn this on to list citation keys, reference keys in text
 \usepackage[mathlines,pagewise]{lineno} % line numbers
 
 % \usepackage[usenames,dvipsnames]{xcolor}
-% \newcommand{\jam}{\textcolor{magenta}}
-\newcommand{\jam}[1]{}
+\newcommand{\jam}{\textcolor{magenta}}
+% \newcommand{\jam}[1]{}
 	% \newcommand{\jam}[1]{\ignorespaces}
 
 \newcommand{\code}[1]{\texttt{#1}}
@@ -61,6 +61,7 @@
 
 \pagenumbering{roman} 
 
+\hypersetup{pageanchor=false}
 \begin{titlepage}
 \title{\textbf{Improving future gravitational-wave detectors using nondegenerate internal~squeezing}\\[2cm]}
 % ``Advanced quantum-mechanical techniques for future gravitational-wave detectors'' is too similar to: https://link.springer.com/article/10.1007/s41114-019-0018-y ?
@@ -71,7 +72,8 @@
 \date{\textbf{\thismonth}}
 \maketitle
 \end{titlepage}
- 
+\hypersetup{pageanchor=true}
+
 \sloppy
 
 
