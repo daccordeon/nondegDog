@@ -1,0 +1,223 @@
+% honours final talk
+\documentclass[12pt,xcolor=dvipsnames]{beamer}
+\mode<presentation> {
+\usetheme{Madrid}
+\setbeamertemplate{navigation symbols}{}
+}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[center]{caption}
+\usepackage{hyperref}
+\usepackage{mathtools}
+
+\usepackage{subfig}
+\usepackage{comment}
+
+\usepackage{multimedia}
+
+
+\graphicspath{{./}}
+
+\setbeamertemplate{enumerate items}[default]
+
+
+\title[]{Improving future gravitational-wave detectors using nondegenerate internal~squeezing}
+
+\author[James Gardner]{\texorpdfstring{\large{James~Gardner}\\\small{Min~Jet~Yap, Vaishali~Adya, Sheon~Chua, and David~McClelland}}{James~Gardner}}
+\institute[]{\small The Centre for Gravitational Astrophysics, ANU}
+\date{November 10, 2021}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{
+  \usebackgroundtemplate{\includegraphics[width=\paperwidth]{title_slide_with_logos.pdf}}
+  \begin{frame}[label=titleframe,noframenumbering]
+  \titlepage
+  \end{frame}
+}
+
+\begin{frame}{Motivation: kilohertz gravitational waves}
+
+\vskip0pt plus 1filll
+\centering
+{\tiny Potential astrophysics from [M. Breschi, S. Bernuzzi, F. Zappa, et al. 2019. \emph{Phys. Rev. D}, 100:104029]}\\
+{\vspace{-0.2cm}\tiny and [H.~Miao, H.~Yang, and D.~Martynov., 2018, \emph{Phys. Rev. D}, 98(4):044044]}
+\end{frame}
+
+\begin{frame}{Gravitational-wave detectors}
+% simple michelson
+
+\vskip0pt plus 1filll
+\centering
+{\tiny [LIGO Collaboration, 2015. \emph{Class. Quantum Grav.}, 32:074001]}
+\end{frame}
+
+\begin{frame}{Goal: kilohertz sensitivity}
+% + overview of how nIS improves SNR
+% no sensitivity graph yet
+\end{frame}
+
+\begin{frame}{Quantum noise and squeezing}
+
+\end{frame}
+
+\begin{frame}{External squeezing and cavities}
+%+ cavities affect signal response
+\end{frame}
+
+\begin{frame}{Internal squeezing}
+
+
+\vskip0pt plus 1filll
+\centering
+{\tiny Degenerate internal squeezing from [M. Korobko, Y. Ma, Y. Chen, et al., 2019, \emph{Light Sci. Appl.}, 8(1):118]}\\
+{\vspace{-0.2cm}\tiny and [V. B. Adya, M. J. Yap, D. Töyrä, et al., 2020, \emph{Class. Quantum Grav.}, 37(7):07LT02]}
+\end{frame}
+
+\begin{frame}{Optical loss}
+\centering
+{
+\includegraphics[angle=-90,width=0.77\textwidth]{talk_ball_and_stick_loss.pdf}
+\hspace*{1cm}
+}
+\end{frame}
+
+\begin{frame}{Method} 
+% clearly say what I did
+% analytic model
+% approximations (no pump depl.)
+% validation
+\end{frame}
+
+\begin{frame}{Results}
+\centering
+\includegraphics[width=\textwidth]{talk_nIS_N_S_NSR_annotated.pdf}
+% N_S_NSR, explain sens!
+% explain parameter set
+\end{frame}
+
+\begin{frame}{Threshold}
+\centering
+\includegraphics[angle=-90,width=1\textwidth]{gain_and_loss.pdf}
+\\\vspace*{1cm}
+\large{threshold: gain$=$loss}
+% blowup
+\end{frame}
+
+\begin{frame}{Threshold via stability}
+% this is my technique
+\centering
+threshold + no pump depletion$\implies$borderline unstable
+% traj
+\pause
+\includegraphics[width=0.7\textwidth]{talk_nIS_threshold.pdf}
+\end{frame}
+
+\begin{frame}{Tolerance to detection optical loss}
+% confirm comparison to dIS but no fig for dIS
+\begin{columns}
+\column{0.55\textwidth}
+\centering
+\includegraphics[height=0.77\textheight]{talk_nIS_tolerance.pdf}
+\column{0.45\textwidth}
+\centering
+\hspace*{-.3cm}
+\includegraphics[height=0.742\textheight]{talk_dIS_tolerance.pdf} % uses a different parameter set, readout rate = 5kHz
+\end{columns}
+\vskip0pt plus 1filll
+\centering
+{\tiny Degenerate internal squeezing model from [M. Korobko, Y. Ma, Y. Chen, et al., 2019, \emph{Light Sci. Appl.}, 8(1):118]}\\
+\end{frame}
+
+\begin{frame}{Kilohertz sensitivity}
+\centering
+\includegraphics[width=0.95\textwidth]{talk_nIS_ideal_losses.pdf}
+{\tiny\vspace{-0.2cm}Astrophysical target from [H.~Miao, H.~Yang, and D.~Martynov., 2018, \emph{Phys. Rev. D}, 98(4):044044]}
+\end{frame}
+
+\begin{frame}{Highlights of other results}
+\vspace{2cm}
+	\begin{enumerate}
+	\item Optimal squeezing
+	\item Alternative to optomechanical analogue
+	\item Broadband sensitivity using a different readout (measurement) scheme 
+	\end{enumerate}
+\vskip0pt plus 1filll
+\centering
+{\tiny\vspace{-0.15cm}Optomechanical analogue in [X. Li, M. Goryachev, Y. Ma, et al., 2020, \emph{arXiv:2012.00836 [quant-ph]}\ ]}
+\end{frame}
+
+\begin{frame}{Future work}
+	\begin{enumerate}
+	\item \textbf{Combined readout scheme} %Optimal sensitivity
+	\item Extended analytic model $\implies$ validate threshold
+	\item Numerical validation % validation already done with limits, sufficient physics extracted with analytic model to absorb all of research time
+	\item Parity-time symmetry
+	\item Experimental table-top demonstration 
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{Conclusions}
+% return to motivation
+\begin{block}{Nondegenerate internal squeezing}
+\begin{enumerate}
+\item Detection loss--resistant, all-optical configuration
+\item Well-characterised by analytic model
+\item Can improve kilohertz (1--4~kHz) or broadband (0.1--4~Hz) sensitivity to gravitational waves 
+\end{enumerate}
+\end{block}
+\centering
+\vspace{0.5cm}
+{\large gravitational-wave detection$\implies$ \underline{new physics}!}
+\end{frame}
+
+
+
+%%%%%%%% repete primeiro slide? %%%%%%%%
+% {
+% \usebackgroundtemplate{\includegraphics[width=\paperwidth]{title_slide_with_logos.pdf}}
+% 	\againframe<3>[noframenumbering]{titleframe}
+% }
+
+\setbeamercolor{frametitle}{fg=Blue,bg=Blue!20}
+
+\begin{frame}[noframenumbering]{Stable optomechanical filtering}
+\centering
+\includegraphics[angle=-90,width=0.8\textwidth]{sWLC_config.pdf}
+\end{frame}
+
+\begin{frame}[noframenumbering]{Abstract mode structure}
+\centering
+\includegraphics[angle=-90,width=\textwidth]{all_mode_structures.pdf}
+\end{frame}
+
+\begin{frame}[noframenumbering]{Stability of nondegenerate internal squeezing}
+\centering
+\includegraphics[width=\textwidth]{nIS_stability.pdf}
+\end{frame}
+
+\begin{frame}[noframenumbering]{Threshold of degenerate internal squeezing}
+\centering
+\includegraphics[width=0.8\textwidth]{dIS_threshold_traj_compressed.pdf}
+\end{frame}
+
+\begin{frame}[noframenumbering]{Alternative readout schemes}
+\begin{columns}
+\column{0.5\textwidth}
+\includegraphics[width=\textwidth]{idler_RO_config.pdf}
+\centering
+\column{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth]{nIS_signal_vs_idler_ROs.pdf}
+\end{columns}
+\end{frame}
+
+
+
+\end{document}
