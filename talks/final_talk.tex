@@ -18,6 +18,7 @@
 \usepackage{comment}
 
 \usepackage{multimedia}
+\usepackage{anyfontsize}
 
 
 \graphicspath{{./}}
@@ -52,15 +53,18 @@
 
 \begin{frame}{Gravitational-wave detectors}
 % simple michelson
-
-\vskip0pt plus 1filll
 \centering
-{\tiny [LIGO Collaboration, 2015. \emph{Class. Quantum Grav.}, 32:074001]}
+\includegraphics[width=0.75\textwidth]{ligo_sites_Christopher_Berry.png}
+\includegraphics[angle=-90,width=\textwidth]{GW_hitting_MICH.pdf}
+\vskip0pt plus 1filll
+{\tiny (top) image credit: [Christopher Berry, 2015], (bottom) reference: [J. Aasi et al., 2015. \emph{Class. Quantum Grav.}, 32:074001]}
 \end{frame}
 
 \begin{frame}{Goal: kilohertz sensitivity}
 % + overview of how nIS improves SNR
 % no sensitivity graph yet
+\centering
+\includegraphics[angle=-90,width=0.8\textwidth]{talk_SNR_goal.pdf}
 \end{frame}
 
 \begin{frame}{Quantum noise and squeezing}
@@ -69,6 +73,8 @@
 
 \begin{frame}{External squeezing and cavities}
 %+ cavities affect signal response
+\centering
+\includegraphics[angle=-90,width=\textwidth]{talk_dES_config.pdf}
 \end{frame}
 
 \begin{frame}{Internal squeezing}
@@ -83,7 +89,7 @@
 \begin{frame}{Optical loss}
 \centering
 {
-\includegraphics[angle=-90,width=0.77\textwidth]{talk_ball_and_stick_loss.pdf}
+\includegraphics[angle=-90,width=0.85\textwidth]{talk_ball_and_stick_loss.pdf}
 \hspace*{1cm}
 }
 \end{frame}
@@ -95,7 +101,7 @@
 % validation
 \end{frame}
 
-\begin{frame}{Results}
+\begin{frame}{Results: nondegenerate internal squeezing}
 \centering
 \includegraphics[width=\textwidth]{talk_nIS_N_S_NSR_annotated.pdf}
 % N_S_NSR, explain sens!
@@ -107,15 +113,16 @@
 \includegraphics[angle=-90,width=1\textwidth]{gain_and_loss.pdf}
 \\\vspace*{1cm}
 \large{threshold: gain$=$loss}
+\\\vspace*{0.5cm}threshold + no pump depletion$\implies$borderline unstable
 % blowup
 \end{frame}
 
 \begin{frame}{Threshold via stability}
 % this is my technique
 \centering
-threshold + no pump depletion$\implies$borderline unstable
+% threshold + no pump depletion$\implies$borderline unstable
 % traj
-\pause
+% \pause
 \includegraphics[width=0.7\textwidth]{talk_nIS_threshold.pdf}
 \end{frame}
 
@@ -145,8 +152,8 @@ threshold + no pump depletion$\implies$borderline unstable
 \vspace{2cm}
 	\begin{enumerate}
 	\item Optimal squeezing
-	\item Alternative to optomechanical analogue
-	\item Broadband sensitivity using a different readout (measurement) scheme 
+	\item Comparison to optomechanical analogue
+	\item Broadband sensitivity using a different readout scheme %(measurement) 
 	\end{enumerate}
 \vskip0pt plus 1filll
 \centering
@@ -156,7 +163,7 @@ threshold + no pump depletion$\implies$borderline unstable
 \begin{frame}{Future work}
 	\begin{enumerate}
 	\item \textbf{Combined readout scheme} %Optimal sensitivity
-	\item Extended analytic model $\implies$ validate threshold
+	\item Extended analytic model %$\implies$ validate threshold
 	\item Numerical validation % validation already done with limits, sufficient physics extracted with analytic model to absorb all of research time
 	\item Parity-time symmetry
 	\item Experimental table-top demonstration 

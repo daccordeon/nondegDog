@@ -9,22 +9,22 @@
     \caption{Degenerate internal squeezing's stability for lossless (left panel) and lossy (right panel) cases. The different colours indicate different poles found numerically.
     % The squeezer parameter is normalised to the appropriate threshold in each case.
     A positive imaginary part of a pole indicates instability.
-    Both cases are stable below singularity threshold. I use the parameters in Tab.~\ref{tab:dIS_parameters}.}
+    Both cases are stable below singularity threshold. I use the parameters in Table~\ref{tab:dIS_parameters}.}
     \label{fig:dIS_stability}
 \end{figure}
 
 I determine the stability of degenerate internal squeezing via the poles of its noise and signal responses. These responses are related fractions of polynomials.
 The denominator of the noise response squared is $\Omega^4 q(\Omega,\chi)$ where $q$ is a polynomial in $\Omega,\chi$~\cite{korobkoQuantumExpanderGravitationalwave2019}.
 Since the zero $\Omega=0$ comes from the horizontally free-falling mass assumption, the remaining zeros of the noise denominator are the zeros of $q$ (which are shared with the signal response~\cite{korobkoQuantumExpanderGravitationalwave2019}). In the complex $\Omega$ plane, if any of these poles~\footnote{I check that the numerator is not also zero at that point.} have a positive imaginary part, then the system is unstable\jam{(check this, IFT suggests other sign?)}~\cite{nise_2019}. %~\footnote{This result is often expressed instead with respect to the Laplace Transform variable $s=i\Omega$, where a positive real part of $s$ indicates instability~\cite{}.}. %This condition is equivalent to others such as\jam{(... the Nyquist criterion?)}.
-As shown in Fig.~\ref{fig:dIS_stability}, therefore, \emph{degenerate internal squeezing is stable in the lossless case below threshold} and the lossy case below the singularity threshold determined in Section~\ref{sec:singularity_threshold}.
+As shown in Fig.~\ref{fig:dIS_stability}, therefore, degenerate internal squeezing is stable in the lossless case below threshold and the lossy case below the singularity threshold determined in Section~\ref{sec:singularity_threshold}.
 
-\chapter{Comparison of mode structures}
+\chapter{Comparison of abstract mode structures}
 \label{app:mode_structure}
 
 \begin{figure}[ht]
     \centering
     \includegraphics[angle=-90,width=1\textwidth]{all_mode_structures.pdf}
-    \caption{Abstract mode diagrams of the different configurations considered in this thesis. The modes and coupling rates are explained in Sections~\ref{sec:Hamiltonian_modelling}~\ref{sec:dIS_results}~\ref{sec:sWLC}~\ref{sec:modal_equivalence}. Whenever the arm mode $\hat a$ is shown, it is implicitly connected to the test mass mechanical mode $\hat x$ and the gravitational wave signal $h(t)$. Losses are not shown. The photodetector shows the possibility for idler (optical or mechanical) or signal readout.}
+    \caption{Abstract mode diagrams of the different configurations considered in this thesis. The modes and coupling rates are explained in Sections~\ref{sec:Hamiltonian_modelling}, \ref{sec:dIS_results}, \ref{sec:sWLC}, and~\ref{sec:modal_equivalence}. Whenever the arm mode $\hat a$ is shown, it is implicitly connected to the test mass mechanical mode $\hat x$ and the gravitational wave signal $h(t)$. Losses are not shown. The photodetector shows the possibility for idler (optical or mechanical) or signal readout.}
     \label{fig:mode_diagram}
 \end{figure}
 
@@ -40,7 +40,7 @@ In Fig.~\ref{fig:mode_diagram}, I compare the abstract mode structure of each of
     \centering
     \includegraphics[width=0.8\textwidth]{dIS_threshold_traj_compressed.pdf}
     \caption{Degenerate internal squeezing trajectories of the singularities of the anti-squeezed quadrature of the noise and the extrema of the squeezed quadrature in $(\Omega, \chi)$ space as the arm loss is changed from $T_{l,a}\in(0,1)$. I assume that the extrema are minima because of the shape of the noise response in Fig.~\ref{fig:dIS_sensitivity}.
-    The singularities and minima both achieve the same (a) lossless and (d) high arm loss limits, where neither reaches (d) because of limited numerical sampling. However, the singularities and minima diverge at high arm losses (e.g.\ $T_{l,a}>0.1$) and merge with their counterparts moving in from infinity at different squeezer parameters shown at (b) and (c), respectively. I use the parameters in Tab.~\ref{tab:signal_RO_parameters} and zero signal loss. %\jam{(rest of explanation moved into text, does it still make sense?)}
+    The singularities and minima both achieve the same (a) lossless and (d) high arm loss limits, where neither reaches (d) because of limited numerical sampling. However, the singularities and minima diverge at high arm losses (e.g.\ $T_{l,a}>0.1$) and merge with their counterparts moving in from infinity at different squeezer parameters shown at (b) and (c), respectively. I use the parameters in Table~\ref{tab:signal_RO_parameters} and zero signal loss. %\jam{(rest of explanation moved into text, does it still make sense?)}
     }
     \label{fig:dIS_threshold_traj} % frequency scale is not logarithmic
 \end{figure}

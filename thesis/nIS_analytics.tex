@@ -14,9 +14,9 @@
 % chapter introduction
 
 % combine the all-optical approach of dIS with the mode structure of sWLC
-In this chapter, I present my analytic, Hamiltonian model of nondegenerate internal squeezing and discuss its results.
+In this chapter, I present my analytic Hamiltonian model of nondegenerate internal squeezing and discuss its results.
 %Nondegenerate internal squeezing is the same configuration as degenerate internal squeezing except that the squeezer is operated nondegenerately, but it is better thought of as an all-optical alternative to stable optomechanical filtering.
-Firstly, in Section~\ref{sec:modal_equivalence}, I describe nondegenerate internal squeezing and how it is motivated by the existing proposals in the previous chapter. Secondly, in Sections~\ref{sec:nIS_model}~\ref{sec:nIS_sigRO_results}, I derive my model and use it to characterise the sensitivity of nondegenerate internal squeezing. %I partially verify my model by demonstrating that it obeys the expected low and high loss limits.
+Firstly, in Section~\ref{sec:modal_equivalence}, I describe nondegenerate internal squeezing and how it is motivated by the existing proposals introduced in the previous chapter. Secondly, in Sections~\ref{sec:nIS_model} and~\ref{sec:nIS_sigRO_results}, I derive my model and use it to characterise the sensitivity of nondegenerate internal squeezing. %I partially verify my model by demonstrating that it obeys the expected low and high loss limits.
 Finally, in Section~\ref{sec:stability_and_threshold}, I find the stability and squeezing threshold of the configuration. % that unites the different squeezing configurations in this thesis. 
 % from the view of quantum optics, gravitational waves in the next chapter
 This chapter is directed at understanding nondegenerate internal squeezing for general quantum metrology. In subsequent chapters, I will return to the problem of kilohertz gravitational-wave detection. % to determine whether nondegenerate internal squeezing can feasibly improve sensitivity. 
@@ -30,7 +30,7 @@ This chapter is directed at understanding nondegenerate internal squeezing for g
     \centering
     \includegraphics[angle=-90,width=0.9\textwidth]{nIS_mode_diagram.pdf}
     % squeezing ellipse and signal arrow plot
-    \caption{Nondegenerate internal squeezing configuration (upper-left panel), simplified effect on the signal and noise using the representation introduced in Fig.~\ref{fig:dIS_config} (upper-right panel), and abstract mode diagram (bottom panel). The signal-recycling cavity resembles the nondegenerate OPO in Fig.~\ref{fig:OPOs_config}. Abstractly, the system consists of three coupled, optical modes $\hat a,\hat b,\hat c$ through which the gravitational-wave signal is coupled and measured at the photodetector. The noise is increased but the gravitational-wave signal is amplified more so that the sensitivity improves. Optical losses are not shown.}
+    \caption{Nondegenerate internal squeezing configuration (upper-left panel), simplified effect on the signal and noise using the representation introduced in Fig.~\ref{fig:dIS_config} (upper-right panel), and abstract mode diagram (bottom panel). The signal-recycling cavity resembles the nondegenerate OPO in Fig.~\ref{fig:OPOs_config}. Abstractly, the system consists of three coupled optical modes $\hat a,\hat b,\hat c$ through which the gravitational-wave signal is coupled and measured at the photodetector. The noise is increased but the gravitational-wave signal is amplified more so that the sensitivity improves. Optical losses are not shown.}
     \label{fig:nIS_mode_diagram}
 \end{figure}
 
@@ -97,7 +97,7 @@ I model nondegenerate internal squeezing using the Hamiltonian method from Secti
 % There are no steps in this derivation that have not already appeared in this thesis\jam{(check this)}.
 % This model is based on and verified against the lossless model for the optomechanical analogue in Ref.~\cite{liBroadbandSensitivityImprovement2020} which effectively couples an arm cavity mode to the nondegenerate OPO model in Section~\ref{sec:nOPO}. %, and to that model I add intra-cavity and detection losses.
 %\jam{(Probably need to talk about my methodology more -- state that this derivation presented is the last of a long curve of increasing complexity (more losses, radiation pressure, pump phase, etc.) and that I have verified at each stage that the model recovers the previous model. This allowed me to also consider the impact of each subsequent addition in isolation. Moreover, I should re-emphasise that it reduces to the lossless case in Li and follows the same path as the verified models of dIS and the OPOs. The point is that this derivation is not controversial.)}
-When deriving my model, my approach was to start with the lossless model for the optomechanical analogue in Ref.~\cite{liBroadbandSensitivityImprovement2020} and progressively add the complications of optical loss in each mode, pump phase, and radiation pressure so that I could study each complication separately. At each stage, I verified that the model recovered the previous stage in the appropriate limits. For brevity, I now present the complete model.
+When deriving my model, my approach was to start with the lossless model for the optomechanical analogue in Ref.~\cite{liBroadbandSensitivityImprovement2020} and progressively add the complexities of optical loss in each mode, pump phase, and radiation pressure so that I could study each complication separately. At each stage, I verified that the model recovered the previous stage in the appropriate limits. For brevity, I now present the complete model.
 
 Let the modes be labelled as shown in Fig.~\ref{fig:nIS_config}. 
 Here, I assume a single-mode approximation to the light in the arm cavities such that the detector in Fig.~\ref{fig:nIS_mode_diagram} is simplified to a three-mirror coupled cavity system between a single ``arm'' cavity, with resonant mode as the differential mode $\hat a$ of the detector, and the signal-recycling cavity~\footnote{The laser source and the power-recycling cavity are abstracted into the fixed circulating power in the arm cavity.}. This ``coupled-cavity'' approximation is common in the literature~\cite{adyaQuantumEnhancedKHz2020,liBroadbandSensitivityImprovement2020,miaoEnhancingBandwidthGravitationalWave2015}, was used in the degenerate internal squeezing model in Section~\ref{sec:dIS}~\cite{korobkoQuantumExpanderGravitationalwave2019}, and is valid below one ``free spectral range'' of the arm cavities (e.g.\ below 37.5~kHz for 4~km arms~\cite{miaoEnhancingBandwidthGravitationalWave2015}).
@@ -111,7 +111,7 @@ The \emph{Hamiltonian} of this system is $\hat H = \hat H_0 + \hat H_I + \hat H_
 & \hspace*{1.55cm} + \sqrt{\gamma^c_R}\left(\hat{c}^\dag(\Omega)\hat C_\text{in}(\Omega)-\hat{c}(\Omega)\hat C_\text{in}(\Omega)\right) + \sqrt{\gamma_c}\left(\hat{c}^\dag(\Omega)\hat n^L_c(\Omega)-\hat{c}(\Omega)\hat{n}^{L\dag}_c(\Omega)\right)\biggr)\text{d}\Omega \nonumber\\
 \hat H_\text{GW+RP} &= -\alpha (\hat{x}-L_\mathrm{arm}h(t))\left(\frac{\hat{a}+\hat{a}^\dag}{\sqrt{2}}\right)+\frac{1}{2\mu}\hat{p}^2.\nonumber
 \end{align}
-Here, $\alpha=\sqrt{\frac{2 P_\text{circ} \omega_0 \hbar}{c  L_\text{arm}}}$ is the coupling strength to the gravitational-wave signal~\cite{liBroadbandSensitivityImprovement2020}~\footnote{I use the value of $\alpha$ from Ref.~\cite{liBroadbandSensitivityImprovement2020} which is $\sqrt2$ more than the convention used in Ref.~\cite{korobkoQuantumExpanderGravitationalwave2019} for example.\jam{(I use the Li value for comparison to sWLC but this affects the feasibility of nIS, which value is correct? not sure, just cite)}}, $\mu=M/4$ is the ``reduced'' mass\jam{(explain)} of the test masses of mass $M$, and $\omega_s\approx c\sqrt{\frac{T_\text{ITM}}{4 L_\text{arm} L_\text{SRM}}}$ is an approximation to the sloshing frequency between the coupled cavities (also known as the coupled cavity pole) which holds when $\omega_s$ (e.g.\ 5~kHz) is below one free spectral range of the arm cavities (e.g.\ 37.5~kHz)~\cite{korobkoQuantumExpanderGravitationalwave2019}.
+Here, $\alpha=\sqrt{\frac{2 P_\text{circ} \omega_0 \hbar}{c  L_\text{arm}}}$ is the coupling strength to the gravitational-wave signal~\cite{liBroadbandSensitivityImprovement2020}~\footnote{I use the value of $\alpha$ from Ref.~\cite{liBroadbandSensitivityImprovement2020} which is $\sqrt2$ more than the convention used in Ref.~\cite{korobkoQuantumExpanderGravitationalwave2019} for example.\jam{(I use the Li value for comparison to sWLC but this affects the feasibility of nIS, which value is correct? not sure, just cite)}}, $\mu=M/4$ is the ``reduced'' mass\jam{(explain)} of the test masses of mass $M$, and $\omega_s\approx c\sqrt{\frac{T_\text{ITM}}{4 L_\text{arm} L_\text{SRM}}}$ is an approximation of the sloshing frequency between the coupled cavities (also known as the coupled cavity pole) which holds when $\omega_s$ (e.g.\ 5~kHz) is below one free spectral range of the arm cavities (e.g.\ 37.5~kHz)~\cite{korobkoQuantumExpanderGravitationalwave2019}.
 Of these terms in the Hamiltonian, $\hat H_0$ describes the decoupled optical system, $\hat H_I$ describes the interaction between the optical modes including the same nondegenerate squeezing as Section~\ref{sec:nOPO}, $\hat H_\gamma$ describes the input/output coupling through the readout and loss ports, and $\hat H_\text{GW+RP}$ describes the coupling of the arm cavity mode to the gravitational-wave signal and the evolution of the test mass mechanical mode due to radiation pressure~\footnote{A more natural formulation of $\hat H_\text{GW+RP}$ couples the gravitational-wave strain to the mirror position and the mirror position to the cavity mode, as shown in Fig.~\ref{fig:nIS_mode_diagram}, but the formula that I use is equivalent~\cite{bowen2015quantum}.}.
 As shown in Fig.~\ref{fig:nIS_config}, there is vacuum entering the system into each intra-cavity mode $\hat n^L_a, \hat n^L_b, \hat n^L_c$, at the readout port $\hat B_\text{in}, \hat C_\text{in}$, and in the detection chain $\hat n^L_\text{PD}$ (which will be included later). Only the vacuum entering the readout port was present in the lossless model in Ref.~\cite{liBroadbandSensitivityImprovement2020}.
 
@@ -185,7 +185,7 @@ By Fourier transforming, vectorising, and then solving the resulting linear alge
 \end{bsmallmatrix}.
 \end{align}
 \endgroup
-Here, $\text{I}$ is the 4 by 4 identity matrix, all off-diagonal terms in each 4 by 4 matrix are zero unless otherwise shown, and the re-scaled coupling constants for the gravitational-wave signal and the radiation pressure~\footnote{Here, $\rho=0$, i.e.\ $\mu=M/4\rightarrow\infty$, turns off the radiation pressure noise.}, respectively, are
+Here, $\text{I}$ is the 4-by-4 identity matrix, all off-diagonal terms in each 4-by-4 matrix are zero unless otherwise shown, and the re-scaled coupling constants for the gravitational-wave signal and the radiation pressure~\footnote{Here, $\rho=0$, i.e.\ $\mu=M/4\rightarrow\infty$, turns off the radiation pressure noise.}, respectively, are
 \begin{equation}\label{eq:beta_and_rho}
 \beta = \frac{\alpha L_\mathrm{arm}}{\sqrt{2}\hbar}=\sqrt{\frac{ P_\text{circ}L_\text{arm} \omega_0 }{c  \hbar}},\quad \rho = \frac{\alpha^2}{\sqrt{2}\hbar\mu}=\frac{\sqrt{2} P_\text{circ} \omega_0}{c \mu L_\text{arm}}.
 \end{equation}
@@ -270,21 +270,21 @@ The \emph{total quantum noise} is given by the spectral density matrix Eq.~\ref{
 \begin{equation}\label{eq:nIS_Sx}
 \text{S}_X=\text{R}_\text{in}\text{R}_\text{in}^\dag+\text{R}^L_a{\text{R}^L_a}^\dag+\text{R}^L_b{\text{R}^L_b}^\dag+\text{R}^L_\text{PD}{\text{R}^L_\text{PD}}^\dag.
 \end{equation} % same expression as dIS
-The structure of $\text{S}_X$ is divided into 2 by 2 blocks of signal-signal, signal-idler, and idler-idler (co)variances as in Section~\ref{sec:nOPO} but now with terms for the radiation-pressure noise such that the variances and covariances no longer reduce to 1 and 0, respectively, when the squeezer is off. The pump phase only appears in the off-diagonal, signal-idler covariances.
+The structure of $\text{S}_X$ is divided into 2-by-2 blocks of signal-signal, signal-idler, and idler-idler (co)variances as in Section~\ref{sec:nOPO} but now with terms for the radiation-pressure noise such that the variances and covariances no longer reduce to 1 and 0, respectively, when the squeezer is off. The pump phase only appears in the off-diagonal, signal-idler covariances.
 
 The \emph{signal response} for a given quadrature is defined with respect to the signal $\tilde h(\Omega)$, not $\vec h(\Omega)$, and therefore the vector of the signal response for each signal and idler quadrature at the photodetector is
 \begin{equation}\label{eq:nIS_sigRO_signal_response}
 \text{T}\begin{psmallmatrix}1 \\1\\0\\0\end{psmallmatrix} = \frac{2 \beta \sqrt{1-R_\text{PD}} \omega_s}{(\gamma_a-i \Omega ) \left(\chi ^2-(\gamma^b_\text{tot}-i\Omega) (\gamma^c_\text{tot}-i\Omega)\right)-\omega_s^2 (\gamma^c_\text{tot}-i \Omega )} \begin{psmallmatrix}0 \\-\sqrt{\gamma^b_R}(\gamma^c_\text{tot}-i\Omega)\\\sqrt{\gamma^c_R}\chi\cos(\phi)\\\sqrt{\gamma^c_R}\chi\sin(\phi)\end{psmallmatrix}.
 \end{equation}
 Here, $\text{T}\vec h(\Omega)=\text{T}\begin{psmallmatrix}1 \\1\\0\\0\end{psmallmatrix}\tilde h(\Omega)$ gives the signal in each quadrature.
-Therefore, by Eq.~\ref{eq:nIS_sigRO_signal_response}, there is gravitational-wave signal in the second signal quadrature as well as each idler quadrature when the squeezer is on ($\chi\neq0$). For simplicity and to compare to Ref.~\cite{liBroadbandSensitivityImprovement2020}, I will consider measuring the second signal quadrature, henceforth referred to as ``signal readout''. However, this is not necessarily the optimum readout of the signal quadratures since the noise might be sufficiently lower in the first quadrature to preference measuring some quadrature between the two. I will consider this and alternative readout schemes involving the idler in Chapter~\ref{chp:idler_readout}.
+Therefore, by Eq.~\ref{eq:nIS_sigRO_signal_response}, the gravitational-wave signal is in the second signal quadrature as well as each idler quadrature when the squeezer is on ($\chi\neq0$). For simplicity and to compare to Ref.~\cite{liBroadbandSensitivityImprovement2020}, I will consider measuring the second signal quadrature, henceforth referred to as ``signal readout''. However, this is not necessarily the optimum readout of the signal quadratures since the noise might be sufficiently lower in the first quadrature to preference measuring some quadrature between the two. I will consider this and alternative readout schemes involving the idler in Chapter~\ref{chp:idler_readout}.
 
 The quantum noise and signal responses of the signal readout scheme are, respectively, $\sqrt{(\text{S}_X)_{2,2}}$ and $\abs{\left(\text{T}\begin{psmallmatrix}1 \\1\\0\\0\end{psmallmatrix}\right)_2}$, and the \emph{sensitivity}, conventionally plotted as the noise-to-signal ratio, is
 \begin{equation}\label{eq:nIS_sigRO_sens}
 \sqrt{S_h} = \frac{\sqrt{(\text{S}_X)_{2,2}}}{\abs{\left(\text{T}\begin{psmallmatrix}1 \\1\\0\\0\end{psmallmatrix}\right)_2}}.
 \end{equation}
 % verified these results by repeating the model with 2x2 matrices and 4x4 matrices, important to mention this because it is part of the methodology
-To partially validate this result, I have repeated its derivation using 2 by 2 matrices~\footnote{Which is not a physically meaningful difference, and therefore I will not present it here, but it separates the signal and idler such that the derivations are not identical.}, and will compare it to the known limits below. %in Section~\ref{sec:nOPO_reduction}.
+To partially validate this result, I have repeated its derivation using 2-by-2 matrices~\footnote{Which is not a physically meaningful difference, and therefore I will not present it here, but it separates the signal and idler such that the derivations are not identical.}, and will compare it to the known limits below. %in Section~\ref{sec:nOPO_reduction}.
 
 
 \section{Results}
@@ -310,13 +310,13 @@ input test mass transmissivity, $T_\text{ITM}$ & 0.197 & signal readout rate, $\
 sloshing frequency, $\omega_s$ & 5 kHz & idler mode transmissivity, $T_{\text{SRM},c}$ & 0 \\
 idler mode intra-cavity loss, $T_{l,c}$ & 1000 ppm & idler readout rate, $\gamma^c_R$ & 0 Hz \\ \bottomrule
 \end{tabular}
-\caption{Nondegenerate internal squeezing signal readout parameter set is based on LIGO~Voyager~\cite{LIGO_Voyager} and the same as Tab.~\ref{tab:dIS_parameters} but with the deviations shown to make the sensitivity more sharply peaked ($\gamma^b_R$ is now 0.5~kHz compared to 5~kHz) and the addition of the idler mode. Radiation pressure is included using $\rho\neq0$ from Eq.~\ref{eq:beta_and_rho} unless $\rho=0$ is stated. The results shown use these parameters unless stated otherwise.}
+\caption{Nondegenerate internal squeezing signal readout parameter set is based on LIGO~Voyager~\cite{LIGO_Voyager} and the same as Table~\ref{tab:dIS_parameters} but with the deviations shown to make the sensitivity more sharply peaked ($\gamma^b_R$ is now 0.5~kHz compared to 5~kHz) and the addition of the idler mode. Radiation pressure is included using $\rho\neq0$ from Eq.~\ref{eq:beta_and_rho} unless $\rho=0$ is stated. The results shown use these parameters unless stated otherwise.}
 \label{tab:signal_RO_parameters}
 \end{table}
 
 I now examine some of the immediate results of the model: (1) the lossless behaviour of the system, (2) the general behaviour when losses are introduced, and (3) the high arm loss limit.
 % (1) the general features of the signal and noise responses and sensitivity, (2) the reduction to known models in certain loss limits, and (3) the stability of the system.
-Throughout the rest of this thesis, I will use the parameter set in Tab.~\ref{tab:signal_RO_parameters}. The choice of parameter set can bias the analysis of a configuration, and I mention, where relevant, the effects of varying the parameters (e.g.\ the readout rates which have a large variation in the literature~\cite{liBroadbandSensitivityImprovement2020,miaoDesignGravitationalWaveDetectors2018,korobkoQuantumExpanderGravitationalwave2019}). These parameters have not been optimised for the sensitivity which I leave to future work. % parameter set. % from Section~\ref{sec:dIS_results}, in particular, I will use the  unless stated otherwise.
+Throughout the rest of this thesis, I will use the parameter set in Table~\ref{tab:signal_RO_parameters}. The choice of parameter set can bias the analysis of a configuration, and I mention, where relevant, the effects of varying the parameters (e.g.\ the readout rates which have a large variation in the literature~\cite{liBroadbandSensitivityImprovement2020,miaoDesignGravitationalWaveDetectors2018,korobkoQuantumExpanderGravitationalwave2019}). These parameters have not been optimised for the sensitivity which I leave to future work. % parameter set. % from Section~\ref{sec:dIS_results}, in particular, I will use the  unless stated otherwise.
 
 % \subsubsection{Lossless limit}
 \label{sec:nIS_lossless_limit}
@@ -324,7 +324,7 @@ Throughout the rest of this thesis, I will use the parameter set in Tab.~\ref{ta
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{nIS_lossless.pdf}
-    \caption{Nondegenerate internal squeezing in the lossless limit, showing the quantum noise (upper-left panel), signal response (bottom-left panel), and sensitivity (right panel) with squeezing (red curves) and without squeezing (blue curves). I also show the results with ($\rho\neq0$, see Eq.~\ref{eq:beta_and_rho}) and without ($\rho=0$) radiation pressure noise, and I compare them to the lossless optomechanical analogue from Section~\ref{sec:sWLC} (cyan curve) with the same ratio to threshold. I use the data from Fig.~5 in Ref.~\cite{liBroadbandSensitivityImprovement2020} with permission from the authors~\cite{xiangLiPersonalCommunication}. The noise and signal responses and sensitivity reduce to the expected lossless limit. I use the parameters in Tab.~\ref{tab:signal_RO_parameters} but with no losses.}
+    \caption{Nondegenerate internal squeezing in the lossless limit, showing the quantum noise (upper-left panel), signal response (bottom-left panel), and sensitivity (right panel) with squeezing (red curves) and without squeezing (blue curves). I also show the results with ($\rho\neq0$, see Eq.~\ref{eq:beta_and_rho}) and without ($\rho=0$) radiation pressure noise, and I compare them to the lossless optomechanical analogue from Section~\ref{sec:sWLC} (cyan curve) with the same ratio to threshold. I use the data from Fig.~5 in Ref.~\cite{liBroadbandSensitivityImprovement2020} with permission from the authors~\cite{xiangLiPersonalCommunication}. The noise and signal responses and sensitivity reduce to the expected lossless limit. I use the parameters in Table~\ref{tab:signal_RO_parameters} but with no losses.}
     \label{fig:nIS_lossless}
 \end{figure}
 
@@ -350,7 +350,7 @@ The changes are not localised to the sloshing frequency, e.g.\ the radiation-pre
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{nIS_N_S_NSR.pdf}
-	\caption{Nondegenerate internal squeezing with all the optical losses included, showing the noise (upper-left panel), signal (bottom-left panel), and sensitivity (right panel). The effect of the squeezer and the radiation pressure noise (turned off by setting $\rho=0$) on the sensitivity are shown; the squeezer anti-squeezes the noise around the peak frequency of the signal response. The losses change the slope of the radiation pressure noise around 10~Hz and also cause the signal to not be amplified down to DC compared to the lossless case in Fig.~\ref{fig:nIS_lossless}. The squeezer parameter is normalised to the lossy threshold which will be found later. I use the parameters in Tab.~\ref{tab:signal_RO_parameters}.}
+	\caption{Nondegenerate internal squeezing with all the optical losses included, showing the noise (upper-left panel), signal (bottom-left panel), and sensitivity (right panel). The effect of the squeezer and the radiation pressure noise (turned off by setting $\rho=0$) on the sensitivity are shown; the squeezer anti-squeezes the noise around the peak frequency of the signal response. The losses change the slope of the radiation pressure noise around 10~Hz and also cause the signal to not be amplified down to DC compared to the lossless case in Fig.~\ref{fig:nIS_lossless}. The squeezer parameter is normalised to the lossy threshold which will be found later. I use the parameters in Table~\ref{tab:signal_RO_parameters}.}
 	\label{fig:nIS_general_sens}
 \end{figure}
 
@@ -377,7 +377,7 @@ These quoted frequencies are specific to this parameter set but the general perf
 
 % explain the effect of each parameter? (except leave tolerance to losses to science case chapter)
 % in terms of the configuration parameters rather than derived parameters such as the sloshing frequency and readout rates
-The \emph{effect of each configuration parameter} is similar to the effect on the interferometer without squeezing discussed in Sections~\ref{sec:intro_IFO}~\ref{sec:dIS_results}. To summarise, increasing the circulating power in the arms increases the signal response at all frequencies via $\beta$ in Eq.~\ref{eq:nIS_sigRO_signal_response}. Increasing the arm length increases the same factor $\beta$ as the power but also decreases the bandwidth of the signal response and the sloshing frequency which determines the peak. The sloshing frequency also decreases with decreased input test mass transmission and longer signal-recycling cavities. Increasing the signal-recycling length decreases the bandwidth of the signal peak~\footnote{The arm cavity bandwidth gives the overall shape of the signal response but the signal-recycling cavity bandwidth gives the width of the peak at the sloshing frequency.}, which is also decreased by decreased signal-recycling mirror transmission. The radiation-pressure noise increases with lighter test masses and increased pump power. Finally, increased pump power also increases the peak shot noise and signal amplification, and the pump phase does not affect signal readout.
+The \emph{effect of each configuration parameter} is similar to the effect on the interferometer without squeezing discussed in Sections~\ref{sec:intro_IFO} and~\ref{sec:dIS_results}. To summarise, increasing the circulating power in the arms increases the signal response at all frequencies via $\beta$ in Eq.~\ref{eq:nIS_sigRO_signal_response}. Increasing the arm length increases the same factor $\beta$ as the power but also decreases the bandwidth of the signal response and the sloshing frequency which determines the peak. The sloshing frequency also decreases with decreased input test mass transmission and longer signal-recycling cavities. Increasing the signal-recycling length decreases the bandwidth of the signal peak~\footnote{The arm cavity bandwidth gives the overall shape of the signal response but the signal-recycling cavity bandwidth gives the width of the peak at the sloshing frequency.}, which is also decreased by decreased signal-recycling mirror transmission. The radiation-pressure noise increases with lighter test masses and increased pump power. Finally, increased pump power also increases the peak shot noise and signal amplification, and the pump phase does not affect signal readout.
 
 % \subsection{Reduction to known systems}
 % show that this follows from the EoM but can be verified by looking at the plots
@@ -414,14 +414,6 @@ I now determine when nondegenerate internal squeezing is stable and below thresh
 \subsection{Stability}
 \label{sec:nIS_stability}
 
-% plot: imaginary part of poles
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.95\textwidth]{nIS_stability.pdf}
-    \caption{Stability of nondegenerate internal squeezing, for lossless (left panel) and lossy (right panel) cases. I show the imaginary part of the shared poles of the noise and signal responses versus the squeezer parameter; where the imaginary part becomes positive, the system becomes unstable. The different colours indicate different poles (zeros of $q$) found numerically, and any discontinuities are numerical or plotting artefacts. I will define singularity threshold ($\chi_\text{thr}$) such that the system is stable below threshold; the value of $\chi_\text{thr}$ is different between the two cases. I use the parameters in Tab.~\ref{tab:signal_RO_parameters}.}
-    \label{fig:nIS_stability}
-\end{figure}
-
 Stability is a feature of nondegenerate internal squeezing that might not be fully inherited from its limiting configurations. I use the same method to determine stability as degenerate internal squeezing in Appendix~\ref{app:dIS_stability}. The signal and noise responses are fractions of polynomials of $\Omega, \chi$ with denominators~\footnote{I state these for the modulus-squared responses, i.e.\ $(\text{S}_X)_{2,2}$ from Eq.~\ref{eq:nIS_Sx} and $\abs{\left(\text{T}\begin{psmallmatrix}1 \\1\\0\\0\end{psmallmatrix}\right)_2}^2$ from Eq.~\ref{eq:nIS_sigRO_signal_response}, but the poles, i.e.\ zeros of $q$, do not change under the square root.} given by $q(\Omega,\chi)$ and $\Omega^4 q(\Omega,\chi) q(\Omega,-\chi)$, respectively. Here, $q$ only depends on $\chi^2$ and so the noise response denominator is $\Omega^4 q(\Omega,\chi)^2$, where $q$ is some polynomial in $\Omega, \chi$, 
 \begin{align}\label{eq:nIS_denom}
 q(\Omega,\chi)&=\left(\gamma_a^2+\Omega ^2\right) \left(\Omega ^2 \left({\gamma^b_\text{tot}}^2+{\gamma^c_\text{tot}}^2+2 \chi ^2\right)+\left({\gamma^b_\text{tot}} {\gamma^c_\text{tot}}-\chi ^2\right)^2+\Omega ^4\right)\\
@@ -432,6 +424,14 @@ Therefore, nondegenerate internal squeezing is unstable if any of the complex $\
 % non-effect of RP, pump phase
 Since Eq.~\ref{eq:nIS_denom} only depends on the pump power, readout and loss rates, and sloshing frequency, therefore, other factors, such as radiation pressure or pump phase, do not affect the stability.
 
+% plot: imaginary part of poles
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.95\textwidth]{nIS_stability.pdf}
+    \caption{Stability of nondegenerate internal squeezing, for lossless (left panel) and lossy (right panel) cases. I show the imaginary part of the shared poles of the noise and signal responses versus the squeezer parameter; where the imaginary part becomes positive, the system becomes unstable. The different colours indicate different poles (zeros of $q$) found numerically, and any discontinuities are numerical or plotting artefacts. I will define the singularity threshold ($\chi_\text{thr}$) such that the system is stable below threshold; the value of $\chi_\text{thr}$ is different between the two cases. I use the parameters in Table~\ref{tab:signal_RO_parameters}.}
+    \label{fig:nIS_stability}
+\end{figure}
+
 
 \subsection{Singularity threshold}
 \label{sec:singularity_threshold}
@@ -439,16 +439,8 @@ Since Eq.~\ref{eq:nIS_denom} only depends on the pump power, readout and loss ra
 
 %\jam{(Rewrite the following as the threshold of stability, should just be one paragraph, make clear that the link to gain-loss balancing is just that if there is a net gain but no pump depletion then energy is demonstrably unpreserved and the field will grow without end which is unstable. But be honest that I do not know and that this result would be different with pump-depletion added.)}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{nIS_on_threshold.pdf}
-    \caption{Nondegenerate internal squeezing noise (upper-left panel), signal (bottom-left panel), and sensitivity (right panel) when approaching and at threshold. At threshold, the no-pump-depletion assumption breaks and the responses are singular. A false peak appears in the sensitivity at the threshold frequency because of numerical error -- the sensitivity should be finite and near the $99\%$ threshold curve because the shared noise and signal singularities cancel analytically. I use the parameters in Tab.~\ref{tab:signal_RO_parameters}. %For the threshold behaviour of the other configurations in this thesis see Figs.~\ref{fig:dOPO_variances}~\ref{fig:nOPO_variances}~\ref{fig:dIS_sensitivity}.
-    }
-    \label{fig:nIS_on_threshold}
-\end{figure}
-
 %\jam{(Emphasise that this is original work and that it is a clever approach.)}
-As discussed in Sections~\ref{sec:dOPO_threshold}~\ref{sec:nOPO_results}~\ref{sec:dIS_results}, the threshold of a squeezing system is the boundary where gains balance losses and the no-pump-depletion assumption breaks. Beyond threshold the system begins lasing as the cavity field is (finitely) coherently amplified~\cite{martinelli2001classical} and energy is taken from the pump mode.
+As discussed in Sections~\ref{sec:dOPO_threshold}, \ref{sec:nOPO_results}, and~\ref{sec:dIS_results}, the threshold of a squeezing system is the boundary where gains balance losses and the no-pump-depletion assumption breaks. Beyond threshold the system begins lasing as the cavity field is (finitely) coherently amplified~\cite{martinelli2001classical} and energy is taken from the pump mode.
 Finding the threshold of nondegenerate internal squeezing is required to understand where my model is valid because I assume no pump depletion and, experimentally, how high the pump power can be raised without lasing.
 The threshold of lossy degenerate and nondegenerate internal squeezing has not been discussed in the literature to date, and, in this section, I present my method for determining threshold in these models. %, which uses the no-pump-depletion assumption.
 Since I assume no pump depletion, beyond threshold, the net gain at the squeezer instead leads to unbounded, coherent amplification of the cavity mode~\cite{walls_1995}, and therefore \emph{the system becomes unstable}. Therefore, my method is to define threshold as the point of marginal stability of the system with no pump depletion and assume that whenever the system becomes unstable it is because of the squeezer reaching threshold.
@@ -475,6 +467,15 @@ To validate this method, I find the (real) singularities~\footnote{The reality c
 (*)&:\gamma^c_\text{tot}\omega_s^2\geq\gamma_a\left(\omega_s^2+\gamma_a(\gamma^b_\mathrm{tot}+\gamma^c_\text{tot})\right)
 \end{align}
 \endgroup
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{nIS_on_threshold.pdf}
+    \caption{Nondegenerate internal squeezing noise (upper-left panel), signal (bottom-left panel), and sensitivity (right panel) when approaching and at threshold. At threshold, the no-pump-depletion assumption breaks and the responses are singular. A false peak appears in the sensitivity at the threshold frequency because of numerical error -- the sensitivity should be finite and near the $99\%$ threshold curve because the shared noise and signal singularities cancel analytically. I use the parameters in Table~\ref{tab:signal_RO_parameters}. %For the threshold behaviour of the other configurations in this thesis see Figs.~\ref{fig:dOPO_variances}~\ref{fig:nOPO_variances}~\ref{fig:dIS_sensitivity}.
+    }
+    \label{fig:nIS_on_threshold}
+\end{figure}
+
 % frequency around which shot noise and signal are amplified in fig:nIS_general_sens is determined (but not exactly) the threshold frequency
 % which pole is chosen tells us the closeness to nOPO or lossless sWLC
 I have \emph{verified} these values by plotting the noise response and observing the singularity, e.g.\ as shown in Fig.~\ref{fig:nIS_on_threshold}. For squeezer parameter near threshold, e.g.\ $\chi=0.95\chi_\text{thr}$ in Fig.~\ref{fig:nIS_general_sens}, the peak frequency around which the shot noise and signal are amplified is determined by the threshold frequency~\footnote{Consider this peak as a slice with constant $\chi$ of the region around the singularity in (real) $(\Omega,\chi)$ space.}. When multiple singularities are listed above, the singularity threshold is determined by the smallest $\chi$ value:
@@ -487,16 +488,16 @@ Which singularity has the smallest squeezer parameter changes as the losses chan
 The singularity threshold is not affected by radiation pressure or pump phase since they do not affect the zeros of the denominator $q$ of the noise response, as explained in Section~\ref{sec:nIS_stability}. Physically, the radiation-pressure noise does not affect the gain-loss balance and the pump phase only affects where the anti-squeezed quadrature lies in the quadrature basis.
 % Although the radiation pressure does introduce (1) a zero at $\Omega=0$ and (2) a factor $q(\Omega,-\chi)$, these can be ignored because, respectively, (1) comes from the free-falling mass assumption which is only valid at frequencies above the actual test mass resonance and therefore the physical behaviour will not have this singularity and (2) only increases the multiplicity of the zeros because the result is independent of pump phase and therefore of the sign of $\chi$. 
 
-\begin{figure}[ht]
+\begin{figure}[ht!]
     \centering
     \includegraphics[width=\textwidth]{nIS_threshold_edited.pdf}
     \caption{Nondegenerate internal squeezing trajectories of singularities of the anti-squeezed noise in (real) $(\Omega, \chi)$ space as losses are changed. Two effects are shown: (1) the idler loss is changed and the arm loss is zero along the red curve and (2) the idler loss is fixed and the arm loss is changed along the cyan and blue curves. In the former case, the second singularity is at $(0,\infty)$.
     The path from the lossless case to the high arm loss limit goes from point (a) with no loss to point (b) with idler loss $T_{l,c}=0.1$ along the red curve, then changes arm loss to point (c) with $T_{l,a}\approx0.3,\;T_{l,c}=0.1$ along the cyan curve, and, finally, to point (d) with $T_{l,a}=1,\;T_{l,c}=0.1$ along the blue curve. The blue curve does not reach point (d) because of limited numerical sampling.
-    I use large idler loss ($T_{l,c}=0.1$) to show the trajectories more clearly, but if it is realistic (e.g.\ $T_{l,c}=1000\text{ppm}$), then (b) and (c) move closer to (a)\jam{(check)}. I use the parameters in Tab.~\ref{tab:signal_RO_parameters} with zero signal loss ($T_{l,b}$).}
+    I use large idler loss ($T_{l,c}=0.1$) to show the trajectories more clearly, but if it is realistic (e.g.\ $T_{l,c}=1000\text{ppm}$), then (b) and (c) move closer to (a)\jam{(check)}. I use the parameters in Table~\ref{tab:signal_RO_parameters} with zero signal loss ($T_{l,b}$).}
     \label{fig:nIS_threshold_traj}
 \end{figure}
 
-The singularity threshold in Eq.~\ref{eq:singularity_threshold} recovers the known threshold values for the OPOs from Sections~\ref{sec:dOPO_threshold}~\ref{sec:nOPO_results}. Although it also recovers the threshold for degenerate internal squeezing from Section~\ref{sec:dIS_results}, it does not necessarily find the minimum of the squeezed quadrature, which I discuss in Appendix~\ref{app:dIS_singularity_thr}.
+The singularity threshold in Eq.~\ref{eq:singularity_threshold} recovers the known threshold values for the OPOs from Sections~\ref{sec:dOPO_threshold} and~\ref{sec:nOPO_results}. Although it also recovers the threshold for degenerate internal squeezing from Section~\ref{sec:dIS_results}, it does not necessarily find the minimum of the squeezed quadrature, which I discuss in Appendix~\ref{app:dIS_singularity_thr}.
 \jam{(Does it agree with existing stability analysis?)}
 % this resolves the mystery of idler loss --> means that lossless nIS is necessarily above threshold and therefore not allowed in this model except in formal limits, pump depletion would need to be added in to properly compare to sWLC?
 For \emph{nondegenerate internal squeezing}, as shown in Fig.~\ref{fig:nIS_threshold_traj}, in the lossless limit $\gamma_a=0,\gamma_c\rightarrow0$ the singularities approach $(0,\infty)$ and $(0,\omega_s)$ which recovers the exceptional value $\chi_m=\omega_s$ of the coupling rates of the optomechanical analogue from Section~\ref{sec:sWLC}. In that configuration, the threshold can be defined by the same principle of gains and losses applied to the signal and mechanical idler modes driven by the blue-detuned pump laser. Moreover, the marginal stability of the optomechanical system at $\chi_m=\omega_s$ means that a pole in the complex $\Omega$ plane has moved on to the real axis and therefore is a (real) singularity. As shown in Fig.~\ref{fig:nIS_threshold_traj}, as the idler loss $\gamma_c$ is increased from zero with arm loss $\gamma_a=0$, one singularity remains at $(0,\infty)$ and the other converges to $(\omega_s,\sqrt{\gamma^b_\text{tot}\gamma_c})$ when $\gamma_c\rightarrow\infty$\jam{(why does the squeezer parameter decrease with increased loss?)}. Fixing the idler loss at $T_{l,c}=0.1$ and changing the arm loss $\gamma_a$~\footnote{Threshold remains poorly defined when the idler loss is zero\jam{(check where this step is in the derivation)} like the nondegenerate OPO in Section~\ref{sec:nOPO_results}. The lossless limit requires $\gamma^c_\text{tot}\rightarrow0$ to be taken formally.}, the singularities merge at the $\Omega=0$ axis when $\gamma^c_\text{tot}\omega_s^2=\gamma_a\omega_s^2+\mathcal{O}(\gamma_a^2)$ which, assuming that $\gamma_a$ is small compared to $\omega_s$~\footnote{Which is reasonable for a gravitational-wave detector with 4~km arms and realistic $T_{l,a}=100\text{ppm}$ since $\gamma_a$ and $\omega_s$ are 1~Hz and 5~kHz respectively.}, is when $\gamma_c\approx\gamma_a$. In the high arm loss limit $\gamma_a\gg\gamma_c$, the remaining singularity converges to the nondegenerate OPO threshold $(\Omega,\chi)\xrightarrow[\gamma_a\rightarrow\infty]{}(0,\sqrt{\gamma^b_\mathrm{tot}\gamma_c})$, as expected.
@@ -534,7 +535,7 @@ Although there is more to understand about singularity threshold, \emph{I will u
 
 In this chapter, I have derived and characterised a Hamiltonian model of nondegenerate internal squeezing from the perspective of general quantum metrology.
 % Firstly, I explained that a dedicated study of nondegenerate internal squeezing was motivated by the related configurations from the previous chapter.
-After motivating the configuration, I derived the sensitivity of the system and discussed its general features, partially validating my model by showing that it reduced to the expected limits. Finally, I presented my method to find the threshold of nondegenerate internal squeezing by finding where the system is stable. % and the singularities of the anti-squeezed quadrature which appear when the pump-depletion assumption is broken.
+After motivating the configuration, I derived its sensitivity, partially validating my model by showing that it reduced to the expected high and low loss limits. Finally, I presented my method to find the threshold of nondegenerate internal squeezing by finding where the system is stable. % and the singularities of the anti-squeezed quadrature which appear when the pump-depletion assumption is broken.
 % I justified this method by showing that it recovers the known values for the other configurations in this thesis. 
 % The results presented in this chapter apply to general cavity-based metrology and, in the following chapters, I will apply them to gravitational-wave detection.
 
