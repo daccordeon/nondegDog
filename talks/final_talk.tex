@@ -18,12 +18,16 @@
 \usepackage{comment}
 
 \usepackage{multimedia}
+% \usepackage{media9}
 \usepackage{anyfontsize}
 
 
 \graphicspath{{./}}
 
 \setbeamertemplate{enumerate items}[default]
+
+\newcommand{\vframefill}{\vskip0pt plus 1filll}
+
 
 
 \title[]{Improving future gravitational-wave detectors using nondegenerate internal~squeezing}
@@ -44,11 +48,20 @@
 }
 
 \begin{frame}{Motivation: kilohertz gravitational waves}
-
-\vskip0pt plus 1filll
 \centering
-{\tiny Potential astrophysics from [M. Breschi, S. Bernuzzi, F. Zappa, et al. 2019. \emph{Phys. Rev. D}, 100:104029]}\\
-{\vspace{-0.2cm}\tiny and [H.~Miao, H.~Yang, and D.~Martynov., 2018, \emph{Phys. Rev. D}, 98(4):044044]}
+\movie[width=6cm,height=4.5cm,showcontrols,autostart,poster]{\includegraphics[height=4.5cm,width=6cm]{merger_first_slide.png}}{merger.mp4}
+% \vframefill
+\vframefill
+\begin{enumerate}
+\item Neutron-star equation-of-state % and exotic states of matter
+\item Origin of low-mass black holes
+\item Post-bounce dynamics of core-collapse supernovae
+% \item Primordial sources in the gravitational-wave background
+\end{enumerate}
+\vframefill
+\centering
+{\tiny video credit: [NASA/Goddard Space Flight Center, 2010]}\\
+{\vspace{-0.2cm}\tiny Potential astrophysical science from [H.~Miao, H.~Yang, and D.~Martynov., 2018, \emph{Phys. Rev. D}, 98(4):044044]}
 \end{frame}
 
 \begin{frame}{Gravitational-wave detectors}
@@ -56,7 +69,7 @@
 \centering
 \includegraphics[width=0.75\textwidth]{ligo_sites_Christopher_Berry.png}
 \includegraphics[angle=-90,width=\textwidth]{GW_hitting_MICH.pdf}
-\vskip0pt plus 1filll
+\vframefill
 {\tiny (top) image credit: [Christopher Berry, 2015], (bottom) reference: [J. Aasi et al., 2015. \emph{Class. Quantum Grav.}, 32:074001]}
 \end{frame}
 
@@ -68,30 +81,42 @@
 \end{frame}
 
 \begin{frame}{Quantum noise and squeezing}
-
+% maximum squeezing set by ``threshold'', explained later
+\begin{picture}(320,250)%(width,height)(xoffset,yoffset)
+\put(50,121.3){\includegraphics<1>[width=0.75\textwidth]{talk_squeezing_intro_half.pdf}}
+\put(50,35){\includegraphics<2>[width=0.75\textwidth]{talk_squeezing_intro_full.pdf}}
+\put(5,25){\only{\vspace*{-0.1cm}\fontsize{5.5pt}{10pt}\selectfont Review of squeezing for gravitational-wave detection in [S. L. Danilishin and F. Y. Khalili. 2012. \emph{Living Rev. Relativ.}, 15(1):5.]}<2>}
+\end{picture}
+% \centering
+% \includegraphics<1>[width=0.77\textwidth]{talk_squeezing_intro_half.pdf}
+% \includegraphics<2>[width=0.77\textwidth]{talk_squeezing_intro_full.pdf}
+% \vframefill
 \end{frame}
 
 \begin{frame}{External squeezing and cavities}
 %+ cavities affect signal response
 \centering
-\includegraphics[angle=-90,width=\textwidth]{talk_dES_config.pdf}
+\vspace*{0.2cm}
+\includegraphics[width=0.68\textwidth]{talk_dES_config.pdf}
+\vframefill\centering
+{\tiny External squeezing in LIGO from [J. Aasi, J. Abadie, B. P. Abbott, et al. 2013. \emph{Nat. Photonics}, 7(8):613--619]}
 \end{frame}
 
 \begin{frame}{Internal squeezing}
-
-
-\vskip0pt plus 1filll
 \centering
-{\tiny Degenerate internal squeezing from [M. Korobko, Y. Ma, Y. Chen, et al., 2019, \emph{Light Sci. Appl.}, 8(1):118]}\\
-{\vspace{-0.2cm}\tiny and [V. B. Adya, M. J. Yap, D. Töyrä, et al., 2020, \emph{Class. Quantum Grav.}, 37(7):07LT02]}
+\vspace*{0.5cm}
+\includegraphics[width=\textwidth]{talk_IS_config.pdf}
+\vframefill\centering
+{\tiny Degenerate internal squeezing from [M. Korobko, Y. Ma, Y. Chen, et al., 2019, \emph{Light Sci. Appl.}, 8(1):118]}
+% \\{\vspace{-0.2cm}\tiny and [V. B. Adya, M. J. Yap, D. Töyrä, et al., 2020, \emph{Class. Quantum Grav.}, 37(7):07LT02]}
 \end{frame}
 
 \begin{frame}{Optical loss}
 \centering
-{
-\includegraphics[angle=-90,width=0.85\textwidth]{talk_ball_and_stick_loss.pdf}
-\hspace*{1cm}
-}
+\begin{picture}(320,250)%(width,height)(xoffset,yoffset)
+\put(0,148.1){\includegraphics<1>[width=0.85\textwidth]{talk_ball_and_stick_loss_half.pdf}}
+\put(0,50){\includegraphics<2>[width=0.85\textwidth]{talk_ball_and_stick_loss.pdf}}
+\end{picture}
 \end{frame}
 
 \begin{frame}{Method} 
@@ -99,6 +124,22 @@
 % analytic model
 % approximations (no pump depl.)
 % validation
+\vspace*{1cm}
+	\begin{columns}
+	\column{0.5\textwidth}
+	\centering
+	\includegraphics[width=\textwidth]{talk_nIS_config.pdf}
+	\column{0.5\textwidth}
+\begin{enumerate}
+\item Analytic Hamiltonian model %with losses % most comprehensive approach
+\item Using approximations, \\e.g.\ no pump depletion, single-mode approximation
+\item Validation: reduces to correct~limits
+\item Stability via poles
+\item Alternative readout schemes
+\end{enumerate}
+	\end{columns}
+\vframefill\centering
+{\tiny\vspace{-0.15cm}Lossless Hamiltonian from [X. Li, M. Goryachev, Y. Ma, et al., 2020, \emph{arXiv:2012.00836 [quant-ph]}\ ]}
 \end{frame}
 
 \begin{frame}{Results: nondegenerate internal squeezing}
@@ -117,7 +158,7 @@
 % blowup
 \end{frame}
 
-\begin{frame}{Threshold via stability}
+\begin{frame}{My method: threshold via stability}
 % this is my technique
 \centering
 % threshold + no pump depletion$\implies$borderline unstable
@@ -137,8 +178,7 @@
 \hspace*{-.3cm}
 \includegraphics[height=0.742\textheight]{talk_dIS_tolerance.pdf} % uses a different parameter set, readout rate = 5kHz
 \end{columns}
-\vskip0pt plus 1filll
-\centering
+\vframefill\centering
 {\tiny Degenerate internal squeezing model from [M. Korobko, Y. Ma, Y. Chen, et al., 2019, \emph{Light Sci. Appl.}, 8(1):118]}\\
 \end{frame}
 
@@ -153,9 +193,9 @@
 	\begin{enumerate}
 	\item Optimal squeezing
 	\item Comparison to optomechanical analogue
-	\item Broadband sensitivity using a different readout scheme %(measurement) 
+	\item \textbf{Broadband sensitivity using a different readout scheme} %(measurement) 
 	\end{enumerate}
-\vskip0pt plus 1filll
+\vframefill
 \centering
 {\tiny\vspace{-0.15cm}Optomechanical analogue in [X. Li, M. Goryachev, Y. Ma, et al., 2020, \emph{arXiv:2012.00836 [quant-ph]}\ ]}
 \end{frame}
@@ -181,7 +221,7 @@
 \end{block}
 \centering
 \vspace{0.5cm}
-{\large gravitational-wave detection$\implies$ \underline{new physics}!}
+{\large gravitational-wave detection$\implies$\underline{new physics}!}
 \end{frame}
 
 
@@ -193,6 +233,17 @@
 % }
 
 \setbeamercolor{frametitle}{fg=Blue,bg=Blue!20}
+
+\begin{frame}[noframenumbering]{Alternative readout schemes}
+\begin{columns}
+\column{0.5\textwidth}
+\includegraphics[width=\textwidth]{idler_RO_config.pdf}
+\centering
+\column{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth]{nIS_signal_vs_idler_ROs.pdf}
+\end{columns}
+\end{frame}
 
 \begin{frame}[noframenumbering]{Stable optomechanical filtering}
 \centering
@@ -214,16 +265,6 @@
 \includegraphics[width=0.8\textwidth]{dIS_threshold_traj_compressed.pdf}
 \end{frame}
 
-\begin{frame}[noframenumbering]{Alternative readout schemes}
-\begin{columns}
-\column{0.5\textwidth}
-\includegraphics[width=\textwidth]{idler_RO_config.pdf}
-\centering
-\column{0.5\textwidth}
-\centering
-\includegraphics[width=\textwidth]{nIS_signal_vs_idler_ROs.pdf}
-\end{columns}
-\end{frame}
 
 
 
