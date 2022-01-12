@@ -81,7 +81,7 @@
 \includegraphics[angle=-90,width=0.8\textwidth]{talk_SNR_goal.pdf}
 \end{frame}
 
-\begin{frame}{Quantum noise and squeezing}
+\begin{frame}{Quantum noise and squeezing} % start with HUP ``like the position and momentum of a massive particle''
 % maximum squeezing set by ``threshold'', explained later
 \begin{picture}(320,250)%(width,height)(xoffset,yoffset)
 \put(50,121.3){\includegraphics<1>[width=0.75\textwidth]{talk_squeezing_intro_1.pdf}}
@@ -95,26 +95,29 @@
 % \vframefill
 \end{frame}
 
-\begin{frame}{External squeezing and cavities}
+\begin{frame}{Cavities and external squeezing} % explain cavities first
 %+ cavities affect signal response
-% \centering
-\vspace*{0.2cm}\hspace*{1.2cm}
-\includegraphics[width=0.68\textwidth]{talk_dES_config.pdf}
-\vframefill\centering
+\centering
+\vspace*{0.5cm}%\hspace*{1.2cm}
+\includegraphics[width=0.9\textwidth]{talk_dES_config.pdf}
+\vframefill
 {\tiny External squeezing in LIGO from [M. Tse, H. Yu, N. Kijbunchoo, et al. 2019. \emph{Phys. Rev. Lett.}, 123(23):231107.]}
 \end{frame}
 
 \begin{frame}{Degenerate internal squeezing}
 \centering
 \vspace*{0.5cm}
-% \includegraphics[width=\textwidth]{talk_IS_config.pdf}
+\includegraphics[width=0.9\textwidth]{talk_dIS_config.pdf}
 \vframefill\centering
 {\tiny Degenerate internal squeezing from [M. Korobko, Y. Ma, Y. Chen, et al., 2019, \emph{Light Sci. Appl.}, 8(1):118]}
 % \\{\vspace{-0.2cm}\tiny and [V. B. Adya, M. J. Yap, D. Töyrä, et al., 2020, \emph{Class. Quantum Grav.}, 37(7):07LT02]}
 \end{frame}
 
 \begin{frame}{Nondegenerate internal squeezing}
-
+\centering
+\vspace*{0.5cm}
+\includegraphics[width=0.9\textwidth]{talk_nIS_config.pdf}
+\vframefill
 \end{frame}
 
 % \begin{frame}{Optical loss} % move to results?
@@ -125,28 +128,59 @@
 % \end{picture}
 % \end{frame}
 
-\begin{frame}{My work: nondegenerate internal squeezing} 
-% clearly say what I did
-% analytic model
-% approximations (no pump depl.)
-% validation
-% \vspace*{1cm}
-% 	\begin{columns}
-% 	\column{0.5\textwidth}
-% 	\centering
-% 	\includegraphics[width=\textwidth]{talk_nIS_config.pdf}
-% 	\column{0.5\textwidth}
-\begin{block}{Analytic model}
-\begin{enumerate}
-\item Hamiltonian method (a conventional, robust approach) %with losses % most comprehensive approach
-\item Approximations, e.g.\ no pump depletion %, single-mode approximation
-\end{enumerate}
-\end{block}
+% \begin{frame}{My work: nondegenerate internal squeezing} 
+% % clearly say what I did
+% % analytic model
+% % approximations (no pump depl.)
+% % validation
+% % \vspace*{1cm}
+% % 	\begin{columns}
+% % 	\column{0.5\textwidth}
+% % 	\centering
+% % 	\includegraphics[width=\textwidth]{talk_nIS_config.pdf}
+% % 	\column{0.5\textwidth}
+% \begin{block}{Analytic model}
+% \begin{enumerate}
+% \item Hamiltonian method %(a conventional, robust approach) %with losses % most comprehensive approach
+% \item Approximations %, e.g.\ no pump depletion %, single-mode approximation
+% \end{enumerate}
+% \end{block}
 
-\begin{block}<2>{Results} %\textbf{(shown today)}
+% \begin{block}<2>{Results} %\textbf{(shown today)}
+% \begin{enumerate}
+% \item Validation %: reduces to correct~limits
+% \item Dynamical stability and squeezing threshold -- a new method %via poles
+% % \only{\vspace*{3cm}}<2>
+% % \only{
+% \item \textbf{Characterisation of sensitivity}
+% \item \textbf{Tolerance to detection optical loss} and other losses
+% \item Comparison to optomechanical analogue
+% \item \textbf{Comparison to astrophysical kilohertz target}
+% \item \textbf{Idler readout scheme} %}<3>
+% \end{enumerate}
+% \end{block}
+% \vframefill\centering
+% {\fontsize{5.9}{10}\selectfont\vspace{-0.1cm}Lossless Hamiltonian and optomechanical analogue from [X. Li, M. Goryachev, Y. Ma, et al., 2020, \emph{arXiv:2012.00836 [quant-ph]}\ ]} 
+% % \vspace{-0.2cm}Optomechanical analogue in [X. Li, M. Goryachev, Y. Ma, et al., 2020, \emph{arXiv:2012.00836 [quant-ph]}\ ]}
+% \end{frame}
+
+\begin{frame}{Methods}
+\begin{flushleft}
+Analytic model of nondegenerate internal squeezing:
+\end{flushleft}
+\centering
+% \vspace*{0.5cm}
+\includegraphics[width=0.7\textwidth]{talk_model_flowchart.pdf}
+\vframefill
+{\fontsize{5.9}{10}\selectfont\vspace{-0.1cm}Lossless Hamiltonian from [X. Li, M. Goryachev, Y. Ma, et al., 2020, \emph{arXiv:2012.00836 [quant-ph]}\ ]}
+\end{frame}
+
+\begin{frame}{Results}
+% \centering
+\vspace*{1.1cm}
 \begin{enumerate}
 \item Validation %: reduces to correct~limits
-\item Stability and threshold using a new method %via poles
+\item Dynamical stability and squeezing threshold -- a new method %via poles
 % \only{\vspace*{3cm}}<2>
 % \only{
 \item \textbf{Characterisation of sensitivity}
@@ -155,13 +189,11 @@
 \item \textbf{Comparison to astrophysical kilohertz target}
 \item \textbf{Idler readout scheme} %}<3>
 \end{enumerate}
-\end{block}
 \vframefill\centering
-{\fontsize{5.9}{10}\selectfont\vspace{-0.1cm}Lossless Hamiltonian and optomechanical analogue from [X. Li, M. Goryachev, Y. Ma, et al., 2020, \emph{arXiv:2012.00836 [quant-ph]}\ ]} 
-% \vspace{-0.2cm}Optomechanical analogue in [X. Li, M. Goryachev, Y. Ma, et al., 2020, \emph{arXiv:2012.00836 [quant-ph]}\ ]}
+{\fontsize{5.9}{10}\selectfont\vspace{-0.1cm}Optomechanical analogue from [X. Li, M. Goryachev, Y. Ma, et al., 2020, \emph{arXiv:2012.00836 [quant-ph]}\ ]} 
 \end{frame}
 
-\begin{frame}{Characterisation of sensitivity}
+\begin{frame}{Characterisation of sensitivity} % internal squeezing only
 \centering
 \vspace*{1cm}
 \includegraphics[width=\textwidth]{talk_nIS_N_S_NSR_annotated.pdf} %0.986, 0.95, 0.85, 0.75 % threshold
@@ -200,7 +232,7 @@
 {\tiny\vspace{-0.2cm}Astrophysical target from [H.~Miao, H.~Yang, and D.~Martynov., 2018, \emph{Phys. Rev. D}, 98(4):044044]}
 \end{frame}
 
-\begin{frame}{Idler readout scheme}
+\begin{frame}{Idler readout scheme} % this is my technique
 \begin{columns}
 \column{0.5\textwidth}
 \includegraphics[width=\textwidth]{talk_idler_RO.pdf}
@@ -208,7 +240,7 @@
 \column{0.5\textwidth}
 \centering
 % \hspace*{-0.1cm}
-\includegraphics[width=\textwidth]{talk_sigVsIdler_ROs}
+\includegraphics[width=\textwidth]{talk_sigVsIdler_ROs} % variational readout of idler
 \end{columns}
 \end{frame}
 
@@ -231,7 +263,7 @@
 		\begin{enumerate}
 		\item Analytic additions, e.g.\ pump depletion
 		\item Numerical validation % validation already done with limits, sufficient physics extracted with analytic model to absorb all of research time
-		\item Parity-time symmetry - future collaboration
+		\item Parity-time symmetry -- future collaboration
 		\end{enumerate}
 	\item Experimental table-top demonstration 
 	\end{enumerate}
@@ -262,7 +294,7 @@
 	\begin{frame}[noframenumbering]{Thank you, CGA!}
 	\centering
 	\vspace*{-1.5cm}
-	\includegraphics[width=\textwidth]{CGA_group_photo.png}
+	\includegraphics[width=\textwidth]{CGA_group_photo.pdf}
 	\end{frame}
 }
 
@@ -314,7 +346,7 @@
 
 \begin{frame}[noframenumbering]{Parity-time (PT) symmetry}
 \centering
-{\Large\begin{equation}
+{\large\begin{equation}
 \hat{H}_I=i\hbar\omega_s(\hat{a}\hat{b}^\dag-\hat{a}^\dag\hat{b})+i\hbar\chi(\hat{b}^\dag\hat{c}^\dag-\hat{b}\hat{c})
 \end{equation}}
 \begin{enumerate}
