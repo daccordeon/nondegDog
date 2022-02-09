@@ -276,8 +276,8 @@ fFSR,arm  ={:.3f}kHz
                 #results[i] = pool.map(sens_given_params, f_List)
                 ax.loglog(f_List, pool.map(sens_given_params, f_List), fmt_List[i], label=labels[i])
 
-        ax.set_xlabel('frequency / Hz')
-        ax.set_ylabel('sensitivity / $\mathrm{Hz}^{-1/2}$')
+        ax.set_xlabel('frequency (Hz)')
+        ax.set_ylabel('sensitivity ($\mathrm{Hz}^{-1/2}$)')
         if show_legend:
             ax.legend(title=legend_title)
         ax.set_xlim(freq_tuple[0], freq_tuple[1])
@@ -328,10 +328,10 @@ fFSR,arm  ={:.3f}kHz
                                                         wm=wm_List[i], psi3=psi3_List[i]),
                           fmt_List[i], color=color_List[i], label=labels[i])
 
-        axs[2].set_xlabel('frequency / Hz')
-        axs[0].set_ylabel('quantum noise\n/ dB')
+        axs[2].set_xlabel('frequency (Hz)')
+        axs[0].set_ylabel('quantum noise\n(dB)')
         axs[1].set_ylabel('signal response')
-        axs[2].set_ylabel('sensitivity / $\mathrm{Hz}^{-1/2}$')
+        axs[2].set_ylabel('sensitivity ($\mathrm{Hz}^{-1/2}$)')
         
         if show_legend=='no sqz/nIS':
             from matplotlib.lines import Line2D
@@ -393,11 +393,11 @@ fFSR,arm  ={:.3f}kHz
             ax3.loglog(f_List, self.sensList_vs_freq(
                 params, freq_tuple, radiation_pressure_on=radiation_pressure_List[i], extSqzFactor=extSqzFactor_List[i], wm=wm_List[i], psi3=psi3_List[i]), fmt_List[i], color=color_List[i], label=labels[i])
 
-        ax2.set_xlabel('frequency, Hz') # units convention: commas over division
-        ax3.set_xlabel('frequency, Hz')
-        ax1.set_ylabel('quantum noise, dB')
+        ax2.set_xlabel('frequency (Hz)') # units convention: commas over division
+        ax3.set_xlabel('frequency (Hz)')
+        ax1.set_ylabel('quantum noise (dB)')
         ax2.set_ylabel('signal response')
-        ax3.set_ylabel('sensitivity, $\mathrm{Hz}^{-1/2}$')
+        ax3.set_ylabel('sensitivity ($\mathrm{Hz}^{-1/2}$)')
         ax1.set_xscale('log')
         ax1.set_xlim(freq_tuple[0], freq_tuple[1])
         ax2.set_xlim(freq_tuple[0], freq_tuple[1])
@@ -664,8 +664,8 @@ fFSR,arm  ={:.3f}kHz
             with Pool() as pool:
                 ax.loglog(f_List, pool.map(_sens_given_params, f_List), fmt_List[i], label=labels[i])
             
-        ax.set_xlabel('frequency / Hz')
-        ax.set_ylabel('sensitivity / $\mathrm{Hz}^{-1/2}$')
+        ax.set_xlabel('frequency (Hz)')
+        ax.set_ylabel('sensitivity ($\mathrm{Hz}^{-1/2}$)')
         if show_legend:
             ax.legend(title=legend_title, fontsize=legend_size)
         ax.set_xlim(freq_tuple[0], freq_tuple[1])
