@@ -1,6 +1,8 @@
 """interferometer.py
-James Gardner 2022
-interferometer (IFO) class, not executable, uses analytic solutions for nondegenerate and degenerate internal squeezing, loaded by plotting scripts"""
+James Gardner, February 2022
+interferometer (IFO) class, not executable, uses analytic solutions for nondegenerate and degenerate internal squeezing, loaded by plotting scripts (e.g. paper_figures_*.ipynb).
+Uses results from Mathematica through Juan Ripoll's conversion pipe.
+"""
 
 import numpy as np
 from nIS_Mathematica_to_Python_via_Ripoll import *

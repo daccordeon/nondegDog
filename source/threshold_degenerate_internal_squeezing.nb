@@ -10,15 +10,17 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     84066,       2069]
-NotebookOptionsPosition[     82475,       2042]
-NotebookOutlinePosition[     82840,       2058]
-CellTagsIndexPosition[     82797,       2055]
+NotebookDataLength[     84201,       2071]
+NotebookOptionsPosition[     82607,       2044]
+NotebookOutlinePosition[     82972,       2060]
+CellTagsIndexPosition[     82929,       2057]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell["\<\
+Threshold and stability of degenerate internal squeezing
+James Gardner, February 2022
 Degenerate internal squeezing -- threshold plots, poles of anti-squeezed \
 quadrature versus minimum of squeezed quadrature definitions
 NB: I am calling the points \[OpenCurlyDoubleQuote]singularities\
@@ -28,8 +30,8 @@ poles of the transfer functions (against complex \[CapitalOmega]) at real \
 \[CapitalOmega]).\
 \>", "Text",
  CellChangeTimes->{{3.8375614797422867`*^9, 3.8375615197137938`*^9}, {
-  3.837731674263188*^9, 
-  3.837731758430163*^9}},ExpressionUUID->"5874aa02-52d4-4ebe-8764-\
+  3.837731674263188*^9, 3.837731758430163*^9}, {3.853802033529106*^9, 
+  3.853802057629077*^9}},ExpressionUUID->"5874aa02-52d4-4ebe-8764-\
 e4954f6b4e83"],
 
 Cell[BoxData[
@@ -2057,20 +2059,20 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 640, 12, 73, "Text",ExpressionUUID->"5874aa02-52d4-4ebe-8764-e4954f6b4e83"],
-Cell[1201, 34, 8515, 207, 430, "Input",ExpressionUUID->"421198d3-ab00-42a7-93e4-104adb21d703"],
-Cell[9719, 243, 3804, 101, 231, "Input",ExpressionUUID->"33f5f241-9d58-4f3b-92c1-6b2d6d71c25e"],
-Cell[13526, 346, 641, 17, 69, "Input",ExpressionUUID->"69bcc258-b6d7-47f0-88b4-3fbc813e5737"],
-Cell[14170, 365, 8657, 228, 604, "Input",ExpressionUUID->"91818c01-cdda-4217-b4e1-c1241da3e705"],
-Cell[22830, 595, 3186, 90, 915, "Input",ExpressionUUID->"3ffa7b06-5f7a-4798-b8a6-49937efca547"],
-Cell[26019, 687, 7345, 166, 1292, "Input",ExpressionUUID->"8f9f19be-3396-46ea-8f8a-63b35832caea"],
-Cell[33367, 855, 6451, 146, 976, "Input",ExpressionUUID->"3c15d2a8-3711-4e15-9868-5c0a30ec77bd"],
-Cell[39821, 1003, 2437, 57, 537, "Input",ExpressionUUID->"67c1abaf-e966-4a19-9377-a49faf780655"],
-Cell[42261, 1062, 9151, 224, 1751, "Input",ExpressionUUID->"60571a1d-32c3-4f74-b1eb-9fc94cee8716"],
-Cell[51415, 1288, 13351, 326, 1640, "Input",ExpressionUUID->"43c7b659-9651-43e8-9d2a-b83f4cd5dbee"],
-Cell[64769, 1616, 9314, 211, 1214, "Input",ExpressionUUID->"fb9ced59-1fb2-4400-8068-4cd990cc47e9"],
-Cell[74086, 1829, 3954, 96, 598, "Input",ExpressionUUID->"e5175b7a-7f51-4394-aa77-d97ecf242fb8"],
-Cell[78043, 1927, 4428, 113, 584, "Input",ExpressionUUID->"6fa74355-869a-43c4-9017-d3fc53a225be"]
+Cell[558, 20, 772, 14, 131, "Text",ExpressionUUID->"5874aa02-52d4-4ebe-8764-e4954f6b4e83"],
+Cell[1333, 36, 8515, 207, 433, "Input",ExpressionUUID->"421198d3-ab00-42a7-93e4-104adb21d703"],
+Cell[9851, 245, 3804, 101, 231, "Input",ExpressionUUID->"33f5f241-9d58-4f3b-92c1-6b2d6d71c25e"],
+Cell[13658, 348, 641, 17, 69, "Input",ExpressionUUID->"69bcc258-b6d7-47f0-88b4-3fbc813e5737"],
+Cell[14302, 367, 8657, 228, 604, "Input",ExpressionUUID->"91818c01-cdda-4217-b4e1-c1241da3e705"],
+Cell[22962, 597, 3186, 90, 1429, "Input",ExpressionUUID->"3ffa7b06-5f7a-4798-b8a6-49937efca547"],
+Cell[26151, 689, 7345, 166, 2018, "Input",ExpressionUUID->"8f9f19be-3396-46ea-8f8a-63b35832caea"],
+Cell[33499, 857, 6451, 146, 1525, "Input",ExpressionUUID->"3c15d2a8-3711-4e15-9868-5c0a30ec77bd"],
+Cell[39953, 1005, 2437, 57, 839, "Input",ExpressionUUID->"67c1abaf-e966-4a19-9377-a49faf780655"],
+Cell[42393, 1064, 9151, 224, 2735, "Input",ExpressionUUID->"60571a1d-32c3-4f74-b1eb-9fc94cee8716"],
+Cell[51547, 1290, 13351, 326, 2562, "Input",ExpressionUUID->"43c7b659-9651-43e8-9d2a-b83f4cd5dbee"],
+Cell[64901, 1618, 9314, 211, 1896, "Input",ExpressionUUID->"fb9ced59-1fb2-4400-8068-4cd990cc47e9"],
+Cell[74218, 1831, 3954, 96, 934, "Input",ExpressionUUID->"e5175b7a-7f51-4394-aa77-d97ecf242fb8"],
+Cell[78175, 1929, 4428, 113, 912, "Input",ExpressionUUID->"6fa74355-869a-43c4-9017-d3fc53a225be"]
 }
 ]
 *)

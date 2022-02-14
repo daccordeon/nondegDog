@@ -10,15 +10,17 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    112659,       2796]
-NotebookOptionsPosition[    111157,       2770]
-NotebookOutlinePosition[    111522,       2786]
-CellTagsIndexPosition[    111479,       2783]
+NotebookDataLength[    112801,       2799]
+NotebookOptionsPosition[    111299,       2773]
+NotebookOutlinePosition[    111664,       2789]
+CellTagsIndexPosition[    111621,       2786]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell["\<\
+Threshold and stability of nondegenerate internal squeezing
+James Gardner, February 2022
 Nondegenerate internal squeezing - threshold plots
 NB: I am calling the points \[OpenCurlyDoubleQuote]singularities\
 \[CloseCurlyDoubleQuote] for now to avoid confusion, but they are just the \
@@ -28,7 +30,8 @@ real \[Chi] such that they are on the real axis (and therefore real \
 \>", "Text",
  CellChangeTimes->{{3.837561716819818*^9, 3.83756172447789*^9}, {
   3.8377319794748774`*^9, 3.837731979800049*^9}, {3.838146099546699*^9, 
-  3.838146099906199*^9}},ExpressionUUID->"1a6ae0b4-1d35-40f6-9760-\
+  3.838146099906199*^9}, {3.8538020829714813`*^9, 
+  3.8538020933894453`*^9}},ExpressionUUID->"1a6ae0b4-1d35-40f6-9760-\
 13e0fe8a2d07"],
 
 Cell[BoxData[
@@ -2785,19 +2788,19 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 603, 11, 102, "Text",ExpressionUUID->"1a6ae0b4-1d35-40f6-9760-13e0fe8a2d07"],
-Cell[1164, 33, 11871, 297, 582, "Input",ExpressionUUID->"74c84ec1-adfa-4d3a-ad6d-847228dd8f48"],
-Cell[13038, 332, 5864, 152, 463, "Input",ExpressionUUID->"7bca5ce3-a695-41da-ab38-2cc6ca9ec217"],
-Cell[18905, 486, 9433, 245, 407, "Input",ExpressionUUID->"b6703edb-41aa-49fd-b5b0-af5babd7f16d"],
-Cell[28341, 733, 3284, 91, 523, "Input",ExpressionUUID->"2e963318-d6d1-4766-858e-4aebee4e5e12"],
-Cell[31628, 826, 3150, 92, 1009, "Input",ExpressionUUID->"1479c1ad-d9f6-4cb8-b4c6-278a1a8c8911"],
-Cell[34781, 920, 29949, 694, 4507, "Input",ExpressionUUID->"21ed204a-f0b3-40b7-822a-be7d34335588"],
-Cell[64733, 1616, 18181, 429, 2317, "Input",ExpressionUUID->"95c1ff99-a320-4b1c-af8c-4c18275c4c5a"],
-Cell[82917, 2047, 3096, 74, 428, "Input",ExpressionUUID->"7b67b8a0-0f3f-47c4-a27f-bb38a4c2c901"],
-Cell[86016, 2123, 8444, 207, 1182, "Input",ExpressionUUID->"ba373ad2-5fdf-4eef-8658-1641ac6d8d4a"],
-Cell[94463, 2332, 3781, 87, 1732, "Input",ExpressionUUID->"167c6320-ed23-4c7f-b7b5-989fd2f64606"],
-Cell[98247, 2421, 3804, 98, 2020, "Input",ExpressionUUID->"85def07e-1706-4b8b-a57d-b3a559fd524a"],
-Cell[102054, 2521, 9099, 247, 4098, "Input",ExpressionUUID->"0511e4c4-c024-4a24-af86-a376582cb0a3"]
+Cell[558, 20, 745, 14, 159, "Text",ExpressionUUID->"1a6ae0b4-1d35-40f6-9760-13e0fe8a2d07"],
+Cell[1306, 36, 11871, 297, 590, "Input",ExpressionUUID->"74c84ec1-adfa-4d3a-ad6d-847228dd8f48"],
+Cell[13180, 335, 5864, 152, 463, "Input",ExpressionUUID->"7bca5ce3-a695-41da-ab38-2cc6ca9ec217"],
+Cell[19047, 489, 9433, 245, 635, "Input",ExpressionUUID->"b6703edb-41aa-49fd-b5b0-af5babd7f16d"],
+Cell[28483, 736, 3284, 91, 817, "Input",ExpressionUUID->"2e963318-d6d1-4766-858e-4aebee4e5e12"],
+Cell[31770, 829, 3150, 92, 1576, "Input",ExpressionUUID->"1479c1ad-d9f6-4cb8-b4c6-278a1a8c8911"],
+Cell[34923, 923, 29949, 694, 7042, "Input",ExpressionUUID->"21ed204a-f0b3-40b7-822a-be7d34335588"],
+Cell[64875, 1619, 18181, 429, 3620, "Input",ExpressionUUID->"95c1ff99-a320-4b1c-af8c-4c18275c4c5a"],
+Cell[83059, 2050, 3096, 74, 668, "Input",ExpressionUUID->"7b67b8a0-0f3f-47c4-a27f-bb38a4c2c901"],
+Cell[86158, 2126, 8444, 207, 1846, "Input",ExpressionUUID->"ba373ad2-5fdf-4eef-8658-1641ac6d8d4a"],
+Cell[94605, 2335, 3781, 87, 2706, "Input",ExpressionUUID->"167c6320-ed23-4c7f-b7b5-989fd2f64606"],
+Cell[98389, 2424, 3804, 98, 3156, "Input",ExpressionUUID->"85def07e-1706-4b8b-a57d-b3a559fd524a"],
+Cell[102196, 2524, 9099, 247, 6403, "Input",ExpressionUUID->"0511e4c4-c024-4a24-af86-a376582cb0a3"]
 }
 ]
 *)
