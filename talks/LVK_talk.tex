@@ -23,7 +23,7 @@
 \usepackage{anyfontsize}
 
 
-\graphicspath{{./}{/home/james/Code/honours/nondegDog/talks/ozgrav_template/}{/home/james/Code/honours/nondegDog/paper/figures_for_publication/}}
+\graphicspath{{./}{/home/james/Code/honours/nondegDog/talks/ozgrav_template/}{/home/james/Code/honours/nondegDog/paper/figures_for_publication/}{/home/james/Code/honours/nondegDog/source/plots/LVK_talk/}}
 
 \setbeamertemplate{enumerate items}[default]
 
@@ -50,188 +50,142 @@
 % body templates are all too busy and/or ugly, just use normal Madrid beamer
 % {\usebackgroundtemplate{\includegraphics[width=\paperwidth]{ozgrav_template_body_slide.pdf}}
 \begin{frame}{Motivation: kilohertz gravitational waves}
+\begin{columns}
+\column{0.48\textwidth}
 \centering
-\includegraphics[height=4.5cm,width=6cm]{merger_first_slide.png}
-% \vframefill
-\vframefill
+% \includegraphics[height=4.5cm,width=6cm]{merger_first_slide.png}
+\movie[width=6cm,height=4.5cm,showcontrols,autostart,poster]{\includegraphics[height=4.5cm,width=6cm]{merger_first_slide.png}}{bns_merger_20s.mp4}
+\\
+{\tiny Media credit: [NASA/Goddard Space Flight Center, 2010]}
+\column{0.52\textwidth}
 \begin{enumerate}
-\item Neutron-star equation-of-state % and exotic states of matter
+\item Neutron-star equation-of-state
 \item Origin of low-mass black holes
 \item Post-bounce dynamics of core-collapse supernovae
-\item Primordial sources %\item Primordial sources in the gravitational-wave background
+\item Primordial sources
 \end{enumerate}
-\vframefill
+$\implies$ want to improve \\ quantum~noise--limited sensitivity 
+\\
+\vspace{0.5cm}
 \centering
-{\tiny video credit: [NASA/Goddard Space Flight Center, 2010]}\\
-{\vspace{-0.2cm}\tiny Potential astrophysical science from [K.~Ackley, V.~B.~Adya, and P.~Agrawal et al., 2020, \emph{Publ. Astron. Soc. Aust.}, 37]} %[H.~Miao, H.~Yang, and D.~Martynov., 2018, \emph{Phys. Rev. D}, 98(4):044044]
+{\tiny [R. X. Adhikari et al. 2020. Class. Quantum Grav., 37(16):165003.],
+\\[0pt] [K.~Ackley et al., 2020, Publ. Astron. Soc. Aust., 37], 
+\\[-7pt] [H. Miao et al. 2018. Phys. Rev. D, 98(4):044044.]}
+\end{columns}
 \end{frame}
 
-\begin{frame}{Current gravitational-wave detectors}
-% simple michelson
+% mention: alternative names, sWLC connection to nIS, limitation of low tolerance to loss
+\begin{frame}{Existing proposals} % related to my work (not leading!)
+\begin{columns}
+\column{0.5\textwidth}
 \centering
-\includegraphics[width=0.75\textwidth]{ligo_sites_Christopher_Berry.png}
-\includegraphics[angle=-90,width=\textwidth]{GW_hitting_MICH.pdf}
-\vframefill
-{\tiny (top) image credit: [Christopher Berry, 2015], (bottom) [J. Aasi et al., 2015. \emph{Class. Quantum Grav.}, 32:074001]}
-\end{frame}
-
-\begin{frame}{Goal: kilohertz sensitivity}
-% + overview of how nIS improves SNR
-% no sensitivity graph yet
+Degenerate internal squeezing\\\vspace{0.1cm}
+% (also known as: degenerate quantum expansion)
+\includegraphics[width=0.9\textwidth]{LVK_talk_dIS_config.pdf}
+	\\{\tiny [M. Korobko et al. 2019. Light Sci. Appl., 8(1):118.] \\[-7pt]  [V. B. Adya et al. 2020. Class. Quantum Grav., 37(7):07LT02.]}
+\column{0.5\textwidth}
 \centering
-\includegraphics[angle=-90,width=0.8\textwidth]{talk_SNR_goal.pdf}
-\end{frame}
-
-\begin{frame}{Quantum noise and squeezing} % start with HUP ``like the position and momentum of a massive particle''
-% maximum squeezing set by ``threshold'', explained later
-\begin{picture}(320,250)%(width,height)(xoffset,yoffset)
-\put(50,121.3){\includegraphics<1>[width=0.75\textwidth]{talk_squeezing_intro_1.pdf}}
-\put(50,121.3){\includegraphics<2>[width=0.75\textwidth]{talk_squeezing_intro_2.pdf}}
-\put(50,35){\includegraphics<3>[width=0.75\textwidth]{talk_squeezing_intro_3.pdf}}
-\put(5,25){\only{\vspace*{-0.1cm}\fontsize{5.5pt}{10pt}\selectfont Review of squeezing for gravitational-wave detection in [S. L. Danilishin and F. Y. Khalili. 2012. \emph{Living Rev. Relativ.}, 15(1):5.]}<3>}
-\end{picture}
-% \centering
-% \includegraphics<1>[width=0.77\textwidth]{talk_squeezing_intro_half.pdf}
-% \includegraphics<2>[width=0.77\textwidth]{talk_squeezing_intro_full.pdf}
-% \vframefill
-\end{frame}
-
-\begin{frame}{Cavities and external squeezing} % explain cavities first
-%+ cavities affect signal response
-\centering
-\vspace*{0.5cm}%\hspace*{1.2cm}
-\includegraphics[width=0.9\textwidth]{talk_dES_config.pdf}
-\vframefill
-{\tiny External squeezing in LIGO from [M. Tse, H. Yu, N. Kijbunchoo, et al. 2019. \emph{Phys. Rev. Lett.}, 123(23):231107.]}
-\end{frame}
-
-\begin{frame}{Degenerate internal squeezing}
-\centering
-\vspace*{0.5cm}
-\includegraphics[width=0.9\textwidth]{talk_dIS_config.pdf}
-\vframefill\centering
-{\tiny Degenerate internal squeezing from [M. Korobko, Y. Ma, Y. Chen, et al., 2019, \emph{Light Sci. Appl.}, 8(1):118]}
-% \\{\vspace{-0.2cm}\tiny and [V. B. Adya, M. J. Yap, D. Töyrä, et al., 2020, \emph{Class. Quantum Grav.}, 37(7):07LT02]}
+Stable optomechanical filtering\\\vspace{0.2cm}
+% (also known as: a stable white-light cavity)
+\includegraphics[width=0.8\textwidth]{talk_sWLC_config.pdf}
+\\{\tiny [X. Li et al. 2020. arXiv:2012.00836 [quant-ph]] \\[-7pt] [X. Li et al. 2021. Phys. Rev. D, 103:122001.]}
+\end{columns}
 \end{frame}
 
 \begin{frame}{Nondegenerate internal squeezing}
 \centering
-\vspace*{0.5cm}
-\includegraphics[width=0.9\textwidth]{talk_nIS_config.pdf}
-\vframefill
+\includegraphics[width=\textwidth]{talk_fig1_paper_nIS_config.pdf}
+% \\{\tiny{Review of relevant quantum optics in [S. L. Danilishin et al. 2012. Living Rev. Relativ., 15(1):5.]}}
 \end{frame}
 
-\begin{frame}{Methods}
-\begin{flushleft}
-Analytic model of nondegenerate internal squeezing:
-\end{flushleft}
-\centering
-% \vspace*{0.5cm}
-\includegraphics[width=0.7\textwidth]{talk_model_flowchart.pdf}
-\vframefill
-{\fontsize{5.9}{10}\selectfont\vspace{-0.1cm}Lossless Hamiltonian from [X. Li, M. Goryachev, Y. Ma, et al., 2020, \emph{arXiv:2012.00836 [quant-ph]}\ ]}
-\end{frame}
-
-\begin{frame}{Results}
-% \centering
-\vspace*{1.1cm}
-\begin{enumerate}
-\item Validation %: reduces to correct~limits
-\item Dynamical stability and squeezing threshold -- a new method %via poles
-% \only{\vspace*{3cm}}<2>
-% \only{
-\item \textbf{Characterisation of sensitivity}
-\item \textbf{Tolerance to detection optical loss} and other losses
-\item Comparison to optomechanical analogue
-\item \textbf{Comparison to astrophysical kilohertz target}
-\item \textbf{Idler readout scheme} %}<3>
-\end{enumerate}
-\vframefill\centering
-{\fontsize{5.9}{10}\selectfont\vspace{-0.1cm}Optomechanical analogue from [X. Li, M. Goryachev, Y. Ma, et al., 2020, \emph{arXiv:2012.00836 [quant-ph]}\ ]} 
-\end{frame}
-
-\begin{frame}{Characterisation of sensitivity} % internal squeezing only
-\centering
-\vspace*{1cm}
-\includegraphics[width=\textwidth]{talk_nIS_N_S_NSR_annotated.pdf} %0.986, 0.95, 0.85, 0.75 % threshold
-% N_S_NSR, explain sens!
-% explain parameter set
-\vframefill\centering
-{\tiny LIGO Voyager parameter set from [R. X. Adhikari, K. Arai, A. F. Brooks, et al. 2020. \emph{Class. Quantum Grav.}, 37(16):165003.]}
-\end{frame}
-
-\begin{frame}{Tolerance to detection optical loss} % compared ``apples-to-apples''
-% confirm comparison to dIS but no fig for dIS
-% \begin{columns}
-% \column{0.55\textwidth}
-% \centering
-% \includegraphics[height=0.77\textheight]{talk_nIS_tolerance.pdf}
-% \column{0.45\textwidth}
-% \centering
-% \hspace*{-.3cm}
-% \includegraphics[height=0.742\textheight]{talk_dIS_tolerance.pdf} % uses a different parameter set, readout rate = 5kHz
-% \end{columns}
-% \vframefill\centering
-% {\tiny Degenerate internal squeezing model from [M. Korobko, Y. Ma, Y. Chen, et al., 2019, \emph{Light Sci. Appl.}, 8(1):118]}\\
-\begin{picture}(320,250)%(width,height)(xoffset,yoffset)
-\put(0,50){\includegraphics<1>[height=0.7\textheight]{talk_nIS_tolerance_1.pdf}}
-\put(180,50){\includegraphics<1>[height=0.7\textheight]{talk_dIS_tolerance_1.pdf}}
-\put(0,50){\includegraphics<2>[height=0.7\textheight]{talk_nIS_tolerance_2.pdf}}
-\put(180,50){\includegraphics<2>[height=0.7\textheight]{talk_dIS_tolerance_2.pdf}}
-\put(20,25){\vspace*{-0.1cm}\tiny Degenerate internal squeezing model from [M. Korobko, Y. Ma, Y. Chen, et al., 2019, \emph{Light Sci. Appl.}, 8(1):118]}
-\end{picture}
-\end{frame}
-
-\begin{frame}{Comparison to astrophysical kilohertz target} % explain target, no increase in circulating power + 4 km arms
-\centering
-\includegraphics[width=0.95\textwidth]{talk_nIS_ideal_losses_w_NS.pdf}
-% low frequencies are not improved by external squeezing because they are dominated by the idler loss, not the readout port vacuum
-{\tiny\vspace{-0.2cm}Astrophysical target from [H.~Miao, H.~Yang, and D.~Martynov., 2018, \emph{Phys. Rev. D}, 98(4):044044]}
-\end{frame}
-
-\begin{frame}{Idler readout scheme} % this is my technique
+\begin{frame}{Application in a modified LIGO Voyager}
 \begin{columns}
-\column{0.5\textwidth}
-\includegraphics[width=\textwidth]{talk_idler_RO.pdf}
+\column{0.45\textwidth}
+\includegraphics[width=\textwidth]{talk_fig1_paper_nIS_config_(a).pdf}
+\column{0.55\textwidth}
 \centering
-\column{0.5\textwidth}
-\centering
-% \hspace*{-0.1cm}
-\includegraphics[width=\textwidth]{talk_sigVsIdler_ROs} % variational readout of idler
+Parameters of LIGO Voyager$^1$ except\\\vspace*{0.2cm}
+\begin{tabular}{@{}ll@{}}
+\toprule signal-recycling cavity length & 1.124 km \\
+input test mass transmissivity & 0.197 \\[5pt]
+arm intra-cavity loss & 100 ppm \\
+SRC intra-cavity loss & 1000 ppm \\
+detection loss & $10\%$ \\\bottomrule
+\end{tabular}
+\\\vspace*{0.5cm}
+{\tiny ${}^1$[R. X. Adhikari et al. 2020. Class. Quantum Grav., 37(16):165003.]}
 \end{columns}
 \end{frame}
 
-\begin{frame}{Future work}
-	\begin{enumerate}
-	\item \textbf{Coherently combined readout scheme} %Optimal sensitivity
-	\item Extended model %$\implies$ validate threshold
-		\begin{enumerate}
-		\item Analytic additions, e.g.\ pump depletion
-		\item Numerical validation % validation already done with limits, sufficient physics extracted with analytic model to absorb all of research time
-		\item Parity-time symmetry -- future collaboration
-		\end{enumerate}
-	\item Experimental table-top demonstration 
-	\end{enumerate}
+\begin{frame}{Characterisation of sensitivity} % for signal readout, explain signal response, also discuss astrophysical target
+\centering
+\includegraphics[height=0.8\textheight]{talk_fig3_nIS_N_S_NSR_vertical_annotated.pdf}
 \end{frame}
 
-\begin{frame}{Conclusions}
-% return to motivation
-\begin{block}{Nondegenerate internal squeezing}
+\begin{frame}{Tolerance to detection optical loss}
+\begin{columns}
+\column{0.5\textwidth}
+\centering
+\includegraphics[height=0.78\textheight]{talk_fig4_nIS_tolerance_to_detection_loss_sens_reduction_combined_vertical_1.pdf}
+\column{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth]{talk_fig4_nIS_tolerance_to_detection_loss_sens_reduction_combined_vertical_2.pdf}
+\\\vspace*{0.2cm}
+\begin{tabular}{@{}ll@{}}
+\toprule squeezer parameter, $\chi$ & 95$\%$ threshold \\
+arm intra-cavity loss & 100 ppm \\
+SRC intra-cavity loss & 1000 ppm \\\bottomrule
+\end{tabular}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Idler readout scheme} % make dES clear
+\begin{columns}
+\column{0.5\textwidth}
+\centering
+\includegraphics[height=0.8\textheight]{LVK_talk_idler_RO.pdf}
+\column{0.5\textwidth}
+\centering
+\includegraphics<1>[width=0.9\textwidth]{talk_fig5_idlerRO_fixed_vs_variational_4curves.pdf}
+\includegraphics<2>[width=0.9\textwidth]{fig5_idlerRO_fixed_vs_variational.pdf}
+\\{\tiny All curves are without injection of external squeezing.}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Optimal filter}
+\centering
+\includegraphics[height=0.8\textheight]{talk_fig6_optimal_filter_vs_variational_readouts_vs_optNoVar_vertical.pdf}
+\end{frame}
+
+\begin{frame}{Summary}
 \begin{enumerate}
-\item Detection loss--resistant, all-optical configuration
-\item Well-characterised by analytic model
-\item Can improve kilohertz (1--4~kHz) or broadband (0.1--4~kHz) sensitivity to gravitational waves 
+\item Single-mode analytic Hamiltonian model
+\item Dynamical stability and squeezing threshold % -- a new method
+\item \textbf{Characterisation of sensitivity}
+% \item \textbf{Comparison to astrophysical kilohertz target}
+\item \textbf{Tolerance to detection optical loss} and other optical losses
+\item Comparison to existing configurations
+\item \textbf{Alternative readout schemes}
 \end{enumerate}
-\end{block}
-\vspace{0.5cm}
-{
-	\setbeamercolor{block body}{bg=red!20}
-  % \setbeamercolor{block title}{#3}	
-	\begin{block}{}
-	\centering
-	{\large gravitational-wave detection$\implies$\underline{new physics}!}
-	\end{block}
-}
+% \vframefill\centering
+{\tiny Content shown in boldface is covered in this presentation} 
+\end{frame}
+
+\begin{frame}{Conclusions} % return to motivation, talk about arm cavity FSR in future work (for CE/ET seems promising)
+Nondegenerate internal squeezing
+\begin{enumerate}
+\item Dynamically stable
+\item Broadband sensitivity improvement using optimal filtering
+\item Tolerant to detection optical loss
+\end{enumerate}
+$\implies$ an all-optical, loss-resistant alternative %to existing proposals
+
+\vspace*{0.5cm}
+Potential future work
+\begin{enumerate}
+\item Multi-mode analysis
+\item Experimental demonstration
+\end{enumerate}
 \end{frame}
 
 {\usebackgroundtemplate{\includegraphics[width=\paperwidth]{ozgrav_template_thanks_slide.pdf}}
@@ -240,30 +194,33 @@ Analytic model of nondegenerate internal squeezing:
 
 \setbeamercolor{frametitle}{fg=Blue,bg=Blue!20}
 
-\begin{frame}[noframenumbering]{Stability and singularity threshold}
-\centering
-% \includegraphics[width=\textwidth]{}
-\end{frame}
-
 \begin{frame}[noframenumbering]{Table of parameters}
 \centering
-\vspace*{2cm}
-% \resizebox{\textwidth}{!}{%
-% 	% \begin{tabular}{@{}ll|ll@{}}
-% 	% \toprule
-% 	% carrier wavelength, $\lambda_0$ & 2 $\mu\text{m}$ &  signal mode transmissivity, $T_{\text{SRM},b}$ & 0.046  \\
-% 	% arm cavity length, $L_\text{arm}$ & 4 km & signal readout rate, $\gamma^b_R$ & 500 Hz \\
-% 	% signal-recycling cavity length, $L_\text{SRC}$ & 1.124 km & idler mode transmissivity, $T_{\text{SRM},c}$ & 0 \\
-% 	% circulating arm power, $P_\text{circ}$ & 3 MW & idler readout rate, $\gamma^c_R$ & 0 \\
-% 	% test mass mass, $M$ & 200 kg & arm intra-cavity loss, $T_{l,a}$ & 100 ppm \\
-% 	% input test mass transmissivity, $T_\text{ITM}$ & 0.197 & signal mode intra-cavity loss, $T_{l,b}$ & 1000 ppm \\
-% 	% sloshing frequency, $\omega_s$ & 5 kHz & idler mode intra-cavity loss, $T_{l,c}$ & 1000 ppm \\
-%  %  &  & detection loss, $R_\text{PD}$ & $10\%$ \\ \bottomrule
-% 	% \end{tabular}
-% }
-\vframefill\centering
-{\tiny LIGO Voyager parameter set from [R. X. Adhikari, K. Arai, A. F. Brooks, et al. 2020. \emph{Class. Quantum Grav.}, 37(16):165003.]}
+\vspace*{0.6cm}
+\resizebox{1.2\textheight}{!}{%
+    \begin{tabular}{@{}ll@{}}
+    \toprule
+    carrier wavelength, $\lambda_0=2\pi c/\omega_0$ & 2 $\mu\text{m}$ \\
+    arm cavity length, $L_\text{arm}$ & 4 km \\
+    \textbf{signal-recycling cavity length, $L_\text{SRC}$} & \textbf{1.124 km} \\
+    circulating arm power, $P_\text{circ}$ & 3 MW \\
+    test mass mass, $M$ & 200 kg \\
+    \textbf{input test mass transmissivity, $T_\text{ITM}$} & \textbf{0.197} \\
+    signal-recycling mirror transmissivity, $T_{\text{SRM},b}$ ($T_{\text{SRM},c}$) & 0.046 (0) \\[0.2cm]
+    \textbf{sloshing frequency, $\omega_s$} & \textbf{5 kHz} \\
+    \textbf{readout rate, $\gamma^b_R$ ($\gamma^c_R$)} & \textbf{0.5 (0) kHz} \\
+    arm cavity free-spectral range & 37.5~kHz \\[0.2cm] 
+    arm intra-cavity loss, $T_{l,a}$ & 100 ppm \\
+    signal-recycling intra-cavity loss, $T_{l,b}$ ($T_{l,c}$) & 1000 (1000) ppm \\
+    detection loss, $R_\text{PD}$ & $10\%$ \\ \bottomrule
+    \end{tabular}}
+\vframefill
+{\tiny [R. X. Adhikari et al. 2020. Class. Quantum Grav., 37(16):165003.]}
 \end{frame}
 
+\begin{frame}[noframenumbering]{Stability and singularity threshold}
+\centering
+\includegraphics[height=0.8\textheight]{talk_fig2_nIS_stability_plane_w_colorbar_vertical.pdf}
+\end{frame}
 
 \end{document}
