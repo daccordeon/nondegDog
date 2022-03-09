@@ -122,7 +122,7 @@ detection loss & $10\%$ \\\bottomrule
 \includegraphics[height=0.8\textheight]{talk_fig3_nIS_N_S_NSR_vertical_annotated.pdf}
 \end{frame}
 
-\begin{frame}{Tolerance to detection optical loss}
+\begin{frame}{Tolerance to detection optical loss} % don’t mention the paper when briefly talking about threshold
 \begin{columns}
 \column{0.5\textwidth}
 \centering
@@ -139,22 +139,31 @@ SRC intra-cavity loss & 1000 ppm \\\bottomrule
 \end{columns}
 \end{frame}
 
-\begin{frame}{Idler readout scheme} % make dES clear
+\begin{frame}{Idler readout scheme} % make dES clear, explain variational readout
 \begin{columns}
 \column{0.5\textwidth}
-\centering
+\centering\vspace*{1.5cm}
 \includegraphics[height=0.8\textheight]{LVK_talk_idler_RO.pdf}
 \column{0.5\textwidth}
-\centering
-\includegraphics<1>[width=0.9\textwidth]{talk_fig5_idlerRO_fixed_vs_variational_4curves.pdf}
-\includegraphics<2>[width=0.9\textwidth]{fig5_idlerRO_fixed_vs_variational.pdf}
-\\{\tiny All curves are without injection of external squeezing.}
+% use picture environment to exactly specify positions to make clean animations
+\begin{picture}(150,250)%(width,height)(xoffset,yoffset)
+\put(0,60){\includegraphics<1>[width=0.9\textwidth]{talk_fig5_idlerRO_fixed_vs_variational_4curves.pdf}}
+\put(0,60){\includegraphics<2>[width=0.9\textwidth]{fig5_idlerRO_fixed_vs_variational.pdf}}
+\put(30,50){\vspace*{-0.1cm}\tiny All curves are without injection of external squeezing.}
+\end{picture}
 \end{columns}
 \end{frame}
 
-\begin{frame}{Optimal filter}
+\begin{frame}{Combined readout scheme}
+\begin{columns}
+\column{0.5\textwidth}
 \centering
-\includegraphics[height=0.8\textheight]{talk_fig6_optimal_filter_vs_variational_readouts_vs_optNoVar_vertical.pdf}
+\includegraphics[height=0.8\textheight]{talk_combined_RO_config.pdf}
+\column{0.5\textwidth}
+\centering
+\includegraphics[width=0.9\textwidth]{talk_fig6_optimal_filter_vs_variational_readouts_vs_optNoVar_vertical.pdf}
+\\{\tiny All curves are without injection of external squeezing.}
+\end{columns}
 \end{frame}
 
 \begin{frame}{Summary}
@@ -174,9 +183,9 @@ SRC intra-cavity loss & 1000 ppm \\\bottomrule
 \begin{frame}{Conclusions} % return to motivation, talk about arm cavity FSR in future work (for CE/ET seems promising)
 Nondegenerate internal squeezing
 \begin{enumerate}
-\item Dynamically stable
-\item Broadband sensitivity improvement using optimal filtering
 \item Tolerant to detection optical loss
+\item Broadband sensitivity improvement using optimal filtering
+\item Dynamically stable
 \end{enumerate}
 $\implies$ an all-optical, loss-resistant alternative %to existing proposals
 
