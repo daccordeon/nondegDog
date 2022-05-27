@@ -41,6 +41,7 @@ xRatio0 = 0.95
 
 # Zhang2021 loss standard: T_loss_a, T_loss_b, T_loss_c, Rpd
 losses0 = (100e-6, 1000e-6, 1000e-6, 0.1)
+lossless= (0, 0, 0, 0)
 
 # readout standards: phiPump, psi0, psi1, psi2
 pumpPhi0 = pi / 2
