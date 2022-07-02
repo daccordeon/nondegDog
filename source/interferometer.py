@@ -1319,7 +1319,18 @@ def extSqzFactor_given_dB_reduction(dB_reduction : float) -> float:
     """dB_reduction = 20 log10(sqrt(extSqzFactor Svac))
     10**(dB_reduction/10) = extSqzFactor"""
     assert dB_reduction <= 0
-    return 10**(dB_reduction/10)        
+    return 10**(dB_reduction/10)      
+
+def extSqzFactor_with_injection_loss(dB_reduction, injection_loss):
+    """Returns the external squeezing factor for a given dB reduction after encountering an injection loss beamsplitter.
+    
+    dB_reduction (float): Value in dB  <= 0 representing external squeezing.
+    injection_loss (float): Value between 0 and 1 of injection loss.
+    """
+    extSqzFactor_inj = extSqzFactor_given_dB_reduction(dB_reduction)
+    extSqzFactor = extSqzFactor_inj * (1 - injection_loss) + 1 * injection_loss
+    print(f'Given {injection_loss:.0%} injection loss, the 10 dB injected becomes {10 * np.log10(extSqzFactor):.2f} dB.') 
+    return extSqzFactor
         
 def plot_coloured_line_segments(x, y, colour_param, cmap, ax=None):
     """https://stackoverflow.com/a/36521456"""
